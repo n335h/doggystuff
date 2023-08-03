@@ -1,8 +1,14 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
+// Assuming the environment variables are defined as string in your .env file.
+const supabaseUrl: string | undefined = process.env.REACT_APP_SUPABASE_URL;
+const supabaseKey: string | undefined = process.env.REACT_APP_SUPABASE_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+// Check if supabaseUrl and supabaseKey are defined before creating the client
+let supabase: SupabaseClient | null = null;
 
-export {};
+if (supabaseUrl && supabaseKey) {
+  supabase = createClient(supabaseUrl, supabaseKey);
+}
+
+export default supabase;
