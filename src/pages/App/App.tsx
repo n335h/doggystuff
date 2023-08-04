@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState } from 'react';
 import SignInSignUp from '../SignInSignUp/SignInSignUp';
 import { Routes, Route } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import SignUp from "../SignInSignUp/Components/SignUp/SignUp"
 
 
@@ -20,14 +21,12 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
       <Routes>
-      {/* <Route
-          path="/SignUp"
-          element={
-            <SignUp/>
-          }
-        /> */}
+      <Route path="/SignUp" element={<SignUp/>}
+        />
       </Routes>
+      </BrowserRouter>
      
      <SignInSignUp {...signInSignUpProps}/>
 
