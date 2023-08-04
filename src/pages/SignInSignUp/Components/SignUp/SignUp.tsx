@@ -14,7 +14,7 @@ interface SignUpProps {
     setSignUpRedirect: (value: boolean) => void;
 }
 
-function SignUp({ formData, handleChange, setSignUpRedirect }) {
+function SignUp({ formData, handleChange, setSignUpRedirect }): SignUpProps {
     // useState to track if SignIn message should be displayed
     const [ signUpSuccess, setSignUpSuccess ] = useState(true);
 
@@ -62,3 +62,5 @@ return (
         </form>
     </div>
 )
+
+export default SignUp;
