@@ -7,6 +7,13 @@ interface FormData {
     password: string;
 }
 
+// Define prop types for SignUp component
+interface SignUpProps {
+    formData: FormData;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    setSignUpRedirect: (value: boolean) => void;
+}
+
 function SignUp({ formData, handleChange, setSignUpRedirect }) {
     // useState to track if SignIn message should be displayed
     const [ signUpSuccess, setSignUpSuccess ] = useState(true);
