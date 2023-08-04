@@ -2,6 +2,9 @@
 import './App.css';
 import React, { useState } from 'react';
 import SignInSignUp from '../SignInSignUp/SignInSignUp';
+import { Routes, Route } from "react-router-dom"
+import SignUp from "../SignInSignUp/Components/SignUp/SignUp"
+
 
 
 function App() {
@@ -17,6 +20,14 @@ function App() {
 
   return (
     <div className="App">
+      <Routes>
+      {/* <Route
+          path="/SignUp"
+          element={
+            <SignUp/>
+          }
+        /> */}
+      </Routes>
      
      <SignInSignUp {...signInSignUpProps}/>
 

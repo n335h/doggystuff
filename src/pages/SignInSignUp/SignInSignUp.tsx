@@ -33,7 +33,9 @@ function SignInSignUp({ isSignedIn, setIsSignedIn, setFilter }: SignInSignUpProp
     }
     return <>
         <div id="sign-up-in-button-container">
-            <button id="sign-up-in-button" onClick={() => setFilter('sign-up')}>Sign Up</button>
+            <a href="/SignUp">
+            <button 
+            id="sign-up-in-button" onClick={() => setFilter('sign-up')}>Sign Up</button></a>
             </div>
     </>
 }
