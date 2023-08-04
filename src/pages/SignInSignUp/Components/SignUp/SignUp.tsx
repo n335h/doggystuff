@@ -64,6 +64,34 @@ return (
                 name='first_name'
                 onChange={handleChange}
                 required
+            />  <label htmlFor='first_name'>Surame</label>
+            <input
+                id='last_name'           
+                type='text'
+                name='last_name'
+                onChange={handleChange}
+                required
+            />  <label htmlFor='first_name'>Email</label>
+            <input
+                id='email'           
+                type='text'
+                name='email'
+                onChange={handleChange}
+                required
+            />  <label htmlFor='password'>Password</label>
+            <input
+                id='password'           
+                type='text'
+                name='password'
+                onChange={handleChange}
+                required
+            /><label htmlFor='confirmPassword'>Confirm Password</label>
+            <input
+                id='confirmPassword'           
+                type='text'
+                name='confirmPassword'
+                onChange={handleChange}
+                required
             />
         </form>
         <button type='submit'>Sign Up</button>
