@@ -59,12 +59,14 @@ return (
         <form onSubmit={handleSubmit}>
             <label htmlFor='first_name'>First Name</label>
             <input
+                id='first_name'           
                 type='text'
                 name='first_name'
                 onChange={handleChange}
                 required
             />
         </form>
+        <button type='submit'>Sign Up</button>
     </div>
 )
 }
