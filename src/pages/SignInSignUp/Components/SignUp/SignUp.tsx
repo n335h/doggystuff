@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { supabaseSignUp } from '../../../../models/queries';
+import SignMessage from '../SignMessage/SignMessage';
 
+// Interface for FormData
 interface FormData {
-    name: string;
+    first_name: string;
+    last_name: string;
     email: string;
     password: string;
 }
@@ -10,17 +13,18 @@ interface FormData {
 // Define prop types for SignUp component
 interface SignUpProps {
     formData: FormData;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     setSignUpRedirect: (value: boolean) => void;
 }
 
-function SignUp({ formData, handleChange, setSignUpRedirect }): SignUpProps {
+
+function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
     // useState to track if SignIn message should be displayed
-    const [ signUpSuccess, setSignUpSuccess ] = useState(true);
+    const [signUpSuccess, setSignUpSuccess] = useState(true);
 
     // This function is used to handle the form submission.
     // It is triggered when the for is submitted
-    async function handleSubmit(e) 
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>)    { 
     // e.preventDefault() - prevents the default form submission behavior
     // It ensures that the form does not cause a page reload
     e.preventDefault();
@@ -44,12 +48,13 @@ function SignUp({ formData, handleChange, setSignUpRedirect }): SignUpProps {
 }
 }
 
+
 return ( 
     <div className='sign-form'>
         <h1>Sign Up</h1>
 
         {/* Check if signUpSuccess has been changed to true and display error if so */}
-        {!signUpSuccess && (<SignMessage message='Sign up failed' />)}
+        {!signUpSuccess && (<SignMessage message='Sign up failed' signUpRedirect={signUpSuccess}/>)}
 
         <form onSubmit={handleSubmit}>
             <label htmlFor='first_name'>First Name</label>
@@ -62,5 +67,6 @@ return (
         </form>
     </div>
 )
+}
 
 export default SignUp;
