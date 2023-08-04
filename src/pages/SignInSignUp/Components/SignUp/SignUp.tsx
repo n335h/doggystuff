@@ -3,7 +3,7 @@ import { supabaseSignUp } from '../../../../models/queries';
 import SignMessage from '../SignMessage/SignMessage';
 
 // Interface for FormData
-interface FormData {
+export interface SignUpFormData {
     first_name: string;
     last_name: string;
     email: string;
@@ -12,7 +12,7 @@ interface FormData {
 
 // Define prop types for SignUp component
 interface SignUpProps {
-    formData: FormData;
+    formData: SignUpFormData;
     handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     setSignUpRedirect: (value: boolean) => void;
 }

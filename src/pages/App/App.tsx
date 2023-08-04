@@ -5,6 +5,7 @@ import SignInSignUp from '../SignInSignUp/SignInSignUp';
 import { Routes, Route } from "react-router-dom"
 import { BrowserRouter } from "react-router-dom"
 import SignUp from "../SignInSignUp/Components/SignUp/SignUp"
+import { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp';
 
 
 
@@ -19,12 +20,26 @@ function App() {
     setFilter: setFilter,
   };
 
+  // Example form data for sign up form
+  const formData: SignUpFormData = {
+    first_name: '',
+    last_name: '',
+    email: '',
+    password: '',
+  };
+
+// Example handleChange function for sign up form
+const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+};
+
+const setSignUpRedirect = (value: boolean) => {
+};
+
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
-      <Route path="/SignUp" element={<SignUp/>}
-        />
+      <Route path="/SignUp" element={<SignUp formData={formData} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />} />
       </Routes>
       </BrowserRouter>
      
