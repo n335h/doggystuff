@@ -5,6 +5,7 @@ import SignInSignUp from '../SignInSignUp/SignInSignUp';
 import SignUp, { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp';
 import Navbar from '../Navbar/Navbar';
 import { Landing } from '../Landing/Landing';
+import { Container } from 'react-bootstrap'
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -23,6 +24,7 @@ function App() {
   const setSignUpRedirect = (value: boolean) => {};
 
   return (
+    <Container className='mb-4'>
     <div className="App">
       <BrowserRouter>
         <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
@@ -41,6 +43,7 @@ function App() {
       {/* {!isSignedIn && <SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />}
       <h1>hello this is the app</h1> */}
     </div>
+    </Container>
   );
 }
 

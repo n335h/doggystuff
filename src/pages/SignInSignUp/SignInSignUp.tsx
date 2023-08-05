@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SignUp from './Components/SignUp/SignUp';
 import SignIn from "./Components/SignIn/SignIn";
 import './SignInSignUp.css';
+import { Button } from 'react-bootstrap';
 
 import Navbar from '../Navbar/Navbar';
 
@@ -55,8 +56,8 @@ function SignInSignUp({ isSignedIn, setIsSignedIn}: SignInSignUpProps) {
             <div id="signInUpComponents">
                 <div id="sign-up-in-container">
                     <div id="signInUpButtons">
-                        <button onClick={handleSignUpClick}>Sign Up</button>
-                        <button onClick={handleSignInClick}>Sign In</button>
+                        <button id='SignUp' onClick={handleSignUpClick}>Sign Up</button>
+                        <button id='SignIn' onClick={handleSignInClick}>Sign In</button>
                     </div>
                 
                     {/* Render the SignUp component only if showSignUp is true and signUpRedirect is false */}

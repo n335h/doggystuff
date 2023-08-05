@@ -3,21 +3,84 @@
     width: 100vw;
     margin: 0;
     display: flex;
-    flex-direction: column;
+    background-image: url('https://img.freepik.com/free-photo/beautiful-pet-portrait-dog_23-2149218450.jpg?w=1480&t=st=1691268991~exp=1691269591~hmac=739c8462ae219d8ccfb8b586d79943c99bdcd8f46ce8d599c7924984b9b2186a');
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-   
-
 }
 
 .landingContent{
-background-size: cover;
-background-color: rgb(201, 201, 201);
-background-repeat: no-repeat;
-background-position:left;
-height: 100vh;
-width: 100vw;
-margin: 0;
+display: flex;
+flex-direction: row;
+justify-content: center;
+width: 50vw;
+
+}
+.landingImage {
+    position: absolute;
+    height: 100vh;
+    width: 50vw;
+    left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
 
+}
+.landingImage img {
+    height: 100vh;
+    opacity: 0.8;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.landingInfo {
+    height: 100vh;
+    width: 30vw;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+   
+}
+
+.landingInfo h1 {
+    font-size: 3.3rem;
+    margin: 0;
+    padding: 0;
+    color:var(--header-main);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-align: right;
+    margin-bottom: 2vh;
+}
+.landingInfo h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: right;
+    color: var(--header-main);
+}
+
+.landingButton {
+    height: 5vh;
+    width: 15vw;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--header-main);
+    border-radius: 10px;
+    border: 0;
 }

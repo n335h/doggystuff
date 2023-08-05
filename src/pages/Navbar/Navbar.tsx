@@ -9,6 +9,7 @@ import { signOut } from '../../models/client';
 import './Navbar.css'
 import SignInSignUp from '../SignInSignUp/SignInSignUp';
 import { Sign } from 'crypto';
+import {Container, Nav, Navbar as NavbarBs } from "react-bootstrap"
 
 interface NavbarProps {
     isSignedIn: boolean;
@@ -33,6 +34,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn}: NavbarProps) {
   }
 
   return (
+    <NavbarBs sticky="top" className="shadow-sm mb-3">
+    <Container>
+      <Nav className="me-auto">
     <div id="navbar-outer-container">
        
 <div className='navbarleft'>
@@ -57,5 +61,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn}: NavbarProps) {
         )}
       </div>
     </div>
+    </Nav>
+    </Container>
+    </NavbarBs>
   );
 }

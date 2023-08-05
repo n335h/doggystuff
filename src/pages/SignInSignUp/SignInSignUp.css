@@ -14,11 +14,30 @@
     height: 100vh;
 }
 
-.signInUpButtons{
+#signInUpButtons{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
-    width: 50vw;
+    width: 40vw;
     height: 100vh;
+ 
+}
+
+#SignIn{
+    border-radius: 10px;
+    border: none;
+    padding: 1vh;
+    width:8rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color:rgb(255, 255, 255) ;
+
+
+}
+#SignUp{
+    background: none;
+    text-decoration: underline;
+    border: none;
+
 }
