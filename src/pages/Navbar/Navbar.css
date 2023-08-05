@@ -1,0 +1,37 @@
+#navbar-outer-container {
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+margin: 0;
+padding: 0;
+    height: 7vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+
+.authButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    max-width: 100%;
+    padding: 0 20px;
+}
+.navbarcenter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    color: black;
+  
+}

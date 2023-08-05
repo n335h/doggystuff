@@ -1,24 +1,13 @@
-
-import './App.css';
 import React, { useState } from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { RouteProps } from 'react-router-dom';
 import SignInSignUp from '../SignInSignUp/SignInSignUp';
-import { Routes, Route } from "react-router-dom"
-import { BrowserRouter } from "react-router-dom"
-import SignUp from "../SignInSignUp/Components/SignUp/SignUp"
-import { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp';
-
-
+import SignUp, { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp';
+import Navbar from '../Navbar/Navbar';
+import { Landing } from '../Landing/Landing';
 
 function App() {
-
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [filter, setFilter] = useState('');
-
-  const signInSignUpProps = {
-    isSignedIn: isSignedIn,
-    setIsSignedIn: setIsSignedIn,
-    setFilter: setFilter,
-  };
 
   // Example form data for sign up form
   const formData: SignUpFormData = {
@@ -28,27 +17,29 @@ function App() {
     password: '',
   };
 
-// Example handleChange function for sign up form
-const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-};
+  // Example handleChange function for sign up form
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {};
 
-const setSignUpRedirect = (value: boolean) => {
-};
+  const setSignUpRedirect = (value: boolean) => {};
 
   return (
     <div className="App">
       <BrowserRouter>
-      <SignInSignUp {...signInSignUpProps}/>
-      <Routes>
-      <Route path="/SignUp" element={<SignUp formData={formData} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />} />
-      </Routes>
+        <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
+
+        <Routes>
+          <Route path="/src/pages/signsignup" element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
+          <Route
+            path="/SignUp"
+            element={<SignUp formData={formData} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />}
+          />
+          
+        </Routes>
       </BrowserRouter>
-     
 
-
- <h1>hello this is the app</h1>
-
-
+      <Landing />
+      {/* {!isSignedIn && <SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />}
+      <h1>hello this is the app</h1> */}
     </div>
   );
 }

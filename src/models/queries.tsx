@@ -28,17 +28,19 @@ type Session = {
 export async function insertPublicUser(
   user_id: string,
   first_name: string,
-  last_name: string
+  last_name: string,
+  email: string
 ): Promise<void> {
-  if (supabaseClient) {
-    await supabaseClient.from('users').insert({
-      user_id: user_id,
-      first_name: first_name,
-      last_name: last_name,
-    });
-  }
+  await supabaseClient!.from('user').insert({
+    user_id: user_id,
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
+  });
 }
 
+// supabaseSignUp() - is used to sign up a user using the Supabase authentication service.
+// It takes in a formData object containing user signup data.
 // supabaseSignUp() - is used to sign up a user using the Supabase authentication service.
 // It takes in a formData object containing user signup data.
 export async function supabaseSignUp(formData: FormData): Promise<boolean> {
@@ -57,6 +59,7 @@ export async function supabaseSignUp(formData: FormData): Promise<boolean> {
         data: {
           first_name: formData.first_name,
           last_name: formData.last_name,
+          email: formData.email,
         },
       },
     });
@@ -65,12 +68,16 @@ export async function supabaseSignUp(formData: FormData): Promise<boolean> {
       console.error('Sign-up error:', error);
       return false;
     } else {
-      const user_id = data?.user?.id;
-      const first_name = data?.user?.user_metadata?.first_name;
-      const last_name = data?.user?.user_metadata?.last_name;
-      // insertPublicUser() - is used to insert a new user into the public.users table.
-      if (user_id && first_name && last_name) {
-        await insertPublicUser(user_id, first_name, last_name);
+      if (data?.user) {
+        const user_id = data.user.id;
+        const first_name = data.user.user_metadata?.first_name;
+        const last_name = data.user.user_metadata?.last_name;
+        const email = data.user.user_metadata?.email;
+
+        // insertPublicUser() - is used to insert a new user into the public.users table.
+        if (user_id && first_name && last_name) {
+          await insertPublicUser(user_id, first_name, last_name, email);
+        }
       }
       return true;
     }
