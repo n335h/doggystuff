@@ -12,12 +12,11 @@ import { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp';
 function App() {
 
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [filter, setFilter] = useState('');
 
   const signInSignUpProps = {
     isSignedIn: isSignedIn,
     setIsSignedIn: setIsSignedIn,
-    setFilter: setFilter,
+  
   };
 
   // Example form data for sign up form
@@ -38,8 +37,9 @@ const setSignUpRedirect = (value: boolean) => {
   return (
     <div className="App">
       <BrowserRouter>
-      <SignInSignUp {...signInSignUpProps}/>
+     
       <Routes>
+      <Route path="/src/pages/signsignup" element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />}/>
       <Route path="/SignUp" element={<SignUp formData={formData} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />} />
       </Routes>
       </BrowserRouter>
