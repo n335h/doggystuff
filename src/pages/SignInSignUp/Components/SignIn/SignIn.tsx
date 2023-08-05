@@ -61,7 +61,7 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
 
     return (
         <div className='sign-form'>
-              <a href="/landing">Close</a>
+              <a href="/landing">X</a>
         {showSignIn && (
           <>
             <h1>Sign In</h1>
@@ -91,6 +91,8 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
               onChange={handleChange}
               required
             />
+            <br />
+       
           <div className="submit-button">
             <button type='submit' aria-label="Submit">Submit</button>
           </div>

@@ -58,7 +58,7 @@ function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
 
   return (
     <div className='sign-form'>
-        <a href="/landing">Close</a>
+        <a id='closeForm' href="/landing">X</a>
 
       <h1>Sign Up</h1>
       <Link to="/signin">Already have an account? Sign in</Link>
@@ -95,6 +95,8 @@ function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
           onChange={handleChange}
           required
         />
+        <br />
+        
         <button type='submit' auto-complete="current-password" aria-label='Submit' data-testid='submit-button' className='submit-button'>
           Submit
         </button>

@@ -11,9 +11,8 @@
 }
 
 .landingContent{
-    background-image: url("https://img.freepik.com/free-photo/beautiful-pet-portrait-dog_23-2149218450.jpg?w=1480&t=st=1691246701~exp=1691247301~hmac=0393cb2b2c64749492eaf1e206e6162208db47aee3baf8030dc782a0ab42b868");
 background-size: cover;
-
+background-color: rgb(201, 201, 201);
 background-repeat: no-repeat;
 background-position:left;
 height: 100vh;
