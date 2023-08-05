@@ -54,7 +54,7 @@ return (
         <h1>Sign Up</h1>
 
         {/* Check if signUpSuccess has been changed to true and display error if so */}
-        {!signUpSuccess && (<SignMessage message='Sign up failed' signUpRedirect={signUpSuccess}/>)}
+        {!signUpSuccess && (<SignMessage message='Sign up failed' signUpRedirect={false} />)}
 
         <form onSubmit={handleSubmit}>
             <label htmlFor='first_name'>First Name</label>
@@ -66,35 +66,31 @@ return (
                 required
             />  <label htmlFor='last_name'>Last Name</label>
             <input
-                id='last_name'           
-                type='text'
-                name='last_name'
-                onChange={handleChange}
-                required
+                id='last_name'
+               data-testid="lastName-input"
+               name="lastName"
+               onChange={handleChange}
+               required
             />  <label htmlFor='email'>Email</label>
             <input
-                id='email'           
-                type='text'
-                name='email'
-                onChange={handleChange}
-                required
+            id='email'
+            data-testid="email-input"
+            name="email"
+            type="email"
+            onChange={handleChange}
+            required
             />  <label htmlFor='password'>Password</label>
             <input
-                id='password'           
-                type='text'
-                name='password'
-                onChange={handleChange}
-                required
-            /><label htmlFor='confirmPassword'>Confirm Password</label>
-            <input
-                id='confirmPassword'           
-                type='text'
-                name='confirmPassword'
-                onChange={handleChange}
-                required
+          data-testid="password-input"
+          name="password"
+          type="password"
+          pattern=".{6,}"
+          title="Please enter at least 6 characters"
+          onChange={handleChange}
+          required
             />
         </form>
-        <button type='submit'>Submit</button>
+        <button type='submit' aria-label="Submit">Submit</button>
     </div>
 )
 }

@@ -49,7 +49,7 @@ function SignInSignUp({ isSignedIn, setIsSignedIn}: SignInSignUpProps) {
 
     return <>
         <div id="sign-up-in-outer-container" data-testid="sign-in-sign-up-page">
-            <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn}  />
+            {/* <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn}  /> */}
           
             <div id="sign-up-in-components-container">
                 <div id="sign-up-in-container">

@@ -30,14 +30,13 @@ export async function insertPublicUser(
   first_name: string,
   last_name: string
 ): Promise<void> {
-  if (supabaseClient) {
-    await supabaseClient.from('users').insert({
+    await supabaseClient!.from('users').insert({
       user_id: user_id,
       first_name: first_name,
       last_name: last_name,
     });
   }
-}
+
 
 // supabaseSignUp() - is used to sign up a user using the Supabase authentication service.
 // It takes in a formData object containing user signup data.

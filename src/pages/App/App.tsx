@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom"
 import { BrowserRouter } from "react-router-dom"
 import SignUp from "../SignInSignUp/Components/SignUp/SignUp"
 import { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp';
+import Navbar from '../Navbar/Navbar';
 
 
 
@@ -37,7 +38,7 @@ const setSignUpRedirect = (value: boolean) => {
   return (
     <div className="App">
       <BrowserRouter>
-     
+     <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn}  />
       <Routes>
       <Route path="/src/pages/signsignup" element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />}/>
       <Route path="/SignUp" element={<SignUp formData={formData} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />} />
