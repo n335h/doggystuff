@@ -8,6 +8,14 @@ import { useNavigate } from 'react-router-dom';
 import { SignInUser } from '../../../../models/client';
 // import components
 import SignMessage from '../../Components/SignMessage/SignMessage';
+// import css
+import { Link} from "react-router-dom"
+interface SignInFormData {
+    email: string;
+    password: string;
+    first_name: string; // Add this property
+    last_name: string; // Add this property
+  }
 
 // interface for SignIn component
 interface SignInProps {
@@ -22,10 +30,9 @@ interface SignInProps {
 }
 
 
-function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSignedIn } : SignInProps) {
-    // initialize the navigate object using the useNavigate 'hook'
+function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSignedIn }: SignInProps) {    // initialize the navigate object using the useNavigate 'hook'
     const navigate = useNavigate();
-
+    const [showSignIn, setShowSignIn] = useState(true); 
     // useState to track if SignIn error message should be displayed
     const [ signInError, setSignInError ] = useState(false);
 
@@ -40,11 +47,10 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
         const signInSuccessful = await SignInUser(formData.email, formData.password);
         // if (signInSuccessful === true) redirect to Card Display Page
         if (signInSuccessful) {
-            // Change isSignedIn useState to true
             setIsSignedIn(true);
-            // Redirect to card display page on successful log in
-            navigate('/src/pages/carddisplay');
-        }
+            navigate('/src/pages/Landing');
+            setShowSignIn(false); // Hide the sign-in component
+          }
         // if (signInSuccessful === false) display error message
         else {
             // show SignMessage component
@@ -55,14 +61,20 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
 
     return (
         <div className='sign-form'>
-        <h1>Sign In</h1>
+              <a href="/landing">Close</a>
+        {showSignIn && (
+          <>
+            <h1>Sign In</h1>
+            <div className="sign-up-link">
+              <Link to="/signup">Don't have an account? Sign up</Link>
+            </div>  
         {/* Check if signInError has been changed to true and display error if so */}
         {signInError && <SignMessage message="Failed to sign in." signUpRedirect={false} />}
         {/* Check if signUpRedirect (new user has successfully signed up) has been changed to true and display success message if so */}
         {signUpRedirect && <SignMessage message="Successfully signed up. Please log in." signUpRedirect={true} />}
   
-            <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email</label>
+        <form onSubmit={handleSubmit}>
+        <label htmlFor="email">Email</label>
             <input
             id='email'
               name="email"
@@ -79,12 +91,14 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
               onChange={handleChange}
               required
             />
-                <div className="submit-button">
-                    <button type='submit' aria-label="Submit">Submit</button>
-                </div>
-            </form>
-        </div>
-    );
+          <div className="submit-button">
+            <button type='submit' aria-label="Submit">Submit</button>
+          </div>
+        </form>
+  
+        </>
+      )}
+    </div>
+  );
 }
-
 export default SignIn;

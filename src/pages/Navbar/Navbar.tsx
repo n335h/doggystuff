@@ -34,8 +34,15 @@ export default function Navbar({ isSignedIn, setIsSignedIn}: NavbarProps) {
 
   return (
     <div id="navbar-outer-container">
-      <div className="authButtons">
-        {isSignedIn && ( // Check if user is signed in
+       
+<div className='navbarleft'>
+
+</div>
+<div className='navbarcenter'>
+    <h1 id='navbar-title'>DoggyStuff</h1>
+</div>
+<div className="authButtons">
+        {isSignedIn ? ( // Check if user is signed in
           <button
             id="dropdown-menu-signout-button"
             onClick={() => {
@@ -45,10 +52,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn}: NavbarProps) {
           >
             Sign Out
           </button>
+        ) : (
+          <SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
         )}
-      </div>
-      <div className='authButtons' id={idSignedoutVariable}>
-    <SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
       </div>
     </div>
   );

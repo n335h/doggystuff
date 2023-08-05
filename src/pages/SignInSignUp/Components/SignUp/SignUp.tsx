@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { supabaseSignUp } from '../../../../models/queries';
 import SignMessage from '../SignMessage/SignMessage';
 import { sign } from 'crypto';
-
+import './SignUp.css';
+import Navbar from '../../../Navbar/Navbar';
+import { Link } from 'react-router-dom';
 // Interface for FormData
 export interface SignUpFormData {
   first_name: string;
@@ -56,8 +58,10 @@ function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
 
   return (
     <div className='sign-form'>
-      <h1>Sign Up</h1>
+        <a href="/landing">Close</a>
 
+      <h1>Sign Up</h1>
+      <Link to="/signin">Already have an account? Sign in</Link>
       {/* Check if signUpSuccess has been changed to true and display error if so */}
       {!signUpSuccess && <SignMessage message='Sign up failed' signUpRedirect={false} />}
 
