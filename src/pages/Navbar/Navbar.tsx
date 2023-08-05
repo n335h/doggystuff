@@ -15,7 +15,7 @@ interface NavbarProps {
 }
 
 
-export default function SearchAppBar({ isSignedIn, setIsSignedIn}: NavbarProps) {
+export default function Navbar({ isSignedIn, setIsSignedIn}: NavbarProps) {
  
 
   // Vary components displayed in dropdown menu depending on whether user is signed in using css

@@ -15,7 +15,7 @@ if (supabaseUrl && supabaseKey) {
 
 export async function SignInUser(email: string, password: string): Promise<boolean> {
   try { 
-    const { data, error } = await supabaseClient?.auth.signInWithPassword({ email, password }) || {};
+    const {  error } = await supabaseClient?.auth.signInWithPassword({ email, password }) || {};
     if (error) {
       console.error('Sign-in error:', error);
       return false;
