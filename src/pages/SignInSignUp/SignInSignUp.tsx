@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SignUp from './Components/SignUp/SignUp';
 import SignIn from "./Components/SignIn/SignIn";
+import './SignInSignUp.css';
 
 import Navbar from '../Navbar/Navbar';
 
@@ -48,12 +49,12 @@ function SignInSignUp({ isSignedIn, setIsSignedIn}: SignInSignUpProps) {
     }
 
     return <>
-        <div id="sign-up-in-outer-container" data-testid="sign-in-sign-up-page">
+        <div id="signInUpcontainer" data-testid="signInUpcontainer">
             {/* <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn}  /> */}
           
-            <div id="sign-up-in-components-container">
+            <div id="signInUpComponents">
                 <div id="sign-up-in-container">
-                    <div id="sign-up-in-button-container">
+                    <div id="signInUpButtons">
                         <button onClick={handleSignUpClick}>Sign Up</button>
                         <button onClick={handleSignInClick}>Sign In</button>
                     </div>

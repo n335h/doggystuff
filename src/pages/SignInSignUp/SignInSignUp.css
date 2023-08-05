@@ -1,0 +1,24 @@
+.signInUpcontainer {
+    display: flex;
+    justify-content: space-between;
+  height: 100vh;
+    width: 100vw;
+}
+
+.signInUpComponents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+.signInUpButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+}

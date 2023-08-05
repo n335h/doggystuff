@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 // import Supabase functions
 import { signOut } from '../../models/client';
 // import MaterialUI dependencies
+import './Navbar.css'
+import SignInSignUp from '../SignInSignUp/SignInSignUp';
+import { Sign } from 'crypto';
 
 interface NavbarProps {
     isSignedIn: boolean;
@@ -29,23 +32,24 @@ export default function Navbar({ isSignedIn, setIsSignedIn}: NavbarProps) {
     idSignedinVariable = "dropdown-menu-signedin-toggle";
   }
 
-
-
   return (
-    <div id="navbar-outer-container" >
-      <div id="navbar-header-container" >    
-                {/* <Link id="dropdown-createagroup-link" to="">Create a Group</Link> */}
-                <button id="dropdown-menu-signout-button" onClick={() => { signOut(); setIsSignedIn(false); }}>
-                  Sign Out
-                </button>
-              </div>
-              <div id={idSignedoutVariable}>
-                <button  id="dropdown-menu-susi-button">
-                  <Link to="/src/pages/signsignup">
-                    Sign Up / Sign In
-                  </Link>
-                </button>
-              </div>   
-            </div>
+    <div id="navbar-outer-container">
+      <div className="authButtons">
+        {isSignedIn && ( // Check if user is signed in
+          <button
+            id="dropdown-menu-signout-button"
+            onClick={() => {
+              signOut();
+              setIsSignedIn(false);
+            }}
+          >
+            Sign Out
+          </button>
+        )}
+      </div>
+      <div className='authButtons' id={idSignedoutVariable}>
+    <SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
+      </div>
+    </div>
   );
 }

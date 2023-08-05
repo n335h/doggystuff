@@ -29,6 +29,14 @@ function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
     console.log(signUpSuccess);
     console.log("function called")
 
+    // Check if Sign up form has been filled out
+    if (
+      formData.first_name !== '' &&
+      formData.last_name !== '' &&
+      formData.email !== '' &&
+      formData.password !== ''
+    ) {
+      console.log(formData);
 
       // supabaseSignUp() is called, passing the formData as a parameter
       // This function contains the logic and DB query for creating a new user
@@ -43,6 +51,7 @@ function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
         
       }
     }
+  }
   
 
   return (
