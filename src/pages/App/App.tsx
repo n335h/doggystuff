@@ -38,12 +38,13 @@ const setSignUpRedirect = (value: boolean) => {
   return (
     <div className="App">
       <BrowserRouter>
+      <SignInSignUp {...signInSignUpProps}/>
       <Routes>
       <Route path="/SignUp" element={<SignUp formData={formData} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />} />
       </Routes>
       </BrowserRouter>
      
-     <SignInSignUp {...signInSignUpProps}/>
+
 
  <h1>hello this is the app</h1>
 

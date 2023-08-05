@@ -94,7 +94,7 @@ return (
                 required
             />
         </form>
-        <button type='submit'>Sign Up</button>
+        <button type='submit'>Submit</button>
     </div>
 )
 }
