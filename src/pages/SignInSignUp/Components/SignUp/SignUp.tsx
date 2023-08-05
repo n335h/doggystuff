@@ -64,14 +64,14 @@ return (
                 name='first_name'
                 onChange={handleChange}
                 required
-            />  <label htmlFor='first_name'>Surame</label>
+            />  <label htmlFor='last_name'>Last Name</label>
             <input
                 id='last_name'           
                 type='text'
                 name='last_name'
                 onChange={handleChange}
                 required
-            />  <label htmlFor='first_name'>Email</label>
+            />  <label htmlFor='email'>Email</label>
             <input
                 id='email'           
                 type='text'
