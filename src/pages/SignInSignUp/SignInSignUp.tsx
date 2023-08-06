@@ -54,7 +54,6 @@ function SignInSignUp({ isSignedIn, setIsSignedIn}: SignInSignUpProps) {
             {/* <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn}  /> */}
           
             <div id="signInUpComponents">
-                <div id="sign-up-in-container">
                     <div id="signInUpButtons">
                         <button id='SignUp' onClick={handleSignUpClick}>Sign Up</button>
                         <button id='SignIn' onClick={handleSignInClick}>Sign In</button>
@@ -68,7 +67,6 @@ function SignInSignUp({ isSignedIn, setIsSignedIn}: SignInSignUpProps) {
                     
                 </div>
             </div>
-        </div>
     </>
 }
 

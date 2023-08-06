@@ -60,35 +60,40 @@ function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
     <div className='sign-form'>
         <a id='closeForm' href="/landing">X</a>
 
-      <h1>Sign Up</h1>
-      <Link to="/signin">Already have an account? Sign in</Link>
+      <h1 className='signUpTitle animate-pop-in'>Sign Up</h1>
+      <div className='sign-in-link animate-pop-in' > 
+      <Link  to="/signin">Already have an account? Sign in</Link>
+      </div>
       {/* Check if signUpSuccess has been changed to true and display error if so */}
       {!signUpSuccess && <SignMessage message='Sign up failed' signUpRedirect={false} />}
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='first_name'>First Name</label>
-        <input id='first_name' type='text' name='first_name' onChange={handleChange} required />
-        <label htmlFor='last_name'>Last Name</label>
+      <form className='signUpForm animate-pop-in'  onSubmit={handleSubmit}>
+        <label htmlFor='first_name'></label>
+        <input placeholder='First Name' id='first_name' type='text' name='first_name' onChange={handleChange} required />
+        <label htmlFor='last_name'></label>
         <input
           id='last_name'
+          placeholder='last Name'
           data-testid='lastName-input'
           name='last_name'
           onChange={handleChange}
           required
         />
-        <label htmlFor='email'>Email</label>
+        <label htmlFor='email'></label>
         <input
           id='email'
+          placeholder='Email'
           data-testid='email-input'
           name='email'
           type='email'
           onChange={handleChange}
           required
         />
-        <label htmlFor='password'>Password</label>
+        <label htmlFor='password'></label>
         <input
           data-testid='password-input'
           name='password'
+          placeholder='Password'
           type='password'
           pattern='.{6,}'
           title='Please enter at least 6 characters'

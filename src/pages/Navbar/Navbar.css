@@ -1,38 +1,75 @@
-#navbar-outer-container {
+.navbar{
     background-color: transparent;
-
-    position: fixed;
+    
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
     height: 7vh;
     width: 100vw;
-    position: fixed;
     top: 0;
     z-index: 100;
-}
-
-
-.authButtons {
+  }
+  #navbar-container {
+    position: sticky;
+    top: 0;
+    background-color:transparent;
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Optional class for hiding the navbar on scroll down */
+  .navbar-hidden {
+    transform: translateY(-100%);
+  }
+  .authButtons {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     height: 100%;
-    width: 90%;
-    max-width: 100%;
     padding: 0 20px;
     margin: 0;
-}
-.navbarcenter{
+    z-index: 100;
+  }
+  
+  .navbarcenter {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: auto;
-    color: black;
+    color: var(--header-main);
+    z-index: 100;
+  }
+
+  .additionalMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    padding: 10px;
+    z-index: 10;
+  }
   
-}
+  .additionalMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .additionalMenu li {
+    margin-bottom: 10px;
+  }
+  
+  .additionalMenu a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .additionalMenu a:hover {
+    color: #007bff;
+  }
+  

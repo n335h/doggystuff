@@ -10,6 +10,7 @@ import { SignInUser } from '../../../../models/client';
 import SignMessage from '../../Components/SignMessage/SignMessage';
 // import css
 import { Link} from "react-router-dom"
+import './SignIn.css'
 interface SignInFormData {
     email: string;
     password: string;
@@ -60,12 +61,12 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
     }
 
     return (
-        <div className='sign-form'>
+        <div className='sign-form '>
               <a href="/landing">X</a>
         {showSignIn && (
           <>
-            <h1>Sign In</h1>
-            <div className="sign-up-link">
+            <h1 className='signIntitle animate-pop-in'>Sign In</h1>
+            <div className="sign-up-link animate-pop-in">
               <Link to="/signup">Don't have an account? Sign up</Link>
             </div>  
         {/* Check if signInError has been changed to true and display error if so */}
@@ -73,18 +74,20 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
         {/* Check if signUpRedirect (new user has successfully signed up) has been changed to true and display success message if so */}
         {signUpRedirect && <SignMessage message="Successfully signed up. Please log in." signUpRedirect={true} />}
   
-        <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
+        <form className='animate-pop-in' onSubmit={handleSubmit}>
+        <label htmlFor="email"></label>
             <input
             id='email'
               name="email"
+              placeholder='Email'
               type="email"
               onChange={handleChange}
               required
             />
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password"></label>
             <input
               name="password"
+              placeholder='Password'
               type="password"
               pattern=".{6,}"
               title="Please enter at least 6 characters"
