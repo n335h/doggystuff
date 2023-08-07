@@ -16,12 +16,12 @@
 
   }
   .menu img {
-    height: 2.5rem;
+    height: 5.5vh;
     
   }
 
   
-  @media screen and (max-width: 430px)
+  @media screen and (max-width: 500px)
   {
     .hamburger-menu {
       display: flex;
@@ -32,6 +32,10 @@
       z-index: 100;
       margin-left: 5vw;
     }
-
+    .menu img {
+      height: 3.5vh;
+      
+    }
+  
 
   }
