@@ -13,9 +13,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow-x: hidden;
   }
   .landingSub {
     height: 130vh;
+    width: 100vw;
     margin-top: -30vh;
     background-color: #f3eddb;
   }
@@ -29,6 +31,7 @@
     position: absolute; /* Use absolute positioning to overlay the image */
     top: 50%;
     left: 70%;
+    width: 100vw;
     transform: translate(-50%, -50%); /* Center the landing info container */
     padding: 20px;
     border-radius: 10px;

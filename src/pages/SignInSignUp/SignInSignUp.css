@@ -27,10 +27,11 @@
 }
 
 #SignIn, #dropdown-menu-signout-button{
-    border-radius: 10px;
+    border-radius: 20px;
     border: none;
     padding: 1vh;
-    width:8rem;
+    width:6.5rem;
+    height:2.5rem;
     font-size: 0.8rem;
     font-weight: 700;
     background-color: var(--header-main);
@@ -43,6 +44,9 @@
     font-weight: 600;
 
 }
+
+
+
  #dropdown-menu-signout-button:hover{
     background-color: var(--header-main-hover);
     color: var(--header-main);
