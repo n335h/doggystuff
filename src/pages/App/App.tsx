@@ -1,6 +1,6 @@
 import React, { useState, useEffect,useRef } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Surveys from "../../Survey/Survey";
+
 
 import SignInSignUp from '../SignInSignUp/SignInSignUp';
 import SignUp, { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp';
@@ -62,7 +62,7 @@ function App() {
               path="/SignUp"
               element={<SignUp formData={formData} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />}
             />
-            <Route path="/Survey" element={<Surveys />} />
+
           </Routes>
         </BrowserRouter>
 
