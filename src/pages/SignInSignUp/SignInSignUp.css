@@ -7,6 +7,7 @@
     width: 100vw;
     height: 100vh;
     margin: 0;
+  
 }
 
 #signInUpButtons{
@@ -16,7 +17,8 @@
     align-items: center;
     width: 40vw;
     height: 100vh;
- 
+    
+    margin-right: 2vw;
 }
 
 #SignIn, #dropdown-menu-signout-button{
