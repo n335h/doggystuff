@@ -2,9 +2,6 @@ import { useState } from 'react';
 import SignUp from './Components/SignUp/SignUp';
 import SignIn from "./Components/SignIn/SignIn";
 import './SignInSignUp.css';
-import { Button } from 'react-bootstrap';
-
-import Navbar from '../Navbar/Navbar';
 
 interface SignInSignUpProps {
     isSignedIn: boolean;

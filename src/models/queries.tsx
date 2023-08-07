@@ -8,10 +8,10 @@ interface FormData {
   last_name: string;
 }
 
-type UserData = {
-  user: User | null;
-  session: Session | null;
-};
+// type UserData = {
+//   user: User | null;
+//   session: Session | null;
+// };
 
 type User = {
   id: string;

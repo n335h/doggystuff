@@ -11,12 +11,12 @@ import SignMessage from '../../Components/SignMessage/SignMessage';
 // import css
 import { Link} from "react-router-dom"
 import './SignIn.css'
-interface SignInFormData {
-    email: string;
-    password: string;
-    first_name: string; // Add this property
-    last_name: string; // Add this property
-  }
+// interface SignInFormData {
+//     email: string;
+//     password: string;
+//     first_name: string; // Add this property
+//     last_name: string; // Add this property
+//   }
 
 // interface for SignIn component
 interface SignInProps {

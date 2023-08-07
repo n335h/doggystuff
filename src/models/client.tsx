@@ -1,4 +1,4 @@
-import { createClient, SupabaseClient, Session, User } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 // Assuming the environment variables are defined as string in your .env file.
 const supabaseUrl: string | undefined = process.env.REACT_APP_SUPABASE_URL;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect,useRef } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { RouteProps } from 'react-router-dom';
+
 import SignInSignUp from '../SignInSignUp/SignInSignUp';
 import SignUp, { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp';
 import Navbar from '../Navbar/Navbar';

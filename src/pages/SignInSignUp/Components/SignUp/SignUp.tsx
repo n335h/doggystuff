@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { supabaseSignUp } from '../../../../models/queries';
 import SignMessage from '../SignMessage/SignMessage';
-import { sign } from 'crypto';
+
 import './SignUp.css';
-import Navbar from '../../../Navbar/Navbar';
+
 import { Link } from 'react-router-dom';
 // Interface for FormData
 export interface SignUpFormData {
