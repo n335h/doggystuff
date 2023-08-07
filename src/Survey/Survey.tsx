@@ -5,11 +5,24 @@ import 'survey-core/defaultV2.min.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 
+
+interface surveyJsonProps {
+    surveyJson: Model;
+    onComplete: (survey: Model) => void;
+    onValueChanged: (survey: Model, options: any) => void;
+    onVisibleChanged: (survey: Model, options: any) => void;
+    onCurrentPageChanged: (survey: Model, options: any) => void;
+
+}
+
+    
+
+
 const surveyJson = {
   pages: [{
     elements: [{
       type: "html",
-      html: "<h2>In this survey, we will ask you a couple questions about your impressions of our product.</h2>"
+      html: "<h2>Please tell us about your doggo</h2>"
     }]
   }, {
     elements: [{
@@ -80,34 +93,31 @@ const surveyJson = {
   completedHtml: "Thank you for your feedback!",
   showPreviewBeforeComplete: "showAnsweredQuestions"
 };
-
-function Surveys() {
-  // useRef enables the Model object to persist between state changes
-  const survey = useRef(new Model(surveyJson)).current;
-  const [surveyResults, setSurveyResults] = useState("");
-  const [isSurveyCompleted, setIsSurveyCompleted] = useState(false);
-
-  const displayResults = useCallback((sender : any) => {
-    setSurveyResults(JSON.stringify(sender.data, null, 4));
-    setIsSurveyCompleted(true);
-  }, []);
-
-  survey.onComplete.add(displayResults);
-
-  return (
-    <>
-      <Survey model={survey} id="surveyContainer" />
-      {isSurveyCompleted && (
+function Surveys( {surveyJson}: surveyJsonProps) {
+    const [surveyResults, setSurveyResults] = useState("");
+    const [isSurveyCompleted, setIsSurveyCompleted] = useState(false);
+  
+    const onCompleteSurvey = useCallback((sender : any) => {
+      setSurveyResults(JSON.stringify(sender.data, null, 4));
+      setIsSurveyCompleted(true);
+    }, []);
+  
+    return (
         <>
-          <p>Result JSON:</p>
-          <code>
-            {surveyResults}
-          </code>
+          <Survey
+            json={surveyJson}
+            onComplete={onCompleteSurvey}
+          />
+          {isSurveyCompleted && (
+            <>
+              <p>Result JSON:</p>
+              <code>
+                {surveyResults}
+              </code>
+            </>
+          )}
         </>
-        )
-      }
-    </>
-  );
-}
-
-export default Surveys;
+      );
+    }
+    
+    export default Surveys;
