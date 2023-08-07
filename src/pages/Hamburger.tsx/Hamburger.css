@@ -1,17 +1,37 @@
 .hamburger-menu {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     height: 20px;
     cursor: pointer;
     z-index: 100;
     margin-left: 2vw;
   }
-  
-  .bar {
-    width: 30px;
-    height: 4px;
-    background-color: var(--header-main);
-    transition: transform 0.3s ease-in-out; /* Add a transition for smooth animation */
+  .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   }
+  .menu img {
+    height: 2.5rem;
+    
+  }
+
   
+  @media screen and (max-width: 430px)
+  {
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 20px;
+      cursor: pointer;
+      z-index: 100;
+      margin-left: 5vw;
+    }
+
+
+  }

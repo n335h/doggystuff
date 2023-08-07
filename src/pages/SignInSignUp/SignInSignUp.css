@@ -1,10 +1,3 @@
-.signInUpcontainer {
-    display: flex;
-    justify-content: space-between;
-  height: 100vh;
-    width: 100vw;
-    top:0;
-}
 
 .signInUpComponents {
     display: flex;
@@ -28,13 +21,18 @@
 
 #SignIn, #dropdown-menu-signout-button{
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     padding: 1vh;
     width:6.5rem;
     height:2.5rem;
     font-size: 0.8rem;
     font-weight: 700;
-    background-color: var(--header-main);
+    background: transparent;
+    opacity: 1;
+    /* background-color: var(--header-main); */
 
 }
 #SignUp{
@@ -54,8 +52,7 @@
     cursor: pointer;
 }
 #SignIn:hover{
-    background-color: var(--header-main-hover);
-    color: var(--header-main);
-    border: 3px solid var(--header-main);
     cursor: pointer;
+    opacity: 0.8;
+
 }

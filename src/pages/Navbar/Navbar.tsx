@@ -6,6 +6,7 @@ import SignInSignUp from '../SignInSignUp/SignInSignUp';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
 
+
 interface NavbarProps {
   isSignedIn: boolean;
   setIsSignedIn: (value: boolean) => void;

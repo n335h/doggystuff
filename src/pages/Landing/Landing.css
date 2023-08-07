@@ -89,7 +89,7 @@
 .landingButton:hover{
     background-color: var(--header-main-hover);
     color: var(--header-main);
-    border: 3px solid var(--header-main);
+    border: 4px solid var(--header-main);
     cursor: pointer;
 }
 
@@ -149,3 +149,57 @@
         width: 80vw;
       } 
     }
+
+    @media screen and (max-width:430px) {
+      .landing {
+          background-size: cover;
+          background-image: url(https://live.staticflickr.com/65535/53097601747_ad931ab6ce_h.jpg);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background-repeat: no-repeat;
+          background-position: right middle;
+          align-items: center;
+          width: 100vw;
+          height: 130vh;
+        }
+      .landingInfo {
+          
+              position: absolute; /* Use absolute positioning to overlay the image */
+              top: 40%;
+              left: 60%;
+             
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          width: 100vw;
+          height: 70vh;
+        }
+        .landingInfo h1 {
+          text-align: left;
+          font-size: 2.7rem;
+          font-weight: 400;
+          width: 80vw;
+          margin-bottom: 2vh;
+        } 
+        
+        
+        .landingButton {
+          height: 12vh;
+          width: 50%;
+          margin: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--header-main);
+          color: #fff;
+          font-size: 1.2rem;
+          font-weight: 500;
+          border-radius: 17.4rem;
+          border: 0;
+          
+      }
+      }
+  

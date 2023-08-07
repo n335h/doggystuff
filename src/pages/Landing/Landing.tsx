@@ -15,7 +15,7 @@ export function Landing () {
         <div className="landingInfo">
 <h2 className="landing-title">WHAT A GOOD DOGGO DESERVES</h2>
 <h1> Tailored to their tastes. Delivered to your door.  Try our trial box today for £9.99! </h1>
-<button className="landingButton">Get Started</button>
+<button className="landingButton">Try DoggyStuff</button>
         </div>
         </div>
         <div className="landingSub">
