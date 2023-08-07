@@ -62,7 +62,7 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
 
     return (
         <div className='sign-form '>
-          <a id='closeForm' href="https://main--bucolic-crumble-89aa09.netlify.app/">X</a>
+          <a id='closeForm' href="https://doggystuff.netlify.app/">X</a>
         {showSignIn && (
           <>
             <h1 className='signIntitle animate-pop-in'>Sign In</h1>
