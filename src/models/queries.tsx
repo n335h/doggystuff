@@ -13,17 +13,17 @@ interface FormData {
 //   session: Session | null;
 // };
 
-type User = {
-  id: string;
-  user_metadata: {
-    first_name: string;
-    last_name: string;
-  };
-};
+// type User = {
+//   id: string;
+//   user_metadata: {
+//     first_name: string;
+//     last_name: string;
+//   };
+// };
 
-type Session = {
-  // Define the properties of the Session type if needed.
-};
+// type Session = {
+//   // Define the properties of the Session type if needed.
+// };
 
 export async function insertPublicUser(
   user_id: string,

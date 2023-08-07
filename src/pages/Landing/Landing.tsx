@@ -1,5 +1,5 @@
 import "./Landing.css";
-import dogLand from "../../Assets/home.png";
+
 import { Container } from "react-bootstrap";
 
 export function Landing () {
