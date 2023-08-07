@@ -25,6 +25,7 @@
     width: 100%;
     margin-bottom: 2vh;
     border-radius:17.4rem;
+ 
 }
 .sign-form button {
     border-radius: 17.4rem;
@@ -128,12 +129,12 @@ a {
       padding: 0 1rem;
       font-size: 1.2rem;
   }
-  .sign-form button {
+.sign-form button {
     border-radius: 17.4rem;
     border: none;
-    padding: 2.5vh 6vw 2.6vh;
+    padding: 2.8vh 7vw 2.9vh;
 
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #fff;
     font-weight: 700;
     background-color: var(--header-main);

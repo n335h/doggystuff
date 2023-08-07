@@ -1,4 +1,6 @@
 import "./Landing.css";
+//import { Link } from "react-router-dom";
+
 
 import { Container } from "react-bootstrap";
 
@@ -15,7 +17,7 @@ export function Landing () {
         <div className="landingInfo">
 <h2 className="landing-title">WHAT A GOOD DOGGO DESERVES</h2>
 <h1> Tailored to their tastes. Delivered to your door.  Try our trial box today for £9.99! </h1>
-<button className="landingButton">Try DoggyStuff</button>
+<a href='/Survey' className="landingButton">Try DoggyStuff</a>
         </div>
         </div>
         <div className="landingSub">
@@ -28,6 +30,7 @@ export function Landing () {
         </div>
         </div>
         </div>
+       
         </Container>
     )
 }
