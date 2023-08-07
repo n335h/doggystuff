@@ -49,7 +49,7 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
         // if (signInSuccessful === true) redirect to Card Display Page
         if (signInSuccessful) {
             setIsSignedIn(true);
-            navigate('/src/pages/Landing');
+            navigate('https://main--bucolic-crumble-89aa09.netlify.app/');
             setShowSignIn(false); // Hide the sign-in component
           }
         // if (signInSuccessful === false) display error message
@@ -62,7 +62,7 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
 
     return (
         <div className='sign-form '>
-              <a href="/landing">X</a>
+          <a id='closeForm' href="https://main--bucolic-crumble-89aa09.netlify.app/">X</a>
         {showSignIn && (
           <>
             <h1 className='signIntitle animate-pop-in'>Sign In</h1>
