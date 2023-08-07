@@ -19,6 +19,7 @@ position: absolute;
     justify-content: center;
     width: 100%;
     margin-bottom: 2vh;
+    border-radius:17.4rem;
 }
 a {
     color: #fff;
@@ -45,6 +46,20 @@ a {
     margin-bottom: 2vh;
 }
 
+#closeForm {
+  position: absolute;
+  top: 0;
+   
+  right: 0;
+  margin: 1rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+#closeForm:hover {
+  color: #ff6565;
+  cursor: pointer;
+}
 
 
 

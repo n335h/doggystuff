@@ -97,7 +97,7 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
             <br />
        
           <div className="submit-button">
-            <button type='submit' aria-label="Submit">Submit</button>
+            <button type='submit' aria-label="Submit">Log in</button>
           </div>
         </form>
   
