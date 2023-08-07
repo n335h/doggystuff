@@ -1,10 +1,12 @@
 .landing {
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
-    margin: 0;
+    margin-top: -10vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    border-bottom-left-radius: 10vh;
+    border-bottom-right-radius: 10vh;
     align-items: center;
     position: relative; /* Add position relative to the parent container */
     background-image: url(https://live.staticflickr.com/65535/53096318282_6b017fa4e9_h.jpg);
@@ -13,7 +15,9 @@
     background-repeat: no-repeat;
   }
   .landingSub {
-    height: 100vh;
+    height: 130vh;
+    margin-top: -30vh;
+    background-color: #f3eddb;
   }
   .landingImage img {
     width: 100%;
@@ -65,8 +69,8 @@
 }
 
 .landingButton {
-    height: 5vh;
-    width: 15vw;
+    height: 7vh;
+    width: 30%;
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -75,7 +79,7 @@
     background-color: var(--header-main);
     color: #fff;
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 30px;
     border: 0;
     
 }
@@ -89,11 +93,38 @@
 @media screen and (max-width: 750px) {
     .landing {
         background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        background-image: url(https://live.staticflickr.com/65535/53097601747_ad931ab6ce_h.jpg);
+        display: flex;
         flex-direction: column;
         justify-content: center;
+        background-repeat: no-repeat;
+        background-position: right middle;
         align-items: center;
+        width: 100vw;
+        height: 120vh;
       }
-    
-}
+    .landingInfo {
+        
+            position: absolute; /* Use absolute positioning to overlay the image */
+            top: 40%;
+            left: 60%;
+           
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100vw;
+        height: 70vh;
+      }
+      .landingInfo h1 {
+        text-align: left;
+        font-size: 2rem;
+        font-weight: 400;
+        width: 80vw;
+      } 
+      .landingInfo h2{
+        text-align: left;
+        font-size: 1rem;
+        width: 80vw;
+      } 
+    }

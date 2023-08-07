@@ -1,5 +1,9 @@
 .sign-form {
     background-color: rgb(104, 104, 101);
+    background-image: url('https://live.staticflickr.com/65535/53098188166_4d6ce88077_k.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     position: absolute;
     height: 100vh;
@@ -10,6 +14,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     
 }
 .sign-form form {

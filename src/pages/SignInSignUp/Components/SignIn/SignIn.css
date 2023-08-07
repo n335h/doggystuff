@@ -9,6 +9,9 @@ position: absolute;
     justify-content: flex-end;
     
 }
+.mobile {
+  display: none;
+ }
 .signIn-form form {
     display: flex;
     flex-direction: column;
@@ -78,3 +81,26 @@ a {
     }
   }
   
+/*   
+  @media screen and (max-width: 750px)
+  {
+    button#SignIn{
+    display: none;
+   }
+   button#SignUp{
+    display: none;
+   }
+   .mobile {
+    display: flex;
+   }
+   #mobileSignUp img {
+    width: 8vw;
+    height: 8vw;
+ 
+   }
+   #mobileSignIn {
+ 
+   }
+
+    
+  } */
