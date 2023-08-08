@@ -23,7 +23,7 @@ function DogInfo({ dogName, dogAge, dogSex, updateFields }: DogInfoProps) {
       console.log(dogAge);
     };
   
-    const handleDogSexChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleDogSexChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       updateFields({ dogSex: e.target.value });
     };
   
@@ -39,6 +39,7 @@ function DogInfo({ dogName, dogAge, dogSex, updateFields }: DogInfoProps) {
           id="dogName"
           name="dogName"
           placeholder="Dog Name"
+          required
         />
   
         <label htmlFor="dogAge">Dog Age:</label>
@@ -47,6 +48,7 @@ function DogInfo({ dogName, dogAge, dogSex, updateFields }: DogInfoProps) {
           value={dogAge}
           id="dogAge"
           name="dogAge"
+          required
         > <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -65,14 +67,17 @@ function DogInfo({ dogName, dogAge, dogSex, updateFields }: DogInfoProps) {
         </select>
   
         <label htmlFor="dogSex">Dog Sex:</label>
-        <input
+        <select
           onChange={handleDogSexChange}
           value={dogSex}
-          type="text"
           id="dogSex"
           name="dogSex"
-          placeholder="Male/Female"
-        />
+          required
+        >
+           <option value="boy">Boy</option>
+        <option value="girl">Girl</option>
+
+        </select>
       </FormWrapper>
     );
   }

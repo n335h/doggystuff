@@ -7,6 +7,9 @@ import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
 
 
+
+
+
 interface NavbarProps {
   isSignedIn: boolean;
   setIsSignedIn: (value: boolean) => void;
@@ -16,6 +19,8 @@ interface NavbarProps {
 export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [additionalMenuOpen, setAdditionalMenuOpen] = useState(false);
+  const [hamburgerIcon, setHamburgerIcon] = useState('hamburgeropen'); // Default to 'hamburgeropen'
+
   const navbarRef = useRef<HTMLElement>(null); // Create a ref for the navbar element
 
   const handleToggleMenu = () => {
@@ -24,8 +29,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
 
   const handleToggleAdditionalMenu = () => {
     setAdditionalMenuOpen(!additionalMenuOpen);
+    setHamburgerIcon(additionalMenuOpen ? 'hamburgeropen' : 'hamburgerclose');
   };
-
   useEffect(() => {
     // Function to handle scroll event
     const handleScroll = () => {
@@ -63,8 +68,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
         <Nav className="navbar me-auto">
      
             <div className="navbarleft">
-              <Hamburger isOpen={menuOpen} toggleMenu={handleToggleMenu} openAdditionalMenu={handleToggleAdditionalMenu} />
-            </div>
+            <div className="navbarleft">
+  <Hamburger isOpen={menuOpen} toggleMenu={handleToggleMenu} openAdditionalMenu={handleToggleAdditionalMenu} icon={hamburgerIcon} />
+</div>            </div>
             <div className="navbarcenter">
               <h1 id="navbar-title">DoggyStuff</h1>
             </div>
@@ -88,6 +94,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
             {/* Add your additional menu content here */}
             {additionalMenuOpen && (
               <div className="additionalMenu">
+                
+                <div className="additionalMenuContent">
                 <ul>
                   <li>
                     <Link to="/" onClick={handleToggleAdditionalMenu}>
@@ -110,6 +118,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                     </Link>
                   </li>
                 </ul>
+              </div>
               </div>
             )}
   

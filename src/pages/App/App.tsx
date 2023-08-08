@@ -6,6 +6,7 @@ import SignUp, { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp
 import Navbar from '../Navbar/Navbar';
 import { Landing } from '../Landing/Landing';
 import { Container } from 'react-bootstrap';
+import GetStarted from '../getStarted/getStarted';
 
 
 function App() {
@@ -91,6 +92,7 @@ const [dogData, setDogData] = useState<DogFormData>(INITIAL_DATA);
               element={<SignUp formData={data} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />}
             />
             <Route path="/Survey" element={<Survey updateFields={updateFields} />} />
+            <Route path="/GetStarted" element={<GetStarted />} />
           </Routes>
         </BrowserRouter>
       </div>
