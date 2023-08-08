@@ -1,5 +1,6 @@
 import React, { useState, useEffect,useRef } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Survey from "../Survey/formPages/Survey"
 
 
 import SignInSignUp from '../SignInSignUp/SignInSignUp';
@@ -7,6 +8,9 @@ import SignUp, { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp
 import Navbar from '../Navbar/Navbar';
 import { Landing } from '../Landing/Landing';
 import { Container } from 'react-bootstrap';
+
+
+  
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -62,6 +66,9 @@ function App() {
               path="/SignUp"
               element={<SignUp formData={formData} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />}
             />
+            <Route path="/Survey" element={<Survey />} />
+
+    
 
           </Routes>
         </BrowserRouter>

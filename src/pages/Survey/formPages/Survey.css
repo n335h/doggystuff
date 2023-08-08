@@ -1,0 +1,131 @@
+/* Style the form */
+.survey {
+    display: flex;
+background-color: rgb(233, 230, 191);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120vh;
+    margin-top: -20vh;
+ 
+}
+.surveyContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50vh;
+    
+ 
+}
+form.surveyForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60vh;
+    
+ 
+
+}
+.formContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+    
+ 
+
+}
+.surveyForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    
+ 
+}
+
+.surveyButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 2vh;
+    
+ 
+}
+
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    
+}
+.formTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    
+}
+
+
+.surveyButton {
+    height: 7vh;
+    width: 40%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--header-main);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 30px;
+    border: 0;
+    
+}
+.surveyButton:hover{
+    background-color: var(--header-main-hover);
+    color: var(--header-main);
+    border: 4px solid var(--header-main);
+    cursor: pointer;
+}
+
+@media screen and (max-width:750px){
+    
+    .surveyContent {
+     
+        width: 80%;
+        
+        
+     
+    }
+    
+}
+@media screen and (max-width: 430px){
+    
+    .surveyContent {
+     
+        width: 80%;
+        
+        
+     
+    }
+    
+}

@@ -73,14 +73,14 @@
 
 .landingButton {
     height: 7vh;
-    width: 30%;
+    width: 40%;
     margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: var(--header-main);
-    color: #fff;
+    color: #ffffff;
     font-weight: 700;
     border-radius: 30px;
     border: 0;
