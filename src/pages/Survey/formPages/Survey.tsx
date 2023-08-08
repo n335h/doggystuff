@@ -3,11 +3,11 @@ import { useMultistepForm } from "../useMultistepForm"
 import { DogBreed } from "./dogBreed"
 import { DogHealth } from "./dogHealth"
 import { useState } from "react"
-import { DogInfo } from "./dogInfo"
+import  DogInfo  from "./dogInfo"
 import { FormEvent } from "react"
 import "./Survey.css"
 
-type FormData = {
+type DogFormData = {
     dogName: string;
     dogAge: string;
     dogSex: string;
@@ -18,7 +18,7 @@ type FormData = {
  
 }
 
-const INITIAL_DATA: FormData = {
+const INITIAL_DATA: DogFormData = {
     dogName: "",
     dogAge: "",
     dogSex: "",
@@ -30,30 +30,32 @@ const INITIAL_DATA: FormData = {
 }
 
 
-function Survey() {
-    const [data , setData] = useState(INITIAL_DATA)
-    function updateFields(fields: Partial<FormData>) {
-        setData(prev => ({
-          ...prev,
-          ...fields
-        }));
-      }
-    
+function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>) => void }) {
+    const [data , setData] = useState(INITIAL_DATA);
+
+    const handleDataUpdate = (updatedFields: Partial<DogFormData>) => {
+        // Create a new object by merging the existing data and updated fields
+        const updatedData = { ...data, ...updatedFields };
+        setData(updatedData);
+        // Propagate the updated data to the parent component
+        updateFields(updatedData);
+    };
+
     const { steps, currentStepIndex, isFirstStep, step, back, next, isLastStep} = useMultistepForm([
-        <>
-        <DogInfo {...data} updateFields={updateFields}/>
-        <DogBreed {...data} updateFields={updateFields}/>
-        <DogHealth {...data} updateFields={updateFields}/>
-        </>
+        <DogInfo {...data} updateFields={handleDataUpdate}/>,
+        <DogBreed {...data} updateFields={handleDataUpdate}/>,
+        <DogHealth {...data} updateFields={handleDataUpdate}/>,
+        
        
     ]) 
+    console.log(data)
+    console.log(steps)
+
 function onSubmit (e: FormEvent) {
     e.preventDefault()
-    if (isLastStep) {
-        alert("Survey complete") // can insert anythign here to send data to backend
-    } else {
-        next() 
-    }
+    if (!isLastStep) return next() 
+    alert ("Survey complete")
+
 }
 
 

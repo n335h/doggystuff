@@ -20,7 +20,7 @@ import './SignIn.css'
 
 // interface for SignIn component
 interface SignInProps {
-    formData: {
+    signInFormData: {
         email: string;
         password: string;
     };
@@ -31,7 +31,7 @@ interface SignInProps {
 }
 
 
-function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSignedIn }: SignInProps) {    // initialize the navigate object using the useNavigate 'hook'
+function SignIn({signInFormData, handleChange, signUpRedirect, isSignedIn, setIsSignedIn }: SignInProps) {    // initialize the navigate object using the useNavigate 'hook'
     const navigate = useNavigate();
     const [showSignIn, setShowSignIn] = useState(true); 
     // useState to track if SignIn error message should be displayed
@@ -45,7 +45,7 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
         e.preventDefault();
 
         //  Call SignInUser() from Models/client.js and pass in user inputted email and password set the return value to a variable
-        const signInSuccessful = await SignInUser(formData.email, formData.password);
+        const signInSuccessful = await SignInUser(signInFormData.email, signInFormData.password);
         // if (signInSuccessful === true) redirect to Card Display Page
         if (signInSuccessful) {
             setIsSignedIn(true);

@@ -17,7 +17,7 @@ type BreedFormProps = BreedData & {  // DogInfoProps is a type that extends DogD
 
 export function DogBreed( {dogBreed, pureCross, updateFields}: BreedFormProps) {
     return (
-        <>
+        
             <FormWrapper title="What breed is your doggo?">
                 <h1> Dog Breed </h1>
                 <h2> What breed is your doggo? </h2>
@@ -30,7 +30,7 @@ export function DogBreed( {dogBreed, pureCross, updateFields}: BreedFormProps) {
                     <option value="notSure">Not sure</option>
                 </select>
             </FormWrapper>
-        </>
+        
     );
 }
 
