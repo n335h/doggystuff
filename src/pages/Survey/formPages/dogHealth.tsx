@@ -10,7 +10,7 @@ type HealthData = {
 
 
 type HealthFormProps = HealthData & {  // DogInfoProps is a type that extends DogData with an updateFields function adding them together
-    updateFields: (fields: Partial<HealthFormProps>) => void; // updateFields is a function that takes in a partial of DogInfoProps
+    updateFields: (fields: Partial<HealthData>) => void; // updateFields is a function that takes in a partial of DogInfoProps
 }
 
 export function DogHealth({dogHealth, dogWeight, updateFields}: HealthFormProps ) {

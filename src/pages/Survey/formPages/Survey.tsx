@@ -1,4 +1,4 @@
-import { Form } from "react-bootstrap"
+
 import { useMultistepForm } from "../useMultistepForm"
 import { DogBreed } from "./dogBreed"
 import { DogHealth } from "./dogHealth"
@@ -48,9 +48,9 @@ function Survey() {
 function onSubmit (e: FormEvent) {
     e.preventDefault()
     if (isLastStep) {
-        alert("Survey complete")
+        alert("Survey complete") // can insert anythign here to send data to backend
     } else {
-        next()
+        next() 
     }
 }
 
