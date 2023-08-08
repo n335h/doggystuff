@@ -23,12 +23,12 @@ function DogInfo({ dogName, dogAge, dogSex, updateFields }: DogInfoProps) {
       console.log(dogAge);
     };
   
-    const handleDogSexChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleDogSexChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       updateFields({ dogSex: e.target.value });
     };
   
     return (
-      <FormWrapper title="Doggo Info">
+      <FormWrapper title="Tell us about your Doggo">
         <legend>Dog Information</legend>
   
         <label htmlFor="dogName">Dog Name:</label>
@@ -44,40 +44,39 @@ function DogInfo({ dogName, dogAge, dogSex, updateFields }: DogInfoProps) {
   
         <label htmlFor="dogAge">Dog Age:</label>
         <select
+        className='dropdownOptions'
           onChange={handleDogAgeChange}
           value={dogAge}
           id="dogAge"
           name="dogAge"
           required
-        > <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
+        > <option value="1">0-1</option>
+        <option value="2">1-2</option>
+        <option value="3">2-5</option>
+        <option value="4">6-10</option>
+        <option value="5">10+</option>
         </select>
   
-        <label htmlFor="dogSex">Dog Sex:</label>
-        <select
+        <label htmlFor="dogSex">Male</label>
+        <input type="radio" className='dropdownOptions'
           onChange={handleDogSexChange}
-          value={dogSex}
+          value='male'
           id="dogSex"
           name="dogSex"
           required
-        >
-           <option value="boy">Boy</option>
-        <option value="girl">Girl</option>
+        />
+                <label htmlFor="dogSex">Female</label>
+        <input type="radio" className='dropdownOptions'
+          onChange={handleDogSexChange}
+          value='Female'
+          id="dogSex"
+          name="dogSex"
+          required
+        />
+           {/* <option  value="boy">Good Boy</option>
+        <option value="girl"> Good Girl</option> */}
 
-        </select>
+      
       </FormWrapper>
     );
   }

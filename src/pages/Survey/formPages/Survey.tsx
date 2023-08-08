@@ -62,7 +62,6 @@ function onSubmit (e: FormEvent) {
     return (
         <div className="survey">
             <div className="surveyContent">
-                <h1 className="survey-title">Tell us about your dog</h1>
                 <form onSubmit={onSubmit}  className="surveyForm">
                     <div className="surveyFormSection">
                        { currentStepIndex +1} / {steps.length}

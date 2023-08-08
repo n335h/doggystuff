@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './getStarted.css'
+import dogbark from '../../Assets/dogbark.svg'
 
 
 
@@ -22,6 +23,10 @@ function GetStarted () {
 
 
             <Link to='/Survey' className='getStartedButton'>Try doggyStuff</Link>
+        </div>
+        <div className='bkgrndFloat'>
+<img className='bkgrndFloatImg' src={dogbark} alt='dogbark'/>
+
         </div>
         <div className='infoBox'>
             <img className='infoBoxImg' src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Infobox_info_icon.svg/1200px-Infobox_info_icon.svg.png' alt='info' />

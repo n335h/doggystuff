@@ -22,7 +22,7 @@ export function DogHealth({dogHealth, dogWeight, updateFields}: HealthFormProps 
                 <div className="surveyFormSectionContent">
                     <div className="surveyFormSectionContentItem">
                         <label htmlFor="dogHealth">Health</label>
-                        <select  onChange={e=> updateFields({dogHealth: e.target.value}) } value={dogHealth} name="dogHealth" id="dogHealth" required>
+                        <select className='dropdownOptions'  onChange={e=> updateFields({dogHealth: e.target.value}) } value={dogHealth} name="dogHealth" id="dogHealth" required>
                             <option value="healthy">Healthy</option>
                             <option value="overweight">Lil thic</option>
                             <option value="underweight">Needs some chonk</option>
@@ -30,7 +30,7 @@ export function DogHealth({dogHealth, dogWeight, updateFields}: HealthFormProps 
                     </div>
                     <div className="surveyFormSectionContentItem">
                         <label htmlFor="dogWeight">They Weight</label>
-                        <select  onChange={e=> updateFields({dogWeight: e.target.value}) } value={dogWeight} name="dogWeight" id="dogWeight" required>
+                        <select className='dropdownOptions'  onChange={e=> updateFields({dogWeight: e.target.value}) } value={dogWeight} name="dogWeight" id="dogWeight" required>
                             <option value="healthy">Healthy</option>
                             <option value="overweight">Overweight</option>
                             <option value="underweight">Underweight</option>

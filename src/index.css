@@ -13,5 +13,20 @@ code {
 :root {
 
  --header-main: #facdf0;
+ --black-text: #242424;
  
+}
+input {
+  width: 30vw;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  border-radius:17.4rem;
+}
+a {
+  color: #fff;
+  text-decoration: none;
 }
