@@ -49,7 +49,7 @@ function SignIn({ formData, handleChange, signUpRedirect, isSignedIn, setIsSigne
         // if (signInSuccessful === true) redirect to Card Display Page
         if (signInSuccessful) {
             setIsSignedIn(true);
-            navigate('https://doggystuff.netlify.app/');
+            navigate('/');
             setShowSignIn(false); // Hide the sign-in component
           }
         // if (signInSuccessful === false) display error message
