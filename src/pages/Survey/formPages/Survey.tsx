@@ -33,16 +33,18 @@ const INITIAL_DATA: FormData = {
 function Survey() {
     const [data , setData] = useState(INITIAL_DATA)
     function updateFields(fields: Partial<FormData>) {
-        setData(prev => {
-          return{...prev,...fields}
-        })
-    }
+        setData(prev => ({
+          ...prev,
+          ...fields
+        }));
+      }
     
     const { steps, currentStepIndex, isFirstStep, step, back, next, isLastStep} = useMultistepForm([
-        <DogInfo {...data} updateFields={updateFields}/>,
-        <DogBreed {...data} updateFields={updateFields}/>,
-        <DogHealth {...data} updateFields={updateFields}/>,
-        
+        <>
+        <DogInfo {...data} updateFields={updateFields}/>
+        <DogBreed {...data} updateFields={updateFields}/>
+        <DogHealth {...data} updateFields={updateFields}/>
+        </>
        
     ]) 
 function onSubmit (e: FormEvent) {
