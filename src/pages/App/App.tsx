@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Survey from "../Survey/formPages/Survey"
-import  DogFormData from "../Survey/formPages/Survey"
 import SignInSignUp from '../SignInSignUp/SignInSignUp';
 import SignUp, { SignUpFormData } from '../SignInSignUp/Components/SignUp/SignUp';
 import Navbar from '../Navbar/Navbar';
@@ -22,6 +21,7 @@ function App() {
   };
 
   const [data, setData] = useState<SignUpFormData>(initialFormData);
+  console.log(setData)
 
 
   const prevScrollPosRef = useRef(0);
@@ -70,6 +70,7 @@ const [dogData, setDogData] = useState<DogFormData>(INITIAL_DATA);
       ...prev,
       ...fields
     }));
+    console.log(dogData)
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {};
