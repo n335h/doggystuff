@@ -2,7 +2,7 @@ import React from 'react';
 import './Hamburger.css';
 import hamburgeropen from '../../Assets/hamburgeropen.svg'
 import hamburgerclose from '../../Assets/hamburgerclose.svg'
-import { useState } from 'react';
+
 
 interface HamburgerMenuProps {
   isOpen: boolean;
