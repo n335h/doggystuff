@@ -2,33 +2,44 @@
 import { useMultistepForm } from "../useMultistepForm"
 import { DogBreed } from "./dogBreed"
 import { DogHealth } from "./dogHealth"
+import  DogFood  from "./dogFood"
 import { useState } from "react"
 import  DogInfo  from "./dogInfo"
 import { FormEvent } from "react"
 import supabase from "../../../models/client"
+import { isSessionSignedIn } from "../../../models/client"
+import { getCurrentUserId } from "../../../models/client"
 
 import "./Survey.css"
 // import supabase from "../config/supabaseClient"
 
 type DogFormData = {
     dog_name: string;
-    dog_age: number;
+    dog_age: string;
     dog_sex: string;
     dog_breed: string;
     pure_cross: string;
     dog_health: string;
     dog_weight: string;
+    dog_size: string;
+    flavours_not: string[];
+    veg: string;
+    user_id: string,
  
 }
 
 const INITIAL_DATA: DogFormData = {
     dog_name: "",
-    dog_age: 0,
+    dog_age: "",
     dog_sex: "",
     dog_breed: "",
     pure_cross: "",
     dog_health: "",
     dog_weight: "",
+    dog_size: "",
+    flavours_not: [""],
+    veg: "",
+    user_id: "",
  
 }
 
@@ -50,6 +61,8 @@ function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>)
         <DogInfo {...data} updateFields={handleDataUpdate}/>,
         <DogBreed {...data} updateFields={handleDataUpdate}/>,
         <DogHealth {...data} updateFields={handleDataUpdate}/>,
+        <DogFood {...data} updateFields={handleDataUpdate}/>,
+
         
        
     ]) 
@@ -58,35 +71,117 @@ function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>)
 
 
 
-    async function onSubmit(e: FormEvent) {
-        e.preventDefault();
-        if (!isLastStep) return next();
+    // async function onSubmit(e: FormEvent) {
+    //     e.preventDefault();
+    //     if (!isLastStep) return next();
 
-        if (supabase) { // Check if supabase is not null or undefined
-            const dataToInsert: DogFormData = {
-                dog_name: data.dog_name,
-                dog_age: data.dog_age,
-                dog_sex: data.dog_sex,
-                dog_breed: data.dog_breed,
-                pure_cross: data.pure_cross,
-                dog_health: data.dog_health,
-                dog_weight: data.dog_weight,
-            };
+        //W need to use isSessionSignedIn() & getCurrentUserId() to check if they are signed in (if not store data and redirect to sign up) get the user id and send with data -
+        // - if they are signed in get the user id and send with data
+        // const user = supabase.auth.user();
+        // const userId = user?.id;
+        // console.log(userId);
+        // console.log(user);
+        // console.log(supabase.auth.session());
+        // console.log(supabase.auth.session()?.user?.id);
+
+
+    // const user = supabase.auth.user();
+    // const userId = user?.id;
+    // console.log(userId);
+    
+
+
+//         if (supabase) { // Check if supabase is not null or undefined
+//             const dataToInsert: DogFormData = {
+//                 dog_name: data.dog_name,
+//                 dog_age: data.dog_age,
+//                 dog_sex: data.dog_sex,
+//                 dog_breed: data.dog_breed,
+//                 pure_cross: data.pure_cross,
+//                 dog_health: data.dog_health,
+//                 dog_weight: data.dog_weight,
+//                 dog_size: data.dog_size,
+//                 flavours_not: data.flavours_not,
+//                 veg: data.veg,
+//             };
             
             
-        const { data: insertData, error } = await supabase
+//         const { data: insertData, error } = await supabase
+//         .from('dog')
+//         .insert([
+//             dataToInsert,
+//         ]);
+
+//         console.log(insertData);
+//     if (error) {
+//         alert(error.message);
+//     } else {
+//         alert("Survey complete");
+//     }    
+// }};
+
+async function onSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!isLastStep) return next();
+
+    const signedIn = await isSessionSignedIn(); // Set variable to check if user is signed in
+
+    if (!signedIn) {
+//checls to see if user is signed in,
+        
+        // For example:
+        // Store data in localStorage
+        // localStorage.setItem('pendingFormData', JSON.stringify(data));
+        
+        // Redirect to sign-up page
+        window.location.href = '/signup'; // Change the URL as needed
+        return;
+    }
+
+    const userId = await getCurrentUserId(); // Get the user ID from the session
+
+    if (!userId) {
+        // Unable to get user ID, handle accordingly
+    
+        return;
+    }
+
+    if (!supabase) {
+        console.error("Supabase client is null");
+        return;
+    }
+    const dataToInsert: DogFormData = {
+        dog_name: data.dog_name,
+        dog_age: data.dog_age,
+        dog_sex: data.dog_sex,
+        dog_breed: data.dog_breed,
+        pure_cross: data.pure_cross,
+        dog_health: data.dog_health,
+        dog_weight: data.dog_weight,
+        dog_size: data.dog_size,
+        flavours_not: data.flavours_not,
+        veg: data.veg,
+        user_id: userId, // Add the user ID to the data
+    };
+
+    const { data: insertData, error } = await supabase
         .from('dog')
-        .insert([
-            dataToInsert,
-        ]);
+        .insert([dataToInsert]);
+        console.log(dataToInsert);
 
-        console.log(insertData);
+    console.log(insertData);
+    
     if (error) {
         alert(error.message);
     } else {
         alert("Survey complete");
-    }    
-}};
+    }
+}
+
+
+
+
+
 
     return (
         <div className="survey">

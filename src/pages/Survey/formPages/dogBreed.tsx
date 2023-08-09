@@ -24,7 +24,8 @@ export function DogBreed( {dog_breed, pure_cross, updateFields}: BreedFormProps)
                 <label htmlFor="dog_breed">Dog Breed</label>
                 <input  onChange={e=> updateFields({dog_breed: e.target.value}) } value={dog_breed} type="text" id="dogBreed" name="dogBreed" placeholder="Dog Breed" required />
                 <label htmlFor="pure_cross">They are a </label>
-                <select title='pure_cross' className='dropdownOptions' onChange={e=> updateFields({pure_cross: e.target.value}) } value={pure_cross}  name="pureCross" id="pureCross" required>
+                <select placeholder='Please Select'  title='pure_cross' className='dropdownOptions' onChange={e=> updateFields({pure_cross: e.target.value}) } value={pure_cross}  name="pureCross" id="pureCross" required>
+                    <option value="free"></option>
                     <option value="pure">Pure breed</option>
                     <option value="cross">Cross-breed</option>
                     <option value="notSure">Not sure</option>

@@ -46,23 +46,29 @@ function App() {
 
   type DogFormData = {
     dog_name: string;
-    dog_age: number;
+    dog_age: string;
     dog_sex: string;
     dog_breed: string;
     pure_cross: string;
     dog_health: string;
     dog_weight: string;
+    dog_size: string;
+    flavours_not: string[];
+    veg: string;
  
 }
 
 const INITIAL_DATA: DogFormData = {
     dog_name: "",
-    dog_age: 0,
+    dog_age: "",
     dog_sex: "",
     dog_breed: "",
     pure_cross: "",
     dog_health: "",
     dog_weight: "",
+    dog_size: "",
+    flavours_not: [""],
+    veg: "",
  
 }
 const [dogData, setDogData] = useState<DogFormData>(INITIAL_DATA);

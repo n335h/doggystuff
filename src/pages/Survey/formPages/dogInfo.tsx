@@ -2,7 +2,7 @@ import { FormWrapper } from "./FormWrapper";
 
 type DogData = {
     dog_name: string;
-    dog_age: number;
+    dog_age: string;
     dog_sex: string;
 
 }
@@ -21,7 +21,7 @@ function DogInfo({ dog_name, dog_age, dog_sex, updateFields }: DogInfoProps) {
   
     const handleDogAgeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const selectedAge = parseInt(e.target.value, 10);
-      updateFields({ dog_age: selectedAge });
+      updateFields({ dog_age: e.target.value });
       console.log(dog_age);
     };
   
@@ -52,15 +52,17 @@ function DogInfo({ dog_name, dog_age, dog_sex, updateFields }: DogInfoProps) {
           id="dog_age"
           name="dog_age"
           required
-        > <option value="1">0-1</option>
-        <option value="2">1-2</option>
-        <option value="3">2-5</option>
-        <option value="4">6-10</option>
-        <option value="5">10+</option>
+        > 
+            <option value="free"></option>
+            <option value="0-1">0-1</option>
+        <option value="1-2">1-2</option>
+        <option value="2-5">2-5</option>
+        <option value="6-10">6-10</option>
+        <option value="10+">10+</option>
         </select>
   
         <label htmlFor="dog_sex">Male</label>
-        <input type="radio" className='dropdownOptions'
+        <input  type="radio" className='dropdownOptions'
           onChange={handleDogSexChange}
           value='male'
           id="dog_sex"
@@ -68,7 +70,7 @@ function DogInfo({ dog_name, dog_age, dog_sex, updateFields }: DogInfoProps) {
           required
         />
                 <label htmlFor="dog_sex">Female</label>
-        <input type="radio" className='dropdownOptions'
+        <input placeholder='Please Select'  type="radio" className='dropdownOptions'
           onChange={handleDogSexChange}
           value='Female'
           id="dog_sex"
