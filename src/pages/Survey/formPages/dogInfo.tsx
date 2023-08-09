@@ -1,9 +1,9 @@
 import { FormWrapper } from "./FormWrapper";
 
 type DogData = {
-    dogName: string;
-    dogAge: string;
-    dogSex: string;
+    dog_name: string;
+    dog_age: string;
+    dog_sex: string;
 
 }
 
@@ -13,43 +13,43 @@ type DogInfoProps = DogData & {  // DogInfoProps is a type that extends DogData 
     // partial means that the fields that could be optional don't have to be included in the function call -accepts any subset of the DogData type- doesnt need all info to run updateFields
 }
 
-function DogInfo({ dogName, dogAge, dogSex, updateFields }: DogInfoProps) {
+function DogInfo({ dog_name, dog_age, dog_sex, updateFields }: DogInfoProps) {
     const handleDogNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         
-      updateFields({ dogName: e.target.value });
+      updateFields({ dog_name: e.target.value });
     };
   
     const handleDogAgeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      updateFields({ dogAge: e.target.value });
-      console.log(dogAge);
+      updateFields({ dog_age: e.target.value });
+      console.log(dog_age);
     };
   
     const handleDogSexChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      updateFields({ dogSex: e.target.value });
+      updateFields({ dog_sex: e.target.value });
     };
   
     return (
       <FormWrapper title="Tell us about your Doggo">
         <legend>Dog Information</legend>
   
-        <label htmlFor="dogName">Dog Name:</label>
+        <label htmlFor="dog_name">Dog Name:</label>
         <input
           onChange={handleDogNameChange}
-          value={dogName}
+          value={dog_name}
           type="text"
-          id="dogName"
-          name="dogName"
+          id="dog_name"
+          name="dog_name"
           placeholder="Dog Name"
           required
         />
   
-        <label htmlFor="dogAge">Dog Age:</label>
+        <label htmlFor="dog_age">Dog Age:</label>
         <select
         className='dropdownOptions'
           onChange={handleDogAgeChange}
-          value={dogAge}
-          id="dogAge"
-          name="dogAge"
+          value={dog_age}
+          id="dog_age"
+          name="dog_age"
           required
         > <option value="1">0-1</option>
         <option value="2">1-2</option>
@@ -58,20 +58,20 @@ function DogInfo({ dogName, dogAge, dogSex, updateFields }: DogInfoProps) {
         <option value="5">10+</option>
         </select>
   
-        <label htmlFor="dogSex">Male</label>
+        <label htmlFor="dog_sex">Male</label>
         <input type="radio" className='dropdownOptions'
           onChange={handleDogSexChange}
           value='male'
-          id="dogSex"
-          name="dogSex"
+          id="dog_sex"
+          name="dog_sex"
           required
         />
-                <label htmlFor="dogSex">Female</label>
+                <label htmlFor="dog_sex">Female</label>
         <input type="radio" className='dropdownOptions'
           onChange={handleDogSexChange}
           value='Female'
-          id="dogSex"
-          name="dogSex"
+          id="dog_sex"
+          name="dog_sex"
           required
         />
            {/* <option  value="boy">Good Boy</option>

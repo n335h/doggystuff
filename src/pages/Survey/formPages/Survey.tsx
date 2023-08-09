@@ -6,27 +6,28 @@ import { useState } from "react"
 import  DogInfo  from "./dogInfo"
 import { FormEvent } from "react"
 import "./Survey.css"
+// import supabase from "../config/supabaseClient"
 
 type DogFormData = {
-    dogName: string;
-    dogAge: string;
-    dogSex: string;
-    dogBreed: string;
-    pureCross: string;
-    dogHealth: string;
-    dogWeight: string;
+    dog_name: string;
+    dog_age: string;
+    dog_sex: string;
+    dog_breed: string;
+    pure_cross: string;
+    dog_health: string;
+    dog_weight: string;
  
 }
 
 const INITIAL_DATA: DogFormData = {
-    dogName: "",
-    dogAge: "",
-    dogSex: "",
-    dogBreed: "",
-    pureCross: "",
-    dogHealth: "",
-    dogWeight: "",
-
+    dog_name: "",
+    dog_age: "",
+    dog_sex: "",
+    dog_breed: "",
+    pure_cross: "",
+    dog_health: "",
+    dog_weight: "",
+ 
 }
 
 
@@ -51,13 +52,33 @@ function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>)
     console.log(data)
     console.log(steps)
 
-function onSubmit (e: FormEvent) {
-    e.preventDefault()
-    if (!isLastStep) return next() 
-    alert ("Survey complete")
 
-}
 
+    function onSubmit(e: FormEvent) {
+        e.preventDefault();
+        if (!isLastStep) return next();
+        console.log(data)
+    
+        const { data, error } = await supabase
+            .from('dogs')
+            .insert([
+                {
+                    dogName: data.dog_name,
+                    dogAge: data.dog_age,
+                    dogSex: data.dog_sex,
+                    dogBreed: data.dog_breed,
+                    pureCross: data.pure_cross,
+                    dogHealth: data.dog_health,
+                    dogWeight: data.dog_weight,
+                },
+            ]);
+    
+        if (error) {
+            alert(error.message);
+        } else {
+            alert("Survey complete");
+        }
+    }
 
     return (
         <div className="survey">
