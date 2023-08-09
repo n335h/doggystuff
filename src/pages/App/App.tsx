@@ -46,7 +46,7 @@ function App() {
 
   type DogFormData = {
     dog_name: string;
-    dog_age: string;
+    dog_age: number;
     dog_sex: string;
     dog_breed: string;
     pure_cross: string;
@@ -57,7 +57,7 @@ function App() {
 
 const INITIAL_DATA: DogFormData = {
     dog_name: "",
-    dog_age: "",
+    dog_age: 0,
     dog_sex: "",
     dog_breed: "",
     pure_cross: "",

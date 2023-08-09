@@ -2,7 +2,7 @@ import { FormWrapper } from "./FormWrapper";
 
 type DogData = {
     dog_name: string;
-    dog_age: string;
+    dog_age: number;
     dog_sex: string;
 
 }
@@ -20,7 +20,8 @@ function DogInfo({ dog_name, dog_age, dog_sex, updateFields }: DogInfoProps) {
     };
   
     const handleDogAgeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      updateFields({ dog_age: e.target.value });
+      const selectedAge = parseInt(e.target.value, 10);
+      updateFields({ dog_age: selectedAge });
       console.log(dog_age);
     };
   
