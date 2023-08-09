@@ -5,12 +5,14 @@ import { DogHealth } from "./dogHealth"
 import { useState } from "react"
 import  DogInfo  from "./dogInfo"
 import { FormEvent } from "react"
+import supabase from "../../../models/client"
+
 import "./Survey.css"
 // import supabase from "../config/supabaseClient"
 
 type DogFormData = {
     dog_name: string;
-    dog_age: string;
+    dog_age: number;
     dog_sex: string;
     dog_breed: string;
     pure_cross: string;
@@ -21,7 +23,7 @@ type DogFormData = {
 
 const INITIAL_DATA: DogFormData = {
     dog_name: "",
-    dog_age: "",
+    dog_age: 0,
     dog_sex: "",
     dog_breed: "",
     pure_cross: "",
@@ -29,6 +31,8 @@ const INITIAL_DATA: DogFormData = {
     dog_weight: "",
  
 }
+
+
 
 
 function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>) => void }) {
@@ -54,12 +58,34 @@ function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>)
 
 
 
-    function onSubmit(e: FormEvent) {
+    async function onSubmit(e: FormEvent) {
         e.preventDefault();
         if (!isLastStep) return next();
-      
-    
-    }
+
+        if (supabase) { // Check if supabase is not null or undefined
+            const dataToInsert: DogFormData = {
+                dog_name: data.dog_name,
+                dog_age: data.dog_age,
+                dog_sex: data.dog_sex,
+                dog_breed: data.dog_breed,
+                pure_cross: data.pure_cross,
+                dog_health: data.dog_health,
+                dog_weight: data.dog_weight,
+            };
+            
+            
+        const { data: insertData, error } = await supabase
+        .from('dog')
+        .insert([
+            dataToInsert,
+        ]);
+
+    if (error) {
+        alert(error.message);
+    } else {
+        alert("Survey complete");
+    }    
+}};
 
     return (
         <div className="survey">
