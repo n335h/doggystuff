@@ -57,27 +57,8 @@ function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>)
     function onSubmit(e: FormEvent) {
         e.preventDefault();
         if (!isLastStep) return next();
-        console.log(data)
+      
     
-        const { data, error } = await supabase
-            .from('dogs')
-            .insert([
-                {
-                    dogName: data.dog_name,
-                    dogAge: data.dog_age,
-                    dogSex: data.dog_sex,
-                    dogBreed: data.dog_breed,
-                    pureCross: data.pure_cross,
-                    dogHealth: data.dog_health,
-                    dogWeight: data.dog_weight,
-                },
-            ]);
-    
-        if (error) {
-            alert(error.message);
-        } else {
-            alert("Survey complete");
-        }
     }
 
     return (
