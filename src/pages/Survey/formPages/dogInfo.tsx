@@ -9,7 +9,8 @@ type DogData = {
 
 
 type DogInfoProps = DogData & {  // DogInfoProps is a type that extends DogData with an updateFields function adding them together
-    updateFields: (fields: Partial<DogData>) => void; // updateFields is a function that takes in a partial of DogInfoProps
+    updateFields: (fields: Partial<DogData>) => void; // updateFields is a function that takes in a partial of DogInfoProps and processes the change
+    // partial means that the fields that could be optional don't have to be included in the function call -accepts any subset of the DogData type- doesnt need all info to run updateFields
 }
 
 function DogInfo({ dogName, dogAge, dogSex, updateFields }: DogInfoProps) {

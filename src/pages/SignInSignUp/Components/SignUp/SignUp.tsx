@@ -58,7 +58,7 @@ function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
 
   return (
     <div className='sign-form'>
-        <a id='closeForm' href="https://doggystuff.netlify.app/">X</a>
+        <a id='closeForm' href="/">X</a>
 
       <h1 className='signUpTitle animate-pop-in'>Sign Up</h1>
       <div className='sign-in-link animate-pop-in' > 
