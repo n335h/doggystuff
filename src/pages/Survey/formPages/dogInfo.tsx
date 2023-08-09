@@ -21,6 +21,7 @@ function DogInfo({ dog_name, dog_age, dog_sex, updateFields }: DogInfoProps) {
   
     const handleDogAgeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const selectedAge = parseInt(e.target.value, 10);
+      console.log(selectedAge);
       updateFields({ dog_age: e.target.value });
       console.log(dog_age);
     };
