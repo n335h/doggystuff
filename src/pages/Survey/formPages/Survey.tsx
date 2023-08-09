@@ -123,20 +123,21 @@ function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>)
 async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!isLastStep) return next();
-
     const signedIn = await isSessionSignedIn(); // Set variable to check if user is signed in
+    console.log('is session signed in:', signedIn); // Log the actual value of signedIn
 
-    if (!signedIn) {
-//checls to see if user is signed in,
-        
-        // For example:
+    ////////////////////^^^^^^^^^^^^^^^^^^^^^Returning true when not signed in but not acting as true - need to fix
+
+    if (!signedIn) { // this is running if user is not signed in and if they are signed in, need to fix
+        console.log("User is not signed in");
+
         // Store data in localStorage
-        // localStorage.setItem('pendingFormData', JSON.stringify(data));
+        localStorage.setItem('pendingFormData', JSON.stringify(data));
         
         // Redirect to sign-up page
-        window.location.href = '/signup'; // Change the URL as needed
+        window.location.href = '/SignUp'; // Change the URL as needed
         return;
-    }
+    } 
 
     const userId = await getCurrentUserId(); // Get the user ID from the session
 

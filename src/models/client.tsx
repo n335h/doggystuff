@@ -39,7 +39,7 @@ export async function isSessionSignedIn(): Promise<boolean> {
       console.log(error);
       return false;
     } else {
-      if (data) {
+      if (data.session) { //added .session to data to fix error "Property 'session' does not exist on type 'Session | null'." 
         // console.log("A user is logged in.", data);
         return true;
       } else {

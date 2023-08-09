@@ -27,9 +27,9 @@ function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
   // on click of submit button, handleSubmit is called
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(formData);
+
     console.log(signUpSuccess);
-    console.log("function called")
+
 
     // Check if Sign up form has been filled out
     if (
@@ -39,6 +39,7 @@ function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
       formData.password !== ''
     ) {
       console.log(formData);
+      console.log("function called")
 
       // supabaseSignUp() is called, passing the formData as a parameter
       // This function contains the logic and DB query for creating a new user

@@ -44,8 +44,7 @@ export async function insertPublicUser(
 
 // supabaseSignUp() - is used to sign up a user using the Supabase authentication service.
 // It takes in a formData object containing user signup data.
-// supabaseSignUp() - is used to sign up a user using the Supabase authentication service.
-// It takes in a formData object containing user signup data.
+
 export async function supabaseSignUp(formData: FormData): Promise<boolean> {
   try {
     if (!supabaseClient) {
