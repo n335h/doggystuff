@@ -8,15 +8,6 @@ interface FormData {
   last_name: string;
 }
 
-interface DogFormData {
-  dogName: string;
-  dogAge: string;
-  dogSex: string;
-  dogBreed: string;
-  pureCross: string;
-  dogHealth: string;
-  dogWeight: string;
-}
 
 
 

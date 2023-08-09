@@ -80,6 +80,7 @@ function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>)
             dataToInsert,
         ]);
 
+        console.log(insertData);
     if (error) {
         alert(error.message);
     } else {
