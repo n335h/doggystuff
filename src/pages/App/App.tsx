@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar';
 import { Landing } from '../Landing/Landing';
 import { Container } from 'react-bootstrap';
 import GetStarted from '../getStarted/getStarted';
+import OrderDetails from '../Survey/formPages/OrderDetails';
 
 
 function App() {
@@ -71,40 +72,66 @@ const INITIAL_DATA: DogFormData = {
     veg: "",
  
 }
+type OrderData = {
+  days: string;
+  address_fl: string;
+  address_sl: string;
+  address_town: string;
+  address_county: string;
+  address_postcode: string;
+  delivery_instructions: string;
+}
+
+const INITIAL_ORDER_DATA: OrderData = {
+  days: "",
+  address_fl: "",
+  address_sl: "",
+  address_town: "",
+  address_county: "",
+  address_postcode: "",
+  delivery_instructions: "",
+}
 const [dogData, setDogData] = useState<DogFormData>(INITIAL_DATA);
+  const [orderData, setOrderData] = useState<OrderData>(INITIAL_ORDER_DATA);
 
   function updateFields(fields: Partial<DogFormData>) {
     setDogData(prev => ({
       ...prev,
       ...fields
     }));
-    console.log(dogData)
   }
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {};
+  function updateOrderFields(fields: Partial<OrderData>) {
+    setOrderData(prev => ({
+      ...prev,
+      ...fields
+    }));
+  }
 
-  const setSignUpRedirect = (value: boolean) => {};
+const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {};
 
-  return (
-    <Container className='mb-4'>
-      <div className="App">
-        <BrowserRouter>
-          <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible} />
+const setSignUpRedirect = (value: boolean) => {};
 
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/src/pages/signsignup" element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
-            <Route
-              path="/SignUp"
-              element={<SignUp formData={data} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />}
-            />
-            <Route path="/Survey" element={<Survey updateFields={updateFields} />} />
-            <Route path="/GetStarted" element={<GetStarted />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </Container>
-  );
+return (
+  <Container className='mb-4'>
+    <div className='App'>
+      <BrowserRouter>
+        <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible} />
+
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/src/pages/signsignup' element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
+          <Route
+            path='/SignUp'
+            element={<SignUp formData={data} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />}
+          />
+             <Route path='/Survey' element={<Survey updateFields={updateFields} updateOrderFields={updateOrderFields} />} />
+                       <Route path='/GetStarted' element={<GetStarted />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  </Container>
+);
 }
 
 export default App;

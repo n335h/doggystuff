@@ -11,6 +11,7 @@ import { isSessionSignedIn } from "../../../models/client"
 import { getCurrentUserId } from "../../../models/client"
 
 import "./Survey.css"
+import OrderDetails from "./OrderDetails"
 // import supabase from "../config/supabaseClient"
 
 type DogFormData = {
@@ -43,11 +44,52 @@ const INITIAL_DATA: DogFormData = {
  
 }
 
+type OrderData = {
+    dog_name: string;
+    days: string;
+    address_fl: string;
+    address_sl: string;
+    address_town: string;
+    address_county: string;
+    address_postcode: string;
+    delivery_instructions: string;
+    dog_health: string;
+    dog_weight: string;
+    dog_size: string;
+    flavours_not: string[];
+    veg: string;
+    user_id: string,
+  }
+  
+  const INITIAL_ORDER_DATA: OrderData = {
+    days: "",
+    address_fl: "",
+    address_sl: "",
+    address_town: "",
+    address_county: "",
+    address_postcode: "",
+    delivery_instructions: "",
+    dog_health: "",
+    dog_weight: "",
+    dog_size: "",
+    flavours_not: [""],
+    veg: "",
+    user_id: "",
+    dog_name: "",
+ 
+  }
 
 
 
-function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>) => void }) {
+  function Survey({
+    updateFields,
+    updateOrderFields
+  }: {
+    updateFields: (fields: Partial<DogFormData>) => void;
+    updateOrderFields: (fields: Partial<OrderData>) => void;
+  }) {
     const [data , setData] = useState(INITIAL_DATA);
+    const [orderData, setOrderData] = useState(INITIAL_ORDER_DATA);
 
     const handleDataUpdate = (updatedFields: Partial<DogFormData>) => {
         // Create a new object by merging the existing data and updated fields
@@ -57,17 +99,28 @@ function Survey({ updateFields }: { updateFields: (fields: Partial<DogFormData>)
         updateFields(updatedData);
     };
 
+
+    const handleOrderDataUpdate = (updatedFields: Partial<OrderData>) => {
+        const updatedOrderData = { ...orderData, ...updatedFields };
+        setOrderData(updatedOrderData);
+        // Propagate the updated orderData to the parent component
+        updateOrderFields(updatedOrderData);
+      };
+
     const { steps, currentStepIndex, isFirstStep, step, back, next, isLastStep} = useMultistepForm([
         <DogInfo {...data} updateFields={handleDataUpdate}/>,
         <DogBreed {...data} updateFields={handleDataUpdate}/>,
         <DogHealth {...data} updateFields={handleDataUpdate}/>,
         <DogFood {...data} updateFields={handleDataUpdate}/>,
+        <OrderDetails {...orderData} updateOrderFields={handleOrderDataUpdate} />,
+        
 
         
        
     ]) 
     console.log(data)
-    console.log(steps)
+    console.log(orderData)
+
 
 
 
@@ -177,10 +230,43 @@ async function onSubmit(e: FormEvent) {
     } else {
         alert("Survey complete");
     }
-}
+
+    // I want to also insert orderData into order table
+    const orderDataToInsert: OrderData = {
+ 
+            days: orderData.days,
+            address_fl:  orderData.address_fl,
+            address_sl: orderData.address_sl,
+            address_town: orderData.address_town,
+            address_county:  orderData.address_county,
+            address_postcode:  orderData.address_postcode,
+            delivery_instructions:   orderData.delivery_instructions, 
+            flavours_not: data.flavours_not,
+            veg: data.veg,
+            user_id: userId, 
+            dog_health: data.dog_health,
+            dog_weight: data.dog_weight,
+            dog_size: data.dog_size,
+            dog_name: data.dog_name,
+    }
+
+    const { data: insertOrderData, error: errorOrderData } = await supabase
+        .from('order')
+        .insert([orderDataToInsert]);
+        console.log(orderDataToInsert);
+        
+    console.log(insertOrderData);
+
+    if (errorOrderData) {
+        alert(errorOrderData.message);
+    } else {
+        alert("Order complete");
+    }
 
 
 
+
+};
 
 
 
