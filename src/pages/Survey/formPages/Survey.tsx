@@ -59,7 +59,7 @@ type OrderData = {
     flavours_not: string[];
     veg: string;
     user_id: string,
-  }
+}
   
   const INITIAL_ORDER_DATA: OrderData = {
     days: "",
@@ -76,10 +76,7 @@ type OrderData = {
     veg: "",
     user_id: "",
     dog_name: "",
- 
-  }
-
-
+}
 
   function Survey({
     updateFields,
@@ -105,7 +102,7 @@ type OrderData = {
         setOrderData(updatedOrderData);
         // Propagate the updated orderData to the parent component
         updateOrderFields(updatedOrderData);
-      };
+    };
 
     const { steps, currentStepIndex, isFirstStep, step, back, next, isLastStep} = useMultistepForm([
         <DogInfo {...data} updateFields={handleDataUpdate}/>,
@@ -113,65 +110,10 @@ type OrderData = {
         <DogHealth {...data} updateFields={handleDataUpdate}/>,
         <DogFood {...data} updateFields={handleDataUpdate}/>,
         <OrderDetails {...orderData} updateOrderFields={handleOrderDataUpdate} />,
-        
-
-        
-       
     ]) 
     console.log(data)
     console.log(orderData)
 
-
-
-
-    // async function onSubmit(e: FormEvent) {
-    //     e.preventDefault();
-    //     if (!isLastStep) return next();
-
-        //W need to use isSessionSignedIn() & getCurrentUserId() to check if they are signed in (if not store data and redirect to sign up) get the user id and send with data -
-        // - if they are signed in get the user id and send with data
-        // const user = supabase.auth.user();
-        // const userId = user?.id;
-        // console.log(userId);
-        // console.log(user);
-        // console.log(supabase.auth.session());
-        // console.log(supabase.auth.session()?.user?.id);
-
-
-    // const user = supabase.auth.user();
-    // const userId = user?.id;
-    // console.log(userId);
-    
-
-
-//         if (supabase) { // Check if supabase is not null or undefined
-//             const dataToInsert: DogFormData = {
-//                 dog_name: data.dog_name,
-//                 dog_age: data.dog_age,
-//                 dog_sex: data.dog_sex,
-//                 dog_breed: data.dog_breed,
-//                 pure_cross: data.pure_cross,
-//                 dog_health: data.dog_health,
-//                 dog_weight: data.dog_weight,
-//                 dog_size: data.dog_size,
-//                 flavours_not: data.flavours_not,
-//                 veg: data.veg,
-//             };
-            
-            
-//         const { data: insertData, error } = await supabase
-//         .from('dog')
-//         .insert([
-//             dataToInsert,
-//         ]);
-
-//         console.log(insertData);
-//     if (error) {
-//         alert(error.message);
-//     } else {
-//         alert("Survey complete");
-//     }    
-// }};
 
 async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -278,18 +220,16 @@ async function onSubmit(e: FormEvent) {
                        { currentStepIndex +1} / {steps.length}
                     </div>
                     <div className="surveyFormSection">
-                    {step}
+                        {step}
                     </div>
-                    
                     <div className="surveyButtons">
                        {!isFirstStep && <button type='button' onClick={back} className="surveyButton">Back</button>}
                         <button type='submit' className="surveyButton">{isLastStep ? "Finish" : "Next"}</button>
                     </div>
-                        </form> 
-                        </div>
-
-                
+                </form> 
             </div>
+
+        </div>
     )
 }
 

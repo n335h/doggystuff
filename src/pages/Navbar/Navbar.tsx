@@ -72,7 +72,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   <Hamburger isOpen={menuOpen} toggleMenu={handleToggleMenu} openAdditionalMenu={handleToggleAdditionalMenu} icon={hamburgerIcon} />
 </div>            </div>
             <div className="navbarcenter">
-              <h1 id="navbar-title">DoggyStuff</h1>
+              <a  href='/' id="navbar-title">DoggyStuff</a>
             </div>
             <div className={`authButtons ${additionalMenuOpen ? 'open' : ''}`}>
               {isSignedIn ? (
