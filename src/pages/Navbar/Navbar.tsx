@@ -37,16 +37,16 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
       const navbarElement = navbarRef.current;
       if (!navbarElement) return;
 
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop) {
-        navbarElement.style.top = '-80px';
-      } else {
-        navbarElement.style.top = '0';
+      const scrollTop = window.scrollY || document.documentElement.scrollTop; // Get the scroll position of the page (y-axis)
+      if (scrollTop > lastScrollTop) { // If the scroll position is greater than the last scroll position, hide the navbar
+        navbarElement.style.top = '-80px'; // Set the top style to -80px (height of the navbar)
+      } else {// If the scroll position is less than the last scroll position, show the navbar
+        navbarElement.style.top = '0'; // Set the top style to 0
       }
-      lastScrollTop = scrollTop;
+      lastScrollTop = scrollTop; // Update the last scroll position to the current scroll position
     };
 
-    let lastScrollTop = 0;
+    let lastScrollTop = 0; // Variable to store the last scroll position
 
     // Add the scroll event listener on mount
     window.addEventListener('scroll', handleScroll);

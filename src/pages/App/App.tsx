@@ -68,7 +68,7 @@ const INITIAL_DATA: DogFormData = {
     dog_health: "",
     dog_weight: "",
     dog_size: "",
-    flavours_not: [""],
+    flavours_not: [],
     veg: "",
  
 }
@@ -117,7 +117,6 @@ return (
     <div className='App'>
       <BrowserRouter>
         <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible} />
-
         <Routes>
           <Route path='/' element={<Landing />} />
           <Route path='/src/pages/signsignup' element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />

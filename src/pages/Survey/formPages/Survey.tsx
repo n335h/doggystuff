@@ -38,7 +38,7 @@ const INITIAL_DATA: DogFormData = {
     dog_health: "",
     dog_weight: "",
     dog_size: "",
-    flavours_not: [""],
+    flavours_not: [],
     veg: "",
     user_id: "",
  
@@ -72,11 +72,30 @@ type OrderData = {
     dog_health: "",
     dog_weight: "",
     dog_size: "",
-    flavours_not: [""],
+    flavours_not: [],
     veg: "",
     user_id: "",
     dog_name: "",
 }
+
+type AddressData = {
+    address_fl: string;
+    address_sl: string;
+    address_town: string;
+    address_county: string;
+    address_postcode: string;
+    user_id: string,
+}
+
+const INITIAL_ADDRESS_DATA: AddressData = {
+    address_fl: "",
+    address_sl: "",
+    address_town: "",
+    address_county: "",
+    address_postcode: "",
+    user_id: "",
+}
+
 
   function Survey({
     updateFields,
@@ -204,6 +223,36 @@ async function onSubmit(e: FormEvent) {
     } else {
         alert("Order complete");
     }
+
+
+
+    // Defininf the address data to insert into the user_address table
+    const addressDataToInsert: AddressData = {
+ 
+        address_fl:  orderData.address_fl,
+        address_sl: orderData.address_sl,
+        address_town: orderData.address_town,
+        address_county:  orderData.address_county,
+        address_postcode:  orderData.address_postcode,
+        user_id: userId, 
+    }
+
+
+
+const { data: insertAddressData, error: errorAddressData } = await supabase
+.from('user_address') 
+.insert([addressDataToInsert]); 
+console.log(addressDataToInsert);
+
+console.log(insertAddressData);
+
+if (errorAddressData) {
+alert(errorAddressData.message);
+} else {
+alert("Order complete");
+}
+
+
 
 
 
