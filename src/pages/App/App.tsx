@@ -14,7 +14,7 @@ import SignIn from '../SignInSignUp/Components/SignIn/SignIn';
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [visible, setVisible] = useState(true);
-  
+
   // Define the initial form data for sign up
   const initialFormData: SignUpFormData = {
     first_name: '',
@@ -57,10 +57,10 @@ function App() {
     dog_size: string;
     flavours_not: string[];
     veg: string;
- 
-}
 
-const INITIAL_DATA: DogFormData = {
+  }
+
+  const INITIAL_DATA: DogFormData = {
     dog_name: "",
     dog_age: "",
     dog_sex: "",
@@ -71,28 +71,28 @@ const INITIAL_DATA: DogFormData = {
     dog_size: "",
     flavours_not: [],
     veg: "",
- 
-}
-type OrderData = {
-  days: string;
-  address_fl: string;
-  address_sl: string;
-  address_town: string;
-  address_county: string;
-  address_postcode: string;
-  delivery_instructions: string;
-}
 
-const INITIAL_ORDER_DATA: OrderData = {
-  days: "",
-  address_fl: "",
-  address_sl: "",
-  address_town: "",
-  address_county: "",
-  address_postcode: "",
-  delivery_instructions: "",
-}
-const [dogData, setDogData] = useState<DogFormData>(INITIAL_DATA);
+  }
+  type OrderData = {
+    days: string;
+    address_fl: string;
+    address_sl: string;
+    address_town: string;
+    address_county: string;
+    address_postcode: string;
+    delivery_instructions: string;
+  }
+
+  const INITIAL_ORDER_DATA: OrderData = {
+    days: "",
+    address_fl: "",
+    address_sl: "",
+    address_town: "",
+    address_county: "",
+    address_postcode: "",
+    delivery_instructions: "",
+  }
+  const [dogData, setDogData] = useState<DogFormData>(INITIAL_DATA);
   const [orderData, setOrderData] = useState<OrderData>(INITIAL_ORDER_DATA);
 
   function updateFields(fields: Partial<DogFormData>) {
@@ -109,39 +109,39 @@ const [dogData, setDogData] = useState<DogFormData>(INITIAL_DATA);
     }));
   }
 
-const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {};
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => { };
 
-const setSignUpRedirect = (value: boolean) => {};
+  const setSignUpRedirect = (value: boolean) => { };
 
-return (
-  <Container className='mb-4'>
-    <div className='App'>
-      <BrowserRouter>
-        <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible} />
-        <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/src/pages/signsignup' element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
-          <Route
-            path='/SignUp'
-            element={<SignUp formData={data} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />}
-          />
-             <Route path='/Survey' element={<Survey updateFields={updateFields} updateOrderFields={updateOrderFields} />} />
-                       <Route path='/GetStarted' element={<GetStarted />} />
-                       <Route path='/signin' 
-                       element={<SignIn
-                       signInFormData={data}
-                       handleChange={handleChange}
-                       signUpRedirect={false}
-                       isSignedIn={isSignedIn}
-                       setIsSignedIn={setIsSignedIn}
-                       />
-                       }
-                       />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  </Container>
-);
+  return (
+    <Container className='mb-4'>
+      <div className='App'>
+        <BrowserRouter>
+          <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible} />
+          <Routes>
+            <Route path='/' element={<Landing />} />
+            <Route path='/src/pages/signsignup' element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
+            <Route
+              path='/SignUp'
+              element={<SignUp formData={data} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />}
+            />
+            <Route path='/Survey' element={<Survey updateFields={updateFields} updateOrderFields={updateOrderFields} />} />
+            <Route path='/GetStarted' element={<GetStarted />} />
+            <Route path='/signin'
+              element={<SignIn
+                signInFormData={data}
+                handleChange={handleChange}
+                signUpRedirect={false}
+                isSignedIn={isSignedIn}
+                setIsSignedIn={setIsSignedIn}
+              />
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </Container>
+  );
 }
 
 export default App;
