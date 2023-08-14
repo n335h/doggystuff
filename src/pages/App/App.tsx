@@ -8,6 +8,7 @@ import { Landing } from '../Landing/Landing';
 import { Container } from 'react-bootstrap';
 import GetStarted from '../getStarted/getStarted';
 import OrderDetails from '../Survey/formPages/OrderDetails';
+import SignIn from '../SignInSignUp/Components/SignIn/SignIn';
 
 
 function App() {
@@ -126,6 +127,16 @@ return (
           />
              <Route path='/Survey' element={<Survey updateFields={updateFields} updateOrderFields={updateOrderFields} />} />
                        <Route path='/GetStarted' element={<GetStarted />} />
+                       <Route path='/signin' 
+                       element={<SignIn
+                       signInFormData={data}
+                       handleChange={handleChange}
+                       signUpRedirect={false}
+                       isSignedIn={isSignedIn}
+                       setIsSignedIn={setIsSignedIn}
+                       />
+                       }
+                       />
         </Routes>
       </BrowserRouter>
     </div>
