@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { signOut } from '../../models/client';
 import './Navbar.css';
 import SignInSignUp from '../SignInSignUp/SignInSignUp';
+import SignIn from '../SignInSignUp/Components/SignIn/SignIn';
+import SignUp from '../SignInSignUp/Components/SignUp/SignUp';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
 
@@ -116,6 +118,16 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                   <li>
                     <Link to="/faq" onClick={handleToggleAdditionalMenu}>
                       FAQ
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/SignIn" onClick={handleToggleAdditionalMenu}>
+                      Sign In
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/SignUp" onClick={handleToggleAdditionalMenu}>
+                      Sign Up
                     </Link>
                   </li>
                 </ul>
