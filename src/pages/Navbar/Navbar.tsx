@@ -74,7 +74,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
             <div className="navbarcenter">
               <a  href='/' id="navbar-title">DoggyStuff</a>
             </div>
-            <div className={`authButtons ${additionalMenuOpen ? 'open' : ''}`}>
+            <div
+            className={`authButtons ${additionalMenuOpen ? 'open' : ''}`}>
               {isSignedIn ? (
                 <button
                   id="dropdown-menu-signout-button"

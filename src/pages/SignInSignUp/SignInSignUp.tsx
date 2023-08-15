@@ -22,14 +22,20 @@ function SignInSignUp({ isSignedIn, setIsSignedIn }: SignInSignUpProps) {
     const [signUpRedirect, setSignUpRedirect] = useState(false);
 
     function handleSignUpClick() {
+        console.log('handleSignUpClick called')
         setShowSignUp(true);
         setShowSignIn(false);
     }
 
     function handleSignInClick() {
+        console.log('handleSignInClick called')
         setShowSignUp(false);
         setShowSignIn(true);
     }
+
+    console.log('showSignUp: ', showSignUp)
+    console.log('showSignIn: ', showSignIn)
+    console.log('signUpRedirect: ', signUpRedirect)
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         setFormData((prevFormData) => {
@@ -49,7 +55,10 @@ function SignInSignUp({ isSignedIn, setIsSignedIn }: SignInSignUpProps) {
                 </div>
 
                 {showSignUp && !signUpRedirect &&  (
-                    <SignUp formData={formData} handleChange={handleChange} setSignUpRedirect={setSignUpRedirect} />
+                    <SignUp
+                    formData={formData}
+                    handleChange={handleChange}
+                    setSignUpRedirect={setSignUpRedirect} />
                 )}
 
                 {(showSignIn || signUpRedirect ) && (
