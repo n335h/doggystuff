@@ -9,9 +9,7 @@
   import { Landing } from '../Landing/Landing';
   import { Container } from 'react-bootstrap';
   import GetStarted from '../getStarted/getStarted';
-  import OrderDetails from '../Survey/formPages/OrderDetails';
-  import signUp from '../SignInSignUp/Components/SignUp/SignUp';
-import { type } from 'os';
+
 
 
   function App() {
@@ -46,6 +44,7 @@ import { type } from 'os';
 
     const [data, setData] = useState<SignUpFormData>(initialSignUpFormData);
     console.log(setData)
+    console.log(data)
 
 
     const prevScrollPosRef = useRef(0);
@@ -137,13 +136,6 @@ import { type } from 'os';
     }
 
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const { name, value } = event.target;
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    };
 
   const setSignUpRedirect = (value: boolean) => {};
 
@@ -151,22 +143,22 @@ import { type } from 'os';
     <Container className='mb-4'>
       <div className='App'>
         <BrowserRouter>
-          <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible} />
+          <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible}/>
           <Routes>
             <Route path='/' element={<Landing />} />
             {/* <Route path='/src/pages/signsignup' element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} /> */}
             <Route
               path='/SignUp'
-              element={<SignUp
-                formData={data}
-                setFormData={setData}
+              element={ <SignUp
+                SignUpFormData={formData}
+        
                 setSignUpRedirect={setSignUpRedirect}
-                isSignedIn={isSignedIn}
-              />}
+                isSignedIn={isSignedIn} // Make sure you provide this prop
+              />   }
             />
             <Route path='/SignIn' element={<SignIn
-              signInFormData={signInFormData}
-              handleChange={handleChange}
+              SignInFormData={signInFormData}
+ 
               signUpRedirect={false}
               isSignedIn={isSignedIn}
               setIsSignedIn={setIsSignedIn}

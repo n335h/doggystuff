@@ -17,11 +17,11 @@
 
   // interface for SignIn component
   interface SignInProps {
-      signInFormData: {
+      SignInFormData: {
           email: string;
           password: string;
       };
-      handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
       signUpRedirect: boolean;
       isSignedIn: boolean;
       setIsSignedIn: (value: boolean) => void;
@@ -34,7 +34,7 @@
   }
 
 
-  function SignIn({signInFormData, signUpRedirect, isSignedIn, setIsSignedIn }: SignInProps) {    // initialize the navigate object using the useNavigate 'hook'
+  function SignIn({SignInFormData, signUpRedirect, isSignedIn, setIsSignedIn }: SignInProps) {    // initialize the navigate object using the useNavigate 'hook'
     
     
 
@@ -49,11 +49,11 @@
       // This function is used to handle the form submission.
       // It is triggered when the form is submitted.
       async function handleSubmit(e   : React.FormEvent<HTMLFormElement>) {
-        setSignInFormData(signInFormData)
+        setSignInFormData(SignInFormData)
           // The 'e.preventDefault()' prevents the default form submission behavior.
           // It ensures that the form does not cause a page reload.
           e.preventDefault();
-          const signInSuccessful = await SignInUser(signInFormData.email, signInFormData.password);
+          const signInSuccessful = await SignInUser(SignInFormData.email, SignInFormData.password);
           // if (signInSuccessful === true) redirect to Card Display Page
           if (signInSuccessful) {
               setIsSignedIn(true);
@@ -73,9 +73,9 @@
           ...prevData,
           [name]: value,
         }));
-        console.log(signInFormData.email)
-        console.log(signInFormData.password)
-        console.log(signInFormData)
+        console.log(SignInFormData.email)
+        console.log(SignInFormData.password)
+        console.log(SignInFormData)
       };
       return (
           <div className='sign-form '>
@@ -98,7 +98,7 @@
                 name="email"
                 placeholder='Email'
                 type="email"
-                value={signInFormData.email}
+                
                 onChange={handleChange}
                 required
               />
@@ -108,7 +108,7 @@
                 placeholder='Password'
                 type="password"
                 pattern=".{6,}"
-                value={signInFormData.password}
+           
                 title="Please enter at least 6 characters"
                 onChange={handleChange}
                 required
