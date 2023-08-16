@@ -224,9 +224,7 @@ async function onSubmit(e: FormEvent) {
         alert("Order complete");
     }
 
-
-
-    // Defininf the address data to insert into the user_address table
+    // Defining the address data to insert into the user_address table
     const addressDataToInsert: AddressData = {
  
         address_fl:  orderData.address_fl,
@@ -236,9 +234,7 @@ async function onSubmit(e: FormEvent) {
         address_postcode:  orderData.address_postcode,
         user_id: userId, 
     }
-
-
-
+    // Inserting the address data into the user_address table b 
 const { data: insertAddressData, error: errorAddressData } = await supabase
 .from('user_address') 
 .insert([addressDataToInsert]); 
@@ -253,6 +249,11 @@ alert("Order complete");
 }
 
 
+    // Clear the pending form data from localStorage
+    localStorage.removeItem('pendingFormData');
+    // Redirect to the home page
+    window.location.href = '/'; // Change the URL as needed
+        
 
 
 

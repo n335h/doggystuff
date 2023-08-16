@@ -5,57 +5,59 @@ import SignMessage from '../SignMessage/SignMessage';
 import './SignUp.css';
 
 import { Link } from 'react-router-dom';
-// Interface for FormData
-export interface SignUpFormData {
+
+interface SignUpFormData {
   first_name: string;
   last_name: string;
   email: string;
   password: string;
 }
 
-// Define prop types for SignUp component
 interface SignUpProps {
   formData: SignUpFormData;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  setFormData: React.Dispatch<React.SetStateAction<SignUpFormData>>;
   setSignUpRedirect: (value: boolean) => void;
+  isSignedIn: boolean;
 }
 
-function SignUp({ formData, handleChange, setSignUpRedirect }: SignUpProps) {
-  // useState to track if SignIn message should be displayed
-  const [signUpSuccess, setSignUpSuccess] = useState(true);
+const INITIAL_SIGNUP_DATA: SignUpFormData = {
+  first_name: "",
+  last_name: "",
+  email: "",
+  password: "",
+}
 
-  // on click of submit button, handleSubmit is called
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+
+function SignUp({ formData, setFormData, setSignUpRedirect }: SignUpProps) {
+  const [signUpSuccess, setSignUpSuccess] = useState(true);
+  const [signUpFormData, setSignUpFormData] = useState(INITIAL_SIGNUP_DATA);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setSignUpFormData(formData)
     e.preventDefault();
 
-    console.log(signUpSuccess);
-
-
-    // Check if Sign up form has been filled out
     if (
       formData.first_name !== '' &&
       formData.last_name !== '' &&
       formData.email !== '' &&
       formData.password !== ''
     ) {
-      console.log(formData);
-      console.log("function called")
-
-      // supabaseSignUp() is called, passing the formData as a parameter
-      // This function contains the logic and DB query for creating a new user
-      // also sets the signUpSuccess state to true or false
       let checkSuccess = await supabaseSignUp(formData);
       setSignUpSuccess(checkSuccess);
-      console.log(signUpSuccess);
 
-      // if signUpSuccess is true, setSignUpRedirect is called
       if (checkSuccess) {
         setSignUpRedirect(true);
-        
       }
     }
-  }
-  
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   return (
     <div className='sign-form'>
