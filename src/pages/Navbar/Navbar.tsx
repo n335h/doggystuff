@@ -116,7 +116,7 @@ const [signUpRedirect, setSignUpRedirect] = useState(false);
                 </button>
               ) : (
                 <div className="sign-in-container">               
-                {showSignUp && !signUpRedirect &&  (
+                {/* {showSignUp && !signUpRedirect &&  (
                   <SignUp
                     SignUpFormData={formData}
               
@@ -131,7 +131,9 @@ const [signUpRedirect, setSignUpRedirect] = useState(false);
                   isSignedIn={isSignedIn}
                   setIsSignedIn={setIsSignedIn}
                             />
-              )}
+              )} */}
+              <a href="/signup" className="signup">Sign Up</a>
+              <a href="/signin" className="signin">Sign In</a>
               </div>
               )}
            </div>
