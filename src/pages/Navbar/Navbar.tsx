@@ -2,11 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { signOut } from '../../models/client';
 import './Navbar.css';
-import SignInSignUp from '../SignInSignUp/SignInSignUp';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
-
-
+import SignIn from '../SignInSignUp/Components/SignIn/SignIn';
+import SignUp from '../SignInSignUp/Components/SignUp/SignUp';
 
 
 
@@ -15,12 +14,41 @@ interface NavbarProps {
   setIsSignedIn: (value: boolean) => void;
   visible: boolean; // Add the 'visible' prop
 }
+const formData = {
+  email: '',
+  password: '',
+  first_name: '',
+  last_name: '',
+}
+
 
 export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [additionalMenuOpen, setAdditionalMenuOpen] = useState(false);
   const [hamburgerIcon, setHamburgerIcon] = useState('hamburgeropen'); // Default to 'hamburgeropen'
 
+const [showSignUp, setShowSignUp] = useState(false);
+const [showSignIn, setShowSignIn] = useState(false);
+const [signUpRedirect, setSignUpRedirect] = useState(false);
+
+// function handleSignUpClick() {
+//     setShowSignUp(true);
+//     setShowSignIn(false);
+// }
+
+// function handleSignInClick() {
+//     setShowSignUp(false);
+//     setShowSignIn(true);
+// }
+
+// function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+//     setFormData((prevFormData) => {
+//         return {
+//             ...prevFormData,
+//             [event.target.name]: event.target.value,
+//         };
+//     });
+// }
   const navbarRef = useRef<HTMLElement>(null); // Create a ref for the navbar element
 
   const handleToggleMenu = () => {
@@ -56,6 +84,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+ 
 
   return (
     <NavbarBs
@@ -86,12 +115,28 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                   Sign Out
                 </button>
               ) : (
-                <div className="sign-in-container">
-                <SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />
+                <div className="sign-in-container">               
+                {/* {showSignUp && !signUpRedirect &&  (
+                  <SignUp
+                    SignUpFormData={formData}
+              
+                    setSignUpRedirect={setSignUpRedirect}
+                    isSignedIn={isSignedIn} 
+                  />)}
+                {(showSignIn || signUpRedirect ) && (
+                   <SignIn
+                   SignInFormData={formData}  // Pass the formData here
+        
+                  signUpRedirect={signUpRedirect}
+                  isSignedIn={isSignedIn}
+                  setIsSignedIn={setIsSignedIn}
+                            />
+              )} */}
+              <a href="/signup" className="signup">Sign Up</a>
+              <a href="/signin" className="signin">Sign In</a>
               </div>
               )}
-            </div>
-            {/* Add your additional menu content here */}
+           </div>
             {additionalMenuOpen && (
               <div className="additionalMenu">
                 
@@ -120,8 +165,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                 </ul>
               </div>
               </div>
+              
             )}
-  
+
         </Nav>
       </Container>
     </NavbarBs>

@@ -1,155 +1,155 @@
-.navbar{
-    background-color: transparent;
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    height: 10vh;
-    width: 100vw;
-    top: 0;
-    z-index: 100;
-  }
-  .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    width: 20vw;
-    z-index: 100;
-    position: relative;
-  }
-  .menu img {
-    width: 8vw;
-    height: 8vw;
+  .navbar{
+      background-color: transparent;
+      
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      height: 10vh;
+      width: 100vw;
+      top: 0;
+      z-index: 100;
+    }
+    .menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      width: 20vw;
+      z-index: 100;
+      position: relative;
+    }
+    .menu img {
+      width: 8vw;
+      height: 8vw;
+      position: absolute;
+      left: 0;
+
+    }
+    .menu img:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    #navbar-title {
     position: absolute;
-    left: 0;
-
-  }
-  .menu img:hover {
-    cursor: pointer;
-    opacity: 0.7;
-  }
-
-  #navbar-title {
-  position: absolute;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.2rem;
-    font-weight: 300;
-    color: var(--header-main);
-    z-index: 100;
-    left:45%;
-  }
-  #navbar-container {
-    position: sticky;
-    top: 0;
-    background-color:transparent;
-    z-index: 100;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Optional class for hiding the navbar on scroll down */
-  .navbar-hidden {
-    transform: translateY(-100%);
-  }
-  .authButtons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    width: 20vw;
-    z-index: 100;
-    
-  }
-  
-  .navbarcenter {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: var(--header-main);
-    z-index: 100;
-  }
-
-  .additionalMenu {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 10vh;
-    border-bottom-right-radius: 10vh;
-    background-color: #2d82dd;
-    top: 100%;
-    left: 0;
-    width: 100vw;
-    height: 105vh;
-    color: azure;
-    margin-top: -20vh;
-    padding: 10px;
-    z-index: 10;
-  }
-  
-  .additionalMenu ul {
-    list-style: none;
-    display: block;
-    font-size: 5.6rem;
-    font-weight: 500;
-    text-align: center;
-    
-  }
-  
-  .additionalMenu li {
-    margin-bottom: 10px;
-    
-  }
-  
-  .additionalMenu a {
-    text-decoration: none;
-    color: var(--header-main);
-  }
-  
-  .additionalMenu a:hover {
-    color: var(--header-main);;
-  }
-  
-
-  @media screen and (max-width: 750px)
-  {
- 
-   button#SignUp{
-    display: none;
-   }
-   .mobile {
-    display: flex;
-   }
-   #mobileSignUp img {
-    width: 8vw;
-    height: 8vw;
- 
-   }
-   #mobileSignIn {
- 
-   }
-   #navbar-title {
-    font-size: 1.5rem;
-      left:30%;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--header-main);
+      z-index: 100;
+      left:45%;
+    }
+    #navbar-container {
+      position: sticky;
+      top: 0;
+      background-color:transparent;
+      z-index: 100;
+      transition: transform 0.3s ease-in-out;
     }
     
-  }
-  @media screen and (max-width: 430px)
-  {
- 
+    /* Optional class for hiding the navbar on scroll down */
+    .navbar-hidden {
+      transform: translateY(-100%);
+    }
+    .authButtons {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      width: 20vw;
+      z-index: 100;
+      
+    }
+    
+    .navbarcenter {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      color: var(--header-main);
+      z-index: 100;
+    }
+
+    .additionalMenu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-bottom-left-radius: 10vh;
+      border-bottom-right-radius: 10vh;
+      background-color: #2d82dd;
+      top: 100%;
+      left: 0;
+      width: 100vw;
+      height: 105vh;
+      color: azure;
+      margin-top: -20vh;
+      padding: 10px;
+      z-index: 10;
+    }
+    
+    .additionalMenu ul {
+      list-style: none;
+      display: block;
+      font-size: 5.6rem;
+      font-weight: 500;
+      text-align: center;
+      
+    }
+    
+    .additionalMenu li {
+      margin-bottom: 10px;
+      
+    }
+    
+    .additionalMenu a {
+      text-decoration: none;
+      color: var(--header-main);
+    }
+    
+    .additionalMenu a:hover {
+      color: var(--header-main);;
+    }
+    
+
+    @media screen and (max-width: 750px)
+    {
+  
+    button#SignUp{
+      display: none;
+    }
+    .mobile {
+      display: flex;
+    }
+    #mobileSignUp img {
+      width: 8vw;
+      height: 8vw;
+  
+    }
+    #mobileSignIn {
+  
+    }
+    #navbar-title {
+      font-size: 1.5rem;
+        left:30%;
+      }
+      
+    }
+    @media screen and (max-width: 430px)
+    {
+  
 
 
-  }
+    }
