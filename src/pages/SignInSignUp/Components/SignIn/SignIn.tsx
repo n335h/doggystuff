@@ -10,10 +10,6 @@
   // import css
   import { Link} from "react-router-dom"
   import './SignIn.css'
- interface SignInFormData {
-    email: string;
-    password: string;
-  }
 
   // interface for SignIn component
   interface SignInProps {
@@ -27,11 +23,11 @@
       setIsSignedIn: (value: boolean) => void;
   }
 
-  const INITIAL_SIGNIN_DATA: SignInFormData = {
-    email: '',
-    password: '',
+  // const INITIAL_SIGNIN_DATA: SignInFormData = {
+  //   email: '',
+  //   password: '',
 
-  }
+  // }
 
 
   function SignIn({SignInFormData, signUpRedirect, isSignedIn, setIsSignedIn }: SignInProps) {    // initialize the navigate object using the useNavigate 'hook'
@@ -44,16 +40,22 @@
 
       // useState to track if SignIn error message should be displayed
       const [ signInError, setSignInError ] = useState(false);
-      const [signInformData, setSignInFormData] = useState(INITIAL_SIGNIN_DATA);
+      // const [signInformData, setSignInFormData] = useState(INITIAL_SIGNIN_DATA);
 
+      const [formData, setFormData] = useState({
+       email: '',
+       password: '',
+       });
       // This function is used to handle the form submission.
       // It is triggered when the form is submitted.
       async function handleSubmit(e   : React.FormEvent<HTMLFormElement>) {
-        setSignInFormData(SignInFormData)
           // The 'e.preventDefault()' prevents the default form submission behavior.
           // It ensures that the form does not cause a page reload.
           e.preventDefault();
-          const signInSuccessful = await SignInUser(SignInFormData.email, SignInFormData.password);
+        setFormData(formData)
+        console.log(formData)
+        
+          const signInSuccessful = await SignInUser(formData.email, formData.password);
           // if (signInSuccessful === true) redirect to Card Display Page
           if (signInSuccessful) {
               setIsSignedIn(true);
@@ -69,13 +71,13 @@
       }
       const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
-        setSignInFormData((prevData) => ({
+       setFormData((prevData) => ({
           ...prevData,
           [name]: value,
         }));
-        console.log(SignInFormData.email)
-        console.log(SignInFormData.password)
-        console.log(SignInFormData)
+        console.log(formData.email)
+        console.log(formData.password)
+        console.log(formData)
       };
       return (
           <div className='sign-form '>
@@ -98,7 +100,6 @@
                 name="email"
                 placeholder='Email'
                 type="email"
-                
                 onChange={handleChange}
                 required
               />
@@ -108,7 +109,6 @@
                 placeholder='Password'
                 type="password"
                 pattern=".{6,}"
-           
                 title="Please enter at least 6 characters"
                 onChange={handleChange}
                 required
