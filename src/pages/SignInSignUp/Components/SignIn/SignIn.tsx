@@ -59,6 +59,7 @@
           // if (signInSuccessful === true) redirect to Card Display Page
           if (signInSuccessful) {
               setIsSignedIn(true);
+              alert('You have successfully signed in!');
               navigate('/');
               setShowSignIn(false); // Hide the sign-in component
             }
@@ -67,8 +68,7 @@
               // show SignMessage component
               setSignInError(true);
           }
-          alert('You have successfully signed in!');
-          redirect('/');
+          
           
       }
       const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

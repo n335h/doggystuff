@@ -3,7 +3,6 @@ import { supabaseSignUp } from '../../../../models/queries';
 import { insertPublicUser } from '../../../../models/queries';
 import SignMessage from '../SignMessage/SignMessage';
 import { Link } from 'react-router-dom';
-import { getCurrentUserId } from '../../../../models/client';
 
 // interface SignUpFormData {
 //   first_name: string;
@@ -55,24 +54,14 @@ password: '',
       formData.password !== ''
       
     ) {
-      const checkSuccess = await supabaseSignUp(formData);
+      let checkSuccess = await supabaseSignUp(formData)
+      
+      setSignUpSuccess(checkSuccess);
 
-    if (checkSuccess) {
-      // Get the user_id from the returned data
-      const user_id = await getCurrentUserId();
-      console.log(user_id)
-
-      if (user_id) {
-        await insertPublicUser(
-           user_id,
-          formData.first_name,
-          formData.last_name,
-          formData.email
-        );
+      if (checkSuccess) {
         setSignUpRedirect(true);
       }
     }
-  }
     alert('Sign up successful');
     window.location.href = '/'; // Change the URL as needed
   };
@@ -146,7 +135,6 @@ password: '',
     </div>
   );
 }
-
 
 
 export default SignUp;
