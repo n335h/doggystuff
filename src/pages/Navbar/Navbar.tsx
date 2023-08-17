@@ -140,8 +140,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
               <div className="sign-in-container">
                 <SignInIcon
                   isOpen={SignInMenuOpen}
-                  toggleMenu={handleToggleSignInMenu}
-                  openAdditionalMenu={handleToggleAdditionalSignInMenu}
+                  handleToggleSignInMenu={handleToggleSignInMenu}
+                  openAdditionalSignInMenu={handleToggleAdditionalSignInMenu}
                   icon={user}
                 />
                 {additionalSignInMenuOpen && (

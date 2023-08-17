@@ -1,22 +1,24 @@
 import React from 'react';
 import './Navbar.css';
 import user from '../../Assets/user.svg'
+import userClose from '../../Assets/userClose.svg'
 
 
 interface SignInIconProps {
   isOpen: boolean;
-  toggleMenu: () => void;
-  openAdditionalMenu: () => void;
+  handleToggleSignInMenu: () => void;
+  openAdditionalSignInMenu: () => void;
   icon: string; // Add this line to include the icon prop
 }
 
-  const SignInIcon: React.FC<SignInIconProps> = ({ isOpen, toggleMenu, openAdditionalMenu, icon}) => {
+  const SignInIcon: React.FC<SignInIconProps> = ({ isOpen, handleToggleSignInMenu, openAdditionalSignInMenu, icon}) => {
   
     return (
-      <div className={`SignInIcon-menu ${isOpen ? 'open' : ''}`} onClick={() => isOpen ? toggleMenu() : openAdditionalMenu()}>
+      <div className={`SignInIcon-menu ${isOpen ? 'open' : ''}`} onClick={() => isOpen ? handleToggleSignInMenu() : openAdditionalSignInMenu()}>
         <div className="menu">
-        {/* <img src={icon === 'hamburgeropen' ? hamburgeropen : hamburgerclose} alt="Hamburger Icon" /> */}
-        <img src={user} alt="User Icon" />
+        {/* console.log('user:', user); */}
+        {/* <img src={user === 'user' ? user : userClose} alt="User Icon" /> */}
+        <img src={user === 'user' ? user : userClose} alt="User Icon" />
     </div>
         </div>
   
