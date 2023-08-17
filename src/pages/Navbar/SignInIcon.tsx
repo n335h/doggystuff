@@ -17,7 +17,7 @@ interface SignInIconProps {
       <div className={`SignInIcon-menu ${isOpen ? 'open' : ''}`} onClick={() => isOpen ? ToggleSignInMenu() : openAdditionalSignInMenu()}>
         <div className="menu">
         {/* console.log('user:', user); */}
-        <img src={icon === 'user' ? user : user} alt="User Icon" />
+        <img src={icon === 'user' ? user : userClose} alt="User Icon" />
     </div>
         </div>
   
