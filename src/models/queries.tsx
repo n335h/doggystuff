@@ -8,6 +8,22 @@ interface FormData {
   last_name: string;
 }
 
+
+export async function insertPublicUser(
+  user_id: string,
+  first_name: string,
+  last_name: string,
+  email: string
+): Promise<void> {
+  await supabaseClient!.from('user').insert({
+    user_id: user_id,
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
+  });
+}
+
+
 // supabaseSignUp() - is used to sign up a user using the Supabase authentication service.
 // It takes in a formData object containing user signup data.
 
@@ -88,16 +104,3 @@ export default supabaseClient;
 //   // Define the properties of the Session type if needed.
 // };
 
-// export async function insertPublicUser(
-//   user_id: string,
-//   first_name: string,
-//   last_name: string,
-//   email: string
-// ): Promise<void> {
-//   await supabaseClient!.from('user').insert({
-//     user_id: user_id,
-//     first_name: first_name,
-//     last_name: last_name,
-//     email: email,
-//   });
-// }
