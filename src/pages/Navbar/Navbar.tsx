@@ -132,8 +132,8 @@ const [signUpRedirect, setSignUpRedirect] = useState(false);
                   setIsSignedIn={setIsSignedIn}
                             />
               )} */}
-              <a href="/signup" className="signup">Sign Up</a>
-              <a href="/signin" className="signin">Sign In</a>
+              <a href="/signup" className="signup">sign up</a>
+              <a href="/signin" className="signin"> sign in</a>
               </div>
               )}
            </div>
