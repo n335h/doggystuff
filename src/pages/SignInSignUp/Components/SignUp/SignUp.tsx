@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { supabaseSignUp } from '../../../../models/queries';
+import { insertPublicUser } from '../../../../models/queries';
 import SignMessage from '../SignMessage/SignMessage';
 import { Link } from 'react-router-dom';
+import { getCurrentUserId } from '../../../../models/client';
 
 // interface SignUpFormData {
 //   first_name: string;
@@ -16,7 +18,7 @@ SignUpFormData: {
     last_name: string;
     email: string;
     password: string;
-}
+};
 
   setSignUpRedirect: (value: boolean) => void;
   isSignedIn: boolean;
@@ -30,7 +32,7 @@ function SignUp({
 
 }: SignUpProps) {
   const [signUpSuccess, setSignUpSuccess] = useState(true);
-  {
+
 const [formData, setFormData] = useState({
  first_name: '',
 last_name: '',
@@ -53,14 +55,26 @@ password: '',
       formData.password !== ''
       
     ) {
-      let checkSuccess = await supabaseSignUp(formData);
-      
-      setSignUpSuccess(checkSuccess);
+      const checkSuccess = await supabaseSignUp(formData);
 
-      if (checkSuccess) {
+    if (checkSuccess) {
+      // Get the user_id from the returned data
+      const user_id = await getCurrentUserId();
+      console.log(user_id)
+
+      if (user_id) {
+        await insertPublicUser(
+           user_id,
+          formData.first_name,
+          formData.last_name,
+          formData.email
+        );
         setSignUpRedirect(true);
       }
     }
+  }
+    alert('Sign up successful');
+    window.location.href = '/'; // Change the URL as needed
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -132,6 +146,7 @@ password: '',
     </div>
   );
 }
-}
+
+
 
 export default SignUp;

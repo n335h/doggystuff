@@ -2,7 +2,7 @@
   // import react dependencies
   import { useState } from 'react'
   // useNavigate() is used to redirect to a different page
-  import { useNavigate } from 'react-router-dom';
+  import { redirect, useNavigate } from 'react-router-dom';
   // import function from client.js
   import { SignInUser } from '../../../../models/client';
   // import components
@@ -67,6 +67,8 @@
               // show SignMessage component
               setSignInError(true);
           }
+          alert('You have successfully signed in!');
+          redirect('/');
           
       }
       const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
