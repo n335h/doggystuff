@@ -6,8 +6,7 @@ import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
 import SignInIcon from './SignInIcon';
 import user from '../../Assets/user.svg';
-import SignIn from '../SignInSignUp/Components/SignIn/SignIn';
-import SignUp from '../SignInSignUp/Components/SignUp/SignUp';
+import userClose from '../../Assets/userClose.svg';
 
 
 
@@ -29,8 +28,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   const [additionalMenuOpen, setAdditionalMenuOpen] = useState(false);
   const [hamburgerIcon, setHamburgerIcon] = useState('hamburgeropen'); // Default to 'hamburgeropen'
   const [SignInMenuOpen, setSignInMenuOpen] = useState(false);
-  const [SignInIconState, setSignInIconState] = useState('user');
-  const [additionalSignInIcon, setAdditionalSignInIcon] = useState('user');
+  // const [SignInIconState, setSignInIconState] = useState('user');
+  const [SignInIconState, setSignInIcon] = useState('user');
   const [additionalSignInMenuOpen, setAdditionalSignInMenuOpen] = useState(false);
 
 
@@ -73,6 +72,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
 
   const handleToggleAdditionalSignInMenu = () => {
     setAdditionalSignInMenuOpen(!additionalSignInMenuOpen);
+    setSignInIcon(additionalSignInMenuOpen ? 'user' : 'userClose');
   };
 
   useEffect(() => {
@@ -140,9 +140,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
               <div className="sign-in-container">
                 <SignInIcon
                   isOpen={SignInMenuOpen}
-                  handleToggleSignInMenu={handleToggleSignInMenu}
+                  ToggleSignInMenu={handleToggleSignInMenu}
                   openAdditionalSignInMenu={handleToggleAdditionalSignInMenu}
-                  icon={user}
+                  icon={SignInMenuOpen ? user : userClose}
                 />
                 {additionalSignInMenuOpen && (
                   <div className="additionalSignInMenu">
