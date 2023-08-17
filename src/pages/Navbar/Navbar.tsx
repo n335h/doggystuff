@@ -4,6 +4,8 @@ import { signOut } from '../../models/client';
 import './Navbar.css';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
+import SignInIcon from './SignInIcon';
+import user from '../../Assets/user.svg';
 import SignIn from '../SignInSignUp/Components/SignIn/SignIn';
 import SignUp from '../SignInSignUp/Components/SignUp/SignUp';
 
@@ -26,29 +28,34 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   const [menuOpen, setMenuOpen] = useState(false);
   const [additionalMenuOpen, setAdditionalMenuOpen] = useState(false);
   const [hamburgerIcon, setHamburgerIcon] = useState('hamburgeropen'); // Default to 'hamburgeropen'
+  const [SignInMenuOpen, setSignInMenuOpen] = useState(false);
+  const [SignInIconState, setSignInIconState] = useState('user');
+  const [additionalSignInIcon, setAdditionalSignInIcon] = useState('user');
+  const [additionalSignInMenuOpen, setAdditionalSignInMenuOpen] = useState(false);
 
-const [showSignUp, setShowSignUp] = useState(false);
-const [showSignIn, setShowSignIn] = useState(false);
-const [signUpRedirect, setSignUpRedirect] = useState(false);
 
-// function handleSignUpClick() {
-//     setShowSignUp(true);
-//     setShowSignIn(false);
-// }
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [signUpRedirect, setSignUpRedirect] = useState(false);
 
-// function handleSignInClick() {
-//     setShowSignUp(false);
-//     setShowSignIn(true);
-// }
+  // function handleSignUpClick() {
+  //     setShowSignUp(true);
+  //     setShowSignIn(false);
+  // }
 
-// function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-//     setFormData((prevFormData) => {
-//         return {
-//             ...prevFormData,
-//             [event.target.name]: event.target.value,
-//         };
-//     });
-// }
+  // function handleSignInClick() {
+  //     setShowSignUp(false);
+  //     setShowSignIn(true);
+  // }
+
+  // function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+  //     setFormData((prevFormData) => {
+  //         return {
+  //             ...prevFormData,
+  //             [event.target.name]: event.target.value,
+  //         };
+  //     });
+  // }
   const navbarRef = useRef<HTMLElement>(null); // Create a ref for the navbar element
 
   const handleToggleMenu = () => {
@@ -59,6 +66,15 @@ const [signUpRedirect, setSignUpRedirect] = useState(false);
     setAdditionalMenuOpen(!additionalMenuOpen);
     setHamburgerIcon(additionalMenuOpen ? 'hamburgeropen' : 'hamburgerclose');
   };
+
+  const handleToggleSignInMenu = () => {
+    setSignInMenuOpen(!SignInMenuOpen);
+  };
+
+  const handleToggleAdditionalSignInMenu = () => {
+    setAdditionalSignInMenuOpen(!additionalSignInMenuOpen);
+  };
+
   useEffect(() => {
     // Function to handle scroll event
     const handleScroll = () => {
@@ -84,7 +100,7 @@ const [signUpRedirect, setSignUpRedirect] = useState(false);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
- 
+
 
   return (
     <NavbarBs
@@ -95,27 +111,57 @@ const [signUpRedirect, setSignUpRedirect] = useState(false);
     >
       <Container>
         <Nav className="navbar me-auto">
-     
+
+          <div className="navbarleft">
             <div className="navbarleft">
-            <div className="navbarleft">
-  <Hamburger isOpen={menuOpen} toggleMenu={handleToggleMenu} openAdditionalMenu={handleToggleAdditionalMenu} icon={hamburgerIcon} />
-</div>            </div>
-            <div className="navbarcenter">
-              <a  href='/' id="navbar-title">DoggyStuff</a>
+              <Hamburger
+                isOpen={menuOpen}
+                toggleMenu={handleToggleMenu}
+                openAdditionalMenu={handleToggleAdditionalMenu}
+                icon={hamburgerIcon}
+              />
             </div>
-            <div className={`authButtons ${additionalMenuOpen ? 'open' : ''}`}>
-              {isSignedIn ? (
-                <button
-                  id="dropdown-menu-signout-button"
-                  onClick={() => {
-                    signOut();
-                    setIsSignedIn(false);
-                  }}
-                >
-                  Sign Out
-                </button>
-              ) : (
-                <div className="sign-in-container">               
+          </div>
+          <div className="navbarcenter">
+            <a href='/' id="navbar-title">DoggyStuff</a>
+          </div>
+          <div className={`authButtons ${additionalMenuOpen ? 'open' : ''}`}>
+            {isSignedIn ? (
+              <button
+                id="dropdown-menu-signout-button"
+                onClick={() => {
+                  signOut();
+                  setIsSignedIn(false);
+                }}
+              >
+                Sign Out
+              </button>
+            ) : (
+              <div className="sign-in-container">
+                <SignInIcon
+                  isOpen={SignInMenuOpen}
+                  toggleMenu={handleToggleSignInMenu}
+                  openAdditionalMenu={handleToggleAdditionalSignInMenu}
+                  icon={user}
+                />
+                {additionalSignInMenuOpen && (
+                  <div className="additionalSignInMenu">
+                    <div className="additionalSignInMenuContent">
+                      <ul>
+                        <li>
+                          <Link to="/signin" onClick={handleToggleAdditionalSignInMenu}>
+                            Sign In
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/signup" onClick={handleToggleAdditionalSignInMenu}>
+                            Sign Up
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
                 {/* {showSignUp && !signUpRedirect &&  (
                   <SignUp
                     SignUpFormData={formData}
@@ -132,24 +178,25 @@ const [signUpRedirect, setSignUpRedirect] = useState(false);
                   setIsSignedIn={setIsSignedIn}
                             />
               )} */}
-              <a href="/signup" className="signup">sign up</a>
-              <a href="/signin" className="signin"> sign in</a>
+                {/* <a href="/signup" className="signup">sign up</a> */}
+                {/* <a href="/signin" className="signin"> sign in</a> */}
+
               </div>
-              )}
-           </div>
-            {additionalMenuOpen && (
-              <div className="additionalMenu">
-                
-                <div className="additionalMenuContent">
+            )}
+          </div>
+          {additionalMenuOpen && (
+            <div className="additionalMenu">
+
+              <div className="additionalMenuContent">
                 <ul>
                   <li>
                     <Link to="/" onClick={handleToggleAdditionalMenu}>
-                      
+
                     </Link>
                   </li>
                   <li>
                     <Link to="/" onClick={handleToggleAdditionalMenu}>
-                   
+
                     </Link>
                   </li>
                   <li>
@@ -164,9 +211,9 @@ const [signUpRedirect, setSignUpRedirect] = useState(false);
                   </li>
                 </ul>
               </div>
-              </div>
-              
-            )}
+            </div>
+
+          )}
 
         </Nav>
       </Container>
