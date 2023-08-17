@@ -35,12 +35,12 @@ export async function supabaseSignUp(formData: FormData): Promise<boolean> {
      
       return false;
     }
-    console.log(FormData)
+    console.log(formData)
     console.log ('Supabase Connection')
     const { data, error } = await supabaseClient.auth.signUp({
       email: formData.email,
       password: formData.password,
-      // additional 'metadata' can be inserted into the auth.users table
+      // additional 'metadata' can be inserted into the auth.user table
       // using the 'options' property
       options: {
         data: {
@@ -57,15 +57,18 @@ export async function supabaseSignUp(formData: FormData): Promise<boolean> {
       return false;
     } else {
       if (data?.user) {
-        const user_id = data.user.id;
-        const first_name = data.user.user_metadata?.first_name;
-        const last_name = data.user.user_metadata?.last_name;
-        const email = data.user.user_metadata?.email;
+        let user_id = data.user.id;
+        let first_name = data.user.user_metadata?.first_name;
+        let last_name = data.user.user_metadata?.last_name;
+        let email = data.user.user_metadata?.email;
+        insertPublicUser(user_id, first_name, last_name, email);
+        console.log('insert public user');
 
-        // // insertPublicUser() - is used to insert a new user into the public.users table.
+        // // insertPublicUser() - is used to insert a new user into the public.user table.
         // if (user_id && first_name && last_name) {
         //   await insertPublicUser(user_id, first_name, last_name, email);
         // }
+        // insertPublicUser() - is used to insert a new user into the public.user table.
       }
       return true;
     }
