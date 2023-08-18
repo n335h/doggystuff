@@ -142,7 +142,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                   isOpen={SignInMenuOpen}
                   ToggleSignInMenu={handleToggleSignInMenu}
                   openAdditionalSignInMenu={handleToggleAdditionalSignInMenu}
-                  icon={SignInMenuOpen ? user : userClose}
+                  icon={SignInIconState}
                 />
                 {additionalSignInMenuOpen && (
                   <div className="additionalSignInMenu">
