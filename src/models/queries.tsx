@@ -104,3 +104,4 @@ export default supabaseClient;
 //   // Define the properties of the Session type if needed.
 // };
 
+
