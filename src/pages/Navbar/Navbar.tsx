@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { signOut } from '../../models/client';
 import './Navbar.css';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
 import SignInIcon from './SignInIcon';
-import user from '../../Assets/user.svg';
-import userClose from '../../Assets/userClose.svg';
 
 
 
@@ -15,12 +13,12 @@ interface NavbarProps {
   setIsSignedIn: (value: boolean) => void;
   visible: boolean; // Add the 'visible' prop
 }
-const formData = {
-  email: '',
-  password: '',
-  first_name: '',
-  last_name: '',
-}
+// const formData = {
+//   email: '',
+//   password: '',
+//   first_name: '',
+//   last_name: '',
+// }
 
 
 export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarProps) {
@@ -33,9 +31,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   const [additionalSignInMenuOpen, setAdditionalSignInMenuOpen] = useState(false);
 
 
-  const [showSignUp, setShowSignUp] = useState(false);
-  const [showSignIn, setShowSignIn] = useState(false);
-  const [signUpRedirect, setSignUpRedirect] = useState(false);
+  // const [showSignUp, setShowSignUp] = useState(false);
+  // const [showSignIn, setShowSignIn] = useState(false);
+  // const [signUpRedirect, setSignUpRedirect] = useState(false);
 
   // function handleSignUpClick() {
   //     setShowSignUp(true);
