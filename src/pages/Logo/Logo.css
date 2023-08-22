@@ -1,0 +1,26 @@
+.doggyStuff-logo img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;;
+    width: 50%;
+    height: auto;
+}
+
+@media screen and (max-width: 500px)
+{
+    .doggyStuff-logo img {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;;
+        width: 100%;
+        height: auto;
+    }
+
+    /* .doggyStuff-logo img {
+        height: 7vh;
+    } */
+}

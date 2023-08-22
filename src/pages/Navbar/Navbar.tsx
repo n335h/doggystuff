@@ -5,6 +5,7 @@ import './Navbar.css';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
 import SignInIcon from './SignInIcon';
+import DoggyStuffLogo from '../Logo/Logo';
 
 
 
@@ -121,7 +122,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
             </div>
           </div>
           <div className="navbarcenter">
-            <a href='/' id="navbar-title">DoggyStuff</a>
+            <DoggyStuffLogo />
+            {/* <a href='/' id="navbar-title">DoggyStuff</a> */}
           </div>
           <div className={`authButtons ${additionalMenuOpen ? 'open' : ''}`}>
             {isSignedIn ? (

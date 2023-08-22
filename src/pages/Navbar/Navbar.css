@@ -1,6 +1,5 @@
   .navbar{
       background-color: transparent;
-      
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -196,7 +195,6 @@
     .additionalSignInMenu a:hover {
       color: var(--header-main);;
     }
-
     
 
     @media screen and (max-width: 750px)
@@ -220,7 +218,7 @@
       font-size: 1.5rem;
         left:30%;
       }
-      
+
     }
     @media screen and (max-width: 430px)
     {
