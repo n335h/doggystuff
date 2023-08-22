@@ -2,15 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 20px;
   padding-bottom: 70px;
   /* border: 1px solid #f3eddb; */
   /* border-radius: 8px; */
   border-bottom-left-radius: 10vh;
   border-bottom-right-radius: 10vh;
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #f3eddb;
+  margin-top: -10vh;
+  background-color: #b8a2a2;
+
+  background-image: url(https://live.staticflickr.com/65535/53127036589_369cd7bedd_h.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  width: 100vw;
 }
 
 
@@ -18,17 +25,17 @@
   .signIn-form {
   position: absolute;
       width: 80%;
-      height: 100vh;
+      height: 90vh;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      justify-content: flex-end;
+      align-items:center;
+      justify-content: center;
   }
   
   .mobile {
     display: none;
   }
-  .signIn-form form {
+  .sign-form form {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -80,7 +87,12 @@
     font-size: 18px;
     cursor: pointer;
   }
-  
+  .submit-button button:hover {
+    background-color: transparent;
+    color: var(--header-main);
+    border: 4px solid var(--header-main);
+    cursor: pointer;
+}
 
   .sign-up-link {
       margin-bottom: 2vh;
