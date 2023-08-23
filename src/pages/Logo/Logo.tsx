@@ -1,5 +1,5 @@
 import React from 'react';
-import DOGGYSTUFF_LOGO_4 from '../../Assets/DOGGYSTUFF_LOGO_4.png'
+import DOGGYSTUFF_LOGO_12 from '../../Assets/DOGGYSTUFF_LOGO_12.svg'
 import './Logo.css';
 
 
@@ -15,7 +15,7 @@ import './Logo.css';
     return (
       <div className="doggyStuff-logo" >
         <div className="logo">
-        <img src={DOGGYSTUFF_LOGO_4} alt="Doggy Stuff Logo" />
+        <img src={DOGGYSTUFF_LOGO_12} alt="Doggy Stuff Logo" />
     </div>
         </div>
   
