@@ -196,7 +196,7 @@
       color: var(--header-main);;
     }
 
-    #SignIn, #dropdown-menu-signout-button{
+    #SignIn, #dropdown-menu-signout-button {
       border-radius: 20px;
       display: flex;
       justify-content: center;
@@ -209,6 +209,26 @@
       font-weight: 700;
       background: transparent;
       opacity: 1;
+    }
+
+    .button-normal {
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      padding: 1vh;
+      width:5rem;
+      height:5vh;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: transparent;
+      opacity: 1;
+    }
+
+    .button-hovered {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: #ff5733; /* Hovered color */
     }
     
 

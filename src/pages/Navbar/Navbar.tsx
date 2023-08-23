@@ -142,9 +142,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                 onMouseLeave={() => {
                   setIsSignedOutHovered(false);
                 }}
-                style={{
-                  boxShadow: isSignedOutHovered ? '0 2px 4px rgba(5, 0, 0, 5.1)' : 'none'
-                }}
+                className={`button-normal ${isSignedOutHovered ? 'button-hovered' : ''}`}
               >
                 Sign Out
               </button>
