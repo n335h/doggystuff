@@ -1,23 +1,25 @@
-.sign-form {
-    background-color: rgb(104, 104, 101);
-    background-image: url('https://live.staticflickr.com/65535/53098188166_4d6ce88077_k.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    position: absolute;
-    height: 100vh;
-    margin: 0;
-    top:0vh;
-    left:0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+.sign-form1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 70px;
+  /* border: 1px solid #f3eddb; */
+  /* border-radius: 8px; */
+  border-bottom-left-radius: 10vh;
+  border-bottom-right-radius: 10vh;
+  margin-top: -10vh;
+  background-color: #b8a2a2;
+  background-image: url(https://live.staticflickr.com/65535/53098188166_e5194703cb_h.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  width: 100vw;
     
 }
-.sign-form form {
+.sign-form1 form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,17 +29,17 @@
     border-radius:17.4rem;
  
 }
-.sign-form button {
-    border-radius: 17.4rem;
-    border: none;
-    padding: 2.5vh 6vw 2.6vh;
-
-    font-size: 0.8rem;
-    color: #fff;
-    font-weight: 700;
-    background-color: var(--header-main);
+.sign-form1 button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  cursor: pointer;
 }
-.sign-form button:hover {
+.sign-form1 button:hover {
     background-color: transparent;
     color: var(--header-main);
     border: 4px solid var(--header-main);

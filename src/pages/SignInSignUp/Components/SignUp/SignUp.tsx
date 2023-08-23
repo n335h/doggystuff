@@ -3,6 +3,7 @@ import { supabaseSignUp } from '../../../../models/queries';
 import { insertPublicUser } from '../../../../models/queries';
 import SignMessage from '../SignMessage/SignMessage';
 import { Link } from 'react-router-dom';
+import './SignUp.css';
 
 // interface SignUpFormData {
 //   first_name: string;
@@ -81,7 +82,7 @@ password: '',
   
 
   return (
-    <div className='sign-form'>
+    <div className='sign-form1'>
       <a id='closeForm' href='/'>
         X
       </a>

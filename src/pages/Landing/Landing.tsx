@@ -22,16 +22,66 @@
     {/* <a href='/Survey' className="landingButton">Try DoggyStuff</a> */}
             </div>
             </div>
+            <section className="landingSection">
             <div className="landingSub">
-                <h2>How it works</h2>
+<br></br>
+                
                 <div className="landingSubContent">
+                <h2>How it works</h2>
                     <div className="landingSubContentItem">
-                        <h3>1. Tell us about your dog</h3>
+                        <div className='container'> 
+                        <div className='containerImage'>
+                        <img  alt='containerImg' className='containerImg' src='https://images.pexels.com/photos/15794775/pexels-photo-15794775/free-photo-of-border-collie-dog-portrait.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
+                        </div>
+                        <div className='containerContent'>
+                        <h3>Tell us about your dog</h3>
                         <p>Fill out your dog's profile and tell us about their breed, age, weight, health and activity level.</p>
-
+                        </div>
+                        </div>
+                        <div className='container'> 
+                        <div className='containerImage'>
+                        <img alt='containerImg' className='containerImg' src='https://images.pexels.com/photos/15794775/pexels-photo-15794775/free-photo-of-border-collie-dog-portrait.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
+                        </div>
+                        <div className='containerContent'>
+                        <h3>Tell us about your dog</h3>
+                        <p>Fill out your dog's profile and tell us about their breed, age, weight, health and activity level.</p>
+                        </div>
+                        </div>
+                        <div className='container'> 
+                        <div className='containerImage'>
+                        <img alt='containerImg'  className='containerImg' src='https://images.pexels.com/photos/15794775/pexels-photo-15794775/free-photo-of-border-collie-dog-portrait.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
+                        </div>
+                        <div className='containerContent'>
+                        <h3>Tell us about your dog</h3>
+                        <p>Fill out your dog's profile and tell us about their breed, age, weight, health and activity level.</p>
+                        </div>
+                        </div>
+                        <div className='container'> 
+                        <div className='containerImage'>
+                        <img  alt='containerImg' className='containerImg' src='https://images.pexels.com/photos/15794775/pexels-photo-15794775/free-photo-of-border-collie-dog-portrait.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
+                        </div>
+                        <div className='containerContent'>
+                        <h3>Tell us about your dog</h3>
+                        <p>Fill out your dog's profile and tell us about their breed, age, weight, health and activity level.</p>
+                        </div>
+                        </div>
+                        <div className='container'> 
+                        <div className='containerImage'>
+                        <img alt='containerImg'  className='containerImg' src='https://images.pexels.com/photos/15794775/pexels-photo-15794775/free-photo-of-border-collie-dog-portrait.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
+                        </div>
+                        <div className='containerContent'>
+                        <h3>Tell us about your dog</h3>
+                        <p>Fill out your dog's profile and tell us about their breed, age, weight, health and activity level.</p>
+                        </div>
+                        </div>
+                     
+                    </div>
+                    
+                        
+                </div>
             </div>
-            </div>
-            </div>
+      
+            </section>
         
             </Container>
         )

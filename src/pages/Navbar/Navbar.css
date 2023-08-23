@@ -24,13 +24,7 @@
       z-index: 100;
       position: relative;
     }
-    .menu img {
-      width: 8vw;
-      height: 8vw;
-      position: absolute;
-      left: 0;
 
-    }
     .menu img:hover {
       cursor: pointer;
       opacity: 0.7;
@@ -47,6 +41,38 @@
       z-index: 100;
       left:45%;
     }
+
+   .signup {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      margin-right: 10px;
+      width: 20vw;
+      z-index: 100;
+      color: var(--header-main);
+      font-size: 1rem;
+    }
+    
+
+    .signin {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      margin-right: 10px;
+      width: 20vw;
+      z-index: 100;
+      color: var(--header-main);
+      font-size: 1rem;
+    }
+
     #navbar-container {
       position: sticky;
       top: 0;
@@ -59,7 +85,7 @@
     .navbar-hidden {
       transform: translateY(-100%);
     }
-    .authButtons {
+    /* .authButtons {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
@@ -70,7 +96,7 @@
       width: 20vw;
       z-index: 100;
       
-    }
+    } */
     
     .navbarcenter {
       display: flex;
@@ -122,6 +148,49 @@
     .additionalMenu a:hover {
       color: var(--header-main);;
     }
+
+    .additionalSignInMenu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-bottom-left-radius: 10vh;
+      border-bottom-right-radius: 10vh;
+      background-color: #cf537c;
+      top: 100%;
+      left: 0;
+      width: 100vw;
+      height: 105vh;
+      color: azure;
+      margin-top: -20vh;
+      padding: 10px;
+      z-index: 10; 
+    }
+    
+    .additionalSignInMenu ul {
+      list-style: none;
+      display: block;
+      font-size: 5.6rem;
+      font-weight: 500;
+      text-align: center;
+      
+    }
+    
+    .additionalSignInMenu li {
+      margin-bottom: 10px;
+      
+    }
+    
+    .additionalSignInMenu a {
+      text-decoration: none;
+      color: var(--header-main);
+    }
+    
+    .additionalSignInMenu a:hover {
+      color: var(--header-main);;
+    }
+
     
 
     @media screen and (max-width: 750px)
