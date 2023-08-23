@@ -74,6 +74,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
     setSignInIcon(additionalSignInMenuOpen ? 'user' : 'userClose');
   };
 
+  const [isSignedOutHovered, setIsSignedOutHovered] = useState(false);
+
   useEffect(() => {
     // Function to handle scroll event
     const handleScroll = () => {
@@ -132,6 +134,16 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                 onClick={() => {
                   signOut();
                   setIsSignedIn(false);
+                }}
+                // add hover effect to the sign out button
+                onMouseEnter={() => {
+                  setIsSignedOutHovered(true);
+                }}
+                onMouseLeave={() => {
+                  setIsSignedOutHovered(false);
+                }}
+                style={{
+                  boxShadow: isSignedOutHovered ? '0 2px 4px rgba(5, 0, 0, 5.1)' : 'none'
                 }}
               >
                 Sign Out

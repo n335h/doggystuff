@@ -195,6 +195,21 @@
     .additionalSignInMenu a:hover {
       color: var(--header-main);;
     }
+
+    #SignIn, #dropdown-menu-signout-button{
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      padding: 1vh;
+      width:5rem;
+      height:5vh;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: transparent;
+      opacity: 1;
+    }
     
 
     @media screen and (max-width: 750px)
