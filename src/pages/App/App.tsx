@@ -24,7 +24,7 @@
       email: '',
       password: '',
     };
-    const [signInFormData, setSignInFormData] = useState<SignInFormData>(initialSignInFormData);
+    const [signInFormData] = useState<SignInFormData>(initialSignInFormData);
 
 
     type SignUpFormData = {

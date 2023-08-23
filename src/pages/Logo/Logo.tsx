@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import DOGGYSTUFF_LOGO_12 from '../../Assets/DOGGYSTUFF_LOGO_12.svg'
 import './Logo.css';
 
@@ -11,11 +12,14 @@ import './Logo.css';
 // }
 
   const DoggyStuffLogo: React.FC = () => {
-  
+  // link svg to home page
     return (
       <div className="doggyStuff-logo" >
         <div className="logo">
-        <img src={DOGGYSTUFF_LOGO_12} alt="Doggy Stuff Logo" />
+          <Link to="/">
+            <img src={DOGGYSTUFF_LOGO_12} alt="Doggy Stuff Logo" />
+          </Link>
+        {/* <img src={DOGGYSTUFF_LOGO_12} alt="Doggy Stuff Logo" /> */}
     </div>
         </div>
   
