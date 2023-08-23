@@ -24,13 +24,7 @@
       z-index: 100;
       position: relative;
     }
-    .menu img {
-      width: 8vw;
-      height: 8vw;
-      position: absolute;
-      left: 0;
 
-    }
     .menu img:hover {
       cursor: pointer;
       opacity: 0.7;
@@ -163,7 +157,7 @@
       align-items: center;
       border-bottom-left-radius: 10vh;
       border-bottom-right-radius: 10vh;
-      background-color: #2d82dd;
+      background-color: #cf537c;
       top: 100%;
       left: 0;
       width: 100vw;
@@ -171,7 +165,7 @@
       color: azure;
       margin-top: -20vh;
       padding: 10px;
-      z-index: 10;
+      z-index: 10; 
     }
     
     .additionalSignInMenu ul {
