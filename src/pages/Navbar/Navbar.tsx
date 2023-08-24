@@ -74,6 +74,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
     setSignInIcon(additionalSignInMenuOpen ? 'user' : 'userClose');
   };
 
+  // Add the 'useEffect' hook to handle the hover effect
+  
+  
   const [isSignedOutHovered, setIsSignedOutHovered] = useState(false);
 
   useEffect(() => {
@@ -136,13 +139,13 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                   setIsSignedIn(false);
                 }}
                 // add hover effect to the sign out button
-                onMouseEnter={() => {
-                  setIsSignedOutHovered(true);
-                }}
-                onMouseLeave={() => {
-                  setIsSignedOutHovered(false);
-                }}
-                className={`button-normal ${isSignedOutHovered ? 'button-hovered' : ''}`}
+                // onMouseEnter={() => {
+                //   setIsSignedOutHovered(true);
+                // }}
+                // onMouseLeave={() => {
+                //   setIsSignedOutHovered(false);
+                // }}
+                className={`button-normal button-hoverable ${isSignedOutHovered ? 'button-hovered' : ''}`}
               >
                 Sign Out
               </button>

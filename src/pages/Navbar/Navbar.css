@@ -154,6 +154,22 @@
       color: var(--header-main);;
     }
 
+    .sign-in-container {
+      display: flex;
+      flex-direction: flex-end;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      margin-left: 5px;
+      margin-right: 0px;
+      width: auto;
+      z-index: 100;
+      color: var(--header-main);
+      font-size: 1rem;
+    }
+
     .additionalSignInMenu {
       position: absolute;
       display: flex;
@@ -220,15 +236,21 @@
       padding: 1vh;
       width:5rem;
       height:5vh;
+      color: var(--header-main);
       font-size: 0.8rem;
       font-weight: 700;
       background: transparent;
       opacity: 1;
     }
 
+    .button-hoverable:hover {
+      cursor: pointer;
+      color: white;
+    }
+
     .button-hovered {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      color: #ff5733; /* Hovered color */
+      /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+      color: white;
     }
     
 
