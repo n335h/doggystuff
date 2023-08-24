@@ -1,6 +1,5 @@
   .navbar{
       background-color: transparent;
-      
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -149,6 +148,22 @@
       color: var(--header-main);;
     }
 
+    .sign-in-container {
+      display: flex;
+      flex-direction: flex-end;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      margin-left: 5px;
+      margin-right: 0px;
+      width: auto;
+      z-index: 100;
+      color: var(--header-main);
+      font-size: 1rem;
+    }
+
     .additionalSignInMenu {
       position: absolute;
       display: flex;
@@ -191,6 +206,46 @@
       color: var(--header-main);;
     }
 
+    #SignIn, #dropdown-menu-signout-button {
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      padding: 1vh;
+      width:5rem;
+      height:5vh;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: transparent;
+      opacity: 1;
+    }
+
+    .button-normal {
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      padding: 1vh;
+      width:5rem;
+      height:5vh;
+      color: var(--header-main);
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: transparent;
+      opacity: 1;
+    }
+
+    .button-hoverable:hover {
+      cursor: pointer;
+      color: white;
+    }
+
+    .button-hovered {
+      /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+      color: white;
+    }
     
 
     @media screen and (max-width: 750px)
@@ -214,7 +269,7 @@
       font-size: 1.5rem;
         left:30%;
       }
-      
+
     }
     @media screen and (max-width: 430px)
     {

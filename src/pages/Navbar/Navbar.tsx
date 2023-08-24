@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { signOut } from '../../models/client';
 import './Navbar.css';
 import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
 import SignInIcon from './SignInIcon';
-import user from '../../Assets/user.svg';
-import userClose from '../../Assets/userClose.svg';
+import DoggyStuffLogo from '../Logo/Logo';
 
 
 
@@ -15,12 +14,12 @@ interface NavbarProps {
   setIsSignedIn: (value: boolean) => void;
   visible: boolean; // Add the 'visible' prop
 }
-const formData = {
-  email: '',
-  password: '',
-  first_name: '',
-  last_name: '',
-}
+// const formData = {
+//   email: '',
+//   password: '',
+//   first_name: '',
+//   last_name: '',
+// }
 
 
 export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarProps) {
@@ -33,9 +32,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   const [additionalSignInMenuOpen, setAdditionalSignInMenuOpen] = useState(false);
 
 
-  const [showSignUp, setShowSignUp] = useState(false);
-  const [showSignIn, setShowSignIn] = useState(false);
-  const [signUpRedirect, setSignUpRedirect] = useState(false);
+  // const [showSignUp, setShowSignUp] = useState(false);
+  // const [showSignIn, setShowSignIn] = useState(false);
+  // const [signUpRedirect, setSignUpRedirect] = useState(false);
 
   // function handleSignUpClick() {
   //     setShowSignUp(true);
@@ -74,6 +73,11 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
     setAdditionalSignInMenuOpen(!additionalSignInMenuOpen);
     setSignInIcon(additionalSignInMenuOpen ? 'user' : 'userClose');
   };
+
+  // Add the 'useEffect' hook to handle the hover effect
+  
+  
+  const [isSignedOutHovered, setIsSignedOutHovered] = useState(false);
 
   useEffect(() => {
     // Function to handle scroll event
@@ -123,7 +127,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
             </div>
           </div>
           <div className="navbarcenter">
-            <a href='/' id="navbar-title">DoggyStuff</a>
+            <DoggyStuffLogo />
+            {/* <a href='/' id="navbar-title">DoggyStuff</a> */}
           </div>
           <div className={`authButtons ${additionalMenuOpen ? 'open' : ''}`}>
             {isSignedIn ? (
@@ -133,6 +138,14 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                   signOut();
                   setIsSignedIn(false);
                 }}
+                // add hover effect to the sign out button
+                // onMouseEnter={() => {
+                //   setIsSignedOutHovered(true);
+                // }}
+                // onMouseLeave={() => {
+                //   setIsSignedOutHovered(false);
+                // }}
+                className={`button-normal button-hoverable ${isSignedOutHovered ? 'button-hovered' : ''}`}
               >
                 Sign Out
               </button>

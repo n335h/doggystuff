@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabaseSignUp } from '../../../../models/queries';
-import { insertPublicUser } from '../../../../models/queries';
+// import { insertPublicUser } from '../../../../models/queries';
 import SignMessage from '../SignMessage/SignMessage';
 import { Link } from 'react-router-dom';
 import './SignUp.css';
@@ -13,12 +13,12 @@ import './SignUp.css';
 // }
 
 interface SignUpProps {
-SignUpFormData: {
+  SignUpFormData: {
     first_name: string;
     last_name: string;
     email: string;
     password: string;
-};
+  };
 
   setSignUpRedirect: (value: boolean) => void;
   isSignedIn: boolean;
@@ -33,17 +33,17 @@ function SignUp({
 }: SignUpProps) {
   const [signUpSuccess, setSignUpSuccess] = useState(true);
 
-const [formData, setFormData] = useState({
- first_name: '',
-last_name: '',
-email: '', 
-password: '',
-});
+  const [formData, setFormData] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    password: '',
+  });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-   setFormData(formData);
-   console.log('submit clicked')
+    setFormData(formData);
+    console.log('submit clicked')
     console.log(formData);
     console.log('Submitting form')
 
@@ -53,10 +53,10 @@ password: '',
       formData.last_name !== '' &&
       formData.email !== '' &&
       formData.password !== ''
-      
+
     ) {
       let checkSuccess = await supabaseSignUp(formData)
-      
+
       setSignUpSuccess(checkSuccess);
 
       if (checkSuccess) {
@@ -72,14 +72,14 @@ password: '',
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
-      
+
     }));
     console.log(value)
     console.log(formData)
     console.log('Updating handleChange')
   };
 
-  
+
 
   return (
     <div className='sign-form1'>
@@ -111,7 +111,7 @@ password: '',
           id='email'
           placeholder='Email'
           data-testid='email-input'
-     
+
           name='email'
           type='email'
           onChange={handleChange}
@@ -119,19 +119,21 @@ password: '',
         />
         <label htmlFor='password'></label>
         <input
-  data-testid='password-input'
-  name='password'
-  placeholder='Password'
-  type='password'
-  pattern='.{6,}'
-  title='Please enter at least 6 characters'
-  onChange={handleChange}
-  required
-/>
+          data-testid='password-input'
+          name='password'
+          placeholder='Password'
+          type='password'
+          pattern='.{6,}'
+          title='Please enter at least 6 characters'
+          onChange={handleChange}
+          required
+        />
         <br />
+        <div className="submit-button">
         <button type='submit' auto-complete='current-password' aria-label='Submit' data-testid='submit-button' className='submit-button'>
           Submit
         </button>
+        </div>
       </form>
     </div>
   );
