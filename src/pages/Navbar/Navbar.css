@@ -84,10 +84,10 @@
     .navbar-hidden {
       transform: translateY(-100%);
     }
-    /* .authButtons {
+    .authButtons {
       display: flex;
       flex-direction: row;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
       height: 100%;
       padding: 0;
@@ -95,7 +95,7 @@
       width: 20vw;
       z-index: 100;
       
-    } */
+    }
     
     .navbarcenter {
       display: flex;
@@ -219,7 +219,13 @@
       font-weight: 700;
       background: transparent;
       opacity: 1;
+      color: var(--header-main);
     }
+    #dropdown-menu-signout-button:hover {
+      cursor: pointer;
+      color: white;
+    }
+
 
     .button-normal {
       border-radius: 20px;

@@ -144,8 +144,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                 // }}
                 // onMouseLeave={() => {
                 //   setIsSignedOutHovered(false);
-                // }}
-                className={`button-normal button-hoverable ${isSignedOutHovered ? 'button-hovered' : ''}`}
+                // // }}
+                // className={`button-normal button-hoverable ${isSignedOutHovered ? 'button-hovered' : ''}`}
               >
                 Sign Out
               </button>
@@ -159,7 +159,6 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                 />
                 {additionalSignInMenuOpen && (
                   <div className="additionalSignInMenu">
-                    <div className="additionalSignInMenuContent">
                       <ul>
                         <li>
                           <Link to="/signin" onClick={handleToggleAdditionalSignInMenu}>
@@ -172,7 +171,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                           </Link>
                         </li>
                       </ul>
-                    </div>
+                  
                   </div>
                 )}
                 {/* {showSignUp && !signUpRedirect &&  (

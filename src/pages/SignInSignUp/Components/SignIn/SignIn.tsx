@@ -116,6 +116,7 @@
                 required
               />
               <br />
+              <p> Forgot your password?</p>
         
             <div className="submit-button">
               <button type='submit' aria-label="Submit" >Submit</button>
