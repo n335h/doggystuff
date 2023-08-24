@@ -88,14 +88,14 @@ type AddressData = {
     user_id: string,
 }
 
-const INITIAL_ADDRESS_DATA: AddressData = {
-    address_fl: "",
-    address_sl: "",
-    address_town: "",
-    address_county: "",
-    address_postcode: "",
-    user_id: "",
-}
+// const INITIAL_ADDRESS_DATA: AddressData = {
+//     address_fl: "",
+//     address_sl: "",
+//     address_town: "",
+//     address_county: "",
+//     address_postcode: "",
+//     user_id: "",
+// }
 
 
   function Survey({

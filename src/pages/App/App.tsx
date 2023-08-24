@@ -114,11 +114,13 @@
   }
   const [dogData, setDogData] = useState<DogFormData>(INITIAL_DATA);
     const [orderData, setOrderData] = useState<OrderData>(INITIAL_ORDER_DATA);
-    const [formData, setFormData] = useState({
+    const [formData] = useState({
       first_name: '',
         last_name: '',
       password: '',
       email: '', });
+
+      console.log(dogData,orderData)
     
 
     function updateFields(fields: Partial<DogFormData>) {

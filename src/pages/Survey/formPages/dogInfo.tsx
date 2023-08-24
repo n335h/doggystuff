@@ -74,7 +74,7 @@ function DogInfo({ dog_name, dog_age, dog_sex, updateFields }: DogInfoProps) {
         <input placeholder='Please Select'  type="radio" className='dropdownOptions'
           onChange={handleDogSexChange}
           value='Female'
-          id="dog_sex"
+          id="dog_sexFemale"
           name="dog_sex"
           required
         />

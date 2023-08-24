@@ -77,7 +77,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   // Add the 'useEffect' hook to handle the hover effect
   
   
-  const [isSignedOutHovered, setIsSignedOutHovered] = useState(false);
+  // const [isSignedOutHovered, setIsSignedOutHovered] = useState(false);
 
   useEffect(() => {
     // Function to handle scroll event
