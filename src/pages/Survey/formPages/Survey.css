@@ -1,6 +1,6 @@
 .survey {
         
-      background-color: rgb(171, 202, 187);
+      background-color: rgb(255, 253, 219);
          width: 100vw;
           height: 100vh;
           margin: auto;
@@ -95,6 +95,12 @@ form.surveyForm {
     margin: 0;
     
 }
+.surveyFormNum{
+position: absolute;
+top: 15%;
+right: 10%;
+
+}
 
 
 .surveyButton {
@@ -130,7 +136,12 @@ form.surveyForm {
 }
 
 
-
+.confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
 
 
 

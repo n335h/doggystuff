@@ -2,7 +2,7 @@
   // import react dependencies
   import { useState } from 'react'
   // useNavigate() is used to redirect to a different page
-  import { redirect, useNavigate } from 'react-router-dom';
+  import { useNavigate } from 'react-router-dom';
   // import function from client.js
   import { SignInUser } from '../../../../models/client';
   // import components
@@ -88,7 +88,7 @@
             <>
               <h1 className='signIntitle animate-pop-in'>Sign In</h1>
               <div className="sign-up-link animate-pop-in">
-                <Link to="/signup">Don't have an account? Sign up</Link>
+                <Link  to="/signup">Don't have an account? Sign up</Link>
               </div>  
           {/* Check if signInError has been changed to true and display error if so */}
           {signInError && <SignMessage message="Failed to sign in." signUpRedirect={false} />}

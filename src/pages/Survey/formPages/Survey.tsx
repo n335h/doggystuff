@@ -9,6 +9,7 @@ import { FormEvent } from "react"
 import supabase from "../../../models/client"
 import { isSessionSignedIn } from "../../../models/client"
 import { getCurrentUserId } from "../../../models/client"
+import Confirmation from "./confirmation"
 
 import "./Survey.css"
 import OrderDetails from "./OrderDetails"
@@ -129,6 +130,7 @@ const INITIAL_ADDRESS_DATA: AddressData = {
         <DogHealth {...data} updateFields={handleDataUpdate}/>,
         <DogFood {...data} updateFields={handleDataUpdate}/>,
         <OrderDetails {...orderData} updateOrderFields={handleOrderDataUpdate} />,
+        <Confirmation surveyData={data} orderData={orderData} />
     ]) 
     console.log(data)
     console.log(orderData)
@@ -266,7 +268,7 @@ alert("Order complete");
         <div className="survey">
             <div className="surveyContent">
                 <form onSubmit={onSubmit}  className="surveyForm">
-                    <div className="surveyFormSection">
+                    <div className="surveyFormNum">
                        { currentStepIndex +1} / {steps.length}
                     </div>
                     <div className="surveyFormSection">
