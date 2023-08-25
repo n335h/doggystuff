@@ -9,6 +9,7 @@
   import { Landing } from '../Landing/Landing';
   import { Container } from 'react-bootstrap';
   import GetStarted from '../getStarted/getStarted';
+import Profile from '../Profile/Profile';
 
 
 
@@ -167,6 +168,7 @@
             />} />
               <Route path='/Survey' element={<Survey updateFields={updateFields} updateOrderFields={updateOrderFields} />} />
                         <Route path='/GetStarted' element={<GetStarted />} />
+                        <Route path='/profile'  element={<Profile />} />  
           </Routes>
         </BrowserRouter>
       </div>

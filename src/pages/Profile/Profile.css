@@ -1,0 +1,74 @@
+
+#dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+}
+  .userdetails {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  
+  .inner-text {
+    line-height: 4rem;
+  }
+  .user-info-container {
+    width: 50vw;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  
+    z-index: 2;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    top: -50px;
+    padding: 2rem;
+    margin: auto;
+    
+  }
+  
+  .user-image {
+    /* the magic */
+    border-radius: 180px;
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    object-position: center;
+    margin: 1rem;
+    border: 5px solid var(--secondary-color);
+  justify-content: center;
+  align-items: center;
+  }
+
+  
+.user-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex: 0 0 50%;
+    width: 50vw;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .user-info-container {
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            margin-left: 25vw;
+            flex-direction: column;
+          }
+
+    }

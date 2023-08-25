@@ -30,7 +30,7 @@
     }
     .landingSubContent {
       margin-top: 40vh;
-      height: 100vh;
+      height: 90vh;
       color: black;
       overflow-x: auto;
         overflow-y: hidden;
@@ -40,6 +40,7 @@
     }
     .landingSubContentItem {
       display: flex;
+      width: 200vw;
       flex-direction: row;
       justify-content: center;
       align-items: center;
@@ -56,7 +57,7 @@
       border-radius:1.4rem;
     }
     .container {
-      width: 0vw;
+      width: 40vw;
       border-radius:1.4rem;
     }
     
