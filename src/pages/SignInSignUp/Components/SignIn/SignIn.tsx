@@ -10,6 +10,7 @@
   // import css
   import { Link} from "react-router-dom"
   import './SignIn.css'
+  import hamburgerclose from '../../../../Assets/hamburgerclose.svg';
 
   // interface for SignIn component
   interface SignInProps {
@@ -83,7 +84,7 @@
       };
       return (
           <div className='sign-form '>
-            <a id='closeForm' href="/">X</a>
+            <a id='closeForm' href="/">  <img className='signformclose' src={hamburgerclose} alt='close' /></a>
           {showSignIn && (
             <>
             <section className="sign-in">

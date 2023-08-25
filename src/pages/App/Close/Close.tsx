@@ -1,4 +1,4 @@
-
+import hamburgerclose from './hamburgerclose.svg';
 
 import React from 'react';
 
@@ -9,7 +9,7 @@ interface CloseButtonProps {
 function CloseButton({ onClose }: CloseButtonProps) {
   return (
     <button className='close-button' onClick={onClose}>
-      Close
+      <img src={hamburgerclose} alt='close' />
     </button>
   );
 }

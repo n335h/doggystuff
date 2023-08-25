@@ -114,7 +114,7 @@
       align-items: center;
       border-bottom-left-radius: 10vh;
       border-bottom-right-radius: 10vh;
-      background-color: #2d82dd;
+      background-color:var(--main-blue);
       top: 100%;
       left: 0;
       width: 100vw;
