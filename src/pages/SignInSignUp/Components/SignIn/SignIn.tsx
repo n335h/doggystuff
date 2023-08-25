@@ -86,6 +86,7 @@
             <a id='closeForm' href="/">X</a>
           {showSignIn && (
             <>
+            <section className="sign-in">
               <h1 className='signIntitle animate-pop-in'>Sign In</h1>
               <div className="sign-up-link animate-pop-in">
                 <Link  to="/signup">Don't have an account? Sign up</Link>
@@ -122,6 +123,7 @@
               <button type='submit' aria-label="Submit" >Submit</button>
             </div>
           </form>
+          </section>
     
           </>
         )}

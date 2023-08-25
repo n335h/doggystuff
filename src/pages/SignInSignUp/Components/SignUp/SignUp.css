@@ -11,7 +11,7 @@
   border-bottom-right-radius: 10vh;
   margin-top: -10vh;
   background-color: #b8a2a2;
-  background-image: url(https://live.staticflickr.com/65535/53098188166_e5194703cb_h.jpg);
+  background-image: url(https://live.staticflickr.com/65535/53140196546_80bad8a6d2_h.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -29,8 +29,8 @@
     border-radius:17.4rem;
  
 }
-.sign-form1 button {
-  background-color: #2e8ef5;
+/* .sign-form1 button {
+  background-color: #6883a0;
   color: #fff;
   padding: 30px 60px;
   margin: 10px 0;
@@ -38,16 +38,16 @@
   border-radius: 60px;
   font-size: 18px;
   cursor: pointer;
-}
-.sign-form1 button:hover {
+} */
+/* .sign-form1 button:hover {
     background-color: transparent;
     color: #2e8ef5;
     border: 4px solid #2e8ef5;
     cursor: pointer;
-}
+} */
 
 .sign-form h1 {
-    color: #2e8ef5;
+    color: var( --main-blue);
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
@@ -87,7 +87,7 @@
   
   .signUpTitle {
     animation-delay: 0.5s;
-    color: #2e8ef5;
+    color: var( --main-blue);
   }
   
   .header-button {
