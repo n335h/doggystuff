@@ -72,3 +72,123 @@ export async function signOut() {
 }
 
 export default supabaseClient;
+
+
+
+
+export async function fetchUserProfile() {
+  const user = await supabaseClient?.auth.getUser();
+
+  
+
+  if (user) {
+    console.log(user?.data.user?.id, 'THIS IS THE USER ID 1 ');
+    try {
+      const { data: userData, error } = await supabaseClient!
+        .from('users')
+        .select('*')
+        .eq('user_id', user?.data.user?.id) //added ? to user to fix error "Object is possibly 'null'."
+        .single();
+
+        console.log(userData, 'THIS IS THE USER DATA 2');
+
+      // const { data: addressData, error } = await supabaseClient!
+      //   .from('user_address')
+      //   .select('*')
+      //   .eq('user_id', user.data.user.id)
+      //   .single();
+
+      //   console.log(user.data.user.id, 'THIS IS THE USER ID being');
+
+      if (error) {
+        console.error('Error fetching user data:', error);
+      } else {
+        const userProfile = {...userData} ;
+        console.log('User Profile:', userProfile, 'THIS IS THE USER PROFILE 3');
+        return userProfile;
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  } else {
+    console.log('User is not signed in.');
+  }
+}
+
+export async function fetchUserAddressData(): Promise<addressData | null> {
+  try {
+    const user_ID = await getCurrentUserId();
+    if (user_ID) {
+      const address_query = await supabaseClient!
+        .from('user_address')
+        .select('*')
+        .eq('user_id', user_ID)
+        .single();
+
+      if (address_query.error) {
+        console.error('Error fetching user address data:', address_query.error);
+        return null;
+      } else {
+        return {
+          address_fl: address_query.data.address_fl,
+          address_sl: address_query.data.address_sl,
+          address_town: address_query.data.address_town,
+          address_county: address_query.data.address_county,
+          address_postcode: address_query.data.address_postcode,
+          user_id: user_ID,
+        };
+      }
+    } else {
+      console.log('User is not signed in.');
+      return null;
+    }
+  } catch (error) {
+    console.error('Error fetching user address data:', error);
+    return null;
+  }
+}
+// export async function fetchUserAddressData() {
+//   const user_ID = await getCurrentUserId();
+//   //convert user_ID to string
+//   console.log(user_ID, 'THIS IS THE USER ID 1 ');
+
+//   if (user_ID) {
+//     let address_query = await supabaseClient!
+//       .from('user_address')
+//       .select('*')
+//       .eq('user_id', user_ID)
+//       .single();
+
+//     console.log(address_query, 'THIS IS THE ADDRESS QUERY 2');
+
+//     if (address_query.error) {
+//       console.error('Error fetching user address data:', address_query.error);
+//     } else {
+//       const userAddress = { ...address_query};
+//       console.log('User Address:', userAddress, 'THIS IS THE USER ADDRESS 4');
+//       return userAddress;
+//     }
+//   } else {
+//     console.log('User is not signed in.');
+//   }
+  
+
+
+  // if (user) {
+  //   const { data: addressData, error } = await supabaseClient!
+  //     .from('user_address')
+  //     .select('*')
+  //     .eq('user_id',user_id)
+  //     .single();
+
+  //   if (error) {
+  //     console.error('Error fetching user address data:', error);
+  //   } else {
+  //     const userAddress = { ...addressData };
+  //     console.log('User Address:', userAddress, 'THIS IS THE USER ADDRESS 4');
+  //     return userAddress;
+  //   }
+  // } else {
+  //   console.log('User is not signed in.');
+  // }
+// }

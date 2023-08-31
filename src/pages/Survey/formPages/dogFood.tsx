@@ -28,7 +28,7 @@
 
         return (
             <div className="surveyFormSection">
-                <FormWrapper title="Tell us about your doggo">
+                <FormWrapper title="Tell us what food your doggo likes">
                     <h3>How is your dog's health?</h3>
                     <div className="surveyFormSectionContent">
                         <input
