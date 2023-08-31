@@ -115,7 +115,7 @@ export async function fetchUserProfile() {
   }
 }
 
-export async function fetchUserAddressData(): Promise<addressData | null> {
+export async function fetchUserAddressData(): Promise <addressData | null> {
   try {
     const user_ID = await getCurrentUserId();
     if (user_ID) {
@@ -146,6 +146,47 @@ export async function fetchUserAddressData(): Promise<addressData | null> {
     console.error('Error fetching user address data:', error);
     return null;
   }
+}
+
+export async function fetchUserOrderData(): Promise< orderData | null> {
+  try {
+    const user_ID = await getCurrentUserId();
+    console.log(user_ID, 'THIS IS THE USER ID 14 ');
+    if (user_ID) {
+      const order_query = await supabaseClient!
+        .from("order")
+        .select('*') 
+        .eq('user_id', user_ID)
+       
+console.log(order_query, 'THIS IS THE ORDER QUERY 2');
+      if (order_query.error) {
+        console.error('Error fetching user order data:', order_query.error);
+        return null;
+      } else {         
+        console.log(order_query, 'THIS IS THE ORDER QUERY 2');
+
+        return order_query.data;
+        // return {
+        //   order_id: order_query.data.order_id,
+        //   created_at: order_query.data.created_at,
+        //   total: order_query.data.total,
+        //   veg: order_query.data.veg,
+        //   flavours_not: order_query.data.flavours_not,
+        //   user_id: user_ID,
+        //   days: order_query.data.days,
+
+        // };
+      }
+    } else {
+      console.log('User is not signed in.');
+      return null;
+    }
+  } catch (error) {
+    console.error('Error fetching user order data:', error);
+    return null;
+  }
+
+  
 }
 // export async function fetchUserAddressData() {
 //   const user_ID = await getCurrentUserId();
@@ -192,3 +233,45 @@ export async function fetchUserAddressData(): Promise<addressData | null> {
   //   console.log('User is not signed in.');
   // }
 // }
+
+
+
+export async function fetchUserDogData(): Promise< dogData | null> {
+  try {
+    const user_ID = await getCurrentUserId();
+    if (user_ID) {
+      const dog_query = await supabaseClient!
+        .from("dog")
+        .select('*') 
+        .eq('user_id', user_ID)
+        
+       
+console.log(dog_query, 'THIS IS THE DOG QUERY 1');
+      if (dog_query.error) {
+        console.error('Error fetching user order data:', dog_query.error);
+        return null;
+      } else {         
+        console.log(dog_query, 'THIS IS THE DOG QUERY 2');
+        return dog_query.data;
+        // return {
+        //   order_id: order_query.data.order_id,
+        //   created_at: order_query.data.created_at,
+        //   total: order_query.data.total,
+        //   veg: order_query.data.veg,
+        //   flavours_not: order_query.data.flavours_not,
+        //   user_id: user_ID,
+        //   days: order_query.data.days,
+
+        // };
+      }
+    } else {
+      console.log('User is not signed in.');
+      return null;
+    }
+  } catch (error) {
+    console.error('Error fetching user order data:', error);
+    return null;
+  }
+
+  
+}
