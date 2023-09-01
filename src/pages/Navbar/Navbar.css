@@ -209,10 +209,9 @@
     #SignIn, #dropdown-menu-signout-button {
       border-radius: 20px;
       display: flex;
-      justify-content: center;
-      align-items: center;
       border: none;
-      padding: 1vh;
+      padding: 0vh;
+      margin: 0;
       width:5rem;
       height:5vh;
       font-size: 0.8rem;
@@ -255,15 +254,14 @@
 
 
     .profileicon {
+      width: 5rem;
       height: 5vh;
       padding: 0;
       margin: 0;
-      margin-left: 5px;
-      margin-right: 0px;
-      width: auto;
       z-index: 100;
       color: var(--header-main);
       font-size: 1rem;
+      margin-top: 2vh;
     }
 
     .signedinnav {
@@ -273,7 +271,7 @@
       align-items: center;
       height: 100%;
       padding: 0;
-      margin: 0;
+      margin-right: 10vw;
       width: 20vw;
       z-index: 100;
     }
@@ -299,10 +297,15 @@
         left:30%;
       }
 
+
     }
-    @media screen and (max-width: 430px)
+    @media screen and (max-width: 500px)
     {
   
 
+      .profileicon {
+        height: 3.5vh;
+      }
 
+   
     }

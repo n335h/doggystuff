@@ -155,9 +155,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                   openAdditionalSignInMenu={handleToggleAdditionalSignInMenu}
                   icon={SignInIconState}
                 />
-                  <Link to="/signup" onClick={handleToggleAdditionalSignInMenu}>
-                            Sign Up
-                          </Link>
+            
                 {additionalSignInMenuOpen && (
                   <div className="additionalSignInMenu">
                       <ul>

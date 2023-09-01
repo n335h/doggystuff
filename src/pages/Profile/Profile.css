@@ -1,13 +1,30 @@
-.maindashboard {
+
+.profile {
   height: 110vh;
   width: 100vw;
+  margin: 0;
   margin-top: -10vh;
   background-color: #e7efff;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   border-bottom-left-radius: 10vh;
   border-bottom-right-radius: 10vh;
+  align-items:center;
+  position: relative; /* Add position relative to the parent container */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+.maindashboard {
+  height: 80vh;
+  width: 100vw;
+  
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   position: relative; /* Add position relative to the parent container */
   background-size: cover;
@@ -18,8 +35,6 @@
 .dashboardleft, .dashboardright {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
     width: 50%;
     height: 100%;
    
@@ -63,8 +78,29 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     height:auto;
     margin: 0;
+}
+
+.userDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height:auto;
+    
+}
+
+
+.welcome-text {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    color:var(--header-main);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 2vh;
 }

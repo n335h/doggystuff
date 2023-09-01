@@ -147,19 +147,20 @@ function Profile() {
 
 
   return (
-    <div>
-      
+    <div className='profile'>
+
       <div className="maindashboard">
         
         <div className="dashboardleft">
-        <h1 className="welcome-text">
-            Welcome <span className="name-text">{userProfile?.first_name}</span>
-          </h1>
+       
           <div className="userDetails">
-    
+          <h1 className="welcome-text">
+            Welcome <span className="name-text">{userProfile?.first_name}</span>!
+          </h1>
+     
 
           <div className="userinfobox">
-      
+          
             {editProfile ? (
               /* Edit Mode */
               <div className="userinfobox">
@@ -244,6 +245,7 @@ function Profile() {
             ) : (
               /* Display Mode */
               <div className="userinfobox">
+                <h2 className="userdetails">User Details</h2> 
                 <p>
                   <span className="bolded">Firstname: {userProfile?.first_name}</span>
                 </p>
@@ -278,7 +280,7 @@ function Profile() {
         <div className="dashboardright">
           
           <div className="userpetbox">
-            <h1 className="Doggos"> Doggos</h1>
+            <h2 className="userpetbox"> Doggos</h2>
           
             {editPets ? (
 
@@ -351,7 +353,7 @@ function Profile() {
                 </div>
 
             <div className="userorderbox">
-              <h1 className="Orders"> Orders</h1>
+              <h2 className="Orders"> Orders</h2>
               {orders.map(order => (
                 <div key={order.order_id} className="order-details">
                   <p className="inner-text">
