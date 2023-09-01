@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { fetchUserProfile, fetchUserAddressData, fetchUserOrderData, fetchUserDogData} from '../../models/client';
+import { fileUploadHandler, fetchUserProfile, fetchUserAddressData, fetchUserOrderData, fetchUserDogData} from '../../models/client';
+import ImageUpload from '../ImgUpload/ImgUpload';
 import './Profile.css';
+
+
+
 interface profileData {
   first_name: string;
   last_name: string;
@@ -45,7 +49,7 @@ function Profile() {
   const [orders, setOrders] = useState<orderData[]>([]); // Initialise the orders state as an empty array
   const [dogData, setdogData] = useState<dogData | null>(null);
   const [dogs, setDogs] = useState<dogData[]>([]); // Initialise the orders state as an empty array
-
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const [editProfile, setEditProfile] = useState(false);
   const [editedProfile, setEditedProfile] = useState({
@@ -103,6 +107,21 @@ function Profile() {
     setUserProfile(updatedProfile);
     setEditProfile(false);
   };
+  const fileSelectedHandler = (event: any) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+  };
+
+  const handleFileUpload = async () => {
+    const success = await fileUploadHandler(selectedFile);
+    if (success) {
+      console.log('File uploaded successfully');
+    } else {
+      console.log('File upload failed');
+    }
+  };
+
+
   
   useEffect(() => {
     async function getUserOrderData() {
@@ -129,13 +148,18 @@ function Profile() {
 
   return (
     <div>
-      <div id="dashboard">
-        <div className="userDetails">
-          <h1 className="welcome-text">
+      
+      <div className="maindashboard">
+        
+        <div className="dashboardleft">
+        <h1 className="welcome-text">
             Welcome <span className="name-text">{userProfile?.first_name}</span>
           </h1>
+          <div className="userDetails">
+    
 
           <div className="userinfobox">
+      
             {editProfile ? (
               /* Edit Mode */
               <div className="userinfobox">
@@ -249,10 +273,17 @@ function Profile() {
               </div>
             )}
           </div>
+        </div>
+        </div>
+        <div className="dashboardright">
+          
           <div className="userpetbox">
+            <h1 className="Doggos"> Doggos</h1>
+          
             {editPets ? (
 
               <div>
+                
                 {editedPets.map((dog, index) => (
                   <div key={index}>
                      <input
@@ -292,50 +323,51 @@ function Profile() {
               </div>
             ) : (
               /* Display Mode */
-              <div>
+              <div className='dogDisplay'>
                 {dogs.map((dog) => (
+                 
                   <div className='dogContainer' key={dog.dog_id}>
-                    <div className="dog-image-container">
-                    <img src="https://images.unsplash.com/photo-1593642532452-9d5c0b2b1b5b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nJTIwYmVlZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="dogImg" />
-                   </div>
-                   <button className='uploadImg'>Upload Image</button>
+                      
+                   <div className="dog-details">
                     <p> {dog.dog_name} </p>
                     <p> {dog.dog_breed} </p>
                     <p> {dog.dog_age} </p>
                     <p> {dog.dog_sex} </p>
                     <p> {dog.dog_health} </p>
-                
+                    <button onClick={() => setEditPets(true)}>Edit</button>
+                    </div>
+                    <div className="dog-image-container">
+                      <ImageUpload
+                      selectedFile={selectedFile}
+                      fileSelectedHandler={fileSelectedHandler}
+                      fileUploadHandler={fileUploadHandler}
+                    />
+                   </div>
                   </div>
                 ))}
-                <button onClick={() => setEditPets(true)}>Edit</button>
-              </div>
-            )}
-          </div>
+         
+                </div>
+                )}
+                </div>
 
-<div className="userorderbox">
-  <h1 className="Orders"> Orders</h1>
-  {orders.map(order => (
-    <div key={order.order_id} className="order-details">
-      <p className="inner-text">
-        <span className="bolded">Order ID: {order.order_id}</span>
-      </p>
-      <p className="inner-text">
-      <span className="bolded">Order Date: {formatDate(order.created_at)}</span>
-      </p>
-      {/* Display other order details */}
-    </div>
-  ))}
-</div>
-        </div>
-        <div className="user-image-container">
-          <img
-            className="user-image"
-            src="your-image-url-here"
-            alt="dogImg"
-          />
-        </div>
+            <div className="userorderbox">
+              <h1 className="Orders"> Orders</h1>
+              {orders.map(order => (
+                <div key={order.order_id} className="order-details">
+                  <p className="inner-text">
+                    <span className="bolded">Order ID: {order.order_id}</span>
+                  </p>
+                  <p className="inner-text">
+                  <span className="bolded">Order Date: {formatDate(order.created_at)}</span>
+                  </p>
+                  {/* Display other order details */}
+                </div>
+              ))}
+            </div>
+            </div>
       </div>
-    </div>
+      </div>
+   
   );
 }
 

@@ -1,5 +1,6 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
+
 // Assuming the environment variables are defined as string in your .env file.
 const supabaseUrl: string | undefined = process.env.REACT_APP_SUPABASE_URL;
 const supabaseKey: string | undefined = process.env.REACT_APP_SUPABASE_KEY;
@@ -274,4 +275,35 @@ console.log(dog_query, 'THIS IS THE DOG QUERY 1');
   }
 
   
+}
+
+
+export async function fileUploadHandler(selectedFile: File | null) {
+  if (!selectedFile) {
+    throw new Error("Please select an image file.");
+  }
+
+  const formData = new FormData();
+  formData.append("dog_image", selectedFile); // Assuming "dog_image" is the name of the column where you want to store the image.
+
+  try {
+    const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
+    
+    const { data, error } = await supabaseClient!
+      .from('dog')
+      .update({ dog_image: formData })
+      .eq('user_id', user_ID)
+      .single();
+
+    if (!error) { // Check if there was no error during the update.
+      console.log("Image uploaded successfully.");
+      return true;
+    } else {
+      console.error("Image upload failed:", error.message);
+      return false;
+    }
+  } catch (error) {
+    console.error("Error uploading image:", error);
+    return false;
+  }
 }

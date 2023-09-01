@@ -6,6 +6,7 @@ import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
 import SignInIcon from './SignInIcon';
 import DoggyStuffLogo from '../Logo/Logo';
+import user from '../../Assets/user.svg';
 
 
 
@@ -132,23 +133,20 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
           </div>
           <div className={`authButtons ${additionalMenuOpen ? 'open' : ''}`}>
             {isSignedIn ? (
-              <button
-                id="dropdown-menu-signout-button"
-                onClick={() => {
-                  signOut();
-                  setIsSignedIn(false);
-                }}
-                // add hover effect to the sign out button
-                // onMouseEnter={() => {
-                //   setIsSignedOutHovered(true);
-                // }}
-                // onMouseLeave={() => {
-                //   setIsSignedOutHovered(false);
-                // // }}
-                // className={`button-normal button-hoverable ${isSignedOutHovered ? 'button-hovered' : ''}`}
-              >
-                Sign Out
-              </button>
+              <div className='signedinnav'>
+                <button
+                  id="dropdown-menu-signout-button"
+                  onClick={() => {
+                    signOut();
+                    setIsSignedIn(false);
+                  }}
+                >
+                  Sign Out
+                </button>
+                <Link to="/profile" >
+                <img  className='profileicon' src={user} alt="Additional" /> 
+                </Link>
+              </div>
             ) : (
               <div className="sign-in-container">
                 <SignInIcon

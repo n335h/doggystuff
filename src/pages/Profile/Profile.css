@@ -1,74 +1,70 @@
-
-#dashboard {
+.maindashboard {
+  height: 110vh;
+  width: 100vw;
+  margin-top: -10vh;
+  background-color: #e7efff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom-left-radius: 10vh;
+  border-bottom-right-radius: 10vh;
+  align-items: center;
+  position: relative; /* Add position relative to the parent container */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+.dashboardleft, .dashboardright {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100vw;
-
-}
-  .userdetails {
-    margin: auto;
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
-  }
-  
-  .inner-text {
-    line-height: 4rem;
-  }
-  .user-info-container {
-    width: 50vw;
+    justify-content: space-evenly;
+    width: 50%;
     height: 100%;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-  
-    z-index: 2;
-    background-color: #f9f9f9;
-    border-radius: 0.5rem;
-    top: -50px;
-    padding: 2rem;
-    margin: auto;
-    
-  }
-  
-  .user-image {
-    /* the magic */
-    border-radius: 180px;
-    height: 180px;
-    width: 180px;
-    object-fit: cover;
-    object-position: center;
-    margin: 1rem;
-    border: 5px solid var(--secondary-color);
+   
+}
+
+.maindashboard button {
+  height: 7vh;
+  width: 40%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  }
+  background-color: var(--header-main);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 17.4rem;
+  border: 0;
 
-  
-.user-image-container {
+}
+
+.maindashboard button:hover {
+  background-color: var(--header-main-hover);
+  color: var(--header-main);
+  border: 4px solid var(--header-main);
+  cursor: pointer;
+
+}
+
+.dogContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: row;
-    flex: 0 0 50%;
-    width: 50vw;
-    }
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
 
-    @media screen and (max-width: 1000px) {
-        .user-info-container {
-            justify-content: center;
-            align-items: center;
-            width: 400px;
-            margin-left: 25vw;
-            flex-direction: column;
-          }
-
-    }
+.userpetbox, .userorderbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height:auto;
+    margin: 0;
+}
