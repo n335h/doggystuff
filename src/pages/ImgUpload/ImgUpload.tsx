@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 interface ImageUploadProps {
     selectedFile: File | null;
     fileSelectedHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -10,9 +11,7 @@ interface ImageUploadProps {
 
 function ImageUpload({ selectedFile, fileSelectedHandler, fileUploadHandler }: ImageUploadProps) {
   return (
-    <div>
-    
-      
+    <div className='imageupload'>
       {selectedFile && (
         <img
           className="user-image"
@@ -20,7 +19,7 @@ function ImageUpload({ selectedFile, fileSelectedHandler, fileUploadHandler }: I
           alt="Profile"
         />
       )}
-        <input title='imgSelect' type="file" onChange={fileSelectedHandler} />
+        <input className='file' title='imgSelect' type="file" onChange={fileSelectedHandler} />
       <button className="uploadImg" onClick={fileUploadHandler}>
         Upload Image
       </button>

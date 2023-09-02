@@ -82,29 +82,3 @@ export async function supabaseSignUp(formData: FormData): Promise<boolean> {
 export default supabaseClient;
 
 
-
-
-
-
-
-
-
-
-
-
-// type UserData = {
-//   user: User | null;
-//   session: Session | null;
-// };
-// type User = {
-//  user_metadata: {
-//   first_name: string;
-//   last_name: string;
-//  };
-//  };
-
-// type Session = {
-//   // Define the properties of the Session type if needed.
-// };
-
-

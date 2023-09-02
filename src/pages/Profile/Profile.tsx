@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fileUploadHandler, fetchUserProfile, fetchUserAddressData, fetchUserOrderData, fetchUserDogData} from '../../models/client';
+import { fileUploadHandler, fetchUserProfile, fetchUserAddressData, fetchUserOrderData, fetchUserDogData, updateUserData, updateUserAddressData, updateDogData } from '../../models/client';
 import ImageUpload from '../ImgUpload/ImgUpload';
 import './Profile.css';
 
@@ -34,6 +34,7 @@ type orderData = {
 type dogData = {
   dog_id: string;
   dog_name: string;
+  dog_health: string;
 };
 
 function formatDate(dateString: string) { // the formatDate function uses the toLocaleDateString method to format the date in a user-readable format
@@ -52,61 +53,97 @@ function Profile() {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const [editProfile, setEditProfile] = useState(false);
-  const [editedProfile, setEditedProfile] = useState({
+  const [editedProfile, setEditedProfile] = useState<profileData>({
     first_name: userProfile?.first_name || '',
     last_name: userProfile?.last_name || '',
     email: userProfile?.email || '',
+    user_id: userProfile?.user_id || '', // Make sure to include user_id
   });
   const [editAddress, setEditAddress] = useState(false);
-  const [editedAddress, setEditedAddress] = useState({
+  const [editedAddress, setEditedAddress] = useState<addressData>({
     address_fl: addressData?.address_fl || '',
     address_sl: addressData?.address_sl || '',
     address_town: addressData?.address_town || '',
     address_county: addressData?.address_county || '',
     address_postcode: addressData?.address_postcode || '',
+    user_id: userProfile?.user_id || '', // Set user_id to a valid value
   });
   const [editPets, setEditPets] = useState(false);
   const [editedPets, setEditedPets] = useState([...dogs]);
   //#endregion
 
-  const handleSaveAddress = async () => {
-    const updatedAddress = await fetchUserAddressData(editedAddress);
-    setAddressData(updatedAddress);
-    setEditAddress(false);
-  };
 
-  const handleSavePets = async () => {
-    const updatedPets = await fetchUserDogData(editedPets);
-    setdogData(updatedPets);
-    setEditPets(false);
-  };
-  
   
   useEffect(() => {
     async function getUserProfile() {
       const profileData = await fetchUserProfile();
-      setUserProfile(profileData); /// need to rework so it isnt replacing the whole object with the new one with limited info
-      console.log(userProfile, 'THIS IS THE USER PROFILE on PROFILE PAGE');
+      setUserProfile(profileData);
+      setEditedProfile(profileData); // Set editedProfile to the current user data
+      console.log(profileData, 'THIS IS THE USER PROFILE on PROFILE PAGE');
     }
   
     getUserProfile();
   }, []);
+  
 
   useEffect(() => {
     async function getUserAddressData() {
-      const addressData = await fetchUserAddressData();
-       setAddressData(addressData);
-       console.log(addressData, 'THIS IS THE USER ADDRESS DATA on PROFILE PAGE');
+      const fetchedAddressData = await fetchUserAddressData();
+      if (fetchedAddressData) {
+        setAddressData(fetchedAddressData);
+        setEditedAddress(fetchedAddressData); // Set editedAddress to the current address data
+        console.log(fetchedAddressData, 'THIS IS THE USER ADDRESS DATA on PROFILE PAGE');
+      }
     }
-      
+  
     getUserAddressData();
   }, []);
 
   const handleSaveProfile = async () => {
-    const updatedProfile = await fetchUserProfile(editedProfile);
-    setUserProfile(updatedProfile);
-    setEditProfile(false);
+    try {
+      await updateUserData(userProfile?.user_id || '', editedProfile.first_name, editedProfile.last_name, editedProfile.email);
+      setUserProfile({ ...userProfile, ...editedProfile });
+      setEditProfile(false);
+    } catch (error) {
+      console.error("Error updating user profile:", error);
+    }
   };
+
+  const handleSaveAddress = async () => {
+    try {
+      await updateUserAddressData(
+        editedAddress.address_fl,
+        editedAddress.address_sl,
+        editedAddress.address_town,
+        editedAddress.address_county,
+        editedAddress.address_postcode,
+      );
+      setAddressData({ ...addressData, ...editedAddress });
+      setEditAddress(false);
+    } catch (error) {
+      console.error("Error updating address data:", error);
+    }
+  };
+  const handleSavePets = async () => {
+    try {
+      // Assuming you have a list of edited pets, you can loop through them and update each one individually
+      for (const editedPet of editedPets) {
+        await updateDogData(
+          editedPet.dog_name,
+          editedPet.dog_health,
+        );
+      }
+      setdogData([...editedPets]);
+      setEditPets(false);
+    } catch (error) {
+      console.error("Error updating dog data:", error);
+    }
+  };
+  
+
+
+
+
   const fileSelectedHandler = (event: any) => {
     const file = event.target.files[0];
     setSelectedFile(file);
@@ -164,7 +201,7 @@ function Profile() {
             {editProfile ? (
               /* Edit Mode */
               <div className="userinfobox">
-                <input
+                <input className='editinfo'
                   type="text"
                   value={userProfile?.first_name}
                   onChange={(e) =>
@@ -174,7 +211,7 @@ function Profile() {
                     })
                   }
                 />
-                <input
+                <input className='editinfo'
                   type="text"
                   placeholder={userProfile?.last_name}
                   value={editedProfile.last_name}
@@ -185,7 +222,7 @@ function Profile() {
                     })
                   }
                 />
-                <input
+                <input className='editinfo'
                   type="email"
                   placeholder={userProfile?.email || 'Enter Email'}
                   value={userProfile?.email}
@@ -196,7 +233,7 @@ function Profile() {
                     })
                   }
                 />
-                <input type="text" placeholder={addressData?.address_fl} 
+                <input className='editinfo' type="text" placeholder={addressData?.address_fl} 
                 value={addressData?.address_fl}
                 onChange={(e) =>
                   setEditedAddress({
@@ -204,7 +241,7 @@ function Profile() {
                     address_fl: e.target.value,
                   })
                 }/>
-                <input type="text" placeholder={addressData?.address_sl}
+                <input className='editinfo' type="text" placeholder={addressData?.address_sl}
                 value={addressData?.address_sl}
                 onChange={(e) =>
                   setEditedAddress({
@@ -212,7 +249,7 @@ function Profile() {
                     address_sl: e.target.value,
                   })
                 }/>
-                <input type="text" placeholder={addressData?.address_town}
+                <input className='editinfo' type="text" placeholder={addressData?.address_town}
                 value={addressData?.address_town}
                 onChange={(e) =>
                   setEditedAddress({
@@ -220,7 +257,7 @@ function Profile() {
                     address_town: e.target.value,
                   })
                 }/>
-                <input type="text" placeholder={addressData?.address_county}
+                <input className='editinfo' type="text" placeholder={addressData?.address_county}
                 value={addressData?.address_county}
                 onChange={(e) =>
                   setEditedAddress({
@@ -228,7 +265,7 @@ function Profile() {
                     address_county: e.target.value,
                   })
                 }/>
-                <input type="text" placeholder={addressData?.address_postcode}
+                <input className='editinfo' type="text" placeholder={addressData?.address_postcode}
                 value={addressData?.address_postcode}
                 onChange={(e) =>
                   setEditedAddress({
@@ -237,10 +274,11 @@ function Profile() {
                   })
                 }/>
 
-
-
-                <button onClick={handleSaveProfile}>Save</button>
+                <div className='editButtons'>
                 <button onClick={() => setEditProfile(false)}>Cancel</button>
+                <button onClick={handleSaveProfile}>Save</button>
+                </div>
+               
               </div>
             ) : (
               /* Display Mode */
@@ -360,9 +398,9 @@ function Profile() {
                     <span className="bolded">Order ID: {order.order_id}</span>
                   </p>
                   <p className="inner-text">
-                  <span className="bolded">Order Date: {formatDate(order.created_at)}</span>
+                  <span className="bolded">Order Date: {formatDate(order.created_at)} </span>
                   </p>
-                  {/* Display other order details */}
+                 <button className='orderviewbutton'>View Order</button>
                 </div>
               ))}
             </div>
