@@ -29,7 +29,7 @@
         return (
             <div className="surveyFormSection">
                 <FormWrapper title="Tell us what food your doggo likes">
-                    <h3>How is your dog's health?</h3>
+                    <h3>Whats food does your Doggo want</h3>
                     <div className="surveyFormSectionContent">
                         <input
                             type="checkbox"

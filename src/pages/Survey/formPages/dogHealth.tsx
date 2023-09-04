@@ -24,9 +24,9 @@
                             <label htmlFor="dog_health">Health</label>
                             <select placeholder='Please Select'  title='dog_health' className='dropdownOptions'  onChange={e=> updateFields({dog_health: e.target.value}) } value={dog_health} name="dogHealth" id="dogHealth" required>
                                 <option value="free"></option>
-                                <option value="Needs some chonk">Healthy</option>
-                                <option value="Just right">Lil thic</option>
-                                <option value="Chonky">Needs some chonk</option>
+                                <option value="Needs some chonk">Needs some chonk</option>
+                                <option value="Just right">Just Right </option>
+                                <option value="Chonky">Chonky</option>
                             </select>
                         </div>
                     

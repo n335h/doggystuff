@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { fileUploadHandler, fetchUserProfile, fetchUserAddressData, fetchUserOrderData, fetchUserDogData, updateUserData, updateUserAddressData, updateDogData } from '../../models/client';
+import {
+  fileUploadHandler,
+  fetchUserProfile,
+  fetchUserAddressData,
+  fetchUserOrderData,
+  fetchUserDogData,
+  updateUserData,
+  updateUserAddressData,
+  updateDogData,
+} from '../../models/client';
 import ImageUpload from '../ImgUpload/ImgUpload';
 import './Profile.css';
+import dogAvatar from '../../Assets/temp-dog-avatar.jpg';
 
-
-
-interface profileData {
+interface ProfileData {
   first_name: string;
   last_name: string;
   email: string;
   user_id: string;
 }
 
-type addressData = {
+type AddressData = {
   address_fl: string;
   address_sl: string;
   address_town: string;
@@ -21,7 +29,7 @@ type addressData = {
   user_id: string;
 };
 
-type orderData = {
+type OrderData = {
   order_id: string;
   created_at: string;
   total: string;
@@ -29,79 +37,128 @@ type orderData = {
   flavours_not: string[];
   user_id: string;
   days: string;
+  address_fl: string;
+  address_sl: string;
+  address_town: string;
+  address_county: string;
+  address_postcode: string;
+  dog_name: string;
 };
 
-type dogData = {
+type DogData = {
   dog_id: string;
   dog_name: string;
   dog_health: string;
 };
 
-function formatDate(dateString: string) { // the formatDate function uses the toLocaleDateString method to format the date in a user-readable format
-  const options = { year: 'numeric', month: 'long', day: 'numeric' }; // the options object is used to specify the format of the date
-  const formattedDate = new Date(dateString).toLocaleDateString(undefined, options); // the toLocaleDateString method is used to format the date
+function formatDate(dateString: string) {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = new Date(dateString).toLocaleDateString(undefined, options);
   return formattedDate;
 }
 
 function Profile() {
-  const [userProfile, setUserProfile] = useState<profileData | null>(null);
-  const [addressData, setAddressData] = useState<addressData | null>(null);
-  const [orderData, setOrderData] = useState<orderData | null>(null);
-  const [orders, setOrders] = useState<orderData[]>([]); // Initialise the orders state as an empty array
-  const [dogData, setdogData] = useState<dogData | null>(null);
-  const [dogs, setDogs] = useState<dogData[]>([]); // Initialise the orders state as an empty array
+  const [userProfile, setUserProfile] = useState<ProfileData>({
+    first_name: '',
+    last_name: '',
+    email: '',
+    user_id: '',
+  });
+  const [addressData, setAddressData] = useState<AddressData>({
+    address_fl: '',
+    address_sl: '',
+    address_town: '',
+    address_county: '',
+    address_postcode: '',
+    user_id: '',
+  });
+  const [orderData, setOrderData] = useState<OrderData>({
+    order_id: '',
+    created_at: '',
+    total: '',
+    veg: '',
+    flavours_not: [],
+    user_id: '',
+    days: '',
+    address_fl: '',
+    address_sl: '',
+    address_town: '',
+    address_county: '',
+    address_postcode: '',
+    dog_name: '',
+  });
+  const [orders, setOrders] = useState<OrderData[]>([]);
+  const [dogData, setDogData] = useState<DogData>({
+    dog_id: '',
+    dog_name: '',
+    dog_health: '',
+  });
+  const [dogs, setDogs] = useState<DogData[]>([]);
   const [selectedFile, setSelectedFile] = useState(null);
 
+  const [showOrderOverlay, setShowOrderOverlay] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState<OrderData | null>(null);
+  const [showDogOverlay, setShowDogOverlay] = useState(false);
+  const [selectedDog, setSelectedDog] = useState<DogData | null>(null);
+
   const [editProfile, setEditProfile] = useState(false);
-  const [editedProfile, setEditedProfile] = useState<profileData>({
-    first_name: userProfile?.first_name || '',
-    last_name: userProfile?.last_name || '',
-    email: userProfile?.email || '',
-    user_id: userProfile?.user_id || '', // Make sure to include user_id
+  const [editedProfile, setEditedProfile] = useState<ProfileData>({
+    first_name: '',
+    last_name: '',
+    email: '',
+    user_id: '',
   });
   const [editAddress, setEditAddress] = useState(false);
-  const [editedAddress, setEditedAddress] = useState<addressData>({
-    address_fl: addressData?.address_fl || '',
-    address_sl: addressData?.address_sl || '',
-    address_town: addressData?.address_town || '',
-    address_county: addressData?.address_county || '',
-    address_postcode: addressData?.address_postcode || '',
-    user_id: userProfile?.user_id || '', // Set user_id to a valid value
+  const [editedAddress, setEditedAddress] = useState<AddressData>({
+    address_fl: '',
+    address_sl: '',
+    address_town: '',
+    address_county: '',
+    address_postcode: '',
+    user_id: '',
   });
-  const [editPets, setEditPets] = useState(false);
-  const [editedPets, setEditedPets] = useState([...dogs]);
-  //#endregion
+
+  const handleViewOrderClick = (order: OrderData) => {
+    setSelectedOrder(order);
+    setShowOrderOverlay(true);
+  };
+
+  const handleViewDog = (dog: DogData) => {
+    setSelectedDog(dog);
+    setShowDogOverlay(true);
+  };
 
 
-  
   useEffect(() => {
     async function getUserProfile() {
       const profileData = await fetchUserProfile();
       setUserProfile(profileData);
-      setEditedProfile(profileData); // Set editedProfile to the current user data
-      console.log(profileData, 'THIS IS THE USER PROFILE on PROFILE PAGE');
+      setEditedProfile(profileData);
     }
-  
+
     getUserProfile();
   }, []);
-  
 
   useEffect(() => {
     async function getUserAddressData() {
       const fetchedAddressData = await fetchUserAddressData();
       if (fetchedAddressData) {
         setAddressData(fetchedAddressData);
-        setEditedAddress(fetchedAddressData); // Set editedAddress to the current address data
-        console.log(fetchedAddressData, 'THIS IS THE USER ADDRESS DATA on PROFILE PAGE');
+        setEditedAddress(fetchedAddressData);
       }
     }
-  
+
     getUserAddressData();
   }, []);
 
   const handleSaveProfile = async () => {
     try {
-      await updateUserData(userProfile?.user_id || '', editedProfile.first_name, editedProfile.last_name, editedProfile.email);
+      await updateUserData(
+        userProfile.user_id,
+        editedProfile.first_name,
+        editedProfile.last_name,
+        editedProfile.email
+      );
       setUserProfile({ ...userProfile, ...editedProfile });
       setEditProfile(false);
     } catch (error) {
@@ -116,7 +173,7 @@ function Profile() {
         editedAddress.address_sl,
         editedAddress.address_town,
         editedAddress.address_county,
-        editedAddress.address_postcode,
+        editedAddress.address_postcode
       );
       setAddressData({ ...addressData, ...editedAddress });
       setEditAddress(false);
@@ -124,25 +181,6 @@ function Profile() {
       console.error("Error updating address data:", error);
     }
   };
-  const handleSavePets = async () => {
-    try {
-      // Assuming you have a list of edited pets, you can loop through them and update each one individually
-      for (const editedPet of editedPets) {
-        await updateDogData(
-          editedPet.dog_name,
-          editedPet.dog_health,
-        );
-      }
-      setdogData([...editedPets]);
-      setEditPets(false);
-    } catch (error) {
-      console.error("Error updating dog data:", error);
-    }
-  };
-  
-
-
-
 
   const fileSelectedHandler = (event: any) => {
     const file = event.target.files[0];
@@ -158,46 +196,35 @@ function Profile() {
     }
   };
 
-
-  
   useEffect(() => {
     async function getUserOrderData() {
       const orderData = await fetchUserOrderData();
-       setOrderData(orderData);
-       setOrders(orderData);
-       console.log(orderData, 'THIS IS THE USER Order DATA on PROFILE PAGE');
-    } 
-      
+      setOrderData(orderData);
+      setOrders(orderData);
+    }
+
     getUserOrderData();
   }, []);
 
   useEffect(() => {
     async function getUserDogData() {
       const dogData = await fetchUserDogData();
-       setdogData(dogData);
-       setDogs(dogData);
-       console.log(dogData, 'THIS IS THE USER DOG DATA on PROFILE PAGE');
-    } 
-      
+      setDogData(dogData);
+      setDogs(dogData);
+    }
+
     getUserDogData();
   }, []);
 
-
   return (
-    <div className='profile'>
-
-      <div className="maindashboard">
-        
-        <div className="dashboardleft">
-       
-          <div className="userDetails">
-          <h1 className="welcome-text">
-            Welcome <span className="name-text">{userProfile?.first_name}</span>!
-          </h1>
-     
-
-          <div className="userinfobox">
-          
+    <div className="profile">
+<div className="maindashboard">
+  <div className="dashboardleft">
+    <div className="userDetails">
+      <h2 className="welcome-text">
+        Welcome <span className="name-text">{userProfile.first_name}</span>!
+      </h2>
+            <div className="userinfobox">
             {editProfile ? (
               /* Edit Mode */
               <div className="userinfobox">
@@ -274,16 +301,14 @@ function Profile() {
                   })
                 }/>
 
-                <div className='editButtons'>
-                <button onClick={() => setEditProfile(false)}>Cancel</button>
-                <button onClick={handleSaveProfile}>Save</button>
+                  <div className='editButtons'>
+                    <button onClick={() => setEditProfile(false)}>Cancel</button>
+                    <button onClick={handleSaveProfile}>Save</button>
+                  </div>
                 </div>
-               
-              </div>
-            ) : (
-              /* Display Mode */
-              <div className="userinfobox">
-                <h2 className="userdetails">User Details</h2> 
+              ) : (
+                <div className="userinfobox">
+                <h3 className="userdetails">User Details</h3> 
                 <p>
                   <span className="bolded">Firstname: {userProfile?.first_name}</span>
                 </p>
@@ -293,7 +318,7 @@ function Profile() {
                 <p>
                   <span className="bolded">Email: {userProfile?.email}</span>
                 </p>
-                <h2 className="address">Address</h2>
+                <h3 className="address">Address</h3>
                 <p>
                   <span className="bolded"> {addressData?.address_fl}</span>
                 </p>
@@ -310,104 +335,113 @@ function Profile() {
                   <span className="bolded"> {addressData?.address_postcode}</span>
                 </p>
                 <button onClick={() => setEditProfile(true)}>Edit</button>
-              </div>
-            )}
-          </div>
-        </div>
-        </div>
+                </div>
+        )}
+      </div>
+    </div>
+  </div>
+
         <div className="dashboardright">
-          
-          <div className="userpetbox">
-            <h2 className="userpetbox"> Doggos</h2>
-          
-            {editPets ? (
+        <div className="userpetbox">
+  <h3 className="userpetbox">Doggos</h3>
+  {dogs.map((dog) => (
+    <div className="dogContainer" key={dog.dog_id}>
+      <div className="dogimg">
+        {dog.src ? (
+          <img src={dog.src} alt="dog" />
+        ) : (
+          <img src={dogAvatar} alt="default dog" />
+        )}
+      </div>
+      <div className="dog-details">
+        <p>{dog.dog_name}</p>
+        <p>{dog.dog_breed}</p>
+        <p>{dog.dog_age} Years</p>
+      </div>
+      <div className="dog-button-container">
+        <button onClick={() => handleViewDog(dog)}>View Dog</button>
+      </div>
+    </div>
+  ))}
+</div>
+        
+       
+          <div className="userorderbox">
+  <h3 className="Orders">Orders</h3>
+  {orders.map((order) => (
+    <div key={order.order_id} className="order-container">
+      <div className="order-details">
+        <div className="order-data">
+          <p className="inner-text">
+            <span className="bolded">Order ID: {order.order_id}</span>
+          </p>
+          <p className="inner-text">
+            <span className="bolded">Order Date: {formatDate(order.created_at)}</span>
+          </p>
+        </div>
+        <div className="order-button-container">
+          <button onClick={() => handleViewOrderClick(order)} className="orderviewbutton">
+            View Order
+          </button>
+        </div>
+      </div>
+      <hr className="linebreak" />
+    </div>
+  ))}
+</div>
+        </div>
 
-              <div>
-                
-                {editedPets.map((dog, index) => (
-                  <div key={index}>
-                     <input
-                      type="text"
-                      value={dogData?.dog_name}
-                      onChange={(e) =>
-                        setEditedPets((prevPets) =>
-                          prevPets.map((prevDog, dogIndex) =>
-                            dogIndex === index
-                              ? { ...prevDog, dog_name: e.target.value }
-                              : prevDog
-                          )
-                        )
-                      }
-                      placeholder="Name"
-                    />
+        {/* Overlay to display selected order */}
+        {showOrderOverlay && selectedOrder && (
+                  <div className="order-overlay">
+                  {/* Add your order details display here */}
+                  <h3>Order Details</h3>
+                  <p>Order ID: {selectedOrder.order_id}</p>
+                  <p>Order Date: {formatDate(selectedOrder.created_at)}</p>
+                  <p>Dog Name: {selectedOrder.dog_name}</p>
+                  <p>Include Veg: {selectedOrder.veg}</p>
+                  <p>Food {selectedOrder.dog_name} does not like: {selectedOrder.flavours_not}</p>
+                  <p>Quantity: {selectedOrder.days} days</p>
+                  <h3> Delivery Address</h3>
+                  <p>{selectedOrder.address_fl}</p>
+                  <p>{selectedOrder.address_sl}</p>
+                  <p>{selectedOrder.address_town}</p>
+                  <p>{selectedOrder.address_county}</p>
+                  <p>{selectedOrder.address_postcode}</p>
+                  <button onClick={() => setShowOrderOverlay(false)}>Close</button>
+                </div>
+              )}
 
-                    <input 
-                      type="text"
-                      value={dog.dog_health}
-                      onChange={(e) =>
-                        setEditedPets((prevPets) =>
-                          prevPets.map((prevDog, dogIndex) =>
-                            dogIndex === index
-                              ? { ...prevDog, dog_health: e.target.value }
-                              : prevDog
-                          )
-                        )
-                      }
-                      placeholder="Breed"
-                    />
-                    
-                  </div>
-                ))}
-                <button onClick={handleSavePets}>Save</button>
-                <button onClick={() => setEditPets(false)}>Cancel</button>
-              </div>
+        {/* Overlay to display selected dog */}
+        {showDogOverlay && selectedDog && (
+          <div className="dog-overlay">
+             <h3>{selectedDog.dog_name}s Details</h3>
+          <div className="dogimg">
+            {selectedFile ? (
+              <img src={URL.createObjectURL(selectedFile)} alt="dog" />
+            ) : selectedDog.src ? (
+              <img src={selectedDog.src} alt="dog" />
             ) : (
-              /* Display Mode */
-              <div className='dogDisplay'>
-                {dogs.map((dog) => (
-                 
-                  <div className='dogContainer' key={dog.dog_id}>
-                      
-                   <div className="dog-details">
-                    <p> {dog.dog_name} </p>
-                    <p> {dog.dog_breed} </p>
-                    <p> {dog.dog_age} </p>
-                    <p> {dog.dog_sex} </p>
-                    <p> {dog.dog_health} </p>
-                    <button onClick={() => setEditPets(true)}>Edit</button>
-                    </div>
-                    <div className="dog-image-container">
-                      <ImageUpload
-                      selectedFile={selectedFile}
-                      fileSelectedHandler={fileSelectedHandler}
-                      fileUploadHandler={fileUploadHandler}
-                    />
-                   </div>
-                  </div>
-                ))}
-         
-                </div>
-                )}
-                </div>
+              <img src={dogAvatar} alt="default dog" />
+            )}
+            <input type="file" onChange={fileSelectedHandler} />
+            <button onClick={handleFileUpload}>Upload Image</button>
+          </div>
+          <p>Name: {selectedDog.dog_name}</p>
+          <p>Breed: {selectedDog.dog_breed}</p>
+          <p>Age: {selectedDog.dog_age}</p>
+          <p>Health: {selectedDog.dog_health}</p>
+          <p>Size: {selectedDog.dog_size}</p>
+          <p>Food {selectedDog.dog_name} does not like: {selectedDog.flavours_not}</p>
+          <p>Vegetarian: {selectedDog.veg}</p>
 
-            <div className="userorderbox">
-              <h2 className="Orders"> Orders</h2>
-              {orders.map(order => (
-                <div key={order.order_id} className="order-details">
-                  <p className="inner-text">
-                    <span className="bolded">Order ID: {order.order_id}</span>
-                  </p>
-                  <p className="inner-text">
-                  <span className="bolded">Order Date: {formatDate(order.created_at)} </span>
-                  </p>
-                 <button className='orderviewbutton'>View Order</button>
-                </div>
-              ))}
-            </div>
-            </div>
+
+          <button onClick={() => setShowDogOverlay(false)}>Close</button>
+        </div>
+)}
       </div>
-      </div>
-   
+    </div>
+      
   );
 }
 

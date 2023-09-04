@@ -1,5 +1,7 @@
 import React from 'react';
+import { useState } from 'react';
 import { FormWrapper } from './FormWrapper';
+import './Survey.css';
 
 
 type BreedData = {
@@ -16,6 +18,7 @@ type BreedFormProps = BreedData & {  // DogInfoProps is a type that extends DogD
 
 
 export function DogBreed( {dog_breed, pure_cross, updateFields}: BreedFormProps) {
+    const [selectedDogBreed, setSelectedDogBreed] = useState(dog_breed);
     return (
         
             <FormWrapper title="What breed is your doggo?">
@@ -140,14 +143,13 @@ export function DogBreed( {dog_breed, pure_cross, updateFields}: BreedFormProps)
   <option value="whippet">Whippet</option>
   <option value="yorkshire_terrier">Yorkshire Terrier</option>
 </select>
-
-                <label htmlFor="pure_cross">They are a </label>
-                <select placeholder='Please Select'  title='pure_cross' className='dropdownOptions' onChange={e=> updateFields({pure_cross: e.target.value}) } value={pure_cross}  name="pureCross" id="pureCross" required>
-                    <option value="free" selected disabled>Pure/Cross</option>
-                    <option value="pure">Pure breed</option>
-                    <option value="cross">Cross-breed</option>
-                    <option value="notSure">Not sure</option>
-                </select>
+<label htmlFor="pure_cross">They are a </label>
+<div className='pureCross'>
+            
+                <button type="button" className={`pureCrossOption ${pure_cross === 'pure' ? 'selected' : ''}`} onClick={() => updateFields({pure_cross: 'pure'})}>Pure Breed</button>
+                <button type="button" className={`pureCrossOption ${pure_cross === 'cross' ? 'selected' : ''}`} onClick={() => updateFields({pure_cross: 'cross'})}>Cross Breed</button>
+                <button type="button" className={`pureCrossOption ${pure_cross === 'not_sure' ? 'selected' : ''}`} onClick={() => updateFields({pure_cross: 'not_sure'})}>Not Sure</button>
+            </div>
             </FormWrapper>
         
     );

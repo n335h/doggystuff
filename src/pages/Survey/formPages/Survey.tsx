@@ -225,31 +225,38 @@ async function onSubmit(e: FormEvent) {
     } else {
         alert("Order complete");
     }
+// Check if the address already exists for the user
+const { data: existingAddressData, error: errorExistingAddressData } = await supabase
+  .from('user_address')
+  .select()
+  .eq('user_id', userId);
 
-    // Defining the address data to insert into the user_address table
-    const addressDataToInsert: AddressData = {
- 
-        address_fl:  orderData.address_fl,
-        address_sl: orderData.address_sl,
-        address_town: orderData.address_town,
-        address_county:  orderData.address_county,
-        address_postcode:  orderData.address_postcode,
-        user_id: userId, 
-    }
-    // Inserting the address data into the user_address table b 
-const { data: insertAddressData, error: errorAddressData } = await supabase
-.from('user_address') 
-.insert([addressDataToInsert]); 
-console.log(addressDataToInsert);
+if (errorExistingAddressData) {
+  alert(errorExistingAddressData.message);
+} else if (existingAddressData.length === 0) {
+  // If the user doesn't have an existing address, insert the address data
+  const addressDataToInsert: AddressData = {
+    address_fl: orderData.address_fl,
+    address_sl: orderData.address_sl,
+    address_town: orderData.address_town,
+    address_county: orderData.address_county,
+    address_postcode: orderData.address_postcode,
+    user_id: userId,
+  };
 
-console.log(insertAddressData);
+  const { data: insertAddressData, error: errorAddressData } = await supabase
+    .from('user_address')
+    .insert([addressDataToInsert]);
 
-if (errorAddressData) {
-alert(errorAddressData.message);
+  if (errorAddressData) {
+    alert(errorAddressData.message);
+  } else {
+    alert('Order complete');
+  }
 } else {
-alert("Order complete");
+  // Address already exists for the user, handle this case as needed
+  console.log('User already has an address.');
 }
-
 
     // Clear the pending form data from localStorage
     localStorage.removeItem('pendingFormData');
@@ -275,7 +282,7 @@ alert("Order complete");
                         {step}
                     </div>
                     <div className="surveyButtons">
-                       {!isFirstStep && <button type='button' onClick={back} className="surveyButton">Back</button>}
+                       {!isFirstStep && <button type='button' onClick={back} id='backSurveyButton' className="backSurveyButton">Back</button>}
                         <button type='submit' className="surveyButton">{isLastStep ? "Finish" : "Next"}</button>
                     </div>
                 </form> 

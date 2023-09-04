@@ -85,9 +85,15 @@ label, legend {
     
  
 }
-.dogSexOption, .dogSizeOption, button {
+
+.pureCross {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;    
+}
+.dogSex button , .dogSize button, .pureCross button {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     min-width:10vw;
@@ -99,7 +105,7 @@ label, legend {
 
     border: 0;
 }
- button:hover {
+.dogSex button:hover, .dogSize button:hover, .pureCross button:hover {
     background-color: var(--header-main-hover);
     color: var(--header-main);
     border: 4px solid var(--header-main);
@@ -108,14 +114,20 @@ label, legend {
 .dogSizeOption.selected,
 .dogSexOption.selected,
 .dogSizeOption:active,
-.dogSexOption:active {
+.dogSexOption:active,
+.pureCrossOption.selected,
+.pureCrossOption:active {
   background-color: var(--header-main-hover);
   color: var(--header-main);
   border: 4px solid var(--header-main);
   cursor: pointer;
 }
  
- 
+ #backSurveyButton {
+    position: absolute;
+    top: 15vh;
+    left: 5vw;
+ }
 
 /* .surveyForm {
     display: flex;
@@ -182,7 +194,22 @@ right: 10%;
     border: 0;
     
 }
-.surveyButton:hover{
+.backSurveyButton {
+    height: 7vh;
+    width: 35%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-blue);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 30px;
+    border: 0;
+
+}
+.surveyButton:hover, .backSurveyButton:hover{
     background-color: var(--header-main-hover);
     color: var(--header-main);
     border: 4px solid var(--header-main);
