@@ -144,8 +144,9 @@ import Profile from '../Profile/Profile';
 
   return (
     <Container className='mb-4'>
-      <div className='App'>
+      <div id='App' className='App'>
         <BrowserRouter>
+       
           <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible}/>
           <Routes>
             <Route path='/' element={<Landing />} />
@@ -170,6 +171,7 @@ import Profile from '../Profile/Profile';
                         <Route path='/GetStarted' element={<GetStarted />} />
                         <Route path='/profile'  element={<Profile />} />  
           </Routes>
+          
         </BrowserRouter>
       </div>
     </Container>

@@ -244,7 +244,7 @@ if (errorExistingAddressData) {
     user_id: userId,
   };
 
-  const { data: insertAddressData, error: errorAddressData } = await supabase
+  const { error: errorAddressData } = await supabase
     .from('user_address')
     .insert([addressDataToInsert]);
 

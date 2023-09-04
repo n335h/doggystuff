@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import './SignUp.css';
 import hamburgerclose from '../../../../Assets/hamburgerclose.svg';
 
+
 // interface SignUpFormData {
 //   first_name: string;
 //   last_name: string;
@@ -85,7 +86,7 @@ function SignUp({
   return (
     <div className='sign-form1'>
       <a id='closeForm' href='/'>
-      <img className='signformclose' src={hamburgerclose} alt='close' />
+      <img className='signformclose animate-pop-in' src={hamburgerclose} alt='close' />
       </a>
 
       <h1 className='signUpTitle animate-pop-in'>Sign Up</h1>
@@ -130,7 +131,7 @@ function SignUp({
           required
         />
         <br />
-        <div className="submit-button">
+        <div className="submit-button animate-pop-in ">
         <button type='submit' auto-complete='current-password' aria-label='Submit' data-testid='submit-button' className='submit-button'>
           Submit
         </button>

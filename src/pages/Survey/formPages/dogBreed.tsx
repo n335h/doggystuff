@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+
 import { FormWrapper } from './FormWrapper';
 import './Survey.css';
 
@@ -18,7 +18,6 @@ type BreedFormProps = BreedData & {  // DogInfoProps is a type that extends DogD
 
 
 export function DogBreed( {dog_breed, pure_cross, updateFields}: BreedFormProps) {
-    const [selectedDogBreed, setSelectedDogBreed] = useState(dog_breed);
     return (
         
             <FormWrapper title="What breed is your doggo?">

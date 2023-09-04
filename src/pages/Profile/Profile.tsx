@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {
-  fileUploadHandler,
+  // fileUploadHandler,
   fetchUserProfile,
   fetchUserAddressData,
   fetchUserOrderData,
   fetchUserDogData,
   updateUserData,
   updateUserAddressData,
-  updateDogData,
 } from '../../models/client';
-import ImageUpload from '../ImgUpload/ImgUpload';
+// import ImageUpload from '../ImgUpload/ImgUpload';
 import './Profile.css';
 import dogAvatar from '../../Assets/temp-dog-avatar.jpg';
 
@@ -49,10 +48,16 @@ type DogData = {
   dog_id: string;
   dog_name: string;
   dog_health: string;
+  dog_size: string;
+  dog_breed: string;
+  dog_age: string;
+  flavours_not: string[];
+  veg: string;
+  
 };
 
 function formatDate(dateString: string) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = new Date(dateString).toLocaleDateString(undefined, options);
   return formattedDate;
 }
@@ -92,6 +97,13 @@ function Profile() {
     dog_id: '',
     dog_name: '',
     dog_health: '',
+    dog_size: '',
+    dog_breed: '',
+    dog_age: '',
+    flavours_not: [],
+    veg: '',
+
+
   });
   const [dogs, setDogs] = useState<DogData[]>([]);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -186,7 +198,7 @@ function Profile() {
     const file = event.target.files[0];
     setSelectedFile(file);
   };
-
+  
   const handleFileUpload = async () => {
     const success = await fileUploadHandler(selectedFile);
     if (success) {
@@ -217,7 +229,7 @@ function Profile() {
   }, []);
 
   return (
-    <div className="profile">
+    <div className="profile animate-pop-in">
 <div className="maindashboard">
   <div className="dashboardleft">
     <div className="userDetails">
@@ -229,6 +241,7 @@ function Profile() {
               /* Edit Mode */
               <div className="userinfobox">
                 <input className='editinfo'
+                title='firstName'
                   type="text"
                   value={userProfile?.first_name}
                   onChange={(e) =>
@@ -239,6 +252,7 @@ function Profile() {
                   }
                 />
                 <input className='editinfo'
+                  title='lastName'
                   type="text"
                   placeholder={userProfile?.last_name}
                   value={editedProfile.last_name}
@@ -250,6 +264,7 @@ function Profile() {
                   }
                 />
                 <input className='editinfo'
+                title='email'
                   type="email"
                   placeholder={userProfile?.email || 'Enter Email'}
                   value={userProfile?.email}
@@ -260,7 +275,7 @@ function Profile() {
                     })
                   }
                 />
-                <input className='editinfo' type="text" placeholder={addressData?.address_fl} 
+                <input className='editinfo' title="address_fl" type="text" placeholder={addressData?.address_fl} 
                 value={addressData?.address_fl}
                 onChange={(e) =>
                   setEditedAddress({
@@ -268,7 +283,9 @@ function Profile() {
                     address_fl: e.target.value,
                   })
                 }/>
-                <input className='editinfo' type="text" placeholder={addressData?.address_sl}
+                <input className='editinfo' 
+               title='address_sl'
+               type="text" placeholder={addressData?.address_sl}
                 value={addressData?.address_sl}
                 onChange={(e) =>
                   setEditedAddress({
@@ -276,7 +293,9 @@ function Profile() {
                     address_sl: e.target.value,
                   })
                 }/>
-                <input className='editinfo' type="text" placeholder={addressData?.address_town}
+                <input className='editinfo' 
+                title='address_town'
+                type="text" placeholder={addressData?.address_town}
                 value={addressData?.address_town}
                 onChange={(e) =>
                   setEditedAddress({
@@ -284,7 +303,9 @@ function Profile() {
                     address_town: e.target.value,
                   })
                 }/>
-                <input className='editinfo' type="text" placeholder={addressData?.address_county}
+                <input className='editinfo'
+                title='address_county'
+                type="text" placeholder={addressData?.address_county}
                 value={addressData?.address_county}
                 onChange={(e) =>
                   setEditedAddress({
@@ -292,7 +313,9 @@ function Profile() {
                     address_county: e.target.value,
                   })
                 }/>
-                <input className='editinfo' type="text" placeholder={addressData?.address_postcode}
+                <input className='editinfo' 
+                title='address_postcode'
+                type="text" placeholder={addressData?.address_postcode}
                 value={addressData?.address_postcode}
                 onChange={(e) =>
                   setEditedAddress({
@@ -424,7 +447,7 @@ function Profile() {
             ) : (
               <img src={dogAvatar} alt="default dog" />
             )}
-            <input type="file" onChange={fileSelectedHandler} />
+            <input title="uploadImg" type="file" onChange={fileSelectedHandler} />
             <button onClick={handleFileUpload}>Upload Image</button>
           </div>
           <p>Name: {selectedDog.dog_name}</p>

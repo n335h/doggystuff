@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { Container } from "react-bootstrap";
 import "./Landing.css";
+//import animate.css from main pages folder
+import "../animate.css";
+
 
 export function Landing() {
   const landingSubRef : any = useRef<HTMLDivElement>(null);
@@ -24,19 +26,20 @@ export function Landing() {
   }, []);
 
   return (
-    <Container className='mb-4'>
+   <div className="landingContainer">
       <div className="landing">
         <div className="landingContent"></div>
         
         <div className="landingInfo">
-          <h2 className="landing-title">WHAT A GOOD DOGGO DESERVES</h2>
-          <h1>Tailored to their tastes. Delivered to your door. Try our trial box today for £9.99!</h1>
-          <Link to="/GetStarted" className="landingButton">Try DoggyStuff</Link>
+          <h2 className="landing-title  animate-pop-in">WHAT A GOOD DOGGO DESERVES</h2>
+          <h1 className="landingPara animate-pop-in">Tailored to their tastes. Delivered to your door. Try our trial box today for £9.99!</h1>
+          <Link to="/GetStarted" className="landingButton animate-pop-in">Try DoggyStuff</Link>
         </div>
       </div>
       
+      
       <section className="landingSection">
-        <div className="landingSub" ref={landingSubRef}>
+        <div className="landingSubOuter" ref={landingSubRef}>
           <div className="landingSubContent">
             <h2>How it works</h2>
             <div className="landingSubContentItem">
@@ -71,6 +74,6 @@ export function Landing() {
           </div>
         </div>
       </section>
-    </Container>
+    </div>
   );
 }

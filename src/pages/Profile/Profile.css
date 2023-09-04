@@ -1,7 +1,7 @@
 .profile {
   margin: 0 auto;
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   margin: 0;
   margin-top: -10vh;
   background-color: #f5f5f5;
@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center; /* Horizontally center the content */
   align-items: flex-start; /* Vertically center the content */
-  height: 100vh; /* Adjust the height as needed */
+  height: 90vh; /* Adjust the height as needed */
   width:80vw;
   margin: 0;
 }
@@ -30,9 +30,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-margin-top: 20vh;
+margin-top: 15vh;
   width: 50vw;
-  height: 100vh;
+  height: 90vh;
 
 }
 
@@ -57,7 +57,13 @@ margin-top: 20vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 0;
+
+}
+.dogContainer,
+.order-details p {
+  margin: 0;
+  font-size: 0.8rem;
 }
 
 /* Style for dog and order data */
@@ -76,13 +82,11 @@ margin-top: 20vh;
 .dashboardright button {
  width: 10vw;
   height: 50px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   border-radius: 5px;
   border: none;
   background-color: transparent;
   color: #000;
-  font-size:0.8rem;
+  font-size:0.6rem;
   font-weight: 300;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -111,10 +115,12 @@ margin-top: 20vh;
   cursor: pointer;
 }
 
-.linebreak hr {
+.linebreak {
   width: 80%;
   height: 0.2px;
-  background-color: #000;
+  background-color: #b6b6b657;
+  margin: 0 1vw;
+  border: none;
 }
 
 .userpetbox, .userorderbox {

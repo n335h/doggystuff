@@ -1,0 +1,66 @@
+.animate-pop-in {
+    animation: pop-in 0.4s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+    opacity: 0;
+  }
+
+
+/* Landing page Animations */
+    .landing-title {
+        animation-delay: 0.6s;
+       
+    }
+    .landingPara {
+        animation-delay: 0.7s;
+    }
+    .landingButton {
+        animation-delay: 0.8s;
+    }
+
+    /* Sign Up */
+
+    .signUpTitle {
+        animation-delay: 0.6s;
+    }
+    .sign-in-link {
+        animation-delay: 0.7s;
+    }
+    .signUpForm {
+        animation-delay: 0.8s;
+    }
+    .submit-button {
+        animation-delay: 0.9s;
+    }
+
+
+     /* Sign in */
+    .sign-up-link{
+        animation-delay: 0.7s;
+        margin-bottom: 2vh;
+      }
+      
+  
+      .sign-form form {
+        animation-delay: 0.8s;
+      }
+      
+      .signIntitle {
+        animation-delay: 0.6s;
+      }
+      
+      .header-button {
+        animation-delay: 0.9s;
+      }
+      .signformclose {
+        animation-delay: 0.9s;
+      }
+  
+  @keyframes pop-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-4rem) scale(.8);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }

@@ -84,7 +84,7 @@
       };
       return (
           <div className='sign-form '>
-            <a id='closeForm' href="/">  <img className='signformclose' src={hamburgerclose} alt='close' /></a>
+            <a id='closeForm' href="/">  <img className='signformclose animate-pop-in ' src={hamburgerclose} alt='close' /></a>
           {showSignIn && (
             <>
             <section className="sign-in">

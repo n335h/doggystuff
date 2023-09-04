@@ -66,19 +66,19 @@
                     </div>
 
                     <div className="surveyFormSectionContent">
-                        <input type='radio' className='dropdownOptions'
+                        <input title="vegNo" type='radio' className='dropdownOptions'
                             onChange={e=> updateFields({veg: e.target.value}) }
                             value='No'
-                            id='veg'
+                            id='vegNo'
                             name='veg'
                             required
                         />
                         <label htmlFor='veg'>No Veg</label>
 
-                        <input type='radio' className='dropdownOptions'
+                        <input title="vegYes" type='radio' className='dropdownOptions'
                             onChange={e=> updateFields({veg: e.target.value}) }
                             value='Yes'
-                            id='veg'
+                            id='vegYes'
                             name='veg'
                             required
                         />

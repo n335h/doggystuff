@@ -21,13 +21,39 @@
                 <FormWrapper title="Describe your doggos body">
                     <div className="surveyFormSectionContent">
                         <div className="surveyFormSectionContentItem">
-                            <label htmlFor="dog_health">Health</label>
-                            <select placeholder='Please Select'  title='dog_health' className='dropdownOptions'  onChange={e=> updateFields({dog_health: e.target.value}) } value={dog_health} name="dogHealth" id="dogHealth" required>
-                                <option value="free"></option>
-                                <option value="Needs some chonk">Needs some chonk</option>
-                                <option value="Just right">Just Right </option>
-                                <option value="Chonky">Chonky</option>
-                            </select>
+                        <div className="dogHealth">
+  <button
+    type="button"
+    className={`dogHealthOption ${
+      dog_health === 'Needs some chonk' ? 'selected' : ''
+    }`}
+    onClick={() => updateFields({ dog_health: 'Needs some chonk' })}
+  >
+    Needs some chonk
+  </button>
+  <button
+    type="button"
+    className={`dogHealthOption ${
+      dog_health === 'Just right' ? 'selected' : ''
+    }`}
+    onClick={() => updateFields({ dog_health: 'Just right' })}
+  >
+    Just Right
+  </button>
+  <button
+    type="button"
+    className={`dogHealthOption ${
+      dog_health === 'Chonky' ? 'selected' : ''
+    }`}
+    onClick={() => updateFields({ dog_health: 'Chonky' })}
+  >
+    Chonky
+  </button>
+</div>
+
+
+
+                            
                         </div>
                     
 

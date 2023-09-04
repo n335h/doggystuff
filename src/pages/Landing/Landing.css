@@ -15,23 +15,22 @@
       background-repeat: no-repeat;
       overflow-x: hidden;
     }
-    .landingSub{
-      height: 100vh;
+    .landingSubOuter{
       width: 100vw;
-      margin-top: -30vh;
-      background-color: #f3eddb;
+      height: 120vh;
+      margin-top: -20vh;
+      background-color: var(--header-main);
       flex-direction: column;
       justify-content: center;
       align-items: center;
-   
-
-      
-
     }
     .landingSubContent {
-      margin-top: 40vh;
+
       height: 90vh;
       color: black;
+      padding-top: 30vh;
+      width: 90vw;
+      margin: auto;
       overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
@@ -40,7 +39,7 @@
     }
     .landingSubContentItem {
       display: flex;
-      width: auto;
+      width: 400vw;
       flex-direction: row;
       margin: 2rem;
 
@@ -51,7 +50,7 @@
       object-fit: cover; /* Ensure the image covers the container */
     }
     .containerImg {
-      width: 50%;
+      width: 20vw;
       border-radius:1.4rem;
     }
     .container {
@@ -238,3 +237,6 @@
         }
         }
     
+
+
+        

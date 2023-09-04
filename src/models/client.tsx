@@ -1,6 +1,48 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 
+export interface AddressData {
+  // Define the properties of AddressData here
+  address_fl: string;
+  address_sl: string;
+  address_town: string;
+  address_county: string;
+  address_postcode: string;
+  user_id: string;
+}
+
+export interface OrderData {
+  // Define the properties of OrderData here
+  order_id: string;
+  created_at: string;
+  total: string;
+  veg: string;
+  flavours_not: string[];
+  user_id: string;
+  days: string;
+  address_fl: string;
+  address_sl: string;
+  address_town: string;
+  address_county: string;
+  address_postcode: string;
+  dog_name: string;
+}
+
+export interface DogData {
+  // Define the properties of DogData here
+  dog_id: string;
+  dog_name: string;
+  dog_health: string;
+  dog_size: string;
+  dog_breed: string;
+  dog_age: string;
+  flavours_not: string[];
+  veg: string;
+}
+
+
+
+
 // Assuming the environment variables are defined as string in your .env file.
 const supabaseUrl: string | undefined = process.env.REACT_APP_SUPABASE_URL;
 const supabaseKey: string | undefined = process.env.REACT_APP_SUPABASE_KEY;
@@ -116,7 +158,7 @@ export async function fetchUserProfile() {
   }
 }
 
-export async function fetchUserAddressData(): Promise <addressData | null> {
+export async function fetchUserAddressData(): Promise <AddressData | null> {
   try {
     const user_ID = await getCurrentUserId();
     if (user_ID) {
@@ -149,7 +191,7 @@ export async function fetchUserAddressData(): Promise <addressData | null> {
   }
 }
 
-export async function fetchUserOrderData(): Promise< orderData | null> {
+export async function fetchUserOrderData(): Promise< OrderData | null> {
   try {
     const user_ID = await getCurrentUserId();
     console.log(user_ID, 'THIS IS THE USER ID 14 ');
@@ -237,7 +279,7 @@ console.log(order_query, 'THIS IS THE ORDER QUERY 2');
 
 
 
-export async function fetchUserDogData(): Promise< dogData | null> {
+export async function fetchUserDogData(): Promise< DogData | null> {
   try {
     const user_ID = await getCurrentUserId();
     if (user_ID) {
@@ -278,36 +320,37 @@ console.log(dog_query, 'THIS IS THE DOG QUERY 1');
 }
 
 
-export async function fileUploadHandler(selectedFile: File | null) {
-  if (!selectedFile) {
-    throw new Error("Please select an image file.");
-  }
+// export async function fileUploadHandler(selectedFile: File | null) {
+//   if (!selectedFile) {
+//     throw new Error("Please select an image file.");
+//   }
 
-  const formData = new FormData();
-  formData.append("dog_image", selectedFile); // Assuming "dog_image" is the name of the column where you want to store the image.
+//   const formData = new FormData();
+//   formData.append("dog_image", selectedFile); // Assuming "dog_image" is the name of the column where you want to store the image.
 
-  try {
-    const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
+//   try {
+//     const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
     
-    const { data, error } = await supabaseClient!
-      .storage
-      .from('dog-images')
-      .update({ dog_image: formData })
-      .eq('user_id', user_ID)
-      .single();
+//     const { data, error } = await supabaseClient!
+//       .storage
+//       .from('dog-images')
+//       .update({ dog_image: formData })
+//       .eq('user_id', user_ID)
+//       .single();
 
-    if (!error) { // Check if there was no error during the update.
-      console.log("Image uploaded successfully.");
-      return true;
-    } else {
-      console.error("Image upload failed:", error.message);
-      return false;
-    }
-  } catch (error) {
-    console.error("Error uploading image:", error);
-    return false;
-  }
-}
+//     if (!error) { // Check if there was no error during the update.
+//       console.log("Image uploaded successfully.");
+//       return true;
+//     } else {
+//       console.error("Image upload failed:", error.message);
+//       return false;
+//     }
+//   } catch (error) {
+//     console.error("Error uploading image:", error);
+//     return false;
+//   }
+// }
+
 export async function updateUserData(
   user_id: string,
   first_name: string,
