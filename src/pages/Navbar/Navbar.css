@@ -56,7 +56,17 @@
       font-size: 1rem;
     }
     
-
+    #navbar-container {
+      position: sticky;
+      top: -10vh; /* Start by hiding the navbar above the viewport */
+      background-color: transparent;
+      z-index: 100;
+      transition: top 0.3s ease-in-out;
+    }
+    
+    #navbar-container:hover {
+      top: 0; /* Show the navbar when hovered over */
+    }
     .signin {
       display: flex;
       flex-direction: row;
@@ -72,13 +82,13 @@
       font-size: 1rem;
     }
 
-    #navbar-container {
+    /* #navbar-container {
       position: sticky;
       top: 0;
       background-color:transparent;
       z-index: 100;
       transition: transform 0.3s ease-in-out;
-    }
+    } */
     
     /* Optional class for hiding the navbar on scroll down */
     .navbar-hidden {
@@ -226,8 +236,17 @@
       cursor: pointer;
       color: white;
     }
-
-
+    #navbar-container {
+      position: sticky;
+      top: -10vh; /* Start by hiding the navbar above the viewport */
+      background-color: transparent;
+      z-index: 100;
+      transition: top 0.3s ease-in-out;
+    }
+    
+    #navbar-container:hover {
+      top: 0; /* Show the navbar when hovered over */
+    }
     .button-normal {
       border-radius: 20px;
       display: flex;

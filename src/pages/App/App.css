@@ -8,4 +8,6 @@
       background-color: #e7e0bd;
       color: white;
     overflow-x: hidden;
+    background-color: black;
+    z-index: 101;
   }

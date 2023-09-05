@@ -147,7 +147,7 @@ import Profile from '../Profile/Profile';
       <div id='App' className='App'>
         <BrowserRouter>
        
-          <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible}/>
+          <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible} />
           <Routes>
             <Route path='/' element={<Landing />} />
             {/* <Route path='/src/pages/signsignup' element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} /> */}

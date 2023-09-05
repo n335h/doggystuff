@@ -330,8 +330,13 @@ function Profile() {
                   </div>
                 </div>
               ) : (
+                // View Mode
                 <div className="userinfobox">
+              
+                <section className="userinfo">
+                <div className='userinfodetails'>
                 <h3 className="userdetails">User Details</h3> 
+                  
                 <p>
                   <span className="bolded">Firstname: {userProfile?.first_name}</span>
                 </p>
@@ -341,6 +346,8 @@ function Profile() {
                 <p>
                   <span className="bolded">Email: {userProfile?.email}</span>
                 </p>
+                </div>
+                <div className='useraddressdetails'>
                 <h3 className="address">Address</h3>
                 <p>
                   <span className="bolded"> {addressData?.address_fl}</span>
@@ -357,10 +364,16 @@ function Profile() {
                 <p>
                   <span className="bolded"> {addressData?.address_postcode}</span>
                 </p>
+                </div>
+               
+               
+                </section>
                 <button onClick={() => setEditProfile(true)}>Edit</button>
                 </div>
         )}
+        
       </div>
+
     </div>
   </div>
 

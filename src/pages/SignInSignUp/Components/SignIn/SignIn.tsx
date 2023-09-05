@@ -61,7 +61,7 @@
           if (signInSuccessful) {
               setIsSignedIn(true);
               alert('You have successfully signed in!');
-              navigate('/');
+              navigate('/profile');
               setShowSignIn(false); // Hide the sign-in component
             }
           // if (signInSuccessful === false) display error message
