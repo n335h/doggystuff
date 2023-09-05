@@ -191,45 +191,37 @@ export async function fetchUserAddressData(): Promise <AddressData | null> {
   }
 }
 
-export async function fetchUserOrderData(): Promise< OrderData | null> {
+export async function fetchUserOrderData(): Promise<OrderData | null> {
   try {
     const user_ID = await getCurrentUserId();
-    console.log(user_ID, 'THIS IS THE USER ID 14 ');
+    console.log(user_ID, 'THIS IS THE USER ID 14');
     if (user_ID) {
       const order_query = await supabaseClient!
         .from("order")
-        .select('*') 
-        .eq('user_id', user_ID)
-       
-console.log(order_query, 'THIS IS THE ORDER QUERY 2');
+        .select('*')
+        .eq('user_id', user_ID);
+
+      console.log(order_query, 'THIS IS THE ORDER QUERY 2');
       if (order_query.error) {
         console.error('Error fetching user order data:', order_query.error);
         return null;
-      } else {         
-        console.log(order_query, 'THIS IS THE ORDER QUERY 2');
+      } else {
+        if (order_query.data.length === 0) {
+          // Handle the case where no orders were found for the user.
+          return null;
+        }
 
-        return order_query.data;
-        // return {
-        //   order_id: order_query.data.order_id,
-        //   created_at: order_query.data.created_at,
-        //   total: order_query.data.total,
-        //   veg: order_query.data.veg,
-        //   flavours_not: order_query.data.flavours_not,
-        //   user_id: user_ID,
-        //   days: order_query.data.days,
-
-        // };
+        // Assuming that you want to return the first order found for the user.
+        return order_query.data[0];
       }
-    } else {
-      console.log('User is not signed in.');
-      return null;
     }
+    
+    // Return null when user_ID is not available.
+    return null;
   } catch (error) {
-    console.error('Error fetching user order data:', error);
+    console.error('An error occurred:', error);
     return null;
   }
-
-  
 }
 // export async function fetchUserAddressData() {
 //   const user_ID = await getCurrentUserId();
@@ -279,77 +271,71 @@ console.log(order_query, 'THIS IS THE ORDER QUERY 2');
 
 
 
-export async function fetchUserDogData(): Promise< DogData | null> {
+export async function fetchUserDogData(): Promise<DogData | null> {
   try {
     const user_ID = await getCurrentUserId();
     if (user_ID) {
       const dog_query = await supabaseClient!
         .from("dog")
-        .select('*') 
-        .eq('user_id', user_ID)
-        
-       
-console.log(dog_query, 'THIS IS THE DOG QUERY 1');
-      if (dog_query.error) {
-        console.error('Error fetching user order data:', dog_query.error);
-        return null;
-      } else {         
-        console.log(dog_query, 'THIS IS THE DOG QUERY 2');
-        return dog_query.data;
-        // return {
-        //   order_id: order_query.data.order_id,
-        //   created_at: order_query.data.created_at,
-        //   total: order_query.data.total,
-        //   veg: order_query.data.veg,
-        //   flavours_not: order_query.data.flavours_not,
-        //   user_id: user_ID,
-        //   days: order_query.data.days,
+        .select('*')
+        .eq('user_id', user_ID);
 
-        // };
+      console.log(dog_query, 'THIS IS THE DOG QUERY 1');
+      if (dog_query.error) {
+        console.error('Error fetching user dog data:', dog_query.error);
+        return null;
+      } else {
+        if (dog_query.data.length === 0) {
+          // Handle the case where no dog data was found for the user.
+          return null;
+        }
+
+        // Assuming that you want to return the first dog's data found for the user.
+        return dog_query.data[0];
       }
     } else {
       console.log('User is not signed in.');
       return null;
     }
   } catch (error) {
-    console.error('Error fetching user order data:', error);
+    console.error('Error fetching user dog data:', error);
     return null;
   }
-
-  
 }
 
 
-// export async function fileUploadHandler(selectedFile: File | null) {
-//   if (!selectedFile) {
-//     throw new Error("Please select an image file.");
-//   }
+export async function fileUploadHandler(selectedFile: File | null) {
+  if (!selectedFile) {
+    throw new Error("Please select an image file.");
+  }
 
-//   const formData = new FormData();
-//   formData.append("dog_image", selectedFile); // Assuming "dog_image" is the name of the column where you want to store the image.
+  const formData = new FormData();
+  formData.append("dog_image", selectedFile); // Assuming "dog_image" is the name of the column where you want to store the image.
 
-//   try {
-//     const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
+  try {
+    const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
     
-//     const { data, error } = await supabaseClient!
-//       .storage
-//       .from('dog-images')
-//       .update({ dog_image: formData })
-//       .eq('user_id', user_ID)
-//       .single();
+    // Use the storage.upload method to upload the file
+    const { data, error } = await supabaseClient!
+      .storage
+      .from('dog-images')
+      // .update({ dog_image: formData })
+      // .eq('user_id', user_ID)
+      // .single();
+      .upload(`${user_ID}/${selectedFile.name}`, formData);
 
-//     if (!error) { // Check if there was no error during the update.
-//       console.log("Image uploaded successfully.");
-//       return true;
-//     } else {
-//       console.error("Image upload failed:", error.message);
-//       return false;
-//     }
-//   } catch (error) {
-//     console.error("Error uploading image:", error);
-//     return false;
-//   }
-// }
+    if (!error) { // Check if there was no error during the update.
+      console.log("Image uploaded successfully.");
+      return true;
+    } else {
+      console.error("Image upload failed:", error.message);
+      return false;
+    }
+  } catch (error) {
+    console.error("Error uploading image:", error);
+    return false;
+  }
+}
 
 export async function updateUserData(
   user_id: string,
