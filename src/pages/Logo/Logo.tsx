@@ -4,7 +4,7 @@ import DOGGYSTUFF_LOGO_12 from '../../Assets/DOGGYSTUFF_LOGO_12.svg';
 import './Logo.css';
 
 const DoggyStuffLogo: React.FC = () => {
-  const [currentColorClass, setCurrentColorClass] = useState<string>('color1'); // Set an initial class
+  const [currentColorClass, setCurrentColorClass] = useState<string>('logo1'); // Set an initial class
 
   useEffect(() => {
     const sectionHeight = window.innerHeight;
@@ -12,6 +12,7 @@ const DoggyStuffLogo: React.FC = () => {
     const section1End = sectionHeight;
     const section2Start = sectionHeight;
     const section2End = 2 * sectionHeight;
+    
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -26,7 +27,7 @@ const DoggyStuffLogo: React.FC = () => {
       }
       // Add more conditions and color classes as needed
 
-      let newColor;
+      let newColor = 'logo1'; // Set the default color
 
       if (currentSection === 1) {
         newColor= 'logo1'; // Set the desired color

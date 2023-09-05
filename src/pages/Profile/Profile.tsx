@@ -194,12 +194,12 @@ function Profile() {
     }
   };
 
-  const fileSelectedHandler = (event: any) => {
+  const fileSelectedHandler = (event: any) => { // links to non working image upload
     const file = event.target.files[0];
     setSelectedFile(file);
   };
   
-  const handleFileUpload = async () => {
+  const handleFileUpload = async () => { // links to non working image upload
     const success = await fileUploadHandler(selectedFile);
     if (success) {
       console.log('File uploaded successfully');
