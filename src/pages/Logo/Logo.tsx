@@ -43,7 +43,7 @@ const DoggyStuffLogo: React.FC = () => {
       }
 
       // Get the path element by its ID
-      const pathElement = document.getElementById('path1');
+      const pathElement = document.getElementById('hamburger');
       console.log('pathElement', pathElement);
 
       if (pathElement) {

@@ -170,7 +170,6 @@
       margin-right: 0px;
       width: auto;
       z-index: 100;
-      color: var(--header-main);
       font-size: 1rem;
     }
 
@@ -272,7 +271,11 @@
       /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
       color: white;
     }
-
+    .logo1 {
+      filter: invert(83%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);}
+  .logo2 {
+      filter: invert(72%) sepia(83%) saturate(3811%) hue-rotate(174deg) brightness(97%) contrast(90%);}
+  
 
     .profileicon {
       width: 5rem;
@@ -280,7 +283,6 @@
       padding: 0;
       margin: 0;
       z-index: 100;
-      color: var(--header-main);
       font-size: 1rem;
       margin-top: 2vh;
     }

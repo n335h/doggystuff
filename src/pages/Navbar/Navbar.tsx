@@ -154,6 +154,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                   ToggleSignInMenu={handleToggleSignInMenu}
                   openAdditionalSignInMenu={handleToggleAdditionalSignInMenu}
                   icon={SignInIconState}
+                  
                 />
             
                 {additionalSignInMenuOpen && (
