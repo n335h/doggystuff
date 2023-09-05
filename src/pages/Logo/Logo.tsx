@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import DOGGYSTUFF_LOGO_12 from '../../Assets/DOGGYSTUFF_LOGO_12.svg';
 import './Logo.css';
 
+type Props = {
+  // Props type definition
+  newColor: string;
+};
+
 const DoggyStuffLogo: React.FC = () => {
   const [currentColorClass, setCurrentColorClass] = useState<string>('logo1'); // Set an initial class
 
@@ -42,12 +47,15 @@ const DoggyStuffLogo: React.FC = () => {
       console.log('pathElement', pathElement);
 
       if (pathElement) {
+        // Ensure newColor is string to provide a default value
+        const colorToSet = newColor || ''; // Set the color to an empty string if it is undefined
         // Update the fill attribute of the path element
-        pathElement.setAttribute('class', newColor);
+        pathElement.setAttribute('class', colorToSet);
         console.log('pathElement', pathElement);
+      } else {
+        console.error('pathElement is undefined'); // Handle the case where pathElement is not found
       }
-    };
-
+    };      
     // Attach the scroll event listener when the component mounts
     window.addEventListener('scroll', handleScroll);
 

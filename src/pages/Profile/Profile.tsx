@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-  // fileUploadHandler,
+  fileUploadHandler,
   fetchUserProfile,
   fetchUserAddressData,
   fetchUserOrderData,
@@ -211,8 +211,12 @@ function Profile() {
   useEffect(() => {
     async function getUserOrderData() {
       const orderData = await fetchUserOrderData();
-      setOrderData(orderData);
-      setOrders(orderData);
+
+      // Check if orderData is not null before setting state
+      if (orderData !== null) {
+        setOrderData(orderData);
+        setOrders([orderData]);
+      }
     }
 
     getUserOrderData();
@@ -221,9 +225,14 @@ function Profile() {
   useEffect(() => {
     async function getUserDogData() {
       const dogData = await fetchUserDogData();
+
+      // Check if dogData is not null before setting state
+      if (dogData !== null) {
       setDogData(dogData);
-      setDogs(dogData);
+      setDogs([dogData]);
     }
+  }
+  
 
     getUserDogData();
   }, []);
