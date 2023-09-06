@@ -27,7 +27,7 @@ interface SurveyDataProps {
 function Confirmation({ surveyData, orderData }: SurveyDataProps) {
     return (
         <div className="confirmation">
-            <h1> Check out {surveyData.dog_name}'s order is complete</h1>
+            <h1> Check out {surveyData.dog_name}'s order</h1>
 
             {/* <p>Dog Name: {surveyData.dog_name}</p> */}
             <hr />
@@ -36,7 +36,7 @@ function Confirmation({ surveyData, orderData }: SurveyDataProps) {
      
             <p>You wanted food for: {orderData.days} days</p>
             <hr />
-            <p> Address: <br></br>{orderData.address_fl} <br></br> {orderData.address_sl},<br></br> {orderData.address_town}, <br></br>{orderData.address_county},<br></br> {orderData.address_postcode}</p>
+            <p> Delivery Address: <br></br>{orderData.address_fl} <br></br> {orderData.address_sl},<br></br> {orderData.address_town}, <br></br>{orderData.address_county},<br></br> {orderData.address_postcode}</p>
 
          
           

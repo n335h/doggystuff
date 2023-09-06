@@ -6,6 +6,8 @@ import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import Hamburger from '../Hamburger.tsx/Hamburger';
 import SignInIcon from './SignInIcon';
 import DoggyStuffLogo from '../Logo/Logo';
+import user from '../../Assets/user.svg';
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -30,8 +32,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   // const [SignInIconState, setSignInIconState] = useState('user');
   const [SignInIconState, setSignInIcon] = useState('user');
   const [additionalSignInMenuOpen, setAdditionalSignInMenuOpen] = useState(false);
-
-
+  const [currentColorClass, setCurrentColorClass] = useState<string>('logo1'); // Set an initial class
+  const [currentColorClass2, setCurrentColorClass2] = useState<string>('signedinicon1'); // Set an initial class
   // const [showSignUp, setShowSignUp] = useState(false);
   // const [showSignIn, setShowSignIn] = useState(false);
   // const [signUpRedirect, setSignUpRedirect] = useState(false);
@@ -55,6 +57,10 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   //     });
   // }
   const navbarRef = useRef<HTMLElement>(null); // Create a ref for the navbar element
+  const location = useLocation();
+
+  const shouldApplyPageStyle = location.pathname === '/signin'; // Set to true if the current path is '/specific-page'
+
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -106,6 +112,66 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   }, []);
 
 
+  useEffect(() => {
+    const sectionHeight = window.innerHeight;
+    const section1Start = 0;
+    const section1End = sectionHeight;
+    const section2Start = sectionHeight;
+    const section2End = 2 * sectionHeight;
+    
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      let currentSection;
+
+      if (scrollY >= section1Start && scrollY < section1End) {
+        currentSection = 1;
+        console.log('currentSection', currentSection);
+      } else if (scrollY >= section2Start && scrollY < section2End) {
+        currentSection = 2;
+        console.log('currentSection', currentSection);
+      }
+      // Add more conditions and color classes as needed
+
+      let newColor = 'logo1'; // Set the default color
+      let newSignOutColor = 'signedinicon1';
+
+      if (currentSection === 1) {
+        newColor= 'logo1'; // Set the desired color
+        newSignOutColor = 'signedinicon1';
+        console.log('newColor', newColor);
+      } else if (currentSection === 2) {
+        newColor =  'logo2'; // Set the desired color
+        newSignOutColor = 'signedinicon2';
+        console.log('newColor2', newColor);
+      }
+
+      // Get the path element by its ID
+      const pathElement = document.getElementById('profileicon');
+      const pathElement2 = document.getElementById('dropdown-menu-signout-button');
+      console.log('pathElement', pathElement);
+
+      if (pathElement && pathElement2) {
+        // Ensure newColor is string to provide a default value
+        const colorToSet = newColor || ''; // Set the color to an empty string if it is undefined
+        // Update the fill attribute of the path element
+        const colorToSet2 = newSignOutColor || ''; // Set the color to an empty string if it is undefined
+        pathElement.setAttribute('class', colorToSet);
+        pathElement2.setAttribute('class', colorToSet2);
+        console.log('pathElement', pathElement);
+      } else {
+        console.error('pathElement is undefined'); // Handle the case where pathElement is not found
+      }
+    };      
+    // Attach the scroll event listener when the component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <NavbarBs
       className={`shadow-sm mb-3 ${visible ? '' : 'navbar-hidden'}`}
@@ -132,23 +198,21 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
           </div>
           <div className={`authButtons ${additionalMenuOpen ? 'open' : ''}`}>
             {isSignedIn ? (
-              <button
-                id="dropdown-menu-signout-button"
-                onClick={() => {
-                  signOut();
-                  setIsSignedIn(false);
-                }}
-                // add hover effect to the sign out button
-                // onMouseEnter={() => {
-                //   setIsSignedOutHovered(true);
-                // }}
-                // onMouseLeave={() => {
-                //   setIsSignedOutHovered(false);
-                // // }}
-                // className={`button-normal button-hoverable ${isSignedOutHovered ? 'button-hovered' : ''}`}
-              >
-                Sign Out
-              </button>
+              <div className='signedinnav'>
+                <button
+                  id="dropdown-menu-signout-button"
+                  className={`signedinicon ${currentColorClass2}`}
+                  onClick={() => {
+                    signOut();
+                    setIsSignedIn(false);
+                  }}
+                >
+                  Sign Out
+                </button>
+                <Link to="/profile" >
+                <img  id='profileicon'  className={`signedinicon ${currentColorClass}`} src={user} alt="Additional" /> 
+                </Link>
+              </div>
             ) : (
               <div className="sign-in-container">
                 <SignInIcon
@@ -156,7 +220,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                   ToggleSignInMenu={handleToggleSignInMenu}
                   openAdditionalSignInMenu={handleToggleAdditionalSignInMenu}
                   icon={SignInIconState}
+                  
                 />
+            
                 {additionalSignInMenuOpen && (
                   <div className="additionalSignInMenu">
                       <ul>

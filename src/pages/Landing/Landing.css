@@ -14,35 +14,61 @@
       background-position: center;
       background-repeat: no-repeat;
       overflow-x: hidden;
+      z-index: 12;
     }
-    .landingSub{
-      height: 100vh;
+    .landingSubOuter {
       width: 100vw;
-      margin-top: -30vh;
-      background-color: #f3eddb;
+      height: 120vh;
+      margin-top: -20vh;
+      background-color: var(--header-main);
+      border-bottom-left-radius: 10vh;
+      border-bottom-right-radius: 10vh;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-   
+      z-index: 7;
+
 
       
+    }
+    .landingSubOuter2 {
+      width: 100vw;
+      height: 120vh;
+      margin-top: -20vh;
+      background-color: var(--main-blue);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
 
     }
+
     .landingSubContent {
-      margin-top: 40vh;
-      height: 100vh;
+
+      height: 90vh;
       color: black;
+      padding-top: 30vh;
+      width: 90vw;
+      margin: auto;
       overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
 
 
     }
-    .landingSubContentItem {
+    .landingSection {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      
+    }
+    .landingSubContentItem {
+      display: flex;
+      width: 400vw;
+      flex-direction: row;
+      margin: 2rem;
 
     }
     .landingImage img {
@@ -51,13 +77,15 @@
       object-fit: cover; /* Ensure the image covers the container */
     }
     .containerImg {
-
-      width: 50%;
+      width: 20vw;
       border-radius:1.4rem;
     }
     .container {
-      width: 0vw;
+      width: 100vw;
       border-radius:1.4rem;
+
+  
+
     }
     
     .landingInfo {
@@ -236,3 +264,14 @@
         }
         }
     
+
+.landingSection2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aquamarine;
+  
+}
+        

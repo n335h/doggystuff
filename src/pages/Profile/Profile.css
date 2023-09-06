@@ -1,0 +1,233 @@
+.profile {
+  margin: 0 auto;
+  width: 100vw;
+  height: 110vh;
+  margin: 0;
+  margin-top: -10vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+.maindashboard {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: flex-start; /* Vertically center the content */
+  height: 90vh; /* Adjust the height as needed */
+  width:80vw;
+  margin: 0;
+}
+
+.dashboardleft {
+  text-align: center; /* Center the text inside dashboardleft */
+}
+.dashboardright, .dashboardleft {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+margin-top: 15vh;
+  width: 50vw;
+  height: 90vh;
+
+}
+
+
+
+.userDetails {
+  text-align: left;
+
+  
+}
+.editButtons {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.dogContainer,
+.order-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+
+}
+.dogContainer,
+.order-details p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+/* Style for dog and order data */
+.dog-details,
+.order-data {
+  flex: 1;
+}
+
+/* Style for dog and order button containers */
+.dog-button-container,
+.order-button-container {
+  flex: 0; /* Prevent button containers from growing */
+  margin-left: 10px; /* Add some space between data and buttons */
+}
+
+.dashboardright button {
+ width: 10vw;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  color: #000;
+  font-size:0.6rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: underline;
+}
+
+.dashboardleft button {
+  height: 7vh;
+  width: 10vw;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--header-main);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 17.4rem;
+  border: 0;
+  
+}
+.dashboardleft button:hover{
+  background-color: var(--header-main-hover);
+  color: var(--header-main);
+  border: 4px solid var(--header-main);
+  cursor: pointer;
+}
+
+.linebreak {
+  width: 80%;
+  height: 0.2px;
+  background-color: #b6b6b657;
+  margin: 0 1vw;
+  border: none;
+}
+
+.userpetbox, .userorderbox, .userinfobox{
+  min-width: 30vw;
+
+}
+
+.dog-overlay, .order-overlay {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  width: 50vw;
+
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.dog-overlay button, .order-overlay button {
+  height: 7vh;
+  width: 10vw;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--header-main);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 17.4rem;
+  border: 0;
+}
+.dog-overlay button:hover, .order-overlay button:hover {
+  background-color: var(--header-main-hover);
+  color: var(--header-main);
+  border: 4px solid var(--header-main);
+  cursor: pointer;
+}
+
+.dogimg img {
+  width:5vw;
+  height: auto;
+  margin: 1rem;
+  object-fit: cover;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+.dogimg {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@media screen and (max-width: 750px) {
+  .dashboardright button {
+    width: 15vw;
+     height: 50px;
+
+   }
+   
+   .dashboardleft button {
+     height: 7vh;
+     width: 15vw;
+
+   }
+   .maindashboard {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+   }
+    .dashboardleft {
+      margin-top: 60vh;
+    }
+    .dashboardright {
+      margin-top: 0;
+    }
+    .userinfo {
+      margin-top: 10vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+    }
+  }
+
+  @media screen and (max-width:450px) {
+    .dashboardright button {
+      width: 20vw;
+       height: 50px;
+  
+     }
+     
+     .dashboardleft button {
+       height: 7vh;
+       width: 20vw;
+  
+       
+     }
+
+    }
+
+
+
+    

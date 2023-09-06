@@ -1,3 +1,4 @@
+
 .doggyStuff-logo img {
     display: flex;
     flex-direction: row;
@@ -6,7 +7,25 @@
     padding-top: 25px;
     width: 50%;
     height: auto;
+    
+    margin: 0;
 }
+.doggyStuff-logo a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoMain {
+    fill: var(--header-main);
+}
+
+.logo1, .logo-signin {
+    filter: invert(83%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);}
+.logo2 {
+    filter: invert(72%) sepia(83%) saturate(3811%) hue-rotate(174deg) brightness(97%) contrast(90%);}
+
 
 @media screen and (max-width: 500px)
 {
@@ -16,8 +35,9 @@
         justify-content: center;
         align-items: center;
         padding-top: 15px;;
-        width: 85%;
+        width: 70%;
         height: auto;
+        margin: 0;
     }
 
     /* .doggyStuff-logo img {

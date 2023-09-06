@@ -28,8 +28,8 @@
 
         return (
             <div className="surveyFormSection">
-                <FormWrapper title="Tell us about your doggo">
-                    <h3>How is your dog's health?</h3>
+                <FormWrapper title="Tell us what food your doggo likes">
+                    <h3>Whats food does your Doggo want</h3>
                     <div className="surveyFormSectionContent">
                         <input
                             type="checkbox"
@@ -66,19 +66,19 @@
                     </div>
 
                     <div className="surveyFormSectionContent">
-                        <input type='radio' className='dropdownOptions'
+                        <input title="vegNo" type='radio' className='dropdownOptions'
                             onChange={e=> updateFields({veg: e.target.value}) }
                             value='No'
-                            id='veg'
+                            id='vegNo'
                             name='veg'
                             required
                         />
                         <label htmlFor='veg'>No Veg</label>
 
-                        <input type='radio' className='dropdownOptions'
+                        <input title="vegYes" type='radio' className='dropdownOptions'
                             onChange={e=> updateFields({veg: e.target.value}) }
                             value='Yes'
-                            id='veg'
+                            id='vegYes'
                             name='veg'
                             required
                         />

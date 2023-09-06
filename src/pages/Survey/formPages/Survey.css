@@ -20,7 +20,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 100%;
     height: 50vh;
     margin: auto;
     
@@ -34,7 +34,7 @@ form.surveyForm {
  
 }
 .surveyForm input {
-    width: 60vw;
+    width:30vw;
     height: 3.5rem;
     margin-bottom: 1rem;
     border: none;
@@ -42,18 +42,95 @@ form.surveyForm {
     padding: 0 1rem;
     font-size: 1.2rem;
     border-radius:17.4rem;
+    margin: 0;
    
 } 
+label, legend {
+    margin-bottom: 1vh;
+}
 .formContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 60vw;
  
     
  
 
 }
+#dog_size, #dog_sex p {
+    width: 5vw;
+    padding: 1rem;
+}
+.dogSex, .dogSize {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    margin-top: 2vh;
+
+
+    
+ 
+}
+.dogSexOption, .dogSizeOption{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:10vw;
+
+    
+ 
+}
+
+.pureCross, .dogHealth {
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+}
+.dogSex button , .dogSize button, .pureCross button, .dogHealth button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 14vh;
+    width: 14vw;
+    background-color: var(--main-blue);
+    color: #fff;
+    font-weight: 700;
+    margin: 0.5rem;
+
+    border: 0;
+}
+.dogSex button:hover, .dogSize button:hover, .pureCross button:hover, .dogHealth button:hover {
+    background-color: var(--header-main-hover);
+    color: var(--header-main);
+    border: 4px solid var(--header-main);
+    cursor: pointer;
+}   
+.dogSizeOption.selected,
+.dogSexOption.selected,
+.dogSizeOption:active,
+.dogSexOption:active,
+.pureCrossOption.selected,
+.pureCrossOption:active 
+.dogHealthOption.selected,
+.dogHealthOption:active {
+    background-color: var(--header-main-hover);
+    color: var(--header-main);
+    border: 4px solid var(--header-main);
+    cursor: pointer;
+}
+
+ #backSurveyButton {
+    position: absolute;
+    top: 15vh;
+    left: 5vw;
+ }
+
 /* .surveyForm {
     display: flex;
     flex-direction: column;
@@ -93,6 +170,7 @@ form.surveyForm {
     justify-content: center;
     width: 100%;
     margin: 0;
+    margin-bottom: 1vh;
     
 }
 .surveyFormNum{
@@ -105,7 +183,7 @@ right: 10%;
 
 .surveyButton {
     height: 7vh;
-    width: 40%;
+    width: 35%;
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -118,23 +196,40 @@ right: 10%;
     border: 0;
     
 }
-.surveyButton:hover{
+.backSurveyButton {
+    height: 7vh;
+    width: 35%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-blue);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 30px;
+    border: 0;
+
+}
+.surveyButton:hover, .backSurveyButton:hover{
     background-color: var(--header-main-hover);
     color: var(--header-main);
     border: 4px solid var(--header-main);
     cursor: pointer;
 }
 .dropdownOptions {
-    width:20vw;
+    width:30vw;
     height: 3.5rem;
     margin-bottom: 1rem;
     border: none;
     border-radius: 5px;
-    padding: 0;
+    padding: 1rem;
     font-size: 1.2rem;
     border-radius:17.4rem;
 }
-
+.dropdownOptions p {
+margin: 2rem;
+}
 
 .confirmation {
     display: flex;
@@ -142,6 +237,14 @@ right: 10%;
     align-items: flex-start;
     justify-content: center;
 }
+
+
+
+
+
+
+
+
 
 
 

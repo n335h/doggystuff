@@ -9,6 +9,7 @@
   import { Landing } from '../Landing/Landing';
   import { Container } from 'react-bootstrap';
   import GetStarted from '../getStarted/getStarted';
+import Profile from '../Profile/Profile';
 
 
 
@@ -143,9 +144,10 @@
 
   return (
     <Container className='mb-4'>
-      <div className='App'>
+      <div id='App' className='App'>
         <BrowserRouter>
-          <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible}/>
+       
+          <Navbar isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} visible={visible} />
           <Routes>
             <Route path='/' element={<Landing />} />
             {/* <Route path='/src/pages/signsignup' element={<SignInSignUp isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} /> */}
@@ -167,7 +169,9 @@
             />} />
               <Route path='/Survey' element={<Survey updateFields={updateFields} updateOrderFields={updateOrderFields} />} />
                         <Route path='/GetStarted' element={<GetStarted />} />
+                        <Route path='/profile'  element={<Profile />} />  
           </Routes>
+          
         </BrowserRouter>
       </div>
     </Container>
