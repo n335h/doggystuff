@@ -3,10 +3,7 @@ import './Navbar.css';
 import user from '../../Assets/user.svg'
 import userClose from '../../Assets/userClose.svg'
 
-type Props = {
-  // Props type definition
-  newColor: string;
-};
+
 interface SignInIconProps {
   isOpen: boolean;
   ToggleSignInMenu: () => void;
@@ -15,7 +12,7 @@ interface SignInIconProps {
 }
 
   const SignInIcon: React.FC<SignInIconProps> = ({ isOpen, ToggleSignInMenu, openAdditionalSignInMenu, icon}) => {
-    const [currentColorClass, setCurrentColorClass] = useState<string>('logo1'); // Set an initial class
+    const [currentColorClass] = useState<string>('logo1'); // Set an initial class
 
     useEffect(() => {
       const sectionHeight = window.innerHeight;
