@@ -21,6 +21,10 @@ const DoggyStuffLogo: React.FC = () => {
     const section1End = sectionHeight;
     const section2Start = sectionHeight;
     const section2End = 2 * sectionHeight;
+    const section3Start = 2 * sectionHeight;
+    const section3End = 3 * sectionHeight;
+    const section4Start = 3 * sectionHeight;
+    const section4End = 4 * sectionHeight;
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -32,7 +36,14 @@ const DoggyStuffLogo: React.FC = () => {
       } else if (scrollY >= section2Start && scrollY < section2End) {
         currentSection = 2;
         console.log('currentSection', currentSection);
+      } else if (scrollY >= section3Start && scrollY < section3End) {
+        currentSection = 3;
+        console.log('currentSection', currentSection);
+      } else if (scrollY >= section4Start && scrollY < section4End) {
+        currentSection = 4;
+        console.log('currentSection', currentSection);
       }
+
      
 
       let newColor = 'logo1'; // Set the default color
@@ -43,10 +54,17 @@ const DoggyStuffLogo: React.FC = () => {
       } else if (currentSection === 2) {
         newColor = 'logo2'; // Set the desired color
         console.log('newColor2', newColor);
+      } else if (currentSection === 3) {
+        newColor = 'logo3'; // Set the desired color
+        console.log('newColor3', newColor);
+      } else if (currentSection === 4) {
+        newColor = 'logo4'; // Set the desired color
+        console.log('newColor4', newColor);
       }
 
+
       // Get the path element by its ID
-      const pathElement = document.getElementById('hamburger');
+      const pathElement = document.getElementById('path1');
       console.log('pathElement', pathElement);
 
       if (pathElement) {

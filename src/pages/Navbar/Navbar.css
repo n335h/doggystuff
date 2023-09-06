@@ -289,6 +289,13 @@
       filter: invert(72%) sepia(83%) saturate(3811%) hue-rotate(174deg) brightness(97%) contrast(90%);
       color: var(--header-main);
     }
+
+    .logo3 {
+      filter: invert(100%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);
+    }
+    .logo4 {
+      filter: invert(84%) sepia(36%) saturate(7028%) hue-rotate(178deg) brightness(107%) contrast(89%);
+    }  
     .signedinicon1 {
       color: var(--header-main);
   

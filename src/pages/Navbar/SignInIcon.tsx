@@ -16,10 +16,15 @@ interface SignInIconProps {
 
     useEffect(() => {
       const sectionHeight = window.innerHeight;
-      const section1Start = 0;
-      const section1End = sectionHeight;
-      const section2Start = sectionHeight;
-      const section2End = 2 * sectionHeight;
+    const section1Start = 0;
+    const section1End = sectionHeight;
+    const section2Start = sectionHeight;
+    const section2End = 2 * sectionHeight;
+    const section3Start = 2 * sectionHeight;
+    const section3End = 3 * sectionHeight;
+    const section4Start = 3 * sectionHeight;
+    const section4End = 4 * sectionHeight;
+
       
   
       const handleScroll = () => {
@@ -32,7 +37,15 @@ interface SignInIconProps {
         } else if (scrollY >= section2Start && scrollY < section2End) {
           currentSection = 2;
           console.log('currentSection', currentSection);
+        } else if (scrollY >= section3Start && scrollY < section3End) {
+          currentSection = 3;
+          console.log('currentSection', currentSection);
+        } else if (scrollY >= section4Start && scrollY < section4End) {
+          currentSection = 4;
+          console.log('currentSection', currentSection);
         }
+
+
         // Add more conditions and color classes as needed
   
         let newColor = 'logo1'; // Set the default color
@@ -43,6 +56,12 @@ interface SignInIconProps {
         } else if (currentSection === 2) {
           newColor =  'logo2'; // Set the desired color
           console.log('newColor2', newColor);
+        } else if (currentSection === 3) {
+          newColor =  'logo3'; // Set the desired color
+          console.log('newColor3', newColor);
+        }  else if (currentSection === 4) {
+          newColor =  'logo4'; // Set the desired color
+          console.log('newColor4', newColor);
         }
   
         // Get the path element by its ID
