@@ -278,13 +278,23 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                     </Link>
                   </li>
                   <li>
+                    <Link to="/getstarted" onClick={handleToggleAdditionalMenu}>
+                      Join DoggyStuff
+                    </Link>
+                  </li>
+                  <li>
                     <Link to="/about" onClick={handleToggleAdditionalMenu}>
-                      About
+                      About us
                     </Link>
                   </li>
                   <li>
                     <Link to="/faq" onClick={handleToggleAdditionalMenu}>
                       FAQ
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/contact" onClick={handleToggleAdditionalMenu}>
+                      Contact
                     </Link>
                   </li>
                 </ul>

@@ -139,24 +139,27 @@
     .additionalMenu ul {
       list-style: none;
       display: block;
-      font-size: 5.6rem;
+      font-size: 4rem;
       font-weight: 500;
       text-align: center;
+      
       
     }
     
     .additionalMenu li {
-      margin-bottom: 10px;
+      margin-bottom: 2rem;
+      
       
     }
     
     .additionalMenu a {
+      
       text-decoration: none;
       color: var(--header-main);
     }
     
     .additionalMenu a:hover {
-      color: var(--header-main);;
+      color: var(--backgroud-offwhite);
     }
 
     .sign-in-container {
@@ -213,7 +216,7 @@
     }
     
     .additionalSignInMenu a:hover {
-      color: var(--header-main);;
+      color: var(--backgroud-offwhite);
     }
 
     #SignIn, #dropdown-menu-signout-button {
@@ -344,7 +347,7 @@
     {
   
 
-      .profileicon {
+      #profileicon  {
         height: 3.5vh;
       }
      #dropdown-menu-signout-button{
