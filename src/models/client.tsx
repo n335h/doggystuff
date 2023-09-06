@@ -191,45 +191,31 @@ export async function fetchUserAddressData(): Promise <AddressData | null> {
   }
 }
 
-export async function fetchUserOrderData(): Promise< OrderData | null> {
+export async function fetchUserOrderData(): Promise<OrderData[]> {
   try {
     const user_ID = await getCurrentUserId();
-    console.log(user_ID, 'THIS IS THE USER ID 14 ');
+    console.log(user_ID, 'THIS IS THE USER ID 14');
     if (user_ID) {
       const order_query = await supabaseClient!
         .from("order")
-        .select('*') 
-        .eq('user_id', user_ID)
-       
-console.log(order_query, 'THIS IS THE ORDER QUERY 2');
+        .select('*')
+        .eq('user_id', user_ID);
+
+      console.log(order_query, 'THIS IS THE ORDER QUERY 2');
       if (order_query.error) {
         console.error('Error fetching user order data:', order_query.error);
-        return null;
-      } else {         
-        console.log(order_query, 'THIS IS THE ORDER QUERY 2');
-
-        return order_query.data;
-        // return {
-        //   order_id: order_query.data.order_id,
-        //   created_at: order_query.data.created_at,
-        //   total: order_query.data.total,
-        //   veg: order_query.data.veg,
-        //   flavours_not: order_query.data.flavours_not,
-        //   user_id: user_ID,
-        //   days: order_query.data.days,
-
-        // };
+        return []; // Return an empty array when there's an error.
+      } else {
+        return order_query.data; // Return the array of orders.
       }
-    } else {
-      console.log('User is not signed in.');
-      return null;
     }
-  } catch (error) {
-    console.error('Error fetching user order data:', error);
-    return null;
-  }
 
-  
+    // Return an empty array when user_ID is not available.
+    return [];
+  } catch (error) {
+    console.error('An error occurred:', error);
+    return []; // Return an empty array in case of an error.
+  }
 }
 // export async function fetchUserAddressData() {
 //   const user_ID = await getCurrentUserId();
