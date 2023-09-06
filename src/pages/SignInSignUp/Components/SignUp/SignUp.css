@@ -26,6 +26,7 @@
 .submit-button.signup button {
   background-color: var(--header-main);
   margin: 0;
+ 
 }
 .sign-form1 form {
     display: flex;
@@ -106,9 +107,9 @@
   }
 .sign-form button {
     border-radius: 17.4rem;
-    border: none;
+    border: none; 
     padding: 2.8vh 7vw 2.9vh;
-
+width:50vw;
     font-size: 0.9rem;
     color: #fff;
     font-weight: 700;
@@ -121,4 +122,9 @@
     
     }
     @media screen and (max-width:500px) {
+      .submit-button.signup button {
+        background-color: var(--header-main);
+        margin: 0;
+        width: 60vw;
+      }
     }
