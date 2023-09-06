@@ -7,7 +7,7 @@ import Hamburger from '../Hamburger.tsx/Hamburger';
 import SignInIcon from './SignInIcon';
 import DoggyStuffLogo from '../Logo/Logo';
 import user from '../../Assets/user.svg';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 
 
@@ -32,8 +32,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   // const [SignInIconState, setSignInIconState] = useState('user');
   const [SignInIconState, setSignInIcon] = useState('user');
   const [additionalSignInMenuOpen, setAdditionalSignInMenuOpen] = useState(false);
-  const [currentColorClass, setCurrentColorClass] = useState<string>('logo1'); // Set an initial class
-  const [currentColorClass2, setCurrentColorClass2] = useState<string>('signedinicon1'); // Set an initial class
+  const [currentColorClass] = useState<string>('logo1'); // Set an initial class
+  const [currentColorClass2] = useState<string>('signedinicon1'); // Set an initial class
   // const [showSignUp, setShowSignUp] = useState(false);
   // const [showSignIn, setShowSignIn] = useState(false);
   // const [signUpRedirect, setSignUpRedirect] = useState(false);
@@ -57,9 +57,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   //     });
   // }
   const navbarRef = useRef<HTMLElement>(null); // Create a ref for the navbar element
-  const location = useLocation();
+  // const location = useLocation();
 
-  const shouldApplyPageStyle = location.pathname === '/signin'; // Set to true if the current path is '/specific-page'
+  // const shouldApplyPageStyle = location.pathname === '/signin'; // Set to true if the current path is '/specific-page'
 
 
   const handleToggleMenu = () => {

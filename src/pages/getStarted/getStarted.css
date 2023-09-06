@@ -4,10 +4,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height:100vh;
         margin-top: -10vh;
         width: 100vw;
-        background-color: #fff6e1;
+        background-color: var(--background-offwhite);
 
     }
 
@@ -101,9 +101,31 @@
         z-index: 0;
     }
 
-    @media screen and (max-width: 430px){
+    @media screen and (max-width: 750px){
 
-    
+        .getStarted h1 {
+            font-size: 2.7rem;
+            font-weight: 600;
+            margin-bottom:  5vh;
+            margin-top: 20vh;
+            width: 70%;
+        }
+        .getStarted p {
+            font-size: 1rem;
+            width: 70%;
+            margin-bottom: 10px;
+        }
+    .getStarted {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height:80vh;
+
+    }
+    .getStartedButton {
+        margin-top: 5vh;
+    }
     .bkgrndFloatImg {
         height: 20vh;
         display: none;
@@ -114,6 +136,27 @@
         padding: 0;
         z-index: 0;
     }
+.infoBox{
+   display: flex;
+   position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:17vh;
 
+    
+   margin: 0;
+    width: 50vw;
+}
+.getStartedouter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: -10vh;
+    width: 100vw;
+    background-color: var(--background-offwhite);
+}
 
     }

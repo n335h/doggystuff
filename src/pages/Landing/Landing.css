@@ -1,5 +1,5 @@
   .landing {
-      height: 110vh;
+      height: 100vh;
       width: 100vw;
       margin-top: -10vh;
       display: flex;
@@ -13,12 +13,12 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      overflow-x: hidden;
+      
       z-index: 12;
     }
     .landingSubOuter {
       width: 100vw;
-      height: 120vh;
+      height: 130vh;
       margin-top: -20vh;
       background-color: var(--header-main);
       border-bottom-left-radius: 10vh;
@@ -33,16 +33,41 @@
     }
     .landingSubOuter2 {
       width: 100vw;
-      height: 120vh;
+      height: 130vh;
       margin-top: -20vh;
+      background-color: var(--light-blue);
+      border-bottom-left-radius: 10vh;
+      border-bottom-right-radius: 10vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: -1;
+
+    }
+    .landingSubOuter3 {
+      width: 100vw;
+      height: 130vh;
+      margin-top: -40vh;
+      background-color: var(--background-offwhite);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: -4;
+
+    }
+    .landingSubOuter4 {
+      width: 100vw;
+      height: 110vh;
+      margin-top: 0vh;
+      border-top-left-radius: 10vh;
+      border-top-right-radius: 10vh;
       background-color: var(--main-blue);
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: -2;
+      z-index: 0;
 
     }
-
     .landingSubContent {
 
       height: 90vh;
@@ -88,6 +113,39 @@
 
     }
     
+    .foodTypes {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 45vh;
+
+  
+    }
+    
+.foodTypeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  overflow-x: auto;
+
+
+  margin-right: 10px; /* Adjust the margin as needed */
+  /* You can add more styling as needed for individual foodType divs */
+}
+    .foodType {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-width: 700px;
+      margin: 2rem;
+      height: 45vh;
+      border-radius: 3.4rem;
+      background-color: var(--header-main);
+    }
     .landingInfo {
       position: absolute; /* Use absolute positioning to overlay the image */
       top: 50%;
@@ -209,6 +267,8 @@
           font-size: 1rem;
           width: 80vw;
         } 
+
+     
       }
 
       @media screen and (max-width:430px) {

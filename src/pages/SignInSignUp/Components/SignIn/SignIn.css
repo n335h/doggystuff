@@ -139,8 +139,8 @@
    */
     @media screen and (max-width: 750px){
     input {
-      width: 70%;
-  
+      width: 90%;
+  background-color: #ffffff;
       padding: 10px;
       margin-bottom: 10px;
       /* border: 1px solid #ccc; */

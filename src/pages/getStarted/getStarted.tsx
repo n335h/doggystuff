@@ -7,7 +7,7 @@
 
     function GetStarted () {
         return (
-            <div className='getStarted'>
+            <div className='getStartedouter'>
             <div className='getStarted'>
                 <h1 className='getstartedtitle animate-pop-in '>Welcome to DoggyStuff</h1>
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {
-  // fileUploadHandler,
+  fileUploadHandler,
   fetchUserProfile,
   fetchUserAddressData,
   fetchUserOrderData,
   fetchUserDogData,
   updateUserData,
-  updateUserAddressData,
+  // updateUserAddressData,
 } from '../../models/client';
 // import ImageUpload from '../ImgUpload/ImgUpload';
 import './Profile.css';
@@ -53,6 +53,7 @@ type DogData = {
   dog_age: string;
   flavours_not: string[];
   veg: string;
+  src?: string;
   
 };
 
@@ -77,37 +78,36 @@ function Profile() {
     address_postcode: '',
     user_id: '',
   });
-  const [orderData, setOrderData] = useState<OrderData>({
-    order_id: '',
-    created_at: '',
-    total: '',
-    veg: '',
-    flavours_not: [],
-    user_id: '',
-    days: '',
-    address_fl: '',
-    address_sl: '',
-    address_town: '',
-    address_county: '',
-    address_postcode: '',
-    dog_name: '',
-  });
+  // const [orderData, setOrderData] = useState<OrderData>({
+  //   order_id: '',
+  //   created_at: '',
+  //   total: '',
+  //   veg: '',
+  //   flavours_not: [],
+  //   user_id: '',
+  //   days: '',
+  //   address_fl: '',
+  //   address_sl: '',
+  //   address_town: '',
+  //   address_county: '',
+  //   address_postcode: '',
+  //   dog_name: '',
+  // });
   const [orders, setOrders] = useState<OrderData[]>([]);
-  const [dogData, setDogData] = useState<DogData>({
-    dog_id: '',
-    dog_name: '',
-    dog_health: '',
-    dog_size: '',
-    dog_breed: '',
-    dog_age: '',
-    flavours_not: [],
-    veg: '',
+  // const [dogData, setDogData] = useState<DogData>({
+  //   dog_id: '',
+  //   dog_name: '',
+  //   dog_health: '',
+  //   dog_size: '',
+  //   dog_breed: '',
+  //   dog_age: '',
+  //   flavours_not: [],
+  //   veg: '',
 
 
-  });
+  // });
   const [dogs, setDogs] = useState<DogData[]>([]);
-  const [selectedFile, setSelectedFile] = useState(null);
-
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [showOrderOverlay, setShowOrderOverlay] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState<OrderData | null>(null);
   const [showDogOverlay, setShowDogOverlay] = useState(false);
@@ -120,7 +120,7 @@ function Profile() {
     email: '',
     user_id: '',
   });
-  const [editAddress, setEditAddress] = useState(false);
+  // const [editAddress, setEditAddress] = useState(false);
   const [editedAddress, setEditedAddress] = useState<AddressData>({
     address_fl: '',
     address_sl: '',
@@ -178,41 +178,45 @@ function Profile() {
     }
   };
 
-  const handleSaveAddress = async () => {
-    try {
-      await updateUserAddressData(
-        editedAddress.address_fl,
-        editedAddress.address_sl,
-        editedAddress.address_town,
-        editedAddress.address_county,
-        editedAddress.address_postcode
-      );
-      setAddressData({ ...addressData, ...editedAddress });
-      setEditAddress(false);
-    } catch (error) {
-      console.error("Error updating address data:", error);
-    }
-  };
+  // const handleSaveAddress = async () => {
+  //   try {
+  //     await updateUserAddressData(
+  //       editedAddress.address_fl,
+  //       editedAddress.address_sl,
+  //       editedAddress.address_town,
+  //       editedAddress.address_county,
+  //       editedAddress.address_postcode
+  //     );
+  //     setAddressData({ ...addressData, ...editedAddress });
+  //     setEditAddress(false);
+  //   } catch (error) {
+  //     console.error("Error updating address data:", error);
+  //   }
+  // };
 
   const fileSelectedHandler = (event: any) => { // links to non working image upload
     const file = event.target.files[0];
     setSelectedFile(file);
   };
   
-  const handleFileUpload = async () => { // links to non working image upload
-    const success = await fileUploadHandler(selectedFile);
-    if (success) {
-      console.log('File uploaded successfully');
-    } else {
-      console.log('File upload failed');
+  
+  const handleFileUpload = async () => {
+    if (selectedFile) {
+      const success = await fileUploadHandler(selectedFile); // Call your file upload handler
+      if (success) {
+        console.log('File uploaded successfully');
+      } else {
+        console.log('File upload failed');
+      }
     }
   };
 
   useEffect(() => {
     async function getUserOrderData() {
       const orderData = await fetchUserOrderData();
-      setOrderData(orderData);
-      setOrders(orderData);
+      if (orderData !== null) {
+        setOrders(orderData);
+      }
     }
 
     getUserOrderData();
@@ -221,12 +225,14 @@ function Profile() {
   useEffect(() => {
     async function getUserDogData() {
       const dogData = await fetchUserDogData();
-      setDogData(dogData);
-      setDogs(dogData);
+      if (dogData !== null) {
+        setDogs(dogData);
+      }
     }
 
     getUserDogData();
   }, []);
+
 
   return (
     <div className="profile animate-pop-in">
