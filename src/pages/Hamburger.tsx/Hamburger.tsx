@@ -4,10 +4,6 @@
   import hamburgeropen from '../../Assets/hamburgeropen.svg'
   import hamburgerclose from '../../Assets/hamburgerclose.svg'
 
-  type Props = {
-    // Props type definition
-    newColor: string;
-  };
   interface HamburgerMenuProps {
     isOpen: boolean;
     toggleMenu: () => void;
@@ -17,7 +13,7 @@
 
 
     const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isOpen, toggleMenu, openAdditionalMenu, icon}) => {
-      const [currentColorClass, setCurrentColorClass] = useState<string>('logo1'); // Set an initial class
+      const [currentColorClass] = useState<string>('logo1'); // Set an initial class
 
   
       useEffect(() => {
