@@ -40,7 +40,7 @@ export function Landing() {
       
       <section className="landingSection">
         <div className="landingSubOuter" ref={landingSubRef}>
-          <div className="landingSubContent">
+          {/* <div className="landingSubContent">
             <h2>How it works</h2>
             <div className="landingSubContentItem">
               <div className='container'> 
@@ -71,11 +71,11 @@ export function Landing() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className="landingSection">
-        <div className="landingSubOuter">
+        <div className="landingSubOuter2">
           </div>
       </section>
                 

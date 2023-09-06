@@ -106,6 +106,7 @@
       z-index: 100;
       
     }
+
     
     .navbarcenter {
       display: flex;
@@ -229,7 +230,6 @@
       font-weight: 700;
       background: transparent;
       opacity: 1;
-      color: var(--header-main);
     }
     #dropdown-menu-signout-button:hover {
       cursor: pointer;
@@ -261,7 +261,12 @@
       background: transparent;
       opacity: 1;
     }
-
+#profileicon{
+  width: 5rem;
+  height: 5vh;
+  justify-content: center;
+  margin-top: 0.5vh;
+}
     .button-hoverable:hover {
       cursor: pointer;
       color: white;
@@ -272,10 +277,23 @@
       color: white;
     }
     .logo1 {
-      filter: invert(83%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);}
-  .logo2 {
-      filter: invert(72%) sepia(83%) saturate(3811%) hue-rotate(174deg) brightness(97%) contrast(90%);}
+      filter: invert(83%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);
+    
+    }
+
   
+      .logo2 {
+      filter: invert(72%) sepia(83%) saturate(3811%) hue-rotate(174deg) brightness(97%) contrast(90%);
+      color: var(--header-main);
+    }
+    .signedinicon1 {
+      color: var(--header-main);
+  
+    }
+    .signedinicon2 {
+      color: var(--main-blue);
+  
+    }
 
     .profileicon {
       width: 5rem;

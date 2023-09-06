@@ -55,6 +55,19 @@
       margin-bottom: 2vh;
   }
 
+  .sign-in-overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 11;
+  }
+
+  .applypagestylechange {
+    filter: brightness(0) saturate(100%) invert(51%) sepia(97%) saturate(392%) hue-rotate(160deg) brightness(96%) contrast(92%);
+  }
 
   .signInImg {
       width: 100%;
@@ -119,9 +132,11 @@
 .signInLink{
   color: var( --black-text);
 }
- 
-    
-  
+/*  
+    #path1 {
+      filter: brightness(0) saturate(100%) invert(51%) sepia(97%) saturate(392%) hue-rotate(160deg) brightness(96%) contrast(92%); 
+    }
+   */
     @media screen and (max-width: 750px){
     input {
       width: 70%;

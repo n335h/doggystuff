@@ -14,16 +14,35 @@
       background-position: center;
       background-repeat: no-repeat;
       overflow-x: hidden;
+      z-index: 12;
     }
-    .landingSubOuter{
+    .landingSubOuter {
       width: 100vw;
       height: 120vh;
       margin-top: -20vh;
       background-color: var(--header-main);
+      border-bottom-left-radius: 10vh;
+      border-bottom-right-radius: 10vh;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      z-index: 7;
+
+
+      
     }
+    .landingSubOuter2 {
+      width: 100vw;
+      height: 120vh;
+      margin-top: -20vh;
+      background-color: var(--main-blue);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+
+    }
+
     .landingSubContent {
 
       height: 90vh;
@@ -36,6 +55,14 @@
         white-space: nowrap;
 
 
+    }
+    .landingSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      
     }
     .landingSubContentItem {
       display: flex;
@@ -238,5 +265,13 @@
         }
     
 
-
+.landingSection2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aquamarine;
+  
+}
         
