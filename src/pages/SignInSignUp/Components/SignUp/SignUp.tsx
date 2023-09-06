@@ -131,7 +131,7 @@ function SignUp({
           required
         />
         <br />
-        <div className="submit-button animate-pop-in ">
+        <div className="submit-button signup animate-pop-in ">
         <button type='submit' auto-complete='current-password' aria-label='Submit' data-testid='submit-button' className='submit-button'>
           Submit
         </button>
