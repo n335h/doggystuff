@@ -57,8 +57,8 @@ if (supabaseUrl && supabaseKey) {
 // Functionality for signing in a user
 
 export async function SignInUser(email: string, password: string): Promise<boolean> {
-  try { 
-    const {  error } = await supabaseClient?.auth.signInWithPassword({ email, password }) || {};
+  try {
+    const { error } = await supabaseClient?.auth.signInWithPassword({ email, password }) || {};
     if (error) {
       console.error('Sign-in error:', error);
       return false;
@@ -100,7 +100,7 @@ export async function isSessionSignedIn(): Promise<boolean> {
 // Get the currently signed-in user's id
 export async function getCurrentUserId(): Promise<string | null> {
   try {
-    const { data:{user} } = await supabaseClient!.auth.getUser();
+    const { data: { user } } = await supabaseClient!.auth.getUser();
     return user?.id || null; // ? is used to tell TypeScript that the value may be null or undefined and to not throw an error if it is 
   } catch (error) {
     // Handle any other errors that may occur
@@ -122,7 +122,7 @@ export default supabaseClient;
 export async function fetchUserProfile() {
   const user = await supabaseClient?.auth.getUser();
 
-  
+
 
   if (user) {
     console.log(user?.data.user?.id, 'THIS IS THE USER ID 1 ');
@@ -133,7 +133,7 @@ export async function fetchUserProfile() {
         .eq('user_id', user?.data.user?.id) //added ? to user to fix error "Object is possibly 'null'."
         .single();
 
-        console.log(userData, 'THIS IS THE USER DATA 2');
+      console.log(userData, 'THIS IS THE USER DATA 2');
 
       // const { data: addressData, error } = await supabaseClient!
       //   .from('user_address')
@@ -146,7 +146,7 @@ export async function fetchUserProfile() {
       if (error) {
         console.error('Error fetching user data:', error);
       } else {
-        const userProfile = {...userData} ;
+        const userProfile = { ...userData };
         console.log('User Profile:', userProfile, 'THIS IS THE USER PROFILE 3');
         return userProfile;
       }
@@ -158,7 +158,7 @@ export async function fetchUserProfile() {
   }
 }
 
-export async function fetchUserAddressData(): Promise <AddressData | null> {
+export async function fetchUserAddressData(): Promise<AddressData | null> {
   try {
     const user_ID = await getCurrentUserId();
     if (user_ID) {
@@ -241,68 +241,53 @@ export async function fetchUserOrderData(): Promise<OrderData[]> {
 //   } else {
 //     console.log('User is not signed in.');
 //   }
-  
 
 
-  // if (user) {
-  //   const { data: addressData, error } = await supabaseClient!
-  //     .from('user_address')
-  //     .select('*')
-  //     .eq('user_id',user_id)
-  //     .single();
 
-  //   if (error) {
-  //     console.error('Error fetching user address data:', error);
-  //   } else {
-  //     const userAddress = { ...addressData };
-  //     console.log('User Address:', userAddress, 'THIS IS THE USER ADDRESS 4');
-  //     return userAddress;
-  //   }
-  // } else {
-  //   console.log('User is not signed in.');
-  // }
+// if (user) {
+//   const { data: addressData, error } = await supabaseClient!
+//     .from('user_address')
+//     .select('*')
+//     .eq('user_id',user_id)
+//     .single();
+
+//   if (error) {
+//     console.error('Error fetching user address data:', error);
+//   } else {
+//     const userAddress = { ...addressData };
+//     console.log('User Address:', userAddress, 'THIS IS THE USER ADDRESS 4');
+//     return userAddress;
+//   }
+// } else {
+//   console.log('User is not signed in.');
+// }
 // }
 
 
 
-export async function fetchUserDogData(): Promise< DogData | null> {
+export async function fetchUserDogData(): Promise<DogData[]> {
   try {
     const user_ID = await getCurrentUserId();
     if (user_ID) {
       const dog_query = await supabaseClient!
         .from("dog")
-        .select('*') 
+        .select('*')
         .eq('user_id', user_ID)
-        
-       
-console.log(dog_query, 'THIS IS THE DOG QUERY 1');
+
+
+      console.log(dog_query, 'THIS IS THE DOG QUERY 1');
       if (dog_query.error) {
         console.error('Error fetching user order data:', dog_query.error);
-        return null;
-      } else {         
-        console.log(dog_query, 'THIS IS THE DOG QUERY 2');
-        return dog_query.data;
-        // return {
-        //   order_id: order_query.data.order_id,
-        //   created_at: order_query.data.created_at,
-        //   total: order_query.data.total,
-        //   veg: order_query.data.veg,
-        //   flavours_not: order_query.data.flavours_not,
-        //   user_id: user_ID,
-        //   days: order_query.data.days,
-
-        // };
+        return [];
+      } else {
+        return dog_query.data; // Return the array of dog data.
       }
-    } else {
-      console.log('User is not signed in.');
-      return null;
     }
+    return [];
   } catch (error) {
     console.error('Error fetching user order data:', error);
-    return null;
+    return [];
   }
-
-  
 }
 
 
@@ -316,7 +301,7 @@ console.log(dog_query, 'THIS IS THE DOG QUERY 1');
 
 //   try {
 //     const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
-    
+
 //     const { data, error } = await supabaseClient!
 //       .storage
 //       .from('dog-images')
@@ -365,7 +350,7 @@ export async function updateUserData(
 }
 
 
-export async function updateUserAddressData( 
+export async function updateUserAddressData(
   address_fl: string,
   address_sl: string,
   address_town: string,
@@ -401,8 +386,8 @@ export async function updateDogData(
   await supabaseClient!.from('dog').update({
     dog_name: dog_name,
     dog_health: dog_health,
-    });
-    console.log('Update DogData');
+  });
+  console.log('Update DogData');
 }
 
 
