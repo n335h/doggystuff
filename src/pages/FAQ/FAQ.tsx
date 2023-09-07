@@ -1,10 +1,14 @@
 import './FAQ.css';
 import { useState } from 'react';
+import faqdog from '../../Assets/faqdog.svg';
+import faqtop from '../../Assets/faqtop.svg';
+import { Link } from 'react-router-dom';
+
 
 const FAQ2 = () => {
-    const [activeIndex, setActiveIndex] = useState([]);
+    const [activeIndex, setActiveIndex] = useState<number[]>([]);
 
-    const toggleContent = (index) => {
+    const toggleContent = (index : number) => {
       if (activeIndex.includes(index)) {
         // If the clicked item is already open, close it.
         setActiveIndex(activeIndex.filter((item) => item !== index));
@@ -33,19 +37,24 @@ const FAQ2 = () => {
       answer:
         'Shipping is included in the price. You’ll get a text/email from our delivery driver to let you know a two-hour window in which to expect the delivery.',
     },
+    {
+        question: 'How should i transition my dog onto DoggyStuff?',
+        answer:
+          'We’ll help you through it, with a transition guide to walk you through the process clearly and if at any point you have any issues you can always reach out to us at .',
+      },
   ];
   return (
     <section className="pages" id="faq">
       <div className="faq-container">
         <div className="faq">
           <div className="faq-content">
-            <h1 id="pagetitle">So Help, Much Informative</h1>
-            <p id="pagesubtitle">We guess you have some questions. We're guessing your doggo may too. Good news, we have answers for both.</p>
-            <img className="faqimg" src="" alt="FAQ" />
+            <h1 className="pagetitle animate-pop-in">So Help, Much Informative</h1>
+            <p className="pagesubtitle animate-pop-in">We guess you have some questions. We're guessing your doggo may too. Good news, we have answers for both.</p>
+            <img className="faqfloat" src={faqtop} alt="FAQ" />
             <ul id="list">
               {faqData.map((faq, index) => (
                 <div
-                  className={`faq-subject ${activeIndex.includes(index) ? 'open' : ''}`}
+                  className={`faq-subject animate-pop-in ${activeIndex.includes(index) ? 'open' : ''}`}
                   key={index}
                 >
                   <li
@@ -68,7 +77,15 @@ const FAQ2 = () => {
             </ul>
           </div>
         </div>
+        <div className="faqbottom">
+          <img className="faqbottomimg" src={faqdog} alt="FAQ" />
+          <h1 className="faqbottomtitle animate-pop-in">Ready to stop chasing your tail in circles looking for the best, human-grade quality dog food?</h1>          
+           
+          <Link to="/GetStarted" className="faqbottombutton animate-pop-in">Try DoggyStuff</Link>
       </div>
+        </div>
+      
+
     </section>
   );
 };

@@ -1,12 +1,13 @@
 
 .faq-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
     height: auto;
     margin-top: -10vh;
-    background-color: antiquewhite;
+    background-color: var(--accent-pink);
   }
   
   /* Individual FAQ item styles */
@@ -25,18 +26,17 @@
     justify-content: center;
     align-items: center;
     margin-top: 20vh;
-    font-size: var(--text-r);
     justify-content: center;
     width: 100%;
 
   }
-  #pagetitle {
+  .pagetitle {
     font-size: 3.2rem;
     font-weight: 600;
     margin-bottom: 0;
     
   }
-  #pagesubtitle {
+  .pagesubtitle {
 width: 40vw;
 text-align: center;
 font-size: 1.3rem;
@@ -62,7 +62,7 @@ font-size: 1.3rem;
     margin: auto;
     margin-top: 4vh;
     margin-bottom: 3vh;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   
   .title.active {
@@ -113,3 +113,86 @@ font-size: 1.3rem;
     right: 15vw;
     height: 3vh;
   }
+  .faqbottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:70vw;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .faqbottomimg {
+    height: 60vh;
+  }
+
+  .faqfloat {
+    height: 40vh;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+  }
+
+  .faqbottombutton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--main-blue); /* Change this to your desired button style */
+    color: #fff;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: auto;
+    width: 40vw;
+    height: 8.5vh;
+    border: none;
+    cursor: pointer;
+    border-radius: 17.4rem;
+  }
+  
+  .faqbottombutton:hover {
+    background-color: var(--background-offwhite);
+    color: var(--main-blue);
+    border: 4px solid var(--main-blue);
+  }
+
+  @media screen and (max-width: 750px) {
+.pagesubtitle {
+    width: 80vw;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.pagetitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  #list {
+    padding: 0;
+  }
+  .title {
+    font-size: 0.8rem;
+    margin-top: 2vh;
+    margin-left: -5vw;
+    
+  } 
+  .faq-subject {
+    height: 7vh;
+    width: 100vw;
+   
+  }
+
+  .caron {
+    position: absolute;
+    right:5vw;
+    height: 3vh;
+  }
+  }
+  @media screen and (max-width: 500px) {
+
+  }
+

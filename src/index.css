@@ -17,7 +17,8 @@ code {
  --main-blue: #33a7eb;
  --light-blue: #5fbcf1;
  --accent-blue:rgb(217, 234, 245);
- --background-offwhite: #fcfaf6;
+ --accent-pink:rgb(242, 235, 245);
+  --background-offwhite: #fcfaf6;
  
 }
 input {

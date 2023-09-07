@@ -80,7 +80,16 @@
       .surveyButtons {
         animation-delay: 0.8s;
       }
-  
+  /* FAQ */
+  .pagetitle {
+    animation-delay: 0.6s;
+  }
+  .pagesubtitle {
+    animation-delay: 0.7s;
+  }
+  .faq-subject {
+    animation-delay: 0.8s;
+  }
   @keyframes pop-in {
     0% {
       opacity: 0;
