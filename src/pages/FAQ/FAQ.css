@@ -200,7 +200,7 @@ font-size: 1.3rem;
 }
   @media screen and (max-width: 500px) {
     .title {
-        font-size: 0.8rem;
+        font-size: 0.74rem;
         margin-top: 2vh;
         margin-left: -6vw;
   }
@@ -210,6 +210,11 @@ font-size: 1.3rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
+  }
+  .faq-subject {
+    height: 7vh;
+    width: 100vw;
+   
   }
 }
