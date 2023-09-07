@@ -76,14 +76,11 @@ font-size: 1.3rem;
     color: #fff;
     width: 20px;
     height: 20px;
-    background-image: url(''); /* Add your icon URL here */
     background-size: cover;
     margin-right: 10px;
   }
   
-  .title.active::before {
-    background-image: url(''); /* Add your active icon URL here */
-  }
+  
   
   /* FAQ answer styles */
   .content {
