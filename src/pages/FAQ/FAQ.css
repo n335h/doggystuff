@@ -1,0 +1,243 @@
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: auto;
+    margin-top: -10vh;
+    background-color: var(--accent-pink);
+  }
+
+  .faqtitle {
+   font-size: 0.8rem;
+   color: var(--main-blue);
+   font-weight: 300;
+  }
+  
+  /* Individual FAQ item styles */
+  .faq-subject {
+    max-width: 70vw;
+    background-color: var(--background-offwhite);
+    border-radius: 25px;
+    margin-bottom: 1rem;
+    padding: 20px;
+    text-align: left;
+    height: 12vh;
+  }
+  .faq-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    justify-content: center;
+    width: 100%;
+
+  }
+  .pagetitle {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    
+  }
+  .pagesubtitle {
+width: 40vw;
+text-align: center;
+font-size: 1.3rem;
+  }
+  .faq-subject.open {
+    background-color: var(--main-blue); /* Background color when expanded */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    height: auto;
+    width: 70vw;
+  }
+  li.content.open {
+    margin-bottom: 10px;
+  }
+  
+  /* FAQ question styles */
+  .title {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    font-size: 1.7rem;
+  }
+  
+  .title.active {
+    background-color: transparent; /* Background color when expanded */
+    color: #ffffff;
+    
+  }
+  
+  .title::before {
+    content: ''; /* Empty content for before pseudo-element */
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    margin-right: 10px;
+  }
+  
+  
+  
+  /* FAQ answer styles */
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0 0 0;
+  }
+  
+  .content.open {
+    max-height: 500px; /* Adjust the value as needed for your content */
+    color: #fff;
+    width: 35vw;
+    margin-left: 2vw;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+  
+  /* After content */
+  .faq-subject.open::after {
+    display: block;
+    color: #fff; /* Text color for the after content */
+    margin-top: 10px; /* Spacing between content and after content */
+    
+  }
+  .caron {
+    position: absolute;
+    right: 5vw;
+    height: 3vh;
+  }
+  .faqbottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:40vw;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .faqbottomimg {
+    height: 60vh;
+  }
+  
+
+  .faqfloat {
+    height: 40vh;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+  }
+
+  .faqbottombutton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--main-blue); /* Change this to your desired button style */
+    color: #fff;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: auto;
+    width: 15vw;
+    height: 8.5vh;
+    border: none;
+    cursor: pointer;
+    border-radius: 17.4rem;
+  }
+  
+  .faqbottombutton:hover {
+    background-color:transparent;
+    color: var(--main-blue);
+    border: 4px solid var(--main-blue);
+  }
+
+  @media screen and (max-width: 750px) {
+.pagesubtitle {
+    width: 80vw;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.faq-content {
+    margin-top: 12vh;
+}
+.pagetitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 2vh;
+    text-align: center;
+  }
+  #list {
+    padding: 0;
+  }
+  .title {
+    font-size: 1.2rem;
+    margin-top: 2vh;
+    margin-left: -5vw;
+    
+  } 
+  .faq-subject {
+    height: 7vh;
+    width: 100vw;
+   
+  }
+  .content.open {
+    width: 70vw;
+    margin-left: 0;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  .caron {
+    position: absolute;
+    right:5vw;
+    height: 3vh;
+  }
+  .faqbottomimg {
+    height: 50vh;
+  }
+  .faqbottombutton {
+    width: 40vw;
+  }
+  .faqbottom {
+    width: 70vw;
+  }
+  .faqfloat {
+    display: none;
+  }
+}
+  @media screen and (max-width: 500px) {
+    
+    .title {
+        font-size: 1rem;
+        margin-top: 2vh;
+        margin-left: -6vw;
+        width: 65vw;
+  }
+  #list {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .faq-subject {
+    height: 7vh;
+    width: 100vw;
+   
+  }
+}

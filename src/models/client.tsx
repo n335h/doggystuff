@@ -1,8 +1,6 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-
 export interface AddressData {
-  // Define the properties of AddressData here
   address_fl: string;
   address_sl: string;
   address_town: string;
@@ -12,7 +10,6 @@ export interface AddressData {
 }
 
 export interface OrderData {
-  // Define the properties of OrderData here
   order_id: string;
   created_at: string;
   total: string;
@@ -29,7 +26,6 @@ export interface OrderData {
 }
 
 export interface DogData {
-  // Define the properties of DogData here
   dog_id: string;
   dog_name: string;
   dog_health: string;
@@ -39,10 +35,9 @@ export interface DogData {
   flavours_not: string[];
   veg: string;
   src: string;
+  user_id: string;
+
 }
-
-
-
 
 // Assuming the environment variables are defined as string in your .env file.
 const supabaseUrl: string | undefined = process.env.REACT_APP_SUPABASE_URL;
@@ -192,22 +187,40 @@ export async function fetchUserAddressData(): Promise<AddressData | null> {
   }
 }
 
-export async function fetchUserOrderData(): Promise<OrderData[]> {
+export async function fetchUserOrderData(): Promise<OrderData[] | null> {
+
   try {
     const user_ID = await getCurrentUserId();
     console.log(user_ID, 'THIS IS THE USER ID 14');
     if (user_ID) {
       const order_query = await supabaseClient!
         .from("order")
-        .select('*')
-        .eq('user_id', user_ID);
 
+        .select('*') 
+        .eq('user_id', user_ID);
+       
       console.log(order_query, 'THIS IS THE ORDER QUERY 2');
+
       if (order_query.error) {
         console.error('Error fetching user order data:', order_query.error);
-        return []; // Return an empty array when there's an error.
+        return null;
       } else {
-        return order_query.data; // Return the array of orders.
+        return order_query.data.map((order: any) => ({
+          order_id: order.order_id,
+          created_at: order.created_at,
+          total: order.total,
+          veg: order.veg,
+          flavours_not: order.flavours_not,
+          user_id: order.user_id,
+          days: order.days,
+          address_fl: order.address_fl,
+          address_sl: order.address_sl,
+          address_town: order.address_town,
+          address_county: order.address_county,
+          address_postcode: order.address_postcode,
+          dog_name: order.dog_name,
+        })) as OrderData[];
+
       }
     }
 
@@ -218,6 +231,7 @@ export async function fetchUserOrderData(): Promise<OrderData[]> {
     return []; // Return an empty array in case of an error.
   }
 }
+
 // export async function fetchUserAddressData() {
 //   const user_ID = await getCurrentUserId();
 //   //convert user_ID to string
@@ -266,22 +280,34 @@ export async function fetchUserOrderData(): Promise<OrderData[]> {
 
 
 
-export async function fetchUserDogData(): Promise<DogData[]> {
+
+export async function fetchUserDogData(): Promise<DogData[] | null> {
+
   try {
     const user_ID = await getCurrentUserId();
     if (user_ID) {
       const dog_query = await supabaseClient!
         .from("dog")
-        .select('*')
-        .eq('user_id', user_ID)
-
-
+        .select('*') 
+        .eq('user_id', user_ID);
+        
       console.log(dog_query, 'THIS IS THE DOG QUERY 1');
       if (dog_query.error) {
         console.error('Error fetching user order data:', dog_query.error);
-        return [];
-      } else {
-        return dog_query.data; // Return the array of dog data.
+        return null;
+      } else {         
+        console.log(dog_query, 'THIS IS THE DOG QUERY 2');
+        return dog_query.data.map((dog: any) => ({
+          dog_id: dog.dog_id,
+          dog_name: dog.dog_name,
+          dog_health: dog.dog_health,
+          dog_size: dog.dog_size,
+          dog_breed: dog.dog_breed,
+          dog_age: dog.dog_age,
+          flavours_not: dog.flavours_not,
+          veg: dog.veg,
+          user_id: dog.user_id,
+        })) as DogData[];
       }
     }
     return [];
@@ -303,23 +329,43 @@ export async function fileUploadHandler(selectedFile: File | null) {
   try {
     const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
 
-    const { data, error } = await supabaseClient!
+
+    // Construct the path to the existing file with the same user ID
+    const filePath = `user-${user_ID}-dog-image`; // Replace with your desired file name
+
+    // Remove the existing file with the specified path
+    const { error: deleteError } = await supabaseClient!
       .storage
       .from('dog-images')
-      .update(`${user_ID}/${selectedFile.name}`, formData);
+      .remove([filePath]); // Pass the file path as an array
 
-    if (!error) { // Check if there was no error during the update.
-      console.log("Image uploaded successfully.");
-      return true;
-    } else {
-      console.error("Image upload failed:", error.message);
+    if (deleteError) {
+      console.error("Error deleting existing image:", deleteError.message);
       return false;
     }
+
+    // Upload the new file with updated metadata
+    const {error: uploadError } = await supabaseClient!
+      .storage
+      .from('dog-images')
+      .upload(filePath, formData); // Use the same file path for the upload
+
+    if (uploadError) {
+      console.error("Error uploading image:", uploadError.message);
+      return false;
+    }
+
+    console.log("Image uploaded successfully.");
+    return true;
   } catch (error) {
-    console.error("Error uploading image:", error);
+    console.error("Error uploading image:", error
+
+    );
     return false;
   }
 }
+
+
 
 export async function updateUserData(
   user_id: string,
@@ -358,7 +404,7 @@ export async function updateUserAddressData(
 ): Promise<void> {
   try {
     const user_ID = await getCurrentUserId();
-    const { data, error } = await supabaseClient!.from('user_address').update({
+    const { error } = await supabaseClient!.from('user_address').update({
       address_fl: address_fl,
       address_sl: address_sl,
       address_town: address_town,

@@ -14,12 +14,12 @@
     .menu {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
-      align-items: flex-start;
+      justify-content: flex-end;
+      align-items: flex-end;
       height: 100%;
       padding: 0;
       margin: 0;
-      width: 20vw;
+      width:5vw;
       z-index: 100;
       position: relative;
     }
@@ -46,7 +46,7 @@
       flex-direction: row;
       justify-content: flex-end;
       align-items: center;
-      height: 100%;
+      height: auto;
       padding: 0;
       margin: 0;
       margin-right: 10px;
@@ -102,10 +102,11 @@
       height: 100%;
       padding: 0;
       margin: 0;
-      width: 20vw;
+      width: 10vw;
       z-index: 100;
       
     }
+
     
     .navbarcenter {
       display: flex;
@@ -122,8 +123,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border-bottom-left-radius: 10vh;
-      border-bottom-right-radius: 10vh;
+      border-bottom-left-radius: 5vh;
+      border-bottom-right-radius: 5vh;
       background-color:var(--main-blue);
       top: 100%;
       left: 0;
@@ -131,31 +132,35 @@
       height: 105vh;
       color: azure;
       margin-top: -20vh;
-      padding: 10px;
       z-index: 10;
     }
     
     .additionalMenu ul {
       list-style: none;
       display: block;
-      font-size: 5.6rem;
+      font-size: 4rem;
       font-weight: 500;
       text-align: center;
+      margin: 0;
+      padding: 0;
+      
       
     }
     
     .additionalMenu li {
-      margin-bottom: 10px;
+      margin-bottom: 2rem;
+      
       
     }
     
     .additionalMenu a {
+      
       text-decoration: none;
       color: var(--header-main);
     }
     
     .additionalMenu a:hover {
-      color: var(--header-main);;
+      color: var(--backgroud-offwhite);
     }
 
     .sign-in-container {
@@ -179,8 +184,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border-bottom-left-radius: 10vh;
-      border-bottom-right-radius: 10vh;
+      border-bottom-left-radius: 5vh;
+      border-bottom-right-radius: 5vh;
       background-color: #cf537c;
       top: 100%;
       left: 0;
@@ -188,21 +193,24 @@
       height: 105vh;
       color: azure;
       margin-top: -20vh;
-      padding: 10px;
       z-index: 10; 
     }
     
     .additionalSignInMenu ul {
       list-style: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
       font-size: 5.6rem;
       font-weight: 500;
       text-align: center;
+      margin: 0;
+      padding: 0;
       
     }
     
     .additionalSignInMenu li {
       margin-bottom: 10px;
+      margin: 0;
       
     }
     
@@ -212,7 +220,7 @@
     }
     
     .additionalSignInMenu a:hover {
-      color: var(--header-main);;
+      color: var(--backgroud-offwhite);
     }
 
     #SignIn, #dropdown-menu-signout-button {
@@ -229,7 +237,6 @@
       font-weight: 700;
       background: transparent;
       opacity: 1;
-      color: var(--header-main);
     }
     #dropdown-menu-signout-button:hover {
       cursor: pointer;
@@ -261,7 +268,12 @@
       background: transparent;
       opacity: 1;
     }
-
+#profileicon{
+  width: 2rem;
+  height: 5vh;
+  justify-content: center;
+  margin-top: 0.5vh;
+}
     .button-hoverable:hover {
       cursor: pointer;
       color: white;
@@ -272,10 +284,30 @@
       color: white;
     }
     .logo1 {
-      filter: invert(83%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);}
-  .logo2 {
-      filter: invert(72%) sepia(83%) saturate(3811%) hue-rotate(174deg) brightness(97%) contrast(90%);}
+      filter: invert(83%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);
+    
+    }
+
   
+      .logo2 {
+      filter: invert(72%) sepia(83%) saturate(3811%) hue-rotate(174deg) brightness(97%) contrast(90%);
+      color: var(--header-main);
+    }
+
+    .logo3 {
+      filter: invert(100%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);
+    }
+    .logo4 {
+      filter: invert(84%) sepia(36%) saturate(7028%) hue-rotate(178deg) brightness(107%) contrast(89%);
+    }  
+    .signedinicon1 {
+      color: var(--header-main);
+  
+    }
+    .signedinicon2 {
+      color: var(--main-blue);
+  
+    }
 
     .profileicon {
       width: 5rem;
@@ -326,7 +358,7 @@
     {
   
 
-      .profileicon {
+      #profileicon  {
         height: 3.5vh;
       }
      #dropdown-menu-signout-button{

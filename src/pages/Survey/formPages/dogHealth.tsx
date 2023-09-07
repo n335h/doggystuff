@@ -16,11 +16,9 @@
 
     export function DogHealth({dog_health, dog_weight, updateFields}: HealthFormProps ) {
         return (
-            <div className="surveyFormSection">
                 
                 <FormWrapper title="Describe your doggos body">
                     <div className="surveyFormSectionContent">
-                        <div className="surveyFormSectionContentItem">
                         <div className="dogHealth">
   <button
     type="button"
@@ -57,9 +55,8 @@
                         </div>
                     
 
-                    </div>
                 </FormWrapper>
-            </div>
+           
         );
     }
 

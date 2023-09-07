@@ -1,242 +1,579 @@
-  .landing {
-      height: 110vh;
-      width: 100vw;
-      margin-top: -10vh;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      border-bottom-left-radius: 10vh;
-      border-bottom-right-radius: 10vh;
-      align-items: center;
-      position: relative; /* Add position relative to the parent container */
-      background-image: url(https://live.staticflickr.com/65535/53096318282_6b017fa4e9_h.jpg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      overflow-x: hidden;
-    }
-    .landingSubOuter{
-      width: 100vw;
-      height: 120vh;
-      margin-top: -20vh;
-      background-color: var(--header-main);
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .landingSubContent {
+/* Landing Section 1 Styles */
+.landing {
+  height: 100vh;
+  width: 100vw;
+  margin-top: -10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom-left-radius: 5vh;
+  border-bottom-right-radius: 5vh;
+  align-items: center;
+  position: relative; /* Add position relative to the parent container */
+  background-image: url(https://live.staticflickr.com/65535/53096318282_6b017fa4e9_h.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 12;
+}
 
-      height: 90vh;
-      color: black;
-      padding-top: 30vh;
-      width: 90vw;
-      margin: auto;
-      overflow-x: auto;
-        overflow-y: hidden;
-        white-space: nowrap;
+/* Landing Section 2 Styles */
+.landingSubOuter {
+  width: 100vw;
+  height: 130vh;
+  margin-top: -20vh;
+  background-color: var(--header-main);
+  border-bottom-left-radius:5vh;
+  border-bottom-right-radius: 5vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 7;
+}
 
+/* Landing Section 3 Styles */
+.landingSubOuter2 {
+  width: 100vw;
+  height: 130vh;
+  margin-top: -20vh;
+  background-color: var(--light-blue);
+  border-bottom-left-radius: 5vh;
+  border-bottom-right-radius:5vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
 
-    }
-    .landingSubContentItem {
-      display: flex;
-      width: 400vw;
-      flex-direction: row;
-      margin: 2rem;
+/* Landing Section 3 Styles */
+.landingSubOuter3 {
+  width: 100vw;
+  height: 130vh;
+  margin-top: -40vh;
+  background-color: var(--background-offwhite);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -4;
+}
 
-    }
-    .landingImage img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensure the image covers the container */
-    }
-    .containerImg {
-      width: 20vw;
-      border-radius:1.4rem;
-    }
-    .container {
-      width: 100vw;
-      border-radius:1.4rem;
+/* Landing Section 4 Styles */
+.landingSection4 {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -20vh;
+  background-color: var(--main-blue);
+  border-top-left-radius: 5vh;
+  border-top-right-radius: 5vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.landingSubOuter4 {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 0vh;
+  bottom: 0;
+  border-top-left-radius: 5vh;
+  border-top-right-radius: 5vh;
+  background-color: var(--main-blue);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+/* Common Styles */
+.landingSection,
+.landingSection2,
+.landingSection3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.landingSubContent,
+.landingSub4Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+/* Landing Section 1 Image Styles */
+.landingImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+/* Food Types Styles */
+.foodTypes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45vh;
+}
+
+/* Food Type Container Styles */
+.foodTypeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  overflow-x: auto;
+  margin-right: 10px; /* Adjust the margin as needed */
+  /* You can add more styling as needed for individual foodType divs */
+}
+
+/* Food Type Styles */
+.foodType {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 700px;
+  margin: 2rem;
+  height: 45vh;
+  border-radius: 3.4rem;
+  background-color: var(--header-main);
+}
+
+/* Landing Info Styles */
+.landingInfo {
+  position: absolute; /* Use absolute positioning to overlay the image */
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%); /* Center the landing info container */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.landing-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Terms and Conditions Styles */
+.tcs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--background-offwhite);
+  width: 30vw;
+}
+
+.tcs label {
+  width: 100vw;
+}
+
+.tcsinput {
+  width: 10vw;
+  margin-right: 1rem;
+  border-radius: 10px;
+}
+
+.tcslink a {
+  text-decoration: underline;
+  color: var(--background-offwhite);
+  font-weight: 600;
+}
+
+/* Landing Section 4 Content Styles */
+.landingSub4Title {
+  font-size: 4rem;
+  margin: 0;
+  margin-top: 30vh;
+  margin-bottom: 1rem;
+  color: var(--background-offwhite);
+}
+
+.landingSub4Para {
+  font-size: 1.5rem;
+  font-weight: 300;
+  width: 45vw;
+  margin-bottom: 1rem;
+  color: var(--background-offwhite);
+  text-align: center;
+}
+
+/* Input Container Styles */
+.input-container {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.input-container input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  width: 35vw;
+  height: 7.5vh;
+  border-radius: 17.4rem;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  outline: none;
+}
+
+/* Landing Section 4 Image Styles */
+.landingSub4Img {
+  position: absolute;
+  width: 20vw;
+ top: 0vh;
+ right: 0vw;
+ 
+}
+
+/* Input Button Styles */
+.input-container button {
+  background-color: var(--main-blue); /* Change this to your desired button style */
+  color: #fff;
+  padding: 10px;
+  margin-left: -10.4vw;
+  margin-top: 0.7vh;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 10vw;
+  height: 8.5vh;
+  border: none;
+  cursor: pointer;
+  border-radius: 17.4rem;
+}
+
+.input-container button:hover {
+  background-color: var(--background-offwhite);
+  color: var(--main-blue);
+  border: 4px solid var(--main-blue);
+}
+
+/* Landing Info Heading Styles */
+.landingInfo h1 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  color: var(--header-main);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-align: right;
+  margin-bottom: 2vh;
+}
+
+.landingInfo h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align: right;
+  color: var(--header-main);
+}
+
+/* Landing Button Styles */
+.landingButton {
+  height: 10vh;
+  width: 45%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--header-main);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 17.4rem;
+  border: 0;
+}
+
+.landingButton:hover {
+  background-color: var(--header-main-hover);
+  color: var(--header-main);
+  border: 4px solid var(--header-main);
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .landingInfo h1 {
+    text-align: right;
+    font-size: 2.6rem;
+    font-weight: 600;
+    width: 40vw;
+  }
+
+  .landingInfo h2 {
+    text-align: right;
+    font-size: 1.1rem;
+    width: 40vw;
+  }
 
   
+  .landingSubOuter4, .landingSub4Content, .landingSection4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width:100vw;
+  }
+  
+  .landingSub4Title {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 5vh;
+  }
+  .landingSub4Para {
+    text-align: center;
+    font-size: 1.4rem;
+    width: 65vw;
+    margin-bottom: 1rem;
+    color: var(--background-offwhite);
+    text-align: center;
+  }
+  
+  .input-container input[type="text"] {
+    width: 50vw;
+    height: 8.5vh;
+    border-radius: 35.4rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  .input-container button {
+    padding: 10px;
+    margin-left: -15.5vw;
+    margin-top: 0.6vh;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    width: 15vw;
+    height: 9.5vh;
+    border-radius: 17.4rem;
+  }
+   .tcs {
+    width: 80vw;
+    margin-left: 15vw;
+    font-size: 0.8rem;
+   }
+}
 
-    }
-    
-    .landingInfo {
-      position: absolute; /* Use absolute positioning to overlay the image */
-      top: 50%;
-      left: 70%;
-      
-      transform: translate(-50%, -50%); /* Center the landing info container */
-      padding: 20px;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-end;
+@media screen and (max-width: 750px) {
+  .landing {
+    background-size: cover;
+    background-image: url(https://live.staticflickr.com/65535/53097601747_ad931ab6ce_h.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: right middle;
+    align-items: center;
+    width: 100vw;
+    height: 130vh;
+  }
 
-    }
-    
-    .landing-title {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-    
-
-    
+  .landingInfo {
+    position: absolute; /* Use absolute positioning to overlay the image */
+    top: 40%;
+    left: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 60vw;
+    height: 70vh;
+  }
 
   .landingInfo h1 {
-      font-size: 3rem;
-      margin: 0;
-      padding: 0;
-      color:var(--header-main);
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700;
-      text-align: right;
-      margin-bottom: 2vh;
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 400;
+    width: 80vw;
   }
+
   .landingInfo h2 {
-      font-size: 1.1rem;
-      margin: 0;
-      padding: 0;
-      margin-bottom: 2vh;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 300;
-      text-align: right;
-      color: var(--header-main);
+    text-align: left;
+    font-size: 1rem;
+    width: 80vw;
+  }
+
+  .landingSubOuter4 {
+    height: 90vh;
   }
 
   .landingButton {
-      height: 7vh;
-      width: 40%;
-      margin: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--header-main);
-      color: #ffffff;
-      font-weight: 700;
-      border-radius: 17.4rem;
-      border: 0;
-      
-  }
-  .landingButton:hover{
-      background-color: var(--header-main-hover);
-      color: var(--header-main);
-      border: 4px solid var(--header-main);
-      cursor: pointer;
+    height: 10vh;
+    width: 50%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--header-main);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 17.4rem;
+    border: 0;
   }
 
-
-  @media screen and (max-width: 1200px) {
-    
   
-      .landingInfo h1 {
-        text-align: right;
-        font-size: 2.6rem;
-        font-weight: 600;
-        width: 40vw;
-      } 
-      .landingInfo h2{
-        text-align: right;
-        font-size: 1.1rem;
-        width: 40vw;
-      } 
-    }
+
+  .landingSubOuter4, .landingSub4Content, .landingSection4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width:100vw;
+  }
+  
+  .landingSub4Title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 5vh;
+  }
+  .landingSub4Para {
+    text-align: center;
+    font-size: 1.2rem;
+    width: 80vw;
+    margin-bottom: 1rem;
+    color: var(--background-offwhite);
+    text-align: center;
+  }
+  
+  .input-container input[type="text"] {
+    width: 65vw;
+    height: 5.5vh;
+    border-radius: 35.4rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .input-container button {
+    padding: 10px;
+    margin-left: -15.7vw;
+    margin-top: 0.7vh;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    width: 15vw;
+    height: 7vh;
+    border-radius: 17.4rem;
+  }
+   .tcs {
+    width: 80vw;
+    margin-left: 15vw;
+    font-size: 0.8rem;
+   }
+}
+
+@media screen and (max-width: 430px) {
+  /* .landing {
+    background-size: cover;
+    background-image: url(https://live.staticflickr.com/65535/53097601747_ad931ab6ce_h.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: right middle;
+    align-items: center;
+    width: 100vw;
+    height: 130vh;
+  } */
+
+  /* .landingInfo {
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 70vh;
+  } */
+
+  .landingInfo h1 {
+    text-align: left;
+    font-size: 2.7rem;
+    font-weight: 400;
+    width: 80vw;
+    margin-bottom: 2vh;
+  }
+
+  .landingButton {
+    height: 8vh;
+    width: 70%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--header-main);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 17.4rem;
+    border: 0;
+  }
+.landingSubOuter4, .landingSub4Content, .landingSection4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width:100vw;
+}
+
+.landingSub4Title {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 5vh;
+}
+.landingSub4Para {
+  text-align: center;
+  font-size: 1.2rem;
+  width: 80vw;
+  margin-bottom: 1rem;
+  color: var(--background-offwhite);
+  text-align: center;
+}
 
 
-  @media screen and (max-width: 750px) {
-      .landing {
-          background-size: cover;
-          background-image: url(https://live.staticflickr.com/65535/53097601747_ad931ab6ce_h.jpg);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          background-repeat: no-repeat;
-          background-position: right middle;
-          align-items: center;
-          width: 100vw;
-          height: 130vh;
-        }
-      .landingInfo {
-          
-              position: absolute; /* Use absolute positioning to overlay the image */
-              top: 40%;
-              left: 60%;
-            
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
-          width: 100vw;
-          height: 70vh;
-        }
-        .landingInfo h1 {
-          text-align: left;
-          font-size: 2rem;
-          font-weight: 400;
-          width: 80vw;
-        } 
-        .landingInfo h2{
-          text-align: left;
-          font-size: 1rem;
-          width: 80vw;
-        } 
-      }
-
-      @media screen and (max-width:430px) {
-        .landing {
-            background-size: cover;
-            background-image: url(https://live.staticflickr.com/65535/53097601747_ad931ab6ce_h.jpg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-repeat: no-repeat;
-            background-position: right middle;
-            align-items: center;
-            width: 100vw;
-            height: 130vh;
-          }
-        .landingInfo {
-            
-                position: absolute; /* Use absolute positioning to overlay the image */
-                top: 40%;
-                left: 60%;
-              
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            width: 100vw;
-            height: 70vh;
-          }
-          .landingInfo h1 {
-            text-align: left;
-            font-size: 2.7rem;
-            font-weight: 400;
-            width: 80vw;
-            margin-bottom: 2vh;
-          } 
-          
-          
-          .landingButton {
-            height: 12vh;
-            width: 50%;
-            margin: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--header-main);
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: 500;
-            border-radius: 17.4rem;
-            border: 0;
-            
-        }
-        }
-    
-
-
-        
+.input-container input[type="text"] {
+  width: 65vw;
+  height: 5.5vh;
+  border-radius: 35.4rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.input-container button {
+  padding: 10px;
+  margin-left: -16vw;
+  margin-top: 0.6vh;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  width: 15vw;
+  height: 7vh;
+  border-radius: 17.4rem;
+}
+ .tcs {
+  width: 80vw;
+  margin-left: 15vw;
+  font-size: 0.8rem;
+ }
+}

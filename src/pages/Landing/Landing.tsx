@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import "./Landing.css";
 //import animate.css from main pages folder
 import "../animate.css";
+import dogbark from "../../Assets/dogbark.svg";
+
 
 
 export function Landing() {
@@ -40,7 +42,7 @@ export function Landing() {
       
       <section className="landingSection">
         <div className="landingSubOuter" ref={landingSubRef}>
-          <div className="landingSubContent">
+          {/* <div className="landingSubContent">
             <h2>How it works</h2>
             <div className="landingSubContentItem">
               <div className='container'> 
@@ -71,14 +73,69 @@ export function Landing() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className="landingSection">
-        <div className="landingSubOuter">
+
+        {/* <div className="landingSubOuter2">
           </div>
       </section>
-                
+      <section className="landingSection3">
+  <div className="landingSubOuter3">
+    <div className="foodTypes">
+      <div className="foodTypeContainer">
+        <div className="foodType">
+          <div className="foodTypeImage">
+            <h2 className="foodTypeTitle">Food 1</h2>
+            <img alt='foodTypeImg' className='foodTypeImg' src='image1.jpg' />
+          </div>
+        </div>
+        <div className="foodType">
+          <div className="foodTypeImage">
+            <h2 className="foodTypeTitle">Food 2</h2>
+            <img alt='foodTypeImg' className='foodTypeImg' src='image2.jpg' />
+          </div>
+        </div>
+        <div className="foodType">
+          <div className="foodTypeImage">
+            <h2 className="foodTypeTitle">Food 3</h2>
+            <img alt='foodTypeImg' className='foodTypeImg' src='image3.jpg' />
+          </div>
+        </div>
+        <div className="foodType">
+          <div className="foodTypeImage">
+            <h2 className="foodTypeTitle">Food 3</h2>
+            <img alt='foodTypeImg' className='foodTypeImg' src='image3.jpg' />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button className="foodTypeButton">View all products</button>
+  </div> */}
+</section>
+      <section className="landingSection4">
+        <div className="landingSubOuter4">
+          <div className="landingSub4Content">
+ <img alt='landingSub4Img' className='landingSub4Img' src={dogbark}/>
+            <div className="landingSub4Info">
+              <h1 className="landingSub4Title">Subsribe here, smart human</h1>
+              <h2 className="landingSub4Para">There's always alot happening in the world of doggo delights. Subscribe today to get all the latest from DoggyStuff.</h2>
+              <div className="input-container">
+  <input type="text" placeholder="Enter your email address" />
+  <button className="landingSub4Button">Submit</button>
+</div>
+             <span className="tcs"> <input className='tcsinput' title="t&cs" type="checkbox" />
+              <label className="landingSub4Label">I agree to the <span className="tcslink"><a href="https://www.termsandconditionsgenerator.com/live.php?token=9Z6Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z"> 
+              Terms and Conditions</a></span></label>
+              </span>
+              </div>
+            
+      
+         
+            </div>
+          </div>
+      </section>
     </div>
   );
 }

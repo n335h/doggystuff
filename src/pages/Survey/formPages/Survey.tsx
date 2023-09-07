@@ -273,17 +273,17 @@ if (errorExistingAddressData) {
 
     return (
         <div className="survey">
-            <div className="surveyContent">
+            <div className="surveyContent animate-pop-in">
                 <form onSubmit={onSubmit}  className="surveyForm">
                     <div className="surveyFormNum">
                        { currentStepIndex +1} / {steps.length}
                     </div>
-                    <div className="surveyFormSection">
+                    <div className="surveyFormSection animate-pop-in">
                         {step}
                     </div>
-                    <div className="surveyButtons">
+                    <div className="surveyButtons animate-pop-in">
                        {!isFirstStep && <button type='button' onClick={back} id='backSurveyButton' className="backSurveyButton">Back</button>}
-                        <button type='submit' className="surveyButton">{isLastStep ? "Finish" : "Next"}</button>
+                        <button type='submit' className="surveyButton ">{isLastStep ? "Finish" : "Next"}</button>
                     </div>
                 </form> 
             </div>

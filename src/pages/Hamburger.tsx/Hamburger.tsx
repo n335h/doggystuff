@@ -4,10 +4,6 @@
   import hamburgeropen from '../../Assets/hamburgeropen.svg'
   import hamburgerclose from '../../Assets/hamburgerclose.svg'
 
-  type Props = {
-    // Props type definition
-    newColor: string;
-  };
   interface HamburgerMenuProps {
     isOpen: boolean;
     toggleMenu: () => void;
@@ -17,7 +13,7 @@
 
 
     const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isOpen, toggleMenu, openAdditionalMenu, icon}) => {
-      const [currentColorClass, setCurrentColorClass] = useState<string>('logo1'); // Set an initial class
+      const [currentColorClass] = useState<string>('logo1'); // Set an initial class
 
   
       useEffect(() => {
@@ -26,7 +22,12 @@
         const section1End = sectionHeight;
         const section2Start = sectionHeight;
         const section2End = 2 * sectionHeight;
-        
+        const section3Start = 2 * sectionHeight;
+        const section3End = 3 * sectionHeight;
+        const section4Start = 3 * sectionHeight;
+        const section4End = 4 * sectionHeight;
+
+    
     
         const handleScroll = () => {
           const scrollY = window.scrollY;
@@ -38,7 +39,14 @@
           } else if (scrollY >= section2Start && scrollY < section2End) {
             currentSection = 2;
             console.log('currentSection', currentSection);
+          } else if (scrollY >= section3Start && scrollY < section3End) {
+            currentSection = 3;
+            console.log('currentSection', currentSection);
+          } else if (scrollY >= section4Start && scrollY < section4End) {
+            currentSection = 4;
+            console.log('currentSection', currentSection);
           }
+
           // Add more conditions and color classes as needed
     
           let newColor = 'logo1'; // Set the default color
@@ -49,10 +57,16 @@
           } else if (currentSection === 2) {
             newColor =  'logo2'; // Set the desired color
             console.log('newColor2', newColor);
+          }else if (currentSection === 3) {
+            newColor =  'logo3'; // Set the desired color
+            console.log('newColor3', newColor);
+          } else if (currentSection === 4) {
+            newColor =  'logo4'; // Set the desired color
+            console.log('newColor4', newColor);
           }
     
           // Get the path element by its ID
-          const pathElement = document.getElementById('path1');
+          const pathElement = document.getElementById('hamburger');
           console.log('pathElement', pathElement);
     
           if (pathElement) {

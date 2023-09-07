@@ -21,12 +21,6 @@
     fill: var(--header-main);
 }
 
-.logo1 {
-    filter: invert(83%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);}
-.logo2 {
-    filter: invert(72%) sepia(83%) saturate(3811%) hue-rotate(174deg) brightness(97%) contrast(90%);}
-
-
 @media screen and (max-width: 500px)
 {
     .doggyStuff-logo img {
@@ -35,7 +29,7 @@
         justify-content: center;
         align-items: center;
         padding-top: 15px;;
-        width: 70%;
+        width: 60%;
         height: auto;
         margin: 0;
     }

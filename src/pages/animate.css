@@ -53,7 +53,43 @@
       .signformclose {
         animation-delay: 0.9s;
       }
-  
+
+
+      /* Get Started */
+      .getstartedtitle {
+        animation-delay: 0.6s;
+      }
+      .getStartedP {
+        animation-delay: 0.7s;
+      }
+      .getStartedButton {
+        animation-delay: 0.8s;
+      }
+      .infoBox {
+        animation-delay: 0.9s;
+      }
+
+
+      /* Survey */
+      .surveyContent {
+        animation-delay: 0.6s;
+      }
+      .surveyFormSection {
+        animation-delay: 0.7s;
+      }
+      .surveyButtons {
+        animation-delay: 0.8s;
+      }
+  /* FAQ */
+  .pagetitle {
+    animation-delay: 0.6s;
+  }
+  .pagesubtitle {
+    animation-delay: 0.7s;
+  }
+  .faq-subject {
+    animation-delay: 0.8s;
+  }
   @keyframes pop-in {
     0% {
       opacity: 0;

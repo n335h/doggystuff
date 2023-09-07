@@ -7,8 +7,8 @@
   padding-bottom: 70px;
   /* border: 1px solid #f3eddb; */
   /* border-radius: 8px; */
-  border-bottom-left-radius: 10vh;
-  border-bottom-right-radius: 10vh;
+  border-bottom-left-radius: 5vh;
+  border-bottom-right-radius: 5vh;
   margin-top: -10vh;
   background-color: #b8a2a2;
 
@@ -55,6 +55,19 @@
       margin-bottom: 2vh;
   }
 
+  .sign-in-overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 11;
+  }
+
+  .applypagestylechange {
+    filter: brightness(0) saturate(100%) invert(51%) sepia(97%) saturate(392%) hue-rotate(160deg) brightness(96%) contrast(92%);
+  }
 
   .signInImg {
       width: 100%;
@@ -119,13 +132,15 @@
 .signInLink{
   color: var( --black-text);
 }
- 
-    
-  
+/*  
+    #path1 {
+      filter: brightness(0) saturate(100%) invert(51%) sepia(97%) saturate(392%) hue-rotate(160deg) brightness(96%) contrast(92%); 
+    }
+   */
     @media screen and (max-width: 750px){
     input {
-      width: 70%;
-  
+      width: 90%;
+  background-color: #ffffff;
       padding: 10px;
       margin-bottom: 10px;
       /* border: 1px solid #ccc; */
