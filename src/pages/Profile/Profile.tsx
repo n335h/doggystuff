@@ -54,6 +54,7 @@ type DogData = {
   flavours_not: string[];
   veg: string;
   src?: string;
+
   
 };
 
@@ -94,18 +95,6 @@ function Profile() {
   //   dog_name: '',
   // });
   const [orders, setOrders] = useState<OrderData[]>([]);
-  // const [dogData, setDogData] = useState<DogData>({
-  //   dog_id: '',
-  //   dog_name: '',
-  //   dog_health: '',
-  //   dog_size: '',
-  //   dog_breed: '',
-  //   dog_age: '',
-  //   flavours_not: [],
-  //   veg: '',
-
-
-  // });
   const [dogs, setDogs] = useState<DogData[]>([]);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [showOrderOverlay, setShowOrderOverlay] = useState(false);
@@ -217,6 +206,7 @@ function Profile() {
       if (orderData !== null) {
         setOrders(orderData);
       }
+
     }
 
     getUserOrderData();
@@ -228,6 +218,7 @@ function Profile() {
       if (dogData !== null) {
         setDogs(dogData);
       }
+
     }
 
     getUserDogData();

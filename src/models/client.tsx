@@ -34,7 +34,9 @@ export interface DogData {
   dog_age: string;
   flavours_not: string[];
   veg: string;
+  src: string;
   user_id: string;
+
 }
 
 // Assuming the environment variables are defined as string in your .env file.
@@ -51,8 +53,8 @@ if (supabaseUrl && supabaseKey) {
 // Functionality for signing in a user
 
 export async function SignInUser(email: string, password: string): Promise<boolean> {
-  try { 
-    const {  error } = await supabaseClient?.auth.signInWithPassword({ email, password }) || {};
+  try {
+    const { error } = await supabaseClient?.auth.signInWithPassword({ email, password }) || {};
     if (error) {
       console.error('Sign-in error:', error);
       return false;
@@ -94,7 +96,7 @@ export async function isSessionSignedIn(): Promise<boolean> {
 // Get the currently signed-in user's id
 export async function getCurrentUserId(): Promise<string | null> {
   try {
-    const { data:{user} } = await supabaseClient!.auth.getUser();
+    const { data: { user } } = await supabaseClient!.auth.getUser();
     return user?.id || null; // ? is used to tell TypeScript that the value may be null or undefined and to not throw an error if it is 
   } catch (error) {
     // Handle any other errors that may occur
@@ -116,7 +118,7 @@ export default supabaseClient;
 export async function fetchUserProfile() {
   const user = await supabaseClient?.auth.getUser();
 
-  
+
 
   if (user) {
     console.log(user?.data.user?.id, 'THIS IS THE USER ID 1 ');
@@ -127,7 +129,7 @@ export async function fetchUserProfile() {
         .eq('user_id', user?.data.user?.id) //added ? to user to fix error "Object is possibly 'null'."
         .single();
 
-        console.log(userData, 'THIS IS THE USER DATA 2');
+      console.log(userData, 'THIS IS THE USER DATA 2');
 
       // const { data: addressData, error } = await supabaseClient!
       //   .from('user_address')
@@ -140,7 +142,7 @@ export async function fetchUserProfile() {
       if (error) {
         console.error('Error fetching user data:', error);
       } else {
-        const userProfile = {...userData} ;
+        const userProfile = { ...userData };
         console.log('User Profile:', userProfile, 'THIS IS THE USER PROFILE 3');
         return userProfile;
       }
@@ -152,7 +154,7 @@ export async function fetchUserProfile() {
   }
 }
 
-export async function fetchUserAddressData(): Promise <AddressData | null> {
+export async function fetchUserAddressData(): Promise<AddressData | null> {
   try {
     const user_ID = await getCurrentUserId();
     if (user_ID) {
@@ -184,13 +186,16 @@ export async function fetchUserAddressData(): Promise <AddressData | null> {
     return null;
   }
 }
+
 export async function fetchUserOrderData(): Promise<OrderData[] | null> {
+
   try {
     const user_ID = await getCurrentUserId();
-    console.log(user_ID, 'THIS IS THE USER ID 14 ');
+    console.log(user_ID, 'THIS IS THE USER ID 14');
     if (user_ID) {
       const order_query = await supabaseClient!
         .from("order")
+
         .select('*') 
         .eq('user_id', user_ID);
        
@@ -215,14 +220,15 @@ export async function fetchUserOrderData(): Promise<OrderData[] | null> {
           address_postcode: order.address_postcode,
           dog_name: order.dog_name,
         })) as OrderData[];
+
       }
-    } else {
-      console.log('User is not signed in.');
-      return null;
     }
+
+    // Return an empty array when user_ID is not available.
+    return [];
   } catch (error) {
-    console.error('Error fetching user order data:', error);
-    return null;
+    console.error('An error occurred:', error);
+    return []; // Return an empty array in case of an error.
   }
 }
 
@@ -250,31 +256,33 @@ export async function fetchUserOrderData(): Promise<OrderData[] | null> {
 //   } else {
 //     console.log('User is not signed in.');
 //   }
-  
 
 
-  // if (user) {
-  //   const { data: addressData, error } = await supabaseClient!
-  //     .from('user_address')
-  //     .select('*')
-  //     .eq('user_id',user_id)
-  //     .single();
 
-  //   if (error) {
-  //     console.error('Error fetching user address data:', error);
-  //   } else {
-  //     const userAddress = { ...addressData };
-  //     console.log('User Address:', userAddress, 'THIS IS THE USER ADDRESS 4');
-  //     return userAddress;
-  //   }
-  // } else {
-  //   console.log('User is not signed in.');
-  // }
+// if (user) {
+//   const { data: addressData, error } = await supabaseClient!
+//     .from('user_address')
+//     .select('*')
+//     .eq('user_id',user_id)
+//     .single();
+
+//   if (error) {
+//     console.error('Error fetching user address data:', error);
+//   } else {
+//     const userAddress = { ...addressData };
+//     console.log('User Address:', userAddress, 'THIS IS THE USER ADDRESS 4');
+//     return userAddress;
+//   }
+// } else {
+//   console.log('User is not signed in.');
+// }
 // }
 
 
 
+
 export async function fetchUserDogData(): Promise<DogData[] | null> {
+
   try {
     const user_ID = await getCurrentUserId();
     if (user_ID) {
@@ -301,13 +309,11 @@ export async function fetchUserDogData(): Promise<DogData[] | null> {
           user_id: dog.user_id,
         })) as DogData[];
       }
-    } else {
-      console.log('User is not signed in.');
-      return null;
     }
+    return [];
   } catch (error) {
     console.error('Error fetching user order data:', error);
-    return null;
+    return [];
   }
 }
 
@@ -322,6 +328,7 @@ export async function fileUploadHandler(selectedFile: File | null) {
 
   try {
     const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
+
 
     // Construct the path to the existing file with the same user ID
     const filePath = `user-${user_ID}-dog-image`; // Replace with your desired file name
@@ -359,6 +366,7 @@ export async function fileUploadHandler(selectedFile: File | null) {
 }
 
 
+
 export async function updateUserData(
   user_id: string,
   first_name: string,
@@ -387,7 +395,7 @@ export async function updateUserData(
 }
 
 
-export async function updateUserAddressData( 
+export async function updateUserAddressData(
   address_fl: string,
   address_sl: string,
   address_town: string,
@@ -423,8 +431,8 @@ export async function updateDogData(
   await supabaseClient!.from('dog').update({
     dog_name: dog_name,
     dog_health: dog_health,
-    });
-    console.log('Update DogData');
+  });
+  console.log('Update DogData');
 }
 
 
