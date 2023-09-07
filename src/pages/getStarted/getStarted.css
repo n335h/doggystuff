@@ -151,6 +151,9 @@
    margin-top: -5vh;
     width: 55vw;
 }
+.infoBox p {
+    padding: 10px;
+}
 .getStartedouter {
     display: flex;
     flex-direction: column;
