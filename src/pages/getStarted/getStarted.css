@@ -128,16 +128,7 @@
     .getStartedButton {
         margin-top: 5vh;
     }
-    .bkgrndFloatImg {
-        height: 20vh;
-        display: none;
-        left: auto;
-        right: 0;
-        
-        margin: 0;
-        padding: 0;
-        z-index: 0;
-    }
+    
 .infoBox{
    display: flex;
    position: relative;
@@ -165,4 +156,9 @@
     background-color: var(--background-offwhite);
 }
 
+.bkgrndFloat{
+display: none;
+  
+    
+}
     }
