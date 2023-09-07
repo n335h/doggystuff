@@ -47,7 +47,9 @@ const FAQ2 = () => {
     <section className="pages" id="faq">
       <div className="faq-container">
         <div className="faq">
+            
           <div className="faq-content">
+          <h3 className="faqtitle animate-pop-in">FAQS & HELP</h3>
             <h1 className="pagetitle animate-pop-in">So Help, Much Informative</h1>
             <p className="pagesubtitle animate-pop-in">We guess you have some questions. We're guessing your doggo may too. Good news, we have answers for both.</p>
             <img className="faqfloat" src={faqtop} alt="FAQ" />

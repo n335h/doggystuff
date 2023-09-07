@@ -110,7 +110,7 @@ font-size: 1.3rem;
   }
   .caron {
     position: absolute;
-    right: 15vw;
+    right: 5vw;
     height: 3vh;
   }
   .faqbottom {
@@ -118,7 +118,7 @@ font-size: 1.3rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:70vw;
+    width:40vw;
     height: 100vh;
     text-align: center;
   }
@@ -146,7 +146,7 @@ font-size: 1.3rem;
     font-size: 1.1rem;
     font-weight: 600;
     margin: auto;
-    width: 40vw;
+    width: 15vw;
     height: 8.5vh;
     border: none;
     cursor: pointer;
@@ -191,7 +191,16 @@ font-size: 1.3rem;
     right:5vw;
     height: 3vh;
   }
+  .faqbottomimg {
+    height: 50vh;
   }
+  .faqbottombutton {
+    width: 40vw;
+  }
+  .faqbottom {
+    width: 70vw;
+  }
+}
   @media screen and (max-width: 500px) {
 
   }
