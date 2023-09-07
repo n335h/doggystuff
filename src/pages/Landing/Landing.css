@@ -87,6 +87,7 @@
 
 /* Common Styles */
 .landingSection,
+.landingSection2,
 .landingSection3 {
   display: flex;
   flex-direction: column;

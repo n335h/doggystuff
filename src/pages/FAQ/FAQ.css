@@ -1,0 +1,115 @@
+
+.faq-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: auto;
+    margin-top: -10vh;
+    background-color: antiquewhite;
+  }
+  
+  /* Individual FAQ item styles */
+  .faq-subject {
+    max-width: 70vw;
+    background-color: var(--background-offwhite);
+    border-radius: 25px;
+    margin-bottom: 1rem;
+    padding: 20px;
+    text-align: left;
+    height: 12vh;
+  }
+  .faq-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    font-size: var(--text-r);
+    justify-content: center;
+    width: 100%;
+
+  }
+  #pagetitle {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    
+  }
+  #pagesubtitle {
+width: 40vw;
+text-align: center;
+font-size: 1.3rem;
+  }
+  .faq-subject.open {
+    background-color: var(--main-blue); /* Background color when expanded */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    height: auto;
+    width: 70vw;
+  }
+  li.content.open {
+    margin-bottom: 10px;
+  }
+  
+  /* FAQ question styles */
+  .title {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    font-size: 1.8rem;
+  }
+  
+  .title.active {
+    background-color: transparent; /* Background color when expanded */
+    color: #ffffff;
+    
+  }
+  
+  .title::before {
+    content: ''; /* Empty content for before pseudo-element */
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    background-image: url(''); /* Add your icon URL here */
+    background-size: cover;
+    margin-right: 10px;
+  }
+  
+  .title.active::before {
+    background-image: url(''); /* Add your active icon URL here */
+  }
+  
+  /* FAQ answer styles */
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0 0 0;
+  }
+  
+  .content.open {
+    max-height: 500px; /* Adjust the value as needed for your content */
+    color: #fff;
+    width: 35vw;
+    margin-left: 2vw;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+  
+  /* After content */
+  .faq-subject.open::after {
+    display: block;
+    color: #fff; /* Text color for the after content */
+    margin-top: 10px; /* Spacing between content and after content */
+    
+  }
+  .caron {
+    position: absolute;
+    right: 15vw;
+    height: 3vh;
+  }

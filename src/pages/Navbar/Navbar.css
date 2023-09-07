@@ -14,12 +14,12 @@
     .menu {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
-      align-items: flex-start;
+      justify-content: flex-end;
+      align-items: flex-end;
       height: 100%;
       padding: 0;
       margin: 0;
-      width: 10vw;
+      width:5vw;
       z-index: 100;
       position: relative;
     }
@@ -102,7 +102,7 @@
       height: 100%;
       padding: 0;
       margin: 0;
-      width: 20vw;
+      width: 10vw;
       z-index: 100;
       
     }

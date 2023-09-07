@@ -6,6 +6,7 @@ import "../animate.css";
 import dogbark from "../../Assets/dogbark.svg";
 
 
+
 export function Landing() {
   const landingSubRef : any = useRef<HTMLDivElement>(null);
 
@@ -76,7 +77,8 @@ export function Landing() {
         </div>
       </section>
       <section className="landingSection">
-        <div className="landingSubOuter2">
+
+        {/* <div className="landingSubOuter2">
           </div>
       </section>
       <section className="landingSection3">
@@ -110,7 +112,7 @@ export function Landing() {
       </div>
     </div>
     <button className="foodTypeButton">View all products</button>
-  </div>
+  </div> */}
 </section>
       <section className="landingSection4">
         <div className="landingSubOuter4">
