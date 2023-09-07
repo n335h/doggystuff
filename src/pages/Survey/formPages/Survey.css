@@ -11,6 +11,14 @@
     justify-content: center;
     z-index: 0;
   }
+  .formTitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom:  5vh;
+    margin-top: 15vh;
+    width: 100vw;
+    text-align: center;
+  }
   .formWrapper {
     display: flex;
     flex-direction: column;
@@ -21,7 +29,15 @@
     margin: auto;
     z-index: 1;
   }
-
+.surveyFormNum {
+    position: absolute;
+    top: -10vh;
+    right: 7.5vw;
+    margin: 1rem;
+    font-size: 1.5rem;
+    color: var(--main-blue);
+    
+}
   .surveyForm form {
     display: flex;
     flex-direction: column;
@@ -32,7 +48,7 @@
     background-color: var(--header-main); /* Change this to your desired button style */
     color: #fff;
     padding: 10px;
-    margin: 10px 10px;
+    margin-top: 5rem;
     font-size: 1.1rem;
     font-weight:600;
     width: 15vw;
@@ -228,6 +244,7 @@
     .surveyButton, #backSurveyButton {
       width: 25vw;
       height: 8.5vh;
+      margin-top: 5rem;
     }
     .surveyButtons {
       width: 100%;
@@ -260,6 +277,9 @@
       align-items: center;
       justify-content: space-between;
     }
+    .formContent {
+        width: 80vw;
+    }
     form.surveyForm input {
       width: 67vw;
       height: 3.5rem;
@@ -281,7 +301,7 @@
       font-size: 1.2rem;
       border-radius: 17.4rem;
     }
-    .dogSize, .dogSex {
+    .dogSize, .dogSex, .dogHealth {
       width: 70vw;
     }
     .surveyButton, #backSurveyButton {
@@ -289,20 +309,27 @@
         height: 6vh;
       }
       .pureCross, .dogHealth {
-        width: 100%;
+        width: 100vw;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
     }
     .dogSex button,
     .dogSize button,
     .pureCross button,
-    .dogHealth button {
+    .dogHealth button
+     {
       height: 8rem;
-      width: 12rem;
+      width: 14rem;
     }
-  }
-  
+
+    .formTitle {
+        margin-bottom:  3vh;
+        margin-top: 10vh;
+        font-size: 1.6rem;
+      
+    }
+}
   /* Add any other media queries as needed */
   
