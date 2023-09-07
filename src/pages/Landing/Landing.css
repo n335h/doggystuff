@@ -382,10 +382,35 @@
     border-radius: 17.4rem;
     border: 0;
   }
+
+  
+
+  .input-container input[type="text"] {
+    width: 65vw;
+    height: 5.5vh;
+    border-radius: 35.4rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .input-container button {
+    padding: 10px;
+    margin-left: -16vw;
+    margin-top: 0.6vh;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    width: 15vw;
+    height: 7vh;
+    border-radius: 17.4rem;
+  }
+   .tcs {
+    width: 80vw;
+    margin-left: 15vw;
+    font-size: 0.8rem;
+   }
 }
 
 @media screen and (max-width: 430px) {
-  .landing {
+  /* .landing {
     background-size: cover;
     background-image: url(https://live.staticflickr.com/65535/53097601747_ad931ab6ce_h.jpg);
     display: flex;
@@ -396,10 +421,10 @@
     align-items: center;
     width: 100vw;
     height: 130vh;
-  }
+  } */
 
-  .landingInfo {
-    position: absolute; /* Use absolute positioning to overlay the image */
+  /* .landingInfo {
+    position: absolute;
     top: 40%;
     left: 60%;
     display: flex;
@@ -408,7 +433,7 @@
     align-items: flex-start;
     width: 100%;
     height: 70vh;
-  }
+  } */
 
   .landingInfo h1 {
     text-align: left;
@@ -419,8 +444,8 @@
   }
 
   .landingButton {
-    height: 12vh;
-    width: 50%;
+    height: 10vh;
+    width: 60%;
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -433,6 +458,49 @@
     border-radius: 17.4rem;
     border: 0;
   }
+.landingSubOuter4, .landingSub4Content, .landingSection4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100vw;
+}
+
+.landingSub4Title {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 5vh;
+}
+.landingSub4Para {
+  text-align: center;
+  font-size: 1.2rem;
+  width: 80vw;
+  margin-bottom: 1rem;
+  color: var(--background-offwhite);
+  text-align: center;
+}
 
 
+.input-container input[type="text"] {
+  width: 65vw;
+  height: 5.5vh;
+  border-radius: 35.4rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.input-container button {
+  padding: 10px;
+  margin-left: -16vw;
+  margin-top: 0.6vh;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  width: 15vw;
+  height: 7vh;
+  border-radius: 17.4rem;
+}
+ .tcs {
+  width: 80vw;
+  margin-left: 15vw;
+  font-size: 0.8rem;
+ }
 }
