@@ -19,14 +19,12 @@ const FAQ2 = () => {
     };
   const faqData = [
     {
-      question: 'How much does each subscription cost?',
-      answer:
-        'It depends! The size of your cat plus how you choose to divvy up wet and dry food will affect the cost. Overall, the subscription offers you the best value on these nutrients.',
+      question:'How much does each subscription cost?',
+      answer:'It depends! The size of your cat plus how you choose to divvy up wet and dry food will affect the cost. Overall, the subscription offers you the best value on these nutrients.',
     },
     {
       question: 'Where do you deliver to?',
-      answer:
-        'We deliver to England, Scotland, and Wales (excluding the Scottish Highlands and Islands). We’re looking into expanding our delivery areas in the coming months.',
+      answer: 'We deliver to England, Scotland, and Wales (excluding the Scottish Highlands and Islands). We’re looking into expanding our delivery areas in the coming months.',
     },
     {
       question: 'When does the food arrive?',
@@ -34,13 +32,11 @@ const FAQ2 = () => {
     },
     {
       question: 'Shipping',
-      answer:
-        'Shipping is included in the price. You’ll get a text/email from our delivery driver to let you know a two-hour window in which to expect the delivery.',
+      answer:'Shipping is included in the price. You’ll get a text/email from our delivery driver to let you know a two-hour window in which to expect the delivery.',
     },
     {
         question: 'How should i transition my dog onto DoggyStuff?',
-        answer:
-          'We’ll help you through it, with a transition guide to walk you through the process clearly and if at any point you have any issues you can always reach out to us at .',
+        answer:'We’ll help you through it, with a transition guide to walk you through the process clearly and if at any point you have any issues you can always reach out to us at .',
       },
   ];
   return (

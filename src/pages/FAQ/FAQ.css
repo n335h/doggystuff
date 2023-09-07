@@ -172,7 +172,7 @@ font-size: 1.3rem;
     padding: 0;
   }
   .title {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     margin-top: 2vh;
     margin-left: -5vw;
     
@@ -181,6 +181,12 @@ font-size: 1.3rem;
     height: 7vh;
     width: 100vw;
    
+  }
+  .content.open {
+    width: 70vw;
+    margin-left: 0;
+    line-height: 1.5;
+    font-size: 1rem;
   }
 
   .caron {
@@ -200,9 +206,10 @@ font-size: 1.3rem;
 }
   @media screen and (max-width: 500px) {
     .title {
-        font-size: 0.74rem;
+        font-size: 1rem;
         margin-top: 2vh;
         margin-left: -6vw;
+        width: 65vw;
   }
   #list {
     width: 100vw;
