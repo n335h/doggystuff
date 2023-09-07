@@ -21,6 +21,12 @@
     fill: var(--header-main);
 }
 
+@media screen and (max-width: 750px)
+{
+    .doggyStuff-logo img {
+        width: 60%;
+    }
+}
 @media screen and (max-width: 500px)
 {
     .doggyStuff-logo img {
