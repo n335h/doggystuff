@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Landing.css";
 //import animate.css from main pages folder
 import "../animate.css";
+import dogbark from "../../Assets/dogbark.svg";
 
 
 export function Landing() {
@@ -78,7 +79,7 @@ export function Landing() {
         <div className="landingSubOuter2">
           </div>
       </section>
-      <section className="landingSection">
+      <section className="landingSection3">
   <div className="landingSubOuter3">
     <div className="foodTypes">
       <div className="foodTypeContainer">
@@ -111,8 +112,26 @@ export function Landing() {
     <button className="foodTypeButton">View all products</button>
   </div>
 </section>
-      <section className="landingSection">
+      <section className="landingSection4">
         <div className="landingSubOuter4">
+          <div className="landingSub4Content">
+ <img alt='landingSub4Img' className='landingSub4Img' src={dogbark}/>
+            <div className="landingSub4Info">
+              <h1 className="landingSub4Title">Subsribe here, smart human</h1>
+              <h2 className="landingSub4Para">There's always alot happening in the world of doggo delights. Subscribe today to get all the latest from DoggyStuff.</h2>
+              <div className="input-container">
+  <input type="text" placeholder="Enter your email address" />
+  <button className="landingSub4Button">Submit</button>
+</div>
+             <span className="tcs"> <input className='tcsinput' title="t&cs" type="checkbox" />
+              <label className="landingSub4Label">I agree to the <span className="tcslink"><a href="https://www.termsandconditionsgenerator.com/live.php?token=9Z6Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z"> 
+              Terms and Conditions</a></span></label>
+              </span>
+              </div>
+            
+      
+         
+            </div>
           </div>
       </section>
     </div>

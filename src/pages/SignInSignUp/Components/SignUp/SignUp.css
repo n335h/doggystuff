@@ -26,7 +26,7 @@
 .submit-button.signup button {
   background-color: var(--header-main);
   margin: 0;
- 
+ width: 100vw;
 }
 .sign-form1 form {
     display: flex;
@@ -109,12 +109,13 @@
     border-radius: 17.4rem;
     border: none; 
     padding: 2.8vh 7vw 2.9vh;
-width:50vw;
+width:100vw;
     font-size: 0.9rem;
     color: #fff;
     font-weight: 700;
     background-color: var(--header-main);
 }
+
 
 .sign-form1 {
   background-image: url('https://live.staticflickr.com/65535/53168442224_3089032a24_k.jpg');
@@ -122,9 +123,5 @@ width:50vw;
     
     }
     @media screen and (max-width:500px) {
-      .submit-button.signup button {
-        background-color: var(--header-main);
-        margin: 0;
-        width: 60vw;
-      }
+      
     }

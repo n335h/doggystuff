@@ -57,8 +57,9 @@
     }
     .landingSubOuter4 {
       width: 100vw;
-      height: 110vh;
+      height: 100vh;
       margin-top: 0vh;
+      bottom: 0;
       border-top-left-radius: 10vh;
       border-top-right-radius: 10vh;
       background-color: var(--main-blue);
@@ -88,6 +89,15 @@
       align-items: center;
       height: 100vh;
       
+    }
+
+    .landingSection3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: var(--background-offwhite);
     }
     .landingSubContentItem {
       display: flex;
@@ -122,6 +132,21 @@
 
   
     }
+
+    .landingSubOuter4, .landingSub4Content, .landingSub4Info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0vh;
+      bottom: 0;
+      border-top-left-radius: 10vh;
+      border-top-right-radius: 10vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 0;
+    }
     
 .foodTypeContainer {
   display: flex;
@@ -130,8 +155,6 @@
   align-items: center;
   width: 100vw;
   overflow-x: auto;
-
-
   margin-right: 10px; /* Adjust the margin as needed */
   /* You can add more styling as needed for individual foodType divs */
 }
@@ -166,9 +189,82 @@
       margin-bottom: 10px;
     }
     
+.tcs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--background-offwhite);
+  width: 30vw;
+}
+  .tcs label {
+    width:100vw;
+  }
+.tcsinput {
+  width: 10vw;
+  margin-right: 1rem;
+  border-radius: 10px;
+}
+.tcslink a{
+  text-decoration: underline;
+  color: var(--background-offwhite);
+  font-weight: 600;
+}
+    .landingSub4Title {
+      font-size: 4.4rem;
+      margin-bottom: 1rem;
+      color: var(--background-offwhite);
+    }
+    .landingSub4Para {
+      font-size: 1.5rem;
+      font-weight: 300;
+      width: 45vw;
+      margin-bottom: 1rem;
+      color: var(--background-offwhite);
+      text-align: center;
+    }
+.input-container {
+  display: flex;
+  align-items: center;
+}
 
-    
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  width: 35vw;
+  height: 8vh;
+  border-radius:17.4rem;;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+input:focus {
+ outline: none;
+}
+.landingSub4Img {
+  width: 17vw;
+  margin-top: -9rem;
+  margin-bottom: -6vh;
+}
+.input-container button {
+  background-color: var(--main-blue); /* Change this to your desired button style */
+  color: #fff;
+  padding: 10px;
+  margin-left: -10.5vw;
+  margin-top: 0.6vh;
+  font-size: 1.1rem;
+  font-weight:600;
+  width: 10vw;
+  height: 8.5vh;
+  border: none;
+  cursor: pointer;
+  border-radius: 17.4rem;
+}
+.input-container button:hover {
+  background-color: var(--background-offwhite); 
+  color: var(--main-blue);
+  border: 4px solid var(--main-blue);
 
+}
   .landingInfo h1 {
       font-size: 3rem;
       margin: 0;
@@ -267,7 +363,9 @@
           font-size: 1rem;
           width: 80vw;
         } 
-
+        .landingSubOuter4 {
+          height: 90vh;
+        }
      
       }
 
