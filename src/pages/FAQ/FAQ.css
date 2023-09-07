@@ -158,7 +158,7 @@ font-size: 1.3rem;
   }
   
   .faqbottombutton:hover {
-    background-color: var(--background-offwhite);
+    background-color:transparent;
     color: var(--main-blue);
     border: 4px solid var(--main-blue);
   }
