@@ -38,6 +38,7 @@ export interface DogData {
   dog_age: string;
   flavours_not: string[];
   veg: string;
+  src: string;
 }
 
 

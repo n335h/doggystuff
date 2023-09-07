@@ -53,6 +53,7 @@ type DogData = {
   dog_age: string;
   flavours_not: string[];
   veg: string;
+  src: string;
   
 };
 
@@ -102,6 +103,7 @@ function Profile() {
     dog_age: '',
     flavours_not: [],
     veg: '',
+    src: '',
 
 
   });
