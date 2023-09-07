@@ -11,6 +11,7 @@
   import GetStarted from '../getStarted/getStarted';
   import Profile from '../Profile/Profile';
   import FAQ from '../FAQ/FAQ';
+  import Contact from '../Contact/Contact';
 
 
 
@@ -172,6 +173,7 @@
                         <Route path='/GetStarted' element={<GetStarted />} />
                         <Route path='/profile'  element={<Profile />} />  
                         <Route path='/FAQ' element={<FAQ  />} />
+                        <Route path='/Contact' element={<Contact  />} />
           </Routes>
           
         </BrowserRouter>

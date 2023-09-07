@@ -134,8 +134,8 @@ font-size: 1.3rem;
   .faqfloat {
     height: 40vh;
     position: absolute;
-    top: 10vh;
-    left: 10vw;
+    top: 5vh;
+    left: 5vw;
   }
 
   .faqbottombutton {

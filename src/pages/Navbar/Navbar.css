@@ -131,7 +131,7 @@
       width: 100vw;
       height: 105vh;
       color: azure;
-      margin-top: -20vh;
+      margin-top: -15vh;
       z-index: 10;
     }
     
@@ -139,7 +139,6 @@
       list-style: none;
       display: block;
       font-size: 4rem;
-      font-weight: 500;
       text-align: center;
       margin: 0;
       padding: 0;
@@ -150,11 +149,11 @@
     .additionalMenu li {
       margin-bottom: 2rem;
       
-      
     }
     
     .additionalMenu a {
-      
+      font-weight: 200;
+
       text-decoration: none;
       color: var(--header-main);
     }
@@ -359,7 +358,12 @@
     @media screen and (max-width: 500px)
     {
   
-
+      .additionalMenu a {
+        font-weight: 200;
+  font-size: 3rem;
+        text-decoration: none;
+        color: var(--header-main);
+      }
       #profileicon  {
         height: 3.5vh;
       }

@@ -230,9 +230,7 @@ function Profile() {
 <div className="maindashboard">
   <div className="dashboardleft">
     <div className="userDetails">
-      <h2 className="welcome-text">
-        Welcome <span className="name-text">{userProfile.first_name}</span>!
-      </h2>
+      
             <div className="userinfobox">
             {editProfile ? (
               /* Edit Mode */
@@ -329,9 +327,13 @@ function Profile() {
               ) : (
                 // View Mode
                 <div className="userinfobox">
-              
+               
                 <section className="userinfo">
+             
                 <div className='userinfodetails'>
+                <h2 className="welcome-text">
+        Welcome <span className="name-text">{userProfile.first_name}</span>!
+      </h2>
                 <h3 className="userdetails">User Details</h3> 
                   
                 <p>
@@ -375,8 +377,9 @@ function Profile() {
   </div>
 
         <div className="dashboardright">
+        <h3 className="userpetbox">Doggos</h3>
         <div className="userpetbox">
-  <h3 className="userpetbox">Doggos</h3>
+ 
   {dogs.map((dog) => (
     <div className="dogContainer" key={dog.dog_id}>
       <div className="dogimg">
