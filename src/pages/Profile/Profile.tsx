@@ -211,7 +211,7 @@ function Profile() {
   useEffect(() => {
     async function getUserOrderData() {
       const orderData = await fetchUserOrderData();
-      setOrderData(orderData);
+      // setOrderData(orderData);
       setOrders(orderData);
     }
 
@@ -221,7 +221,7 @@ function Profile() {
   useEffect(() => {
     async function getUserDogData() {
       const dogData = await fetchUserDogData();
-      setDogData(dogData);
+      // setDogData(dogData);
       setDogs(dogData);
     }
 
