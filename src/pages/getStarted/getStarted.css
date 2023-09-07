@@ -39,9 +39,9 @@
     }
     .getStarted h1 {
         color: #242424;
-        font-size: 5rem;
-        font-weight: 700;
-        line-height: 1.33;
+        font-size: 5.2rem;
+        font-weight: 500;
+        line-height: 1.2;
         margin-bottom: 5vh;
         margin-top: 0;
         padding: 0;
@@ -106,16 +106,18 @@
     @media screen and (max-width: 750px){
 
         .getStarted h1 {
-            font-size: 2.7rem;
+            font-size:3.4rem;
             font-weight: 600;
             margin-bottom:  5vh;
             margin-top: 20vh;
-            width: 70%;
+            width: 80vw;
+            line-height: 1.2;
         }
         .getStarted p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             width: 70%;
             margin-bottom: 10px;
+            width: 80vw;
         }
     .getStarted {
         display: flex;
@@ -125,8 +127,13 @@
         height:80vh;
 
     }
+
     .getStartedButton {
         margin-top: 5vh;
+        margin-bottom: 5vh;
+        height: 5rem;
+        width: 12rem;
+        font-size: 1rem;
     }
     
 .infoBox{
