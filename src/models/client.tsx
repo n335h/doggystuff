@@ -291,36 +291,34 @@ export async function fetchUserDogData(): Promise<DogData[]> {
 }
 
 
-// export async function fileUploadHandler(selectedFile: File | null) {
-//   if (!selectedFile) {
-//     throw new Error("Please select an image file.");
-//   }
+export async function fileUploadHandler(selectedFile: File | null) {
+  if (!selectedFile) {
+    throw new Error("Please select an image file.");
+  }
 
-//   const formData = new FormData();
-//   formData.append("dog_image", selectedFile); // Assuming "dog_image" is the name of the column where you want to store the image.
+  const formData = new FormData();
+  formData.append("dog_image", selectedFile); // Assuming "dog_image" is the name of the column where you want to store the image.
 
-//   try {
-//     const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
+  try {
+    const user_ID = await getCurrentUserId(); // Make sure this function gets the current user's ID correctly.
 
-//     const { data, error } = await supabaseClient!
-//       .storage
-//       .from('dog-images')
-//       .update({ dog_image: formData })
-//       .eq('user_id', user_ID)
-//       .single();
+    const { data, error } = await supabaseClient!
+      .storage
+      .from('dog-images')
+      .update(`${user_ID}/${selectedFile.name}`, formData);
 
-//     if (!error) { // Check if there was no error during the update.
-//       console.log("Image uploaded successfully.");
-//       return true;
-//     } else {
-//       console.error("Image upload failed:", error.message);
-//       return false;
-//     }
-//   } catch (error) {
-//     console.error("Error uploading image:", error);
-//     return false;
-//   }
-// }
+    if (!error) { // Check if there was no error during the update.
+      console.log("Image uploaded successfully.");
+      return true;
+    } else {
+      console.error("Image upload failed:", error.message);
+      return false;
+    }
+  } catch (error) {
+    console.error("Error uploading image:", error);
+    return false;
+  }
+}
 
 export async function updateUserData(
   user_id: string,
