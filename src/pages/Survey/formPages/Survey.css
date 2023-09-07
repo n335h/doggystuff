@@ -75,14 +75,12 @@ label, legend {
     
  
 }
-.dogSexOption, .dogSizeOption{
+.dogSexOption, .dogSizeOption, .dogHealthOption {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width:10vw;
 
-    
  
 }
 
@@ -96,8 +94,8 @@ label, legend {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 14vh;
-    width: 14vw;
+    height: 20vh;
+    width: 15vw;
     background-color: var(--main-blue);
     color: #fff;
     font-weight: 700;
@@ -238,46 +236,90 @@ margin: 2rem;
     justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:750px){
+@media screen and (max-width: 1200px){
     
-    .surveyContent {
-     
-        width: 80%;
-        
-        
-     
+    .dogSex button , .dogSize button, .pureCross button, .dogHealth button {
+        height: 20vh;
+        width: 20vw;
     }
-    
+     .dogSize, .dogSex {
+        width: 40vw;
+    }
+     
+
+    .surveyForm input {
+        width:60%;
+       
+       
+    } 
+    .dropdownOptions {
+        width:65%;
+        
+    }
+     
 }
-@media screen and (max-width: 430px){
-    
-    .surveyContent {
+@media screen and (max-width: 1000px){
+    .dogSex button , .dogSize button, .pureCross button, .dogHealth button {
+        height: 10rem;
+        width: 12rem;
+    }
+   .dogSize, .dogSex {
+        width: 50vw;
+    } 
+    .surveyForm input {
+        width:60%;
+       
+       
+    } 
+    .dropdownOptions {
+        width:65%;
+        
+    }
      
-        width: 80%;
-        
-        
+}
+/* @media screen and (max-width: 500px){
+    .dogSex button , .dogSize button, .pureCross button, .dogHealth button {
+        height: 7rem;
+        width: 14rem;
+    }
+   .dogSize, .dogSex {
+        width: 70vw;
+    } 
+    
+} */
+
+@media screen and (max-width: 750px){
+   
+    form.surveyForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
      
     }
-    
+    .surveyForm input {
+        width:65vw;
+        height: 3.5rem;
+        margin-bottom: 1rem;
+        border: none;
+        border-radius: 5px;
+        padding: 0 1rem;
+        font-size: 1.2rem;
+        border-radius:17.4rem;
+        margin: 0;
+       
+    } 
+    .dropdownOptions {
+        width:70vw;
+        height: 3.5rem;
+        margin-bottom: 1rem;
+        border: none;
+        border-radius: 5px;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border-radius:17.4rem;
+    }
+    .dogSize, .dogSex {
+        width: 70vw;
+    }
 }

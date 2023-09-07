@@ -120,6 +120,8 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
     const section2End = 2 * sectionHeight;
     const section3Start = 2 * sectionHeight;
     const section3End = 3 * sectionHeight;
+    const section4Start = 3 * sectionHeight;
+    const section4End = 4 * sectionHeight;
 
     
 
@@ -136,6 +138,9 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
       }
       else if (scrollY >= section3Start && scrollY < section3End) {
         currentSection = 3;
+        console.log('currentSection', currentSection);
+      } else if (scrollY >= section4Start && scrollY < section4End) {
+        currentSection = 4;
         console.log('currentSection', currentSection);
       }
       // Add more conditions and color classes as needed
@@ -155,7 +160,12 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
         newColor =  'logo3'; // Set the desired color
         newSignOutColor = 'signedinicon3';
         console.log('newColor3', newColor);
+      } else if (currentSection === 4) {
+        newColor =  'logo4'; // Set the desired color
+        newSignOutColor = 'signedinicon4';
+        console.log('newColor4', newColor);
       }
+
       // Get the path element by its ID
       const pathElement = document.getElementById('profileicon');
       const pathElement2 = document.getElementById('dropdown-menu-signout-button');
