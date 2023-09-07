@@ -101,6 +101,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
   margin-top: 10vh;
   border-top-left-radius: 10vh;
   border-top-right-radius: 10vh;
@@ -218,13 +219,14 @@
 .input-container {
   display: flex;
   align-items: center;
+  height: auto;
 }
 
 .input-container input[type="text"] {
   flex: 1;
   padding: 10px;
   width: 35vw;
-  height: 8vh;
+  height: 7.5vh;
   border-radius: 17.4rem;
   font-size: 1.4rem;
   margin-top: 1rem;
@@ -246,7 +248,7 @@
   color: #fff;
   padding: 10px;
   margin-left: -10.4vw;
-  margin-top: 0.6vh;
+  margin-top: 0.7vh;
   font-size: 1.1rem;
   font-weight: 600;
   width: 10vw;
@@ -287,8 +289,8 @@
 
 /* Landing Button Styles */
 .landingButton {
-  height: 7vh;
-  width: 40%;
+  height: 10vh;
+  width: 45%;
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -297,6 +299,7 @@
   background-color: var(--header-main);
   color: #ffffff;
   font-weight: 700;
+  font-size: 1.2rem;
   border-radius: 17.4rem;
   border: 0;
 }
@@ -322,6 +325,53 @@
     font-size: 1.1rem;
     width: 40vw;
   }
+
+  
+  .landingSubOuter4, .landingSub4Content, .landingSection4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width:100vw;
+  }
+  
+  .landingSub4Title {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 5vh;
+  }
+  .landingSub4Para {
+    text-align: center;
+    font-size: 1.4rem;
+    width: 65vw;
+    margin-bottom: 1rem;
+    color: var(--background-offwhite);
+    text-align: center;
+  }
+  
+  .input-container input[type="text"] {
+    width: 50vw;
+    height: 8.5vh;
+    border-radius: 35.4rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  .input-container button {
+    padding: 10px;
+    margin-left: -15.5vw;
+    margin-top: 0.6vh;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    width: 15vw;
+    height: 9.5vh;
+    border-radius: 17.4rem;
+  }
+   .tcs {
+    width: 80vw;
+    margin-left: 15vw;
+    font-size: 0.8rem;
+   }
 }
 
 @media screen and (max-width: 750px) {
@@ -369,7 +419,7 @@
 
   .landingButton {
     height: 10vh;
-    width: 60%;
+    width: 50%;
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -385,6 +435,29 @@
 
   
 
+  .landingSubOuter4, .landingSub4Content, .landingSection4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width:100vw;
+  }
+  
+  .landingSub4Title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 5vh;
+  }
+  .landingSub4Para {
+    text-align: center;
+    font-size: 1.2rem;
+    width: 80vw;
+    margin-bottom: 1rem;
+    color: var(--background-offwhite);
+    text-align: center;
+  }
+  
   .input-container input[type="text"] {
     width: 65vw;
     height: 5.5vh;
@@ -394,7 +467,7 @@
   }
   .input-container button {
     padding: 10px;
-    margin-left: -16vw;
+    margin-left: -15.5vw;
     margin-top: 0.6vh;
     margin-bottom: 0;
     font-size: 0.8rem;
@@ -444,8 +517,8 @@
   }
 
   .landingButton {
-    height: 10vh;
-    width: 60%;
+    height: 8vh;
+    width: 70%;
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -463,6 +536,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
   width:100vw;
 }
 
