@@ -11,9 +11,7 @@
             <div className='getStarted'>
                 <h1 className='getstartedtitle animate-pop-in '>Welcome to DoggyStuff</h1>
 
-                <p className='getStartedP animate-pop-in '> We are a subscription service that delivers a box of goodies to your dog every month. </p>
-                <p  className='getStartedP animate-pop-in '> We tailor the contents of the box to your dog's needs and preferences. </p>
-                <p  className='getStartedP animate-pop-in '> To get started, please fill out the survey below. </p>
+                <p  className='getStartedP animate-pop-in '> We tailor the contents of the box to your dog's needs and preferences. To get started, we need to ask you a few questions. </p>
 
 
 

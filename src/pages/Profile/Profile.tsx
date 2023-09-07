@@ -396,7 +396,7 @@ function Profile() {
         )}
       </div>
       <div className="dog-details">
-        <p>{dog.dog_name}</p>
+        <h3>{dog.dog_name}</h3>
         <p>{dog.dog_breed}</p>
         <p>{dog.dog_age} Years</p>
       </div>
