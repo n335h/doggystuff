@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-
+import './Contact.css';
 function Contact() {
     const [formData, setFormData] = useState({
         name: '',
@@ -27,10 +27,13 @@ function Contact() {
     };
 
     return (
-        <div className="container">
-            <h2>Contact Us</h2>
+        <div className="contactcontainer">
+        <div className='conactcontent'>
+             
+          
             <form onSubmit={handleSubmit} id="contactForm">
-                <div className="form-group">
+            <h2>Contact Us</h2>
+                <div className="contactformgroup">
                     <label htmlFor="name">Name:</label>
                     <input
                         type="text"
@@ -41,7 +44,7 @@ function Contact() {
                         required
                     />
                 </div>
-                <div className="form-group">
+                <div className="contactformgroup">
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
@@ -52,9 +55,10 @@ function Contact() {
                         required
                     />
                 </div>
-                <div className="form-group">
+                <div className="contactformgroup">
                     <label htmlFor="message">Message:</label>
                     <textarea
+                    className='contacttextarea'
                         id="message"
                         name="message"
                         rows={4}
@@ -63,10 +67,11 @@ function Contact() {
                         required
                     ></textarea>
                 </div>
-                <div className="form-group">
+                <div className="contactformgroup">
                     <input type="submit" value="Submit" />
                 </div>
             </form>
+        </div>
         </div>
     );
 }

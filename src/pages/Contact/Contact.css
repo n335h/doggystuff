@@ -1,0 +1,76 @@
+.contactcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    margin-top: -20vh;
+    background-color: var(--accent-blue);
+   
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  
+    color: var(--header-text);
+}
+
+.conactcontent {
+    height:100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.contactformgroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    background-color: var(--accent-blue);
+   
+}
+.contactformgroup input {
+    height:7vh;
+    width: 40vw;
+    border-radius: 3.4rem;
+    font-size: 1.5rem;
+
+}
+.contacttextarea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 2vh;
+    padding: 0;
+    width: 40vw;
+    height: 30vh;
+    border-radius: 3.4rem;
+    border: none;
+    font-size: 1.5rem;
+    background-color: var(--background-offwhite);
+   
+}
+
+.contacttextarea.focus {
+    border: none;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: 4px solid var(--header-main);
+}
