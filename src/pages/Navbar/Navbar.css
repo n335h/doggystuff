@@ -369,7 +369,7 @@
   
       .additionalMenu a {
         font-weight: 500;
-  font-size: 3.5rem;
+  font-size: 3.2rem;
         text-decoration: none;
         color: var(--header-main);
       }
@@ -379,5 +379,14 @@
      #dropdown-menu-signout-button{
       display: none;
      }
-   
+     .additionalMenu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+     
+     }
+     .additionalMenuContent {
+      margin-top: 20vh;
+     }
     }
