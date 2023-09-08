@@ -8,7 +8,12 @@ const DoggyStuffLogo: React.FC = () => {
   const [currentColorClass, setCurrentColorClass] = useState<string>('logo1'); // Set an initial class
 
   const location = useLocation();
-
+  const routeToClassMap = {
+    '/': 'logo1', // Default class for the home page
+    '/Contact': 'logo1', // Class for a specific page
+    '/page2': 'logo3', // Class for another specific page
+    // Add more routes and classes as needed
+  };
   // Define an array of paths to check
   const pathsToCheck = ['/SignIn', '/SignUp'];
 
@@ -80,6 +85,7 @@ const DoggyStuffLogo: React.FC = () => {
       // Update the class based on the condition
       setCurrentColorClass(shouldApplyPageStyle ? 'logo1' : 'logo2');
     };
+    
 
     // Attach the scroll event listener when the component mounts
     window.addEventListener('scroll', handleScroll);

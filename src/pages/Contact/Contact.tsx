@@ -32,43 +32,47 @@ function Contact() {
              
           
             <form onSubmit={handleSubmit} id="contactForm">
-            <h2>Contact Us</h2>
+            <h1>Barking up the right tree</h1>
+            <p>From woof to welcome, Contact our pawsome team below</p>
                 <div className="contactformgroup">
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="name"></label>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
+                        placeholder='Enter name*'
                         required
                     />
                 </div>
                 <div className="contactformgroup">
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email"></label>
                     <input
                         type="email"
                         id="email"
                         name="email"
+                        placeholder='Email*'
                         value={formData.email}
                         onChange={handleChange}
                         required
                     />
                 </div>
                 <div className="contactformgroup">
-                    <label htmlFor="message">Message:</label>
+                    <label htmlFor="message"></label>
                     <textarea
                     className='contacttextarea'
                         id="message"
                         name="message"
+                        placeholder='Message*'
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
                         required
                     ></textarea>
                 </div>
-                <div className="contactformgroup">
-                    <input type="submit" value="Submit" />
+                <div className="contactformgroupbutton">
+                    <button type="submit" value="Submit" > Submit</button>
                 </div>
             </form>
         </div>

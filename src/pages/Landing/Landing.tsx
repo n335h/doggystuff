@@ -119,7 +119,7 @@ export function Landing() {
           <div className="landingSub4Content">
  <img alt='landingSub4Img' className='landingSub4Img' src={dogbark}/>
             <div className="landingSub4Info">
-              <h1 className="landingSub4Title">Subsribe here, smart human</h1>
+              <h1 className="landingSub4Title">Subscribe here, smart human</h1>
               <h2 className="landingSub4Para">There's always alot happening in the world of doggo delights. Subscribe today to get all the latest from DoggyStuff.</h2>
               <div className="input-container">
   <input type="text" placeholder="Enter your email address" />
