@@ -152,7 +152,7 @@
     }
     
     .additionalMenu a {
-      font-weight: 200;
+      font-weight: 500;
 
       text-decoration: none;
       color: var(--header-main);
@@ -268,7 +268,7 @@
       opacity: 1;
     }
 #profileicon{
-  width: 2rem;
+  width: 3rem;
   height: 5vh;
   justify-content: center;
   margin-top: 0.5vh;
@@ -284,20 +284,29 @@
     }
     .logo1 {
       filter: invert(83%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);
-    
+  
+    }
+    .logo1 img {
+      height: 3.5vh;
     }
 
   
       .logo2 {
       filter: invert(72%) sepia(83%) saturate(3811%) hue-rotate(174deg) brightness(97%) contrast(90%);
       color: var(--header-main);
+      height: 3.5vh;
+
     }
 
     .logo3 {
       filter: invert(100%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);
+      height: 3.5vh;
+
     }
     .logo4 {
       filter: invert(84%) sepia(36%) saturate(7028%) hue-rotate(178deg) brightness(107%) contrast(89%);
+      height: 3.5vh;
+
     }  
     .signedinicon1 {
       color: var(--header-main);
@@ -359,13 +368,13 @@
     {
   
       .additionalMenu a {
-        font-weight: 200;
-  font-size: 3rem;
+        font-weight: 500;
+  font-size: 3.5rem;
         text-decoration: none;
         color: var(--header-main);
       }
       #profileicon  {
-        height: 3.5vh;
+        height: 5vh;
       }
      #dropdown-menu-signout-button{
       display: none;
