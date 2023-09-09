@@ -6,7 +6,7 @@ import {
   fetchUserOrderData,
   fetchUserDogData,
   updateUserData,
-  // updateUserAddressData,
+  updateUserAddressData,
 } from '../../models/client';
 // import ImageUpload from '../ImgUpload/ImgUpload';
 import './Profile.css';
@@ -109,7 +109,7 @@ function Profile() {
     email: '',
     user_id: '',
   });
-  // const [editAddress, setEditAddress] = useState(false);
+  const [editAddress, setEditAddress] = useState(false);
   const [editedAddress, setEditedAddress] = useState<AddressData>({
     address_fl: '',
     address_sl: '',
@@ -154,12 +154,14 @@ function Profile() {
 
   const handleSaveProfile = async () => {
     try {
+      console.log("Saving profile data...");
       await updateUserData(
         userProfile.user_id,
         editedProfile.first_name,
         editedProfile.last_name,
         editedProfile.email
       );
+      console.log("Profile data save successfully");
       setUserProfile({ ...userProfile, ...editedProfile });
       setEditProfile(false);
     } catch (error) {
@@ -167,21 +169,23 @@ function Profile() {
     }
   };
 
-  // const handleSaveAddress = async () => {
-  //   try {
-  //     await updateUserAddressData(
-  //       editedAddress.address_fl,
-  //       editedAddress.address_sl,
-  //       editedAddress.address_town,
-  //       editedAddress.address_county,
-  //       editedAddress.address_postcode
-  //     );
-  //     setAddressData({ ...addressData, ...editedAddress });
-  //     setEditAddress(false);
-  //   } catch (error) {
-  //     console.error("Error updating address data:", error);
-  //   }
-  // };
+  const handleSaveAddress = async () => {
+    try {
+      console.log("Saving address data...");
+      await updateUserAddressData(
+        editedAddress.address_fl,
+        editedAddress.address_sl,
+        editedAddress.address_town,
+        editedAddress.address_county,
+        editedAddress.address_postcode
+      );
+      console.log("Address data save successfully");
+      setAddressData({ ...addressData, ...editedAddress });
+      setEditAddress(false);
+    } catch (error) {
+      console.error("Error updating address data:", error);
+    }
+  };
 
   const fileSelectedHandler = (event: any) => { // links to non working image upload
     const file = event.target.files[0];
@@ -238,7 +242,8 @@ function Profile() {
                 <input className='editinfo'
                 title='firstName'
                   type="text"
-                  value={userProfile?.first_name}
+                  placeholder="Enter First Name"
+                  value={editedProfile?.first_name || ''}
                   onChange={(e) =>
                     setEditedProfile({
                       ...editedProfile,
@@ -249,8 +254,8 @@ function Profile() {
                 <input className='editinfo'
                   title='lastName'
                   type="text"
-                  placeholder={userProfile?.last_name}
-                  value={editedProfile.last_name}
+                  placeholder="Enter Last Name"
+                  value={editedProfile.last_name || ''}
                   onChange={(e) =>
                     setEditedProfile({
                       ...editedProfile,
@@ -261,8 +266,8 @@ function Profile() {
                 <input className='editinfo'
                 title='email'
                   type="email"
-                  placeholder={userProfile?.email || 'Enter Email'}
-                  value={userProfile?.email}
+                  placeholder="Enter Email"
+                  value={editedProfile?.email || ''}
                   onChange={(e) =>
                     setEditedProfile({
                       ...editedProfile,
@@ -270,8 +275,11 @@ function Profile() {
                     })
                   }
                 />
-                <input className='editinfo' title="address_fl" type="text" placeholder={addressData?.address_fl} 
-                value={addressData?.address_fl}
+                <input className='editinfo'
+                title="address_fl"
+                type="text"
+                placeholder="Enter Address Line 1" 
+                value={editedAddress?.address_fl || ''}
                 onChange={(e) =>
                   setEditedAddress({
                     ...editedAddress,
@@ -280,8 +288,9 @@ function Profile() {
                 }/>
                 <input className='editinfo' 
                title='address_sl'
-               type="text" placeholder={addressData?.address_sl}
-                value={addressData?.address_sl}
+               type="text"
+               placeholder="Enter Address Line 2"
+                value={editedAddress?.address_sl || ''}
                 onChange={(e) =>
                   setEditedAddress({
                     ...editedAddress,
@@ -290,8 +299,9 @@ function Profile() {
                 }/>
                 <input className='editinfo' 
                 title='address_town'
-                type="text" placeholder={addressData?.address_town}
-                value={addressData?.address_town}
+                type="text"
+                placeholder="Enter Town"
+                value={editedAddress?.address_town || ''}
                 onChange={(e) =>
                   setEditedAddress({
                     ...editedAddress,
@@ -300,8 +310,9 @@ function Profile() {
                 }/>
                 <input className='editinfo'
                 title='address_county'
-                type="text" placeholder={addressData?.address_county}
-                value={addressData?.address_county}
+                type="text"
+                placeholder="Enter County"
+                value={editedAddress?.address_county || ''}
                 onChange={(e) =>
                   setEditedAddress({
                     ...editedAddress,
@@ -310,8 +321,9 @@ function Profile() {
                 }/>
                 <input className='editinfo' 
                 title='address_postcode'
-                type="text" placeholder={addressData?.address_postcode}
-                value={addressData?.address_postcode}
+                type="text"
+                placeholder="Enter Postcode"
+                value={editedAddress?.address_postcode || ''}
                 onChange={(e) =>
                   setEditedAddress({
                     ...editedAddress,
