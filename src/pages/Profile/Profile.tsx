@@ -228,6 +228,8 @@ function Profile() {
     getUserDogData();
   }, []);
 
+  
+
 
   return (
     <div className="profile animate-pop-in">
