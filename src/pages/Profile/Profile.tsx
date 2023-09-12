@@ -187,6 +187,24 @@ function Profile() {
     }
   };
 
+  const handleSaveProfileAndAddress = async () => {
+    try {
+      console.log("Saving profile data...");
+      await handleSaveProfile(); // Save profile data
+      console.log("Profile data save successfully");
+
+      console.log("Saving address data...");
+      await handleSaveAddress(); // Save address data
+      console.log("Address data save successfully");
+
+      // Exit edit mode
+      setEditProfile(false);
+      setEditAddress(false);
+    } catch (error) {
+      console.error("Error updating user profile:", error);
+    }
+  };
+
   const fileSelectedHandler = (event: any) => { // links to non working image upload
     const file = event.target.files[0];
     setSelectedFile(file);
@@ -335,7 +353,7 @@ function Profile() {
 
                   <div className='editButtons'>
                     <button onClick={() => setEditProfile(false)}>Cancel</button>
-                    <button onClick={handleSaveProfile}>Save</button>
+                    <button onClick={handleSaveProfileAndAddress}>Save</button>
                   </div>
                 </div>
               ) : (
