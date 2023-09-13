@@ -299,7 +299,7 @@
     }
 
     .logo3 {
-      filter: invert(100%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);
+      filter: invert(70%) sepia(21%) saturate(347%) hue-rotate(270deg) brightness(100%) contrast(96%);
       height: 3.5vh;
 
     }
@@ -342,7 +342,9 @@
 
     @media screen and (max-width: 750px)
     {
-  
+      #profileicon {
+        height: 4vh;
+      }
     button#SignUp{
       display: none;
     }
