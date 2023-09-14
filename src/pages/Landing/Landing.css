@@ -5,6 +5,7 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
+    
 }
 /* Landing Section 1 Styles */
 .landing {
@@ -228,7 +229,7 @@ margin: 0;
 }
 
 .tcsinput  {
-  width: 6vw;
+  width: 3vw;
   margin-right: 1rem;
   border-radius: 60px;
 }
@@ -434,6 +435,7 @@ font-size: 3rem;
     width: 40vw;
     font-size: 2.5rem;
     font-weight: 500;
+    margin-right: 1rem;
   }
   
   .landingSub4Title {
@@ -557,13 +559,14 @@ font-size: 3rem;
 
   
 
-  .landingSubOuter4, .landingSub4Content, .landingSection4 {
+  .landingSubOuter4, .landingSubOuter, .landingSub4Content, .landingSection4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
     width:100vw;
+    z-index: 0;
   }
   
   .landingSub4Title {
@@ -604,8 +607,9 @@ font-size: 3rem;
    }
    .containerImg {
     border-radius: 30px;
-    margin: 2rem;
-    width: 95%;
+    margin: 0;
+    width: 100%;
+    margin-bottom: 2rem;
   }
 }
 

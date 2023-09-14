@@ -62,19 +62,19 @@ function OrderDetails({
                 <legend>Order Details</legend>
                 <label htmlFor="days">Days</label>
                 <select
-                    className='dropdownOptions'
-                    onChange={handleDaysChange}
-                    value={days}
-                    id="days"
-                    name="days"
-                    required
-                >
-                    <option value="free"></option>
-                    <option value="7">7</option>
-                    <option value="14">14</option>
-                    <option value="21">21</option>
-                    <option value="30">30</option>
-                </select>
+    className='dropdownOptions'
+    onChange={handleDaysChange}
+    value={days}
+    id="days"
+    name="days"
+    required
+>
+    <option value="">Select number of days</option>
+    <option value="7">7</option>
+    <option value="14">14</option>
+    <option value="21">21</option>
+    <option value="30">30</option>
+</select>
                 <label htmlFor="address_fl">Address Line 1:</label>
                 <input
                     onChange={handleAddressFLChange}

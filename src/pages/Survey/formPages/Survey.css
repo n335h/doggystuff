@@ -2,7 +2,7 @@
 .survey {
     background-color: var(--background-offwhite);
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     margin: auto;
     margin-top: -10vh;
     display: flex;
@@ -164,6 +164,7 @@
   /* Other Styles */
   label, legend {
     margin-bottom: 1vh;
+    
   }
   
   .formContent {

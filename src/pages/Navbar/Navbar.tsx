@@ -302,11 +302,11 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                       Join DoggyStuff
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/about" onClick={handleToggleAdditionalMenu}>
                       About us
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/faq" onClick={handleToggleAdditionalMenu}>
                       FAQ

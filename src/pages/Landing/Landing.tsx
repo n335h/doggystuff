@@ -5,7 +5,7 @@ import "./Landing.css";
 import "../animate.css";
 import dogbark from "../../Assets/dogbark.svg";
 import landing1 from "../../Assets/landingsub2.png";
-
+// import Footer from "../Footer/Footer";
 
 
 export function Landing() {
@@ -51,11 +51,11 @@ export function Landing() {
                   <h2 className="landingsubs animate-pop-in">The DoggyStuff Way</h2>
                   <h1 className="landingPara animate-pop-in ">DoggyStuff makes food fit for a human’s plate and doggos palate. High-quality, high-protein ingredients. No sugars, salts, grains or fillers. Ever. 
 </h1>
-<button className="landingSubButton">Get Started</button>
+<Link to="/FAQ" className="landingSubButton animate-pop-in">Learn More</Link>
 
                 </div>
                 <div className='containerImage'>
-                <img alt='containerImg' className='containerImg' src={landing1} />
+                <img alt='containerImg ' className='containerImg animate-pop-in' src={landing1} />
                 </div>
               </div>
 
@@ -123,7 +123,11 @@ export function Landing() {
          
             </div>
           </div>
+        
       </section>
+      {/* <Footer/> */}
+    
     </div>
+    
   );
 }

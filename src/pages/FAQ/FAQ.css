@@ -7,7 +7,7 @@
     margin: 0;
     height: auto;
     margin-top: -10vh;
-    background-color: var(--accent-blue);
+    background-color: var(--background-offwhite);
   }
 
   .faqtitle {
@@ -19,7 +19,7 @@
   /* Individual FAQ item styles */
   .faq-subject {
     max-width: 70vw;
-    background-color: var(--background-offwhite);
+    background-color: var(--accent-pink);
     border-radius: 25px;
     margin-bottom: 1rem;
     padding: 20px;
@@ -136,6 +136,7 @@ font-size: 1.3rem;
     position: absolute;
     top: 5vh;
     left: 5vw;
+    opacity: 0.1;
   }
 
   .faqbottombutton {
