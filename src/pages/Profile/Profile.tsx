@@ -182,6 +182,7 @@ function Profile() {
       console.log("Address data save successfully");
       setAddressData({ ...addressData, ...editedAddress });
       setEditAddress(false);
+      console.log(editAddress);
     } catch (error) {
       console.error("Error updating address data:", error);
     }

@@ -467,6 +467,7 @@ font-size: 3rem;
 @media screen and (max-width:1000px) {
   .landingInfo2 {
     width: 60vw;
+    margin-bottom: 5rem;
   }
   .landingInfo2 h1 {
     width: 60vw;
@@ -474,6 +475,10 @@ font-size: 3rem;
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 2rem;
+  }
+  .landingInfo2 h2 {
+    width: 60vw;
+  
   }
 
   
@@ -590,7 +595,7 @@ font-size: 3rem;
    .containerImg {
     border-radius: 30px;
     margin: 2rem;
-    width: 40vw;
+    width: 85%;
   }
 }
 
@@ -641,7 +646,6 @@ font-size: 3rem;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--header-main);
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
