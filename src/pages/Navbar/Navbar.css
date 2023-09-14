@@ -272,6 +272,7 @@
   height: 5vh;
   justify-content: center;
   margin-top: 0.5vh;
+  margin-right: 4vw;
 }
     .button-hoverable:hover {
       cursor: pointer;
