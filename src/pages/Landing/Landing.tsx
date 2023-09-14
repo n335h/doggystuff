@@ -66,42 +66,25 @@ export function Landing() {
       </section>
       <section className="landingSection">
 
-        {/* <div className="landingSubOuter2">
+         <div className="landingSubOuter2">
+
           </div>
       </section>
+
+
+{/* 
       <section className="landingSection3">
   <div className="landingSubOuter3">
     <div className="foodTypes">
       <div className="foodTypeContainer">
-        <div className="foodType">
-          <div className="foodTypeImage">
-            <h2 className="foodTypeTitle">Food 1</h2>
-            <img alt='foodTypeImg' className='foodTypeImg' src='image1.jpg' />
-          </div>
-        </div>
-        <div className="foodType">
-          <div className="foodTypeImage">
-            <h2 className="foodTypeTitle">Food 2</h2>
-            <img alt='foodTypeImg' className='foodTypeImg' src='image2.jpg' />
-          </div>
-        </div>
-        <div className="foodType">
-          <div className="foodTypeImage">
-            <h2 className="foodTypeTitle">Food 3</h2>
-            <img alt='foodTypeImg' className='foodTypeImg' src='image3.jpg' />
-          </div>
-        </div>
-        <div className="foodType">
-          <div className="foodTypeImage">
-            <h2 className="foodTypeTitle">Food 3</h2>
-            <img alt='foodTypeImg' className='foodTypeImg' src='image3.jpg' />
-          </div>
-        </div>
+       
+        
+        
       </div>
     </div>
     <button className="foodTypeButton">View all products</button>
-  </div> */}
-</section>
+  </div> 
+</section> */}
       <section className="landingSection4">
         <div className="landingSubOuter4">
           <div className="landingSub4Content">
