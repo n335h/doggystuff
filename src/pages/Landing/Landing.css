@@ -387,26 +387,29 @@ font-size: 3rem;
   }
 
 
-  .landingInfo h2 {
+  /* .landingInfo h2 {
     text-align: right;
     font-size: 1.1rem;
     width: 40vw;
-  }
+  } */
   
-  .landingInfo2 h2 {
-    text-align: center;
+  /* .landingInfo2 h2 {
     font-size: 1.1rem;
     width: 60vw;
     margin: 0;
-  }
-  .landingInfo2 h1 {
-    width: 40vw;
-    font-size: 2.6rem;
-    margin: 1rem;
+  } 
+   .landingInfo2 h1 {
+    width: 30vw;
+    font-size: 3.6rem;
+    width: 20vw;
+    margin: 0;
+  } 
+  .landingPara {
+    width: 20vw;
   }
   .landingInfo2 {
     width: 50vw;
-  }
+  } */
 
   
   .landingSubOuter4, .landingSubOuter, .landingSub4Content, .landingSection4 {
@@ -418,8 +421,8 @@ font-size: 3rem;
     width:100vw;
   }
   .landingInfo2 h1 {
-    width: 70vw;
-    font-size: 1.5rem;
+    width: 40vw;
+    font-size: 2.5rem;
     font-weight: 500;
   }
   
@@ -463,8 +466,17 @@ font-size: 3rem;
 
 @media screen and (max-width:1000px) {
   .landingInfo2 {
-    width: 90vw;
+    width: 60vw;
   }
+  .landingInfo2 h1 {
+    width: 60vw;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  
   .landing {
     background-size: cover;
     background-image: url(https://live.staticflickr.com/65535/53097601747_ad931ab6ce_h.jpg);
@@ -575,6 +587,11 @@ font-size: 3rem;
     margin-left: 15vw;
     font-size: 0.8rem;
    }
+   .containerImg {
+    border-radius: 30px;
+    margin: 2rem;
+    width: 40vw;
+  }
 }
 
 @media screen and (max-width: 430px) {
