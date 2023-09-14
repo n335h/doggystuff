@@ -7,7 +7,7 @@
     margin: 0;
     height: auto;
     margin-top: -10vh;
-    background-color: var(--accent-pink);
+    background-color: var(--accent-blue);
   }
 
   .faqtitle {
@@ -160,7 +160,7 @@ font-size: 1.3rem;
   .faqbottombutton:hover {
     background-color:transparent;
     color: var(--main-blue);
-    border:5px solid var(--main-blue);
+    border:4px solid var(--main-blue);
   }
 
   @media screen and (max-width: 750px) {
