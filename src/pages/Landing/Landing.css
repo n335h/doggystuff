@@ -466,18 +466,18 @@ font-size: 3rem;
 
 @media screen and (max-width:1000px) {
   .landingInfo2 {
-    width: 60vw;
+    width: 70vw;
     margin-bottom: 5rem;
   }
   .landingInfo2 h1 {
-    width: 60vw;
+    width: 70vw;
     margin: 0;
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 2rem;
   }
   .landingInfo2 h2 {
-    width: 60vw;
+    width: 70vw;
   
   }
 
@@ -595,7 +595,7 @@ font-size: 3rem;
    .containerImg {
     border-radius: 30px;
     margin: 2rem;
-    width: 85%;
+    width: 95%;
   }
 }
 
