@@ -1,7 +1,7 @@
 /* Landing Section 1 Styles */
 .landing {
   height: 100vh;
-  width: 100vw;
+ width: 100vw;
   margin: 0;
   margin-top: -10vh;
   display: flex;
@@ -18,7 +18,9 @@
   z-index: 12;
 
 }
-
+.landingContainer {
+  max-width: 100vw;
+}
 .landingsection2container {
   display: flex;
   flex-direction: row;
@@ -147,7 +149,7 @@ margin-top: 10vh;
 /* Landing Section 2 Image Styles */
 .containerImg {
 border-radius:30px ;
-margin: 2rem;
+margin: 0;
 }
 
 /* Food Types Styles */
@@ -417,7 +419,7 @@ font-size: 3rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 0;
     width:100vw;
   }
   .landingInfo2 h1 {
@@ -552,7 +554,7 @@ font-size: 3rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 0;
     width:100vw;
   }
   
