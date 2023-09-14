@@ -4,6 +4,7 @@ import "./Landing.css";
 //import animate.css from main pages folder
 import "../animate.css";
 import dogbark from "../../Assets/dogbark.svg";
+import landing1 from "../../Assets/landingsub2.png";
 
 
 
@@ -33,7 +34,7 @@ export function Landing() {
         <div className="landingContent"></div>
         
         <div className="landingInfo">
-          <h2 className="landing-title  animate-pop-in">WHAT A GOOD DOGGO DESERVES</h2>
+          <h2 className="landingsubs  animate-pop-in">WHAT A GOOD DOGGO DESERVES</h2>
           <h1 className="landingPara animate-pop-in">Tailored to their tastes. Delivered to your door. Try our trial box today for £9.99!</h1>
           <Link to="/GetStarted" className="landingButton animate-pop-in">Try DoggyStuff</Link>
         </div>
@@ -42,38 +43,25 @@ export function Landing() {
       
       <section className="landingSection">
         <div className="landingSubOuter" ref={landingSubRef}>
-          {/* <div className="landingSubContent">
-            <h2>How it works</h2>
-            <div className="landingSubContentItem">
-              <div className='container'> 
-                <div className='containerImage'>
-                <img alt='containerImg' className='containerImg' src='https://images.pexels.com/photos/15794775/pexels-photo-15794775/free-photo-of-border-collie-dog-portrait.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>                </div>
-                <div className='containerContent'>
-                  <h3>Tell us about your dog</h3>
-                  <p>Fill out your dog's profile and tell us about their breed, age, weight, health, and activity level.</p>
+           <div className="landingSubContent">
+      
+              <div className='landingsection2container'> 
                 
+                <div className='landingInfo2'>
+                  <h2 className="landingsubs animate-pop-in">The DoggyStuff Way</h2>
+                  <h1 className="landingPara animate-pop-in ">DoggyStuff makes food fit for a human’s plate and doggos palate. High-quality, high-protein ingredients. No sugars, salts, grains or fillers. Ever. 
+</h1>
+<button className="landingSubButton">Get Started</button>
+
                 </div>
-              </div>
-              <div className='container'> 
                 <div className='containerImage'>
-                  <img alt='containerImg' className='containerImg' src='your-image-url-here' />
-                </div>
-                <div className='containerContent'>
-                  <h3>Tell us about your dog</h3>
-                  <p>Fill out your dog's profile and tell us about their breed, age, weight, health, and activity level.</p>
+                <img alt='containerImg' className='containerImg' src={landing1} />
                 </div>
               </div>
-              <div className='container'> 
-                <div className='containerImage'>
-                  <img alt='containerImg' className='containerImg' src='your-image-url-here' />
-                </div>
-                <div className='containerContent'>
-                  <h3>Tell us about your dog</h3>
-                  <p>Fill out your dog's profile and tell us about their breed, age, weight, health, and activity level.</p>
-                </div>
-              </div>
+
+             
             </div>
-          </div> */}
+          
         </div>
       </section>
       <section className="landingSection">

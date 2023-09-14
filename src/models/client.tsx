@@ -376,7 +376,7 @@ export async function updateUserData(
   try {
     console.log('Updating user data:', user_id, first_name, last_name, email);
 
-    const { data, error } = await supabaseClient!.from('user').update({
+    const { data, error } = await supabaseClient!.from('users').update({
       first_name: first_name,
       last_name: last_name,
       email: email,
