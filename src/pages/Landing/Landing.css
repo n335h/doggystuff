@@ -694,6 +694,7 @@ font-size: 3rem;
   align-items: center;
   margin: auto;
   width:100vw;
+  margin-top: -10vh;
   min-height: 100vh;
 }
 
