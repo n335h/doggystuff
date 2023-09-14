@@ -1,3 +1,11 @@
+
+html,body
+{
+
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
 /* Landing Section 1 Styles */
 .landing {
   height: 100vh;
