@@ -575,6 +575,7 @@ font-size: 3rem;
     justify-content: center;
     align-items: center;
     margin: 0;
+    margin-top: -10vh;
     width:100vw;
     height: 120vh;
     z-index: 0;
