@@ -72,8 +72,8 @@ margin-top: 10vh;
 /* Landing Section 3 Styles */
 .landingSubOuter2 {
   width: 100vw;
-  height: 130vh;
-  margin-top: -20vh;
+  height: 90vh;
+  margin-top: -10vh;
   background-color: var(--light-blue);
   background-image: url('https://images.pexels.com/photos/825949/pexels-photo-825949.jpeg');
   background-size: cover;
@@ -129,7 +129,6 @@ margin-top: 10vh;
 
 /* Common Styles */
 .landingSection,
-.landingSection2,
 .landingSection3 {
   display: flex;
   flex-direction: column;
@@ -137,6 +136,10 @@ margin-top: 10vh;
   align-items: center;
   height: 100vh;
 }
+.landingSection2{
+  height: 100vh;
+}
+
 
 .landingSubContent,
 .landingSub4Info {
@@ -145,7 +148,6 @@ margin-top: 10vh;
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 10vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -298,8 +300,8 @@ color: #ffffff;
   background-color: var(--main-blue); /* Change this to your desired button style */
   color: #fff;
   padding: 10px;
-  margin-left: -12.36vw;
-  margin-top: 0.4vh;
+  margin-left: -12.4vw;
+  margin-top: 0.7vh;
   font-size: 1.1rem;
   font-weight: 600;
   width: 12vw;
@@ -433,6 +435,7 @@ font-size: 3rem;
     justify-content: center;
     align-items: center;
     margin: 0;
+    margin-top: -10vh;
     width:100vw;
   }
   .landingInfo2 h1 {
@@ -602,11 +605,11 @@ font-size: 3rem;
   .input-container button {
     padding: 10px;
     margin-left: -15.6vw;
-    margin-top: 0.5vh;
+    margin-top: 0.6vh;
     margin-bottom: 0;
     font-size: 0.8rem;
     width: 15vw;
-    height: 6.3vh;
+    height: 6.7vh;
     border-radius: 17.4rem;
   }
    .tcs {
@@ -620,6 +623,11 @@ font-size: 3rem;
     width: 100%;
     margin-bottom: 2rem;
     margin-top: 4rem;
+  }
+  .landingSubOuter2 {
+    background-size: cover;
+    background-position: 50% 20% center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -683,6 +691,7 @@ font-size: 3rem;
   align-items: center;
   margin: auto;
   width:100vw;
+  min-height: 100vh;
 }
 
 .landingSub4Title {

@@ -64,7 +64,7 @@ export function Landing() {
           
         </div>
       </section>
-      <section className="landingSection">
+      <section className="landingSection2">
 
          <div className="landingSubOuter2">
 
