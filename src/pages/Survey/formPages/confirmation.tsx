@@ -31,7 +31,7 @@ function Confirmation({ surveyData, orderData }: SurveyDataProps) {
 
             {/* <p>Dog Name: {surveyData.dog_name}</p> */}
             <hr />
-            <p> Food {surveyData.dog_name} likes: {surveyData.flavours_not}  </p>
+            <p> Food {surveyData.dog_name} likes:{" "} {surveyData.flavours_not}  </p>
             <p> Did {surveyData.dog_name} want vegtables?  {surveyData.veg}</p>
      
             <p>You wanted food for: {orderData.days} days</p>
