@@ -31,15 +31,23 @@ function Confirmation({ surveyData, orderData }: SurveyDataProps) {
 
             {/* <p>Dog Name: {surveyData.dog_name}</p> */}
             <hr />
-            <p> Food {surveyData.dog_name} likes:{" "} {surveyData.flavours_not}  </p>
+            <p>
+                Food {surveyData.dog_name} likes:{" "}
+                {surveyData.flavours_not.map((flavor, index) => (
+                    <span key={index}>
+                        {flavor}
+                        {index < surveyData.flavours_not.length - 1 && ", "} {/* Add a comma and space unless it's the last item */}
+                    </span>
+                ))}
+            </p>
             <p> Did {surveyData.dog_name} want vegtables?  {surveyData.veg}</p>
-     
+
             <p>You wanted food for: {orderData.days} days</p>
             <hr />
             <p> Delivery Address: <br></br>{orderData.address_fl} <br></br> {orderData.address_sl},<br></br> {orderData.address_town}, <br></br>{orderData.address_county},<br></br> {orderData.address_postcode}</p>
 
-         
-          
+
+
         </div>
     );
 }
