@@ -634,8 +634,8 @@ font-size: 3rem;
   }
 }
 
-@media screen and (max-width: 430px) {
-  /* .landing {
+@media screen and (max-width: 768px) {
+  .landing {
     background-size: cover;
     background-image: url(https://live.staticflickr.com/65535/53097601747_ad931ab6ce_h.jpg);
     display: flex;
@@ -646,7 +646,7 @@ font-size: 3rem;
     align-items: center;
     width: 100vw;
     height: 130vh;
-  } */
+  }
 
   /* .landingInfo {
     position: absolute;
@@ -662,7 +662,7 @@ font-size: 3rem;
 
   .landingInfo h1 {
     text-align: left;
-    font-size: 2.7rem;
+    font-size: 2rem;
     font-weight: 400;
     width: 80vw;
     margin-bottom: 2vh;
@@ -716,7 +716,7 @@ font-size: 3rem;
 .input-container input[type="text"] {
   width: 70vw;
   height: 5.5vh;
-  border-radius: 35.4rem;
+  border-radius: 30rem;
   font-size: 1rem;
   margin-top: 1rem;
 }
