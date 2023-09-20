@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import "./Landing.css";
 //import animate.css from main pages folder
 import "../animate.css";
-import dogbark from "../../Assets/dogbark.svg";
 import landing1 from "../../Assets/landingsub2.png";
 import lookinat from "../../Assets/lookinat.svg";
 import keepscroll from "../../Assets/keepscroll.svg";
+
 // import Footer from "../Footer/Footer";
 
 
