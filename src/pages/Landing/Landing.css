@@ -112,9 +112,17 @@ margin-top: 20vh;
   align-items: center;
   z-index: -1;
 }
-.keepscrollimg, .lookinat{
+.keepscrollimg{
   position: relative;
   top:36vh;
+  width:25vw;
+  margin-top: 2vh;
+  z-index: 100;
+}
+.lookinat {
+  position: relative;
+  top: 40vh;
+  left: 60vw;
   width:25vw;
   margin-top: 2vh;
   z-index: 100;
@@ -490,7 +498,7 @@ font-size: 3rem;
    }
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:768px ) {
   .landingInfo2 {
     width: 70vw;
     margin-bottom: 5rem;
@@ -507,11 +515,19 @@ font-size: 3rem;
   
   }
 
-  .keepscrollimg, .lookinat{
+  .keepscrollimg{
     position: relative;
     top:-10vh;
     left: 0vw;
     width:100vw;
+    margin-top: 2vh;
+    z-index: 100;
+  }
+  .lookinat {
+    position: relative;
+    top: 40vh;
+    left: 40vw;
+    width:60vw;
     margin-top: 2vh;
     z-index: 100;
   }
@@ -691,16 +707,20 @@ font-size: 3rem;
   }
   .lookinat{
     position: relative;
-    top: 50vh;
-    left: 30vw;
-    width:80vw;
+    top: 45vh;
+    left: 10vw;
+    width:100vw;
     margin-top: 2vh;
     z-index: 100;
   }
   .landingInfo h2 {
     font-size: 1rem;
   }
-
+  .landingInfo2 h1 {
+    width: 80vw;
+    font-size: 1.8rem;
+  
+  }
   .landingButton, .landingSubButton {
     height: 8vh;
     width: 80%;
@@ -738,6 +758,107 @@ font-size: 3rem;
   text-align: center;
   font-size: 1.2rem;
   width: 90vw;
+  margin-bottom: 1rem;
+  color: var(--background-offwhite);
+  text-align: center;
+}
+
+
+.input-container input[type="text"] {
+  width: 70vw;
+  height: 5vh;
+  border-radius: 35.4rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.input-container button {
+  padding: 10px;
+  margin-left: -19vw;
+  margin-top: 0.8vh;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  width: 18vw;
+  height: 6.2vh;
+  border-radius: 17.4rem;
+}
+ .tcs {
+  width: 80vw;
+  margin-left: 15vw;
+  font-size: 0.8rem;
+ }
+}
+
+@media screen and (max-width: 320px) {
+ 
+  .landingInfo h1 {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 400;
+    width: 80vw;
+    margin-bottom: 2vh;
+  }
+  .keepscrollimg {
+    position: relative;
+    top:0vh;
+    left: 0vw;
+    width:100vw;
+    margin-top: 2vh;
+    z-index: 100;
+  }
+  .lookinat{
+    position: relative;
+    top: 45vh;
+    left: -5vw;
+    width:120vw;
+    margin-top: 2vh;
+    z-index: 100;
+  }
+  .landingInfo h2 {
+    font-size: 1rem;
+  }
+
+  .landingButton, .landingSubButton {
+    height: 8vh;
+    width: 80%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 17.4rem;
+    border: 0;
+  }
+.landingSubOuter4, .landingSection4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width:100vw;
+  margin-top: -10vh;
+ height:70vh;
+}
+.landingSub4Content {
+  margin-top: 10rem;
+}
+.landingInfo2 h1 {
+  width: 80vw;
+  font-size: 1.8rem;
+
+}
+
+.landingSub4Title {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 5vh;
+}
+.landingSub4Para {
+  text-align: center;
+  font-size: 1.2rem;
+  width:100vw;
   margin-bottom: 1rem;
   color: var(--background-offwhite);
   text-align: center;
