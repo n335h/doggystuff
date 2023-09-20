@@ -5,6 +5,8 @@ import "./Landing.css";
 import "../animate.css";
 import dogbark from "../../Assets/dogbark.svg";
 import landing1 from "../../Assets/landingsub2.png";
+import lookinat from "../../Assets/lookinat.svg";
+import keepscroll from "../../Assets/keepscroll.svg";
 // import Footer from "../Footer/Footer";
 
 
@@ -32,7 +34,8 @@ export function Landing() {
    <div className="landingContainer">
       <div className="landing">
         <div className="landingContent"></div>
-        
+        <img className="keepscrollimg animate-pop-in" src={keepscroll} alt="keepscroll" />
+    
         <div className="landingInfo">
           <h2 className="landingsubs  animate-pop-in">WHAT A GOOD DOGGO DESERVES</h2>
           <h1 className="landingPara animate-pop-in">Tailored to their tastes. Delivered to your door. Try our trial box today for £9.99!</h1>
@@ -67,7 +70,7 @@ export function Landing() {
       <section className="landingSection2">
 
          <div className="landingSubOuter2">
-
+     <img className="lookinat" src={lookinat} alt="lookinat" />
           </div>
       </section>
 
@@ -88,7 +91,6 @@ export function Landing() {
       <section className="landingSection4">
         <div className="landingSubOuter4">
           <div className="landingSub4Content">
- <img alt='landingSub4Img' className='landingSub4Img' src={dogbark}/>
             <div className="landingSub4Info">
               <h1 className="landingSub4Title">Subscribe here, smart human</h1>
               <h2 className="landingSub4Para">There's always alot happening in the world of doggo delights. Subscribe today to get all the latest from DoggyStuff.</h2>
