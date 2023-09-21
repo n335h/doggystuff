@@ -119,6 +119,8 @@
   .dogSize button,
   .pureCross button,
   .dogHealth button,
+  .dogFood button,
+  .flavoursNot button,
   .backSurveyButton button {
     display: flex;
     flex-direction: row;
@@ -140,6 +142,8 @@
   .dogSize button:hover,
   .pureCross button:hover,
   .dogHealth button:hover,
+  .dogFood button:hover,
+  .flavoursNot button:hover,
   .backSurveyButton:hover {
     background-color: var(--accent-pink); 
     color: var(--main-blue);
@@ -155,7 +159,11 @@
   .pureCrossOption.selected,
   .pureCrossOption:active,
   .dogHealthOption.selected,
-  .dogHealthOption:active {
+  .dogHealthOption:active,
+  .dogFoodOption.selected,
+  .dogFoodOption:active,
+  .flavoursNot.selected,
+  .flavoursNot:active {
     background-color: var(--accent-pink); 
     color: var(--main-blue);
     cursor: pointer;
@@ -192,7 +200,9 @@
   
   .dogSexOption,
   .dogSizeOption,
-  .dogHealthOption {
+  .dogHealthOption,
+  .dogFoodOption
+  {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -200,11 +210,23 @@
   }
   
   .pureCross,
-  .dogHealth {
+  .dogHealth,
+  .foodVeg
+  
+   {
+    justify-content: center;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
+  .flavoursNotContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width:60vw;
+  }
+
   
   /* Responsive Styles */
   @media screen and (max-width: 1300px) {

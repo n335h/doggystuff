@@ -18,7 +18,7 @@
   
   /* Individual FAQ item styles */
   .faq-subject {
-    max-width: 70vw;
+    width: 60vw;
     background-color: var(--accent-pink);
     border-radius: 25px;
     margin-bottom: 1rem;
@@ -53,7 +53,7 @@ font-size: 1.3rem;
     margin-bottom: 10px;
     padding: 20px;
     height: auto;
-    width: 70vw;
+    width: 60vw;
   }
   li.content.open {
     margin-bottom: 10px;

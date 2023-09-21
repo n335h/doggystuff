@@ -4,9 +4,9 @@ html,body
 
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    /* overflow-x: hidden;  */
     
-}
+} 
 /* Landing Section 1 Styles */
 .landing {
   height: 100vh;
@@ -118,6 +118,8 @@ margin-top: 20vh;
   width:25vw;
   margin-top: 2vh;
   z-index: 100;
+  filter: invert(9%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
+
 }
 .lookinat {
   position: relative;
@@ -126,6 +128,19 @@ margin-top: 20vh;
   width:25vw;
   margin-top: 2vh;
   z-index: 100;
+  filter: invert(9%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
+
+}
+.bowlimg{
+  position: relative;
+  top: -10rem;
+  left: -40%;
+  width:20vw;
+  margin-top: 2vh;
+  z-index: 100;
+  filter: invert(9%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
+
+
 }
 
 .landingSubOuter4 {

@@ -20,7 +20,7 @@ const FAQ2 = () => {
   const faqData = [
     {
       question:'How much does each subscription cost?',
-      answer:'It depends! The size of your cat plus how you choose to divvy up wet and dry food will affect the cost. Overall, the subscription offers you the best value on these nutrients.',
+      answer:'It depends! The size of your dog plus a few other question we have for them will affect the cost. Overall, the subscription offers you the best value on these nutrients.',
     },
     {
       question: 'Where do you deliver to?',

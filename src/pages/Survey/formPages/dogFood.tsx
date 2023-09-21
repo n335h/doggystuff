@@ -14,59 +14,67 @@
 
 
     function DogFood({ flavours_not, veg, updateFields }: DogFoodProps) {
-        
-        const handleFlavoursNotChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-            const selectedValue = e.target.value;
-            const isChecked = e.target.checked;
-
-            if (isChecked) {
-                updateFields({ flavours_not: [...flavours_not, selectedValue] });
+        const handleFlavoursNotChange = (selectedValue: string) => {
+            if (flavours_not.includes(selectedValue)) {
+              // If the value is already selected, remove it from the array
+              updateFields({
+                flavours_not: flavours_not.filter((value) => value !== selectedValue),
+              });
             } else {
-                updateFields({ flavours_not: flavours_not.filter(value => value !== selectedValue) });
+              // If the value is not selected, add it to the array
+              updateFields({ flavours_not: [...flavours_not, selectedValue] });
             }
-        };
-
+          };
         return (
             <div className="surveyFormSection">
                 <FormWrapper title="Tell us what food your doggo likes">
-                    <h3>Whats food does your Doggo want</h3>
-                    <div className="surveyFormSectionContent">
-                        <input
-                            type="checkbox"
-                            className='dropdownOptions'
-                            onChange={handleFlavoursNotChange}
-                            value="Pork"
-                            id="flavours_not_pork"
-                            name="flavours_not"
-                        
-                        />
-                        <label htmlFor="flavours_not_pork">Pork</label>
+                    <h3>What don't they like?
 
-                        <input
-                            type="checkbox"
-                            className='dropdownOptions'
-                            onChange={handleFlavoursNotChange}
-                            value="Beef"
-                            id="flavours_not_beef"
-                            name="flavours_not"
-                        
-                        />
-                        <label htmlFor="flavours_not_beef">Beef</label>
+                    </h3>
+                    <div className="dogFood">
+                    <div className="flavoursNotContent">
+                       
+                    <button
+              type="button"
+              className={`flavoursNot ${
+                flavours_not.includes('Pork') ? 'selected' : ''
+              }`}
+              onClick={() => handleFlavoursNotChange('Pork')}
+            >
+              Pork
+            </button>
+            <button
+              type="button"
+              className={`flavoursNot ${
+                flavours_not.includes('Beef') ? 'selected' : ''
+              }`}
+              onClick={() => handleFlavoursNotChange('Beef')}
+            >
+              Beef
+            </button>
+            <button
+              type="button"
+              className={`flavoursNot ${
+                flavours_not.includes('Chicken') ? 'selected' : ''
+              }`}
+              onClick={() => handleFlavoursNotChange('Chicken')}
+            >
+              Chicken
+            </button>
+            <button
+              type="button"
+              className={`flavoursNot ${
+                flavours_not.includes('Fish') ? 'selected' : ''
+              }`}
+              onClick={() => handleFlavoursNotChange('Fish')}
+            >
+              Fish
+            </button>
+          </div>
+                    <label htmlFor='veg'>Do they want vegetables?</label>
 
-                        <input
-                            type="checkbox"
-                            className='dropdownOptions'
-                            onChange={handleFlavoursNotChange}
-                            value="Chicken"
-                            id="flavours_not_chicken"
-                            name="flavours_not"
-                        
-                        />
-                        <label htmlFor="flavours_not_chicken">Chicken</label>
-                    </div>
-
-                    <div className="surveyFormSectionContent">
-                        <input title="vegNo" type='radio' className='dropdownOptions'
+                    <div className="foodVeg">
+                        {/* <input title="vegNo" type='radio' className='dropdownOptions'
                             onChange={e=> updateFields({veg: e.target.value}) }
                             value='No'
                             id='vegNo'
@@ -82,7 +90,29 @@
                             name='veg'
                             required
                         />
-                        <label htmlFor='veg'>Veg</label>
+                        <label htmlFor='veg'>Veg</label> */}
+                        <button
+    type="button"
+    className={`dogFoodOption ${
+      veg === 'Yes' ? 'selected' : ''
+    }`}
+    onClick={() => updateFields({ veg: 'Yes' })}
+  >
+   Yes
+  </button>
+  <button
+    type="button"
+    className={`dogFoodOption ${
+      veg === 'No' ? 'selected' : ''
+    }`}
+    onClick={() => updateFields({ veg: 'no' })}
+  >
+  No
+  </button>
+
+
+
+                    </div>
                     </div>
                 </FormWrapper>
             </div>
