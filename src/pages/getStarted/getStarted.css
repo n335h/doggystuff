@@ -37,6 +37,7 @@
         padding: 0;
         z-index: 2;
         filter: invert(9%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
+        rotate: 10deg;
 
     }
 
@@ -45,7 +46,7 @@
         bottom: 50;
         left: 50;
         height: 35rem;
-  
+        rotate: -2deg;
         width:60rem;
         margin: 0;
         padding: 0;

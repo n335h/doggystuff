@@ -132,11 +132,15 @@ font-size: 1.3rem;
   
 
   .faqfloat {
-    height: 40vh;
-    position: absolute;
-    top: 5vh;
-    left: 5vw;
-    opacity: 0.1;
+    position: s;
+    height:30vh;
+    width: 10vw;
+    margin: 0;
+    position: fixed;
+    bottom:40%;
+    right: 3vw;
+    opacity: 1;
+    margin: 0;
   }
 
   .faqbottombutton {
@@ -217,7 +221,9 @@ font-size: 1.3rem;
     width: 70vw;
   }
   .faqfloat {
-    display: none;
+    top: 0;
+    right: 2rem;
+    
   }
 }
   @media screen and (max-width: 500px) {
@@ -229,7 +235,7 @@ font-size: 1.3rem;
         width: 65vw;
   }
   #list {
-    width: 100vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -238,7 +244,18 @@ font-size: 1.3rem;
   }
   .faq-subject {
     height: 7vh;
-    width: 100vw;
+    width: 80vw;
    
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .pagetitle {
+font-size: 3rem;
+  }
+  .pagesubtitle {
+    font-size: 1.1rem;
+
   }
 }

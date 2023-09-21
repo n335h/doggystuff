@@ -6,7 +6,8 @@ import "../animate.css";
 import landing1 from "../../Assets/landingsub2.png";
 import lookinat from "../../Assets/lookinat.svg";
 import keepscroll from "../../Assets/keepscroll.svg";
-// import bowl from "../../Assets/bowl.svg";
+import bowl from "../../Assets/bowl.svg";
+import arrows from "../../Assets/arrows.svg";
 
 // import Footer from "../Footer/Footer";
 
@@ -66,7 +67,7 @@ export function Landing() {
                 
               </div>
             
-           {/* <img src={bowl} alt="bowl" className="bowlimg animate-pop-in" /> */}
+          <img src={bowl} alt="bowl" className="bowlimg animate-pop-in" /> 
 
              
             </div>
@@ -98,6 +99,7 @@ export function Landing() {
         <div className="landingSubOuter4">
           <div className="landingSub4Content">
             <div className="landingSub4Info">
+              <img src={arrows} alt="arrow" className="arrowimg" />
               <h1 className="landingSub4Title">Subscribe here, smart human</h1>
               <h2 className="landingSub4Para">There's always alot happening in the world of doggo delights. Subscribe today to get all the latest from DoggyStuff.</h2>
               <div className="input-container">

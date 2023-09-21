@@ -72,7 +72,7 @@ margin-top: 20vh;
 /* Landing Section 3 Styles */
 .landingSubOuter2 {
   width: 100vw;
-  height: 90vh;
+  min-height: 100vh;
   margin-top: -10vh;
   background-color: var(--light-blue);
   background-image: url('https://images.pexels.com/photos/825949/pexels-photo-825949.jpeg');
@@ -123,23 +123,37 @@ margin-top: 20vh;
 }
 .lookinat {
   position: relative;
-  top: 40vh;
+  top: 10vh;
   left: 60vw;
   width:25vw;
   margin-top: 2vh;
-  z-index: 100;
+  z-index: 10;
   filter: invert(9%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
 
 }
 .bowlimg{
-  position: relative;
-  top: -10rem;
-  left: -40%;
-  width:20vw;
-  margin-top: 2vh;
-  z-index: 100;
+  position: relative; /* Use fixed positioning to keep it in a fixed position on the screen */
+  top:-15vh; /* Adjust the top position to place it vertically */
+  left: -40%; /* Adjust the left position to place it horizontally */
+  margin: 0;
+  padding: 0;
+  height: 20vh;
+  transform: translate(-50%, -50%); /* Center the image both vertically and horizontally */
+  z-index: 10; 
   filter: invert(9%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
 
+}
+.arrowimg {
+  position: relative; /* Use fixed positioning to keep it in a fixed position on the screen */
+  top:25vh; /* Adjust the top position to place it vertically */
+  left: -5vh; /* Adjust the left position to place it horizontally */
+  margin: 0;
+  rotate: -20deg;
+  padding: 0;
+  height: 20vh;
+  transform: translate(-50%, -50%); /* Center the image both vertically and horizontally */
+  z-index: 100; 
+  filter: invert(9%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
 
 }
 

@@ -1,7 +1,7 @@
 import './FAQ.css';
 import { useState } from 'react';
 import faqdog from '../../Assets/faqdog.svg';
-import faqtop from '../../Assets/faqtop.svg';
+import question from '../../Assets/question.svg';
 import { Link } from 'react-router-dom';
 
 
@@ -48,7 +48,7 @@ const FAQ2 = () => {
           <h3 className="faqtitle animate-pop-in">FAQS & HELP</h3>
             <h1 className="pagetitle animate-pop-in">So Help, Much Informative</h1>
             <p className="pagesubtitle animate-pop-in">We guess you have some questions. We're guessing your doggo may too. Good news, we have answers for both.</p>
-            <img className="faqfloat" src={faqtop} alt="FAQ" />
+            <img className="faqfloat animate-pop-in" src={question} alt="FAQ" />
             <ul id="list">
               {faqData.map((faq, index) => (
                 <div
