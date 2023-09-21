@@ -6,7 +6,7 @@ import "../animate.css";
 import landing1 from "../../Assets/landingsub2.png";
 import lookinat from "../../Assets/lookinat.svg";
 import keepscroll from "../../Assets/keepscroll.svg";
-import bowl from "../../Assets/bowl.svg";
+// import bowl from "../../Assets/bowl.svg";
 
 // import Footer from "../Footer/Footer";
 
@@ -66,7 +66,7 @@ export function Landing() {
                 
               </div>
             
-
+           {/* <img src={bowl} alt="bowl" className="bowlimg animate-pop-in" /> */}
 
              
             </div>
