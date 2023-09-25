@@ -1,5 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import './Contact.css';
+import wave from '../../Assets/wave.svg';
+import stars from '../../Assets/stars.svg';
 function Contact() {
     const [formData, setFormData] = useState({
         name: '',
@@ -29,12 +31,13 @@ function Contact() {
     return (
         <div className="contactcontainer">
         <div className='conactcontent'>
-             
-          
+        <img src={stars} alt="wave" className="starsimg animate-pop-in"/>
+
             <form onSubmit={handleSubmit} id="contactForm">
-            <h1>Barking up the right tree</h1>
-            <p>From woof to welcome, Contact our pawsome team below</p>
-                <div className="contactformgroup">
+            <h1 className='animate-pop-in'>Barking up the right tree</h1>
+            <img src={wave} alt="wave" className="waveimgcontact animate-pop-in"/>
+            <p className='animate-pop-in'>From woof to welcome, Contact our pawsome team below</p>
+                <div className="contactformgroup animate-pop-in">
                     <label htmlFor="name"></label>
                     <input
                         type="text"
@@ -46,7 +49,7 @@ function Contact() {
                         required
                     />
                 </div>
-                <div className="contactformgroup">
+                <div className="contactformgroup animate-pop-in">
                     <label htmlFor="email"></label>
                     <input
                         type="email"
@@ -58,7 +61,7 @@ function Contact() {
                         required
                     />
                 </div>
-                <div className="contactformgroup">
+                <div className="contactformgroup animate-pop-in">
                     <label htmlFor="message"></label>
                     <textarea
                     className='contacttextarea'
@@ -71,7 +74,7 @@ function Contact() {
                         required
                     ></textarea>
                 </div>
-                <div className="contactformgroupbutton">
+                <div className="contactformgroupbutton animate-pop-in">
                     <button type="submit" value="Submit" > Submit</button>
                 </div>
             </form>
