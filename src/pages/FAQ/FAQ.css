@@ -19,7 +19,7 @@
   /* Individual FAQ item styles */
   .faq-subject {
     width: 60vw;
-    background-color: var(--accent-pink);
+    background-color: var(--header-main);
     border-radius: 25px;
     margin-bottom: 1rem;
     padding: 20px;
@@ -31,7 +31,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20vh;
+    margin-top: 15vh;
     justify-content: center;
     width: 100%;
 
@@ -39,13 +39,17 @@
   .pagetitle {
     font-size: 4rem;
     font-weight: 600;
+    margin-top: 3vh;
     margin-bottom: 0;
+    color: var(--black-text)
     
   }
   .pagesubtitle {
 width: 40vw;
 text-align: center;
 font-size: 1.3rem;
+color: var(--black-text)
+
   }
   .faq-subject.open {
     background-color: var(--main-blue); /* Background color when expanded */
@@ -57,6 +61,7 @@ font-size: 1.3rem;
   }
   li.content.open {
     margin-bottom: 10px;
+
   }
   
   /* FAQ question styles */
@@ -115,6 +120,8 @@ font-size: 1.3rem;
     position: absolute;
     right: 5vw;
     height: 3vh;
+    filter: invert(100%);
+
   }
   .faqbottom {
     display: flex;
@@ -130,6 +137,9 @@ font-size: 1.3rem;
     height: 60vh;
   }
   
+  .faqbottomtitle {
+    color: var(--black-text);
+  }
 
   .faqfloat {
     position: s;
@@ -258,4 +268,44 @@ font-size: 3rem;
     font-size: 1.1rem;
 
   }
+  .faq-content {
+    width: 80vw;
+}
+
+  .faq-subject.open {
+    width: 80vw;
+  }
+  .title {
+    font-size: 1rem;
+    margin-top: 2vh;
+    margin-left: -6vw;
+    width: 65vw;
+}
+
+}
+@media screen and (max-width: 375px) {
+
+  .pagetitle {
+font-size: 2.6rem;
+  }
+  .pagesubtitle {
+    font-size: 1rem;
+
+  }
+  .faq-content {
+    width: 80vw;
+}
+
+  .faq-subject.open {
+    width: 80vw;
+  }
+  .title {
+    font-size: 1rem;
+    margin-top: 2vh;
+    margin-left: -6vw;
+    width: 65vw;
+}
+.faqbottomtitle {
+  font-size: 1.2rem;
+}
 }

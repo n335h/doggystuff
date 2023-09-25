@@ -34,9 +34,9 @@ function Contact() {
         <img src={stars} alt="wave" className="starsimg animate-pop-in"/>
 
             <form onSubmit={handleSubmit} id="contactForm">
-            <h1 className='animate-pop-in'>Barking up the right tree</h1>
+            <h1 className='contacttitle animate-pop-in'>Barking up the right tree</h1>
             <img src={wave} alt="wave" className="waveimgcontact animate-pop-in"/>
-            <p className='animate-pop-in'>From woof to welcome, Contact our pawsome team below</p>
+            <p className='contactpara animate-pop-in'>From woof to welcome, Contact our pawsome team below</p>
                 <div className="contactformgroup animate-pop-in">
                     <label htmlFor="name"></label>
                     <input

@@ -6,7 +6,7 @@ import "../animate.css";
 import landing1 from "../../Assets/landingsub2.png";
 import lookinat from "../../Assets/lookinat.svg";
 import keepscroll from "../../Assets/keepscroll.svg";
-import bowl from "../../Assets/bowl.svg";
+import stars from "../../Assets/stars.svg";
 // import arrows from "../../Assets/arrows.svg";
 
 // import Footer from "../Footer/Footer";
@@ -49,7 +49,7 @@ export function Landing() {
       <section className="landingSection">
         <div className="landingSubOuter" ref={landingSubRef}>
            <div className="landingSubContent">
-           <img src={bowl} alt="bowl" className="bowlimg animate-pop-in" /> 
+           <img src={stars} alt="bowl" className="starsimglanding animate-pop-in" /> 
 
               <div className='landingsection2container'> 
                 
