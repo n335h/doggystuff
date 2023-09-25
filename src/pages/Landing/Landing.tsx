@@ -7,7 +7,7 @@ import landing1 from "../../Assets/landingsub2.png";
 import lookinat from "../../Assets/lookinat.svg";
 import keepscroll from "../../Assets/keepscroll.svg";
 import bowl from "../../Assets/bowl.svg";
-import arrows from "../../Assets/arrows.svg";
+// import arrows from "../../Assets/arrows.svg";
 
 // import Footer from "../Footer/Footer";
 

@@ -2,7 +2,7 @@
 /* Landing Section 1 Styles */
 .landing {
   height: 100vh;
- width: 100vw;
+ width: 100%;
   margin: 0;
   margin-top: -10vh;
   display: flex;
@@ -834,6 +834,9 @@ font-size: 3rem;
 }
 
 @media screen and (max-width: 320px) {
+  html, body {
+    width: 100%;
+   }
 .landingContainer {
   width: 100vw;
   margin-left: 5px;
