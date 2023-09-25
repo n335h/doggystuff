@@ -1,3 +1,15 @@
+  
+      #navbar-container {
+        position: sticky;
+        top: -10vh; 
+        background-color: transparent;
+        z-index: 100;
+        transition: top 0.3s ease-in-out;
+        width: 100vw;
+      }
+      .outerNav {
+        width: 100vw;
+      }
   .navbar{
       background-color: transparent;
       display: flex;
@@ -7,9 +19,14 @@
       margin: 0;
       padding: 0;
       height: 10vh;
-      width: 99vw;
+      width: 100%;
       top: 0;
       z-index: 100;
+    }
+    .Nav {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
     .menu {
       display: flex;
@@ -56,14 +73,7 @@
       font-size: 1rem;
     }
     
-    #navbar-container {
-      position: sticky;
-      top: -10vh; /* Start by hiding the navbar above the viewport */
-      background-color: transparent;
-      z-index: 100;
-      transition: top 0.3s ease-in-out;
-    }
-    
+
     #navbar-container:hover {
       top: 0; /* Show the navbar when hovered over */
     }

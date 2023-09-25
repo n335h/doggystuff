@@ -1,12 +1,4 @@
 
-html,body
-{
-
-    margin: 0px;
-    padding: 0px;
-    /* overflow-x: hidden;  */
-    
-} 
 /* Landing Section 1 Styles */
 .landing {
   height: 100vh;
@@ -25,16 +17,17 @@ html,body
   background-position: center;
   background-repeat: no-repeat;
   z-index: 12;
+  
 
 }
-.landingContainer {
+/* .landingContainer {
   max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
-}
+} */
 
 .landingsection2container {
   display: flex;
@@ -42,7 +35,7 @@ html,body
   justify-content: space-evenly;
   align-items: center;
   margin: 0;
-  width: 100vw;
+  width: 100%;
 height: 100vh;
 margin-top: 10vh;
 
@@ -62,7 +55,7 @@ margin-top: 10vh;
 
 /* Landing Section 2 Styles */
 .landingSubOuter {
-  width: 100vw;
+  width: 100%;
   height: 130vh;
   margin: 0;
   margin-top: -20vh;
@@ -77,7 +70,7 @@ margin-top: 10vh;
 
 /* Landing Section 3 Styles */
 .landingSubOuter2 {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   margin-top: -10vh;
   background-color: var(--light-blue);
@@ -95,7 +88,7 @@ margin-top: 10vh;
 
 /* Landing Section 3 Styles */
 .landingSubOuter3 {
-  width: 100vw;
+  width: 100%;
   height: 130vh;
   margin-top: -40vh;
   background-color: var(--background-offwhite);
@@ -107,7 +100,7 @@ margin-top: 10vh;
 
 /* Landing Section 4 Styles */
 .landingSection4 {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   margin-top: -20vh;
   background-color: var(--main-blue);
@@ -165,7 +158,7 @@ margin-top: 10vh;
 }
 
 .landingSubOuter4 {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   margin-top: 0vh;
   bottom: 0;
@@ -203,7 +196,7 @@ margin-top: 10vh;
   justify-content: center;
   align-items: center;
   z-index: 100;
-  width: 100vw;
+  width: 100%;
 }
 
 /* Landing Section 1 Image Styles */
@@ -234,7 +227,7 @@ margin: 0;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   overflow-x: auto;
   margin-right: 10px; /* Adjust the margin as needed */
   /* You can add more styling as needed for individual foodType divs */
@@ -591,7 +584,7 @@ font-size: 3rem;
     background-repeat: no-repeat;
     background-position: right middle;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 130vh;
   }
 .landingsection2container{
@@ -658,7 +651,7 @@ font-size: 3rem;
     align-items: center;
     margin: 0;
     margin-top: -10vh;
-    width:100vw;
+    width:100%;
     height: 130vh;
     padding-bottom: 5vh;
     z-index: 0;
@@ -706,13 +699,14 @@ font-size: 3rem;
     background-size: cover;
     background-position: 50% 20% center;
     background-repeat: no-repeat;
+    max-width: 100%;
   }
 }
 
 @media screen and (max-width: 430px) {
-    html, body {
-    overflow-x: hidden;
-  }
+ html, body {
+  width: 100%;
+ }
 
   .landingInfo h1 {
     text-align: left;
@@ -720,9 +714,12 @@ font-size: 3rem;
     font-weight: 400;
     width: 80vw;
     margin-bottom: 2vh;
+
   }
   .containerImg {
     margin-top: 5vh;
+    max-width: 80vw;
+
   }
   .keepscrollimg {
     position: absolute;
@@ -731,6 +728,8 @@ font-size: 3rem;
     width:100vw;
     margin-top: 2vh;
     z-index: 100;
+    max-width: 100%;
+
   }
   .lookinat{
   display: flex;
@@ -739,6 +738,8 @@ font-size: 3rem;
     width:80vw;
     margin-top: 2vh;
     z-index: 100;
+    max-width: 100%;
+
 
   } 
   .landingInfo h2 {
@@ -762,6 +763,8 @@ font-size: 3rem;
     font-weight: 600;
     border-radius: 17.4rem;
     border: 0;
+    max-width: 100%;
+
   }
 .landingSubOuter4, .landingSection4 {
   display: flex;
@@ -772,15 +775,21 @@ font-size: 3rem;
   width:100vw;
   margin-top: -10vh;
  height:70vh;
+ max-width: 100%;
+
 }
 .landingSub4Content {
   margin-top: 10rem;
+  max-width: 100%;
+
 }
 
 .landingSub4Title {
   text-align: center;
   font-size: 3rem;
   margin-top: 5vh;
+  max-width: 100%;
+
 }
 .landingSub4Para {
   text-align: center;
@@ -789,6 +798,8 @@ font-size: 3rem;
   margin-bottom: 1rem;
   color: var(--background-offwhite);
   text-align: center;
+  max-width: 100%;
+
 }
 
 
@@ -823,19 +834,22 @@ font-size: 3rem;
 }
 
 @media screen and (max-width: 320px) {
- 
+.landingContainer {
+  width: 100vw;
+  margin-left: 5px;
+}
   .landingInfo h1 {
     text-align: left;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 400;
-    width: 80vw;
+    width: 90vw;
     margin-bottom: 2vh;
   }
   .keepscrollimg {
     position: relative;
     top:0vh;
     left: 0vw;
-    width:100vw;
+    width:100%;
     margin-top: 2vh;
     z-index: 100;
   }
@@ -875,7 +889,7 @@ font-size: 3rem;
   justify-content: center;
   align-items: center;
   margin: auto;
-  width:100vw;
+  width:100%;
   margin-top: -10vh;
  height:70vh;
 }
@@ -890,13 +904,14 @@ font-size: 3rem;
 
 .landingSub4Title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 1.9rem;
   margin-top: 5vh;
+  width: 90vw;
 }
 .landingSub4Para {
   text-align: center;
   font-size: 1.2rem;
-  width:100vw;
+  width:90vw;
   margin-bottom: 1rem;
   color: var(--background-offwhite);
   text-align: center;
@@ -904,19 +919,19 @@ font-size: 3rem;
 
 
 .input-container input[type="text"] {
-  width: 70vw;
-  height: 5vh;
+  width: 80vw;
+  height: 4.5vh;
   border-radius: 35.4rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-top: 1rem;
 }
 .input-container button {
   padding: 10px;
-  margin-left: -19vw;
-  margin-top: 0.8vh;
+  margin-left: -21vw;
+  margin-top: 0.7vh;
   margin-bottom: 0;
   font-size: 0.8rem;
-  width: 18vw;
+  width: 20vw;
   height: 6.2vh;
   border-radius: 17.4rem;
 }
