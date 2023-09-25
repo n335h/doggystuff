@@ -1,13 +1,12 @@
-  .App{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  html, body{
+
       justify-content: center;
-      height: 100vh;
       max-width: 100vw;
       background-color: #e7e0bd;
       color: white;
-    overflow-x: hidden;
+    width: 100vw;
     background-color: black;
     z-index: 101;
+ 
   }
+

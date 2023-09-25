@@ -194,15 +194,14 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
 
   return (
     <NavbarBs
-      className={`shadow-sm mb-3 ${visible ? '' : 'navbar-hidden'}`}
+      className={` ${visible ? '' : 'navbar-hidden'}`}
       sticky="top"
       id="navbar-container"
       ref={navbarRef} // Attach the ref to the navbar element
     >
-      <Container>
+      <Container className='outerNav'>
         <Nav className="navbar me-auto">
 
-          <div className="navbarleft">
             <div className="navbarleft">
               <Hamburger
                 isOpen={menuOpen}
@@ -211,7 +210,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
                 icon={hamburgerIcon}
               />
             </div>
-          </div>
+      
           <div className="navbarcenter">
             <DoggyStuffLogo />
             {/* <a href='/' id="navbar-title">DoggyStuff</a> */}

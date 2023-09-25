@@ -49,7 +49,8 @@ export function Landing() {
       <section className="landingSection">
         <div className="landingSubOuter" ref={landingSubRef}>
            <div className="landingSubContent">
-      
+           <img src={bowl} alt="bowl" className="bowlimg animate-pop-in" /> 
+
               <div className='landingsection2container'> 
                 
                 <div className='landingInfo2'>
@@ -59,6 +60,7 @@ export function Landing() {
 <Link to="/FAQ" className="landingSubButton animate-pop-in">Learn More</Link>
 
                 </div>
+                
                 <div className='containerImage'>
      
                 <img alt='containerImg ' className='containerImg animate-pop-in' src={landing1} />
@@ -67,7 +69,6 @@ export function Landing() {
                 
               </div>
             
-          <img src={bowl} alt="bowl" className="bowlimg animate-pop-in" /> 
 
              
             </div>
@@ -77,7 +78,7 @@ export function Landing() {
       <section className="landingSection2">
 
          <div className="landingSubOuter2">
-     <img className="lookinat" src={lookinat} alt="lookinat" />
+         <img className="lookinat" src={lookinat} alt="lookinat" />
           </div>
       </section>
 
@@ -99,7 +100,6 @@ export function Landing() {
         <div className="landingSubOuter4">
           <div className="landingSub4Content">
             <div className="landingSub4Info">
-              <img src={arrows} alt="arrow" className="arrowimg" />
               <h1 className="landingSub4Title">Subscribe here, smart human</h1>
               <h2 className="landingSub4Para">There's always alot happening in the world of doggo delights. Subscribe today to get all the latest from DoggyStuff.</h2>
               <div className="input-container">
