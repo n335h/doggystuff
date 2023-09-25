@@ -8,7 +8,7 @@
     padding: 0;
     margin: 0;
     margin-top: -20vh;
-    background-color: var(--accent-blue);
+    background-color: var(--main-blue);
    
 }
 #contactForm h1 {
@@ -31,7 +31,7 @@ text-align: center;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
   
     color: var(--header-text);
 }
@@ -84,7 +84,7 @@ text-align: center;
 
 .contactformgroupbutton button {
     height: 10vh;
-    width: 15vw;
+    width: 10vw;
     border-radius: 3.4rem;
     font-size: 1.5rem;
     font-weight: 600;
@@ -154,20 +154,20 @@ input:focus, textarea:focus, select:focus{
         }
         
 .contactformgroupbutton button {
-    width:50vw;
+    width:30vw;
 
 }
 .contactformgroupbutton {
-    width: 75vw;
+    width: 60vw;
 }
 }
 @media screen and (max-width: 750px) {
 
-    #contactForm {
+    /* #contactForm {
     
-        width: 100%;
+        width: 90%;
 
-    }
+    } */
     #contactForm h1 {
         font-size: 3.5rem;
         width: 60vw;
@@ -206,17 +206,51 @@ input:focus, textarea:focus, select:focus{
 }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 375px) {
 
 
-    #contactForm h1 {
-        font-size: 3.5rem;
-        width: 80vw;
 
-          
-        }
         #contactForm p {
             width: 80vw;
+            font-size: 1.2rem;
         
         }
+
+        #contactForm h1 {
+            font-size: 2.6rem;
+            width: 80vw;
+    
+              
+            }
+            
+            #contactForm p {
+                font-size: 1rem;
+                width: 70vw;
+                text-align: center;
+                margin-bottom: 5vh;
+            
+            }
+    
+            .contactformgroup input {
+                height: 1vh;
+                width: 65vw;
+                font-size: 1rem;
+    
+            
+            }
+            .contacttextarea {
+                
+                width: 65vw;
+                font-size: 1.1rem;
+           
+               
+            }
+            
+    .contactformgroupbutton button {
+        width:50vw;
+    
+    }
+    .contactformgroupbutton {
+        width: 75vw;
+    }
 }
