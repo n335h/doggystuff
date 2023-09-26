@@ -33,51 +33,48 @@ export function Landing() {
   }, []);
 
   return (
-   <div className="landingContainer">
+   <div className="landing-container">
       <div className="landing">
-        <div className="landingContent"></div>
         <img className="keepscrollimg animate-pop-in" src={keepscroll} alt="keepscroll" />
     
-        <div className="landingInfo">
-          <h2 className="landingsubs  animate-pop-in">WHAT A GOOD DOGGO DESERVES</h2>
-          <h1 className="landingPara animate-pop-in">Tailored to their tastes. Delivered to your door. Try our trial box today for £9.99!</h1>
-          <Link to="/GetStarted" className="landingButton animate-pop-in">Try DoggyStuff</Link>
+        <div className="landing-main-Info ">
+          <h2 className="main-sub  animate-pop-in">WHAT A GOOD DOGGO DESERVES</h2>
+          <h1 className="main-para animate-pop-in">Tailored to their tastes. Delivered to your door. Try our trial box today for £9.99!</h1>
+          <Link to="/GetStarted" className="landing-button animate-pop-in">Try DoggyStuff</Link>
         </div>
       </div>
       
       
-      <section className="landingSection">
-        <div className="landingSubOuter" ref={landingSubRef}>
-           <div className="landingSubContent">
+      <section className="landing-section-1">
+        <div className="landing-section-1-container" ref={landingSubRef}>
 
-              <div className='landingsection2container'> 
+              <div className='landing-section-1-content'> 
 
-                <div className='landingInfo2'>
-                  <h2 className="landingsubs animate-pop-in">The DoggyStuff Way</h2>
-                  <h1 className="landingPara animate-pop-in ">DoggyStuff makes food fit for a human’s plate and doggos palate. High-quality, high-protein ingredients. No sugars, salts, grains or fillers. Ever. 
-</h1>
-<Link to="/FAQ" className="landingSubButton animate-pop-in">Learn More</Link>
+                <div className='landing-section-1-info'>
+                  <h2 className="landing-section-1-subs animate-pop-in">
+                    The DoggyStuff Way
+                    </h2>
+                  <h1 className="landing-section-1-para ">
+                    DoggyStuff makes food fit for a human’s plate and doggos palate. High-quality, high-protein ingredients. No sugars, salts, grains or fillers. Ever. 
+                  </h1>
+<Link to="/FAQ" className="landing-section-1-button animate-pop-in">Learn More</Link>
               <img src={stars} alt="bowl" className="starsimglanding animate-pop-in" /> 
-
                 </div>
-                
-                <div className='containerImage'>
-     
-                <img alt='containerImg ' className='containerImg animate-pop-in' src={landing1} />
-                
+
+                <div className='landing-section-1-img-container'>
+                  <img alt='containerImg ' className='landing-section-1-img animate-pop-in' src={landing1} />
                 </div>
                 
               </div>
             
 
              
-            </div>
           
         </div>
       </section>
-      <section className="landingSection2">
+      <section className="landing-section-2">
 
-         <div className="landingSubOuter2">
+         <div className="landing-section-2-container">
          <img className="lookinat" src={lookinat} alt="lookinat" />
           </div>
       </section>

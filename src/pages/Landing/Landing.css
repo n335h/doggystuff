@@ -30,7 +30,7 @@
   margin: 0;
 } */
 
-.landingsection2container {
+.landing-section-1-content {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -55,7 +55,7 @@ margin-top: 10vh;
 } */
 
 /* Landing Section 2 Styles */
-.landingSubOuter {
+.landing-section-1-container {
   width: 100%;
   height: 130vh;
   margin: 0;
@@ -69,8 +69,8 @@ margin-top: 10vh;
   z-index: 7;
 }
 
-/* Landing Section 3 Styles */
-.landingSubOuter2 {
+/* Landing Section 2 Styles */
+.landing-section-2-container {
   width: 100%;
   min-height: 100vh;
   margin-top: -10vh;
@@ -173,7 +173,7 @@ margin-top: 10vh;
 }
 
 /* Common Styles */
-.landingSection,
+.landing-section-1,
 .landingSection3 {
   display: flex;
   flex-direction: column;
@@ -181,12 +181,11 @@ margin-top: 10vh;
   align-items: center;
   height: 100vh;
 }
-.landingSection2{
+.landing-section-2{
   height: 100vh;
 }
 
 
-.landingSubContent,
 .landingSub4Info {
   display: flex;
   flex-direction: column;
@@ -208,7 +207,7 @@ margin-top: 10vh;
 }
 
 /* Landing Section 2 Image Styles */
-.containerImg {
+.landing-section-1-img {
 border-radius:30px ;
 margin: 0;
 }
@@ -248,7 +247,7 @@ margin: 0;
 }
 
 /* Landing Info Styles */
-.landingInfo {
+.landing-main-Info {
   position: absolute; /* Use absolute positioning to overlay the image */
   top: 50%;
   left: 70%;
@@ -261,7 +260,7 @@ margin: 0;
   align-items: flex-end;
 }
 
-.landingsubs {
+.main-sub {
   font-size: 2rem;
   margin-bottom: 10px;
 }
@@ -366,7 +365,7 @@ color: #ffffff;
 }
 
 /* Landing Info Heading Styles */
-.landingInfo h1, .landingInfo2 h1 {
+.landing-main-Info  h1, .landing-section-1-info h1 {
   font-size: 3rem;
   margin: 0;
   padding: 0;
@@ -377,7 +376,7 @@ color: #ffffff;
   margin-bottom: 2vh;
 }
 
-.landingInfo h2, .landingInfo2 h2 {
+.landing-main-Info h2, .landing-section-1-info h2 {
   font-size: 1rem;
   margin: 0;
   padding: 0;
@@ -388,17 +387,17 @@ color: #ffffff;
   color: var(--header-main);
 }
 
-.landingInfo2 h1{
+.landing-section-1-info h1{
 font-size: 3rem;
 }
-.landingInfo2 h1, .landingInfo2 h2 {
+.landing-section-1-info h1, .landing-section-1-info h2 {
   color: var(--main-blue);
   text-align: left;
   width: 25vw;
 }
 
 /* Landing Button Styles */
-.landingButton, .landingSubButton {
+.landing-button, .landing-section-1-button {
   height: 8vh;
   width: 45%;
   margin: 0;
@@ -414,18 +413,18 @@ font-size: 3rem;
   border-radius: 17.4rem;
 
 }
-.landingSubButton {
+.landing-section-1-button {
   background-color: var(--main-blue);
   border: 4px solid var(--main-blue);
 }
 
-.landingButton:hover, .landingSubButton:hover {
+.landing-button:hover, .landing-section-1-button:hover {
   background-color: var(--header-main-hover);
   color: var(--header-main);
   border: 4px solid var(--header-main);
   cursor: pointer;
 }
-.landingSubButton:hover {
+.landing-section-1-button:hover {
   background-color: var(--main-blue-hover);
   color: var(--main-blue);
   border: 4px solid var(--main-blue);
@@ -434,13 +433,13 @@ font-size: 3rem;
 
 /* Media Queries */
 @media screen and (max-width: 1500px) {
-  .landingInfo h1 {
+  .landing-main-Info  h1 {
     text-align: right;
     font-size: 2.6rem;
     font-weight: 600;
     width: 40vw;
   }
-  .landingsection2container {
+  .landing-section-1-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -452,30 +451,8 @@ font-size: 3rem;
   }
 
 
-  /* .landingInfo h2 {
-    text-align: right;
-    font-size: 1.1rem;
-    width: 40vw;
-  } */
   
-  /* .landingInfo2 h2 {
-    font-size: 1.1rem;
-    width: 60vw;
-    margin: 0;
-  } 
-   .landingInfo2 h1 {
-    width: 30vw;
-    font-size: 3.6rem;
-    width: 20vw;
-    margin: 0;
-  } 
- 
-  .landingInfo2 {
-    width: 50vw;
-  } */
-
-  
-  .landingSubOuter4, .landingSubOuter, .landingSub4Content, .landingSection4 {
+  .landingSubOuter4, .landing-section-1-container, .landingSub4Content, .landingSection4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -484,7 +461,7 @@ font-size: 3rem;
     margin-top: -10vh;
     width:100vw;
   }
-  .landingInfo2 h1 {
+  .landing-section-1-info h1 {
     width: 30vw;
     font-size: 2.5rem;
     font-weight: 500;
@@ -530,7 +507,7 @@ font-size: 3rem;
 }
 
 @media screen and (max-width:1024px ) {
-  .landingInfo2 h1 {
+  .landing-section-1-info h1 {
     width: 35vw;
     margin: 0;
     font-size: 2rem;
@@ -538,27 +515,27 @@ font-size: 3rem;
     margin-bottom: 2rem;
     margin-right: 2rem;
   }
-  .containerImg {
+  .landing-section-1-img {
     width:50vw;
   }
 }
 @media screen and (max-width:768px ) {
-  .landingInfo2 {
+  .landing-section-1-info {
     width: 70vw;
     margin-bottom: 5rem;
   }
-  .landingInfo2 h1 {
+  .landing-section-1-info h1 {
     width: 70vw;
     margin: 0;
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 2rem;
   }
-  .landingInfo2 h2 {
+  .landing-section-1-info h2 {
     width: 70vw;
   
   }
-  .containerImg {
+  .landing-section-1-img {
     width:70vw;
     margin-bottom: 2rem;
   }
@@ -590,7 +567,7 @@ font-size: 3rem;
     max-width: 100vw;
     height: 130vh;
   }
-.landingsection2container{
+.landing-section-1-content{
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
@@ -598,7 +575,7 @@ font-size: 3rem;
   margin-top:20vh;
   height: 130vh;
 }
-  .landingInfo {
+.landing-main-Info  {
     position: absolute; /* Use absolute positioning to overlay the image */
     top: 40%;
     left: 35%;
@@ -610,14 +587,14 @@ font-size: 3rem;
     height: 70vh;
   }
 
-  .landingInfo h1 {
+  .landing-main-Info  h1 {
     text-align: left;
     font-size: 2rem;
     font-weight: 400;
     width: 80vw;
   }
 
-  .landingInfo h2 {
+  .landing-main-Info h2 {
     text-align: left;
     font-size: 1rem;
     width: 80vw;
@@ -627,7 +604,7 @@ font-size: 3rem;
     height: 90vh;
   }
 
-  .landingButton, .landingSubButton {
+  .landing-button, .landing-section-1-button {
     height: 8vh;
     width: 60%;
     margin: 0;
@@ -642,12 +619,12 @@ font-size: 3rem;
     border: 0;
   }
 
-  .landingSubOuter2 {
+  .landing-section-2-container {
     background-position: 45% center;
 
   }
 
-  .landingSubOuter4, .landingSubOuter, .landingSub4Content, .landingSection4 {
+  .landingSubOuter4, .landing-section-1-container, .landingSub4Content, .landingSection4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -698,7 +675,7 @@ font-size: 3rem;
     font-size: 0.8rem;
    }
 
-  .landingSubOuter2 {
+  .landing-section-2-container {
     background-size: cover;
     background-position: 50% 20% center;
     background-repeat: no-repeat;
@@ -711,7 +688,7 @@ font-size: 3rem;
   width: 100%;
  }
 
-  .landingInfo h1 {
+ .landing-main-Info  h1 {
     text-align: left;
     font-size: 2.4rem;
     font-weight: 400;
@@ -719,7 +696,7 @@ font-size: 3rem;
     margin-bottom: 2vh;
 
   }
-  .containerImg {
+  .landing-section-1-img {
     margin-top: 5vh;
     max-width: 80vw;
 
@@ -745,15 +722,15 @@ font-size: 3rem;
     max-width: 100%;
     filter: invert(100%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
   } 
-  .landingInfo h2 {
+  .landing-main-Info  h2 {
     font-size: 1rem;
   }
-  .landingInfo2 h1 {
+  .landing-section-1-info h1 {
     width: 70vw;
     font-size: 1.8rem;
   
   }
-  .landingButton, .landingSubButton {
+  .landing-button, .landing-section-1-button {
     height: 8vh;
     width: 80%;
     margin: 0;
@@ -846,11 +823,11 @@ font-size: 3rem;
   html, body {
     width: 100%;
    }
-.landingContainer {
+.landing-container {
   width: 100vw;
   margin-left: 5px;
 }
-  .landingInfo h1 {
+.landing-main-Info  h1 {
     text-align: left;
     font-size: 1.8rem;
     font-weight: 400;
@@ -873,18 +850,18 @@ font-size: 3rem;
     margin-top: 2vh;
     z-index: 100;
   }
-  .landingInfo h2 {
+  .landing-main-Info  h2 {
     font-size: 1rem;
   }
   .arrowimg {
     display: none;
   }
 
-.containerImg {
+.landing-section-1-img {
   width: 100vw;
   margin-top: 5vh;
 }
-  .landingButton, .landingSubButton {
+  .landing-button, .landing-section-1-button {
     height: 8vh;
     width: 80%;
     margin: 0;
@@ -911,7 +888,7 @@ font-size: 3rem;
 .landingSub4Content {
   margin-top: 10rem;
 }
-.landingInfo2 h1 {
+.landing-section-1-info h1 {
   width: 80vw;
   font-size: 1.8rem;
 
