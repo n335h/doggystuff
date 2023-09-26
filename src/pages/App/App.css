@@ -3,11 +3,11 @@
       justify-content: center;
       background-color: #e7e0bd;
       color: white;
-      margin: auto;
+      margin: 0;
       padding: 0;
-max-width: 100%;
-    background-color: black;
-    z-index: 101;
+      width: 100vw;
+      max-width: 100%;
+      background-color: black;
+      z-index: 101;
  
   }
-

@@ -120,11 +120,11 @@ color: var(--black-text);
    
 }
 .waveimgcontact {
-            position: absolute;
+            position: relative;
             height:10vh;
             width:4vw;
             scale:7;
-            top:16.5rem;
+            top:2rem;
             margin: 0;
             padding: 0;
             z-index: 0;
@@ -167,7 +167,8 @@ color: var(--black-text);
 
 input:focus, textarea:focus, select:focus{
     outline: 4px solid var(--header-main);
-}/* 
+}
+
 @media screen and (max-width: 1500px) {
 
     #contactForm {
@@ -324,4 +325,4 @@ input:focus, textarea:focus, select:focus{
         top:16rem;
 
     }
-} */
+} 

@@ -123,21 +123,21 @@ margin-top: 10vh;
 }
 .lookinat {
   position: relative;
-  top: 10vh;
-  left: 60vw;
-  width:25vw;
+  top: 40vh;
+  left: 70vw;
+  width:15vw;
   margin-top: 2vh;
   z-index: 10;
   filter: invert(9%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
 
 }
 .starsimglanding{
-  position: absolute; /* Use fixed positioning to keep it in a fixed position on the screen */
-  bottom: -100%; /* Adjust the top position to place it vertically */
-  left:5%; /* Adjust the left position to place it horizontally */
+  position: absolute;
+  left: 5vw;
+  top: 190vh;
   margin: 0;
   padding: 0;
-  height: 15vh;
+  height: 20vh;
   transform: translate(-50%, -50%); /* Center the image both vertically and horizontally */
   rotate: 10deg;
   z-index: 10; 
@@ -734,14 +734,14 @@ font-size: 3rem;
   }
   .lookinat{
   display: flex;
-    top: 45vh;
-    left: 10vw;
-    width:80vw;
+    top: 65vh;
+    left: 25%;
+    width:60vw;
+    margin: 0;
     margin-top: 2vh;
     z-index: 100;
     max-width: 100%;
-
-
+    filter: invert(100%) sepia(6%) saturate(30%) hue-rotate(5deg) brightness(94%) contrast(86%);
   } 
   .landingInfo h2 {
     font-size: 1rem;
@@ -832,6 +832,12 @@ font-size: 3rem;
   width: 50vw;
   display: none;
 }
+.starsimglanding{
+  position: absolute;
+  bottom:  10vh;
+  left: 12vw;
+} 
+
 }
 
 @media screen and (max-width: 320px) {
@@ -872,7 +878,10 @@ font-size: 3rem;
     display: none;
   }
 
-
+.containerImg {
+  width: 100vw;
+  margin-top: 5vh;
+}
   .landingButton, .landingSubButton {
     height: 8vh;
     width: 80%;
@@ -949,4 +958,9 @@ font-size: 3rem;
   top: 83%; /* Adjust the top position to place it vertically */
   right:-30%; /* Adjust the left position to place it horizontally */
 }
+
+.starsimglanding{
+  top:  40vh;
+}
+
 }

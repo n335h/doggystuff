@@ -162,7 +162,7 @@ color: var(--black-text)
     background-color: var(--main-blue); /* Change this to your desired button style */
     color: #fff;
     padding: 10px;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin: auto;
     width: 15vw;
@@ -206,11 +206,15 @@ color: var(--black-text)
   } 
   .faq-subject {
     height: 7vh;
-    width: 100vw;
+    width: 80vw;
+   
+  }
+  .faq-subject.open {
+    width: 80vw;
    
   }
   .content.open {
-    width: 70vw;
+    width: 80vw;
     margin-left: 0;
     line-height: 1.5;
     font-size: 1rem;
@@ -226,6 +230,7 @@ color: var(--black-text)
   }
   .faqbottombutton {
     width: 40vw;
+    font-size: 1.5rem;
   }
   .faqbottom {
     width: 70vw;
@@ -260,7 +265,10 @@ color: var(--black-text)
 }
 
 @media screen and (max-width: 425px) {
-
+  .faqbottombutton {
+    width: 40vw;
+    font-size: 1.2rem;
+  }
   .pagetitle {
 font-size: 3rem;
   }
@@ -284,7 +292,11 @@ font-size: 3rem;
 
 }
 @media screen and (max-width: 375px) {
-
+  .faqbottombutton {
+    width: 50vw;
+    height: 7vh;
+    font-size: 1.2rem;
+  }
   .pagetitle {
 font-size: 2.6rem;
   }

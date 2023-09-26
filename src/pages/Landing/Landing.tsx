@@ -49,15 +49,15 @@ export function Landing() {
       <section className="landingSection">
         <div className="landingSubOuter" ref={landingSubRef}>
            <div className="landingSubContent">
-           <img src={stars} alt="bowl" className="starsimglanding animate-pop-in" /> 
 
               <div className='landingsection2container'> 
-                
+
                 <div className='landingInfo2'>
                   <h2 className="landingsubs animate-pop-in">The DoggyStuff Way</h2>
                   <h1 className="landingPara animate-pop-in ">DoggyStuff makes food fit for a human’s plate and doggos palate. High-quality, high-protein ingredients. No sugars, salts, grains or fillers. Ever. 
 </h1>
 <Link to="/FAQ" className="landingSubButton animate-pop-in">Learn More</Link>
+<img src={stars} alt="bowl" className="starsimglanding animate-pop-in" /> 
 
                 </div>
                 
