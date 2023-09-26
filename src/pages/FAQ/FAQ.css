@@ -1,5 +1,5 @@
-
-.faq-container {
+/* Updated CSS with logical class names for FAQ2 component */
+.faq2-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,16 +8,19 @@
     height: auto;
     margin-top: -10vh;
     background-color: var(--background-offwhite);
-  }
+}
+.faq2-page-title {
+    color: var(--main-blue);
+    font-weight: 300;
+}
+.faq2-title {
+    font-size: 0.8rem;
+    color: var(--background-offwhite);
+    font-weight: 300;
+}
 
-  .faqtitle {
-   font-size: 0.8rem;
-   color: var(--main-blue);
-   font-weight: 300;
-  }
-  
-  /* Individual FAQ item styles */
-  .faq-subject {
+/* Individual FAQ item styles */
+.faq2-subject {
     width: 60vw;
     background-color: var(--header-main);
     border-radius: 25px;
@@ -25,8 +28,9 @@
     padding: 20px;
     text-align: left;
     height: 12vh;
-  }
-  .faq-content {
+}
+
+.faq2-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,38 +38,38 @@
     margin-top: 15vh;
     justify-content: center;
     width: 100%;
+}
 
-  }
-  .pagetitle {
+.faq2-pagetitle {
     font-size: 4rem;
     font-weight: 600;
     margin-top: 3vh;
     margin-bottom: 0;
-    color: var(--black-text)
-    
-  }
-  .pagesubtitle {
-width: 40vw;
-text-align: center;
-font-size: 1.3rem;
-color: var(--black-text)
+    color: var(--black-text);
+}
 
-  }
-  .faq-subject.open {
+.faq2-pagesubtitle {
+    width: 40vw;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--black-text);
+}
+
+.faq2-subject.open {
     background-color: var(--main-blue); /* Background color when expanded */
     border-radius: 10px;
     margin-bottom: 10px;
     padding: 20px;
     height: auto;
     width: 60vw;
-  }
-  li.content.open {
-    margin-bottom: 10px;
+}
 
-  }
-  
-  /* FAQ question styles */
-  .title {
+.faq2-content.open {
+    margin-bottom: 10px;
+}
+
+/* FAQ question styles */
+.faq2-title {
     cursor: pointer;
     display: flex;
     justify-content: flex-start;
@@ -74,86 +78,82 @@ color: var(--black-text)
     margin-top: 4vh;
     margin-bottom: 3vh;
     font-size: 1.7rem;
-  }
-  
-  .title.active {
+}
+
+.faq2-title.active {
     background-color: transparent; /* Background color when expanded */
     color: #ffffff;
-    
-  }
-  
-  .title::before {
+}
+
+.faq2-title::before {
     content: ''; /* Empty content for before pseudo-element */
     color: #fff;
     width: 20px;
     height: 20px;
     background-size: cover;
     margin-right: 10px;
-  }
-  
-  
-  
-  /* FAQ answer styles */
-  .content {
-    max-height: 0;
+}
+
+/* FAQ answer styles */
+.faq2-content {
     overflow: hidden;
     padding: 0 0 0 0;
-  }
-  
-  .content.open {
+}
+
+.faq2-content.open {
     max-height: 500px; /* Adjust the value as needed for your content */
     color: #fff;
     width: 35vw;
     margin-left: 2vw;
     line-height: 1.5;
     font-size: 1rem;
-  }
-  
-  /* After content */
-  .faq-subject.open::after {
+}
+
+/* After content */
+.faq2-subject.open::after {
     display: block;
     color: #fff; /* Text color for the after content */
     margin-top: 10px; /* Spacing between content and after content */
-    
-  }
-  .caron {
+}
+
+.faq2-caron {
     position: absolute;
     right: 5vw;
     height: 3vh;
     filter: invert(100%);
+}
 
-  }
-  .faqbottom {
+.faq2-bottom {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:40vw;
+    width: 40vw;
     height: 100vh;
     text-align: center;
-  }
+}
 
-  .faqbottomimg {
+.faq2-bottom-img {
     height: 60vh;
-  }
-  
-  .faqbottomtitle {
-    color: var(--black-text);
-  }
+}
 
-  .faqfloat {
-    position: s;
-    height:30vh;
+.faq2-bottom-title {
+    color: var(--black-text);
+}
+
+.faq2-float {
+    position: absolute;
+    height: 30vh;
     width: 10vw;
     margin: 0;
     position: fixed;
-    bottom:40%;
+    bottom: 40%;
     right: 3vw;
     opacity: 1;
     margin: 0;
-  }
+}
 
-  .faqbottombutton {
+.faq2-bottom-button {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -170,143 +170,156 @@ color: var(--black-text)
     border: none;
     cursor: pointer;
     border-radius: 17.4rem;
-  }
-  
-  .faqbottombutton:hover {
-    background-color:transparent;
+}
+
+.faq2-bottom-button:hover {
+    background-color: transparent;
     color: var(--main-blue);
-    border:4px solid var(--main-blue);
-  }
-
-  @media screen and (max-width: 750px) {
-.pagesubtitle {
-    width: 80vw;
-    text-align: center;
-    font-size: 1.3rem;
+    border: 4px solid var(--main-blue);
 }
 
-.faq-content {
-    margin-top: 12vh;
-}
-.pagetitle {
-    font-size: 3.5rem;
-    font-weight: 600;
-    margin-bottom: 0;
-    margin-top: 2vh;
-    text-align: center;
-  }
-  #list {
-    padding: 0;
-  }
-  .title {
-    font-size: 1.2rem;
-    margin-top: 2vh;
-    margin-left: -5vw;
-    
-  } 
-  .faq-subject {
-    height: 7vh;
-    width: 100vw;
-   
-  }
-  .content.open {
-    width: 70vw;
-    margin-left: 0;
-    line-height: 1.5;
-    font-size: 1rem;
-  }
+@media screen and (max-width: 750px) {
+    .faq2-pagesubtitle {
+        width: 80vw;
+        text-align: center;
+        font-size: 1.3rem;
+    }
 
-  .caron {
-    position: absolute;
-    right:5vw;
-    height: 3vh;
-  }
-  .faqbottomimg {
-    height: 50vh;
-  }
-  .faqbottombutton {
-    width: 40vw;
-  }
-  .faqbottom {
-    width: 70vw;
-  }
-  .faqfloat {
-    top: 0;
-    right: 2rem;
-    
-  }
+    .faq2-content {
+        margin-top: 12vh;
+    }
+
+    .faq2-pagetitle {
+        font-size: 3.5rem;
+        font-weight: 600;
+        margin-bottom: 0;
+        margin-top: 2vh;
+        text-align: center;
+    }
+
+    #faq2-list {
+        padding: 0;
+    }
+
+    .faq2-title {
+        font-size: 1.2rem;
+        margin-top: 2vh;
+        margin-left: -5vw;
+    }
+
+    .faq2-subject {
+        height: 7vh;
+        width: 100vw;
+    }
+
+    .faq2-content.open {
+        width: 70vw;
+        margin-left: 0;
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+
+    .faq2-caron {
+        position: absolute;
+        right: 5vw;
+        height: 3vh;
+    }
+
+    .faq2-bottom-img {
+        height: 50vh;
+    }
+
+    .faq2-bottom-button {
+        width: 40vw;
+    }
+
+    .faq2-bottom {
+        width: 70vw;
+    }
+
+    .faq2-float {
+        top: 0;
+        right: 2rem;
+    }
 }
-  @media screen and (max-width: 500px) {
-    
-    .title {
+
+@media screen and (max-width: 500px) {
+    .faq2-title {
         font-size: 1rem;
         margin-top: 2vh;
         margin-left: -6vw;
         width: 65vw;
-  }
-  #list {
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    }
 
-  }
-  .faq-subject {
-    height: 7vh;
-    width: 80vw;
-   
-  }
+    #faq2-list {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .faq2-subject {
+        height: 7vh;
+        width: 80vw;
+    }
 }
 
 @media screen and (max-width: 425px) {
+    .faq2-pagetitle {
+        font-size: 3rem;
+    }
 
-  .pagetitle {
-font-size: 3rem;
-  }
-  .pagesubtitle {
-    font-size: 1.1rem;
+    .faq2-pagesubtitle {
+        font-size: 1.1rem;
+    }
 
-  }
-  .faq-content {
-    width: 80vw;
+    .faq2-content {
+        width: 80vw;
+    }
+
+    .faq2-subject.open {
+        width: 80vw;
+    }
+
+    .faq2-title {
+        font-size: 1rem;
+        margin-top: 2vh;
+        margin-left: -6vw;
+        width: 65vw;
+    }
+
+    .faq2-bottom-title {
+        font-size: 1.2rem;
+    }
 }
 
-  .faq-subject.open {
-    width: 80vw;
-  }
-  .title {
-    font-size: 1rem;
-    margin-top: 2vh;
-    margin-left: -6vw;
-    width: 65vw;
-}
-
-}
 @media screen and (max-width: 375px) {
+    .faq2-pagetitle {
+        font-size: 2.4rem;
+        width: 90vw;
+    }
 
-  .pagetitle {
-font-size: 2.4rem;
-width: 90vw;
-  }
-  .pagesubtitle {
-    font-size: 1rem;
+    .faq2-pagesubtitle {
+        font-size: 1rem;
+    }
 
-  }
-  .faq-content {
-    width: 80vw;
-}
+    .faq2-content {
+        width: 80vw;
+    }
 
-  .faq-subject.open {
-    width: 80vw;
-  }
-  .title {
-    font-size: 1rem;
-    margin-top: 2vh;
-    margin-left: -6vw;
-    width: 65vw;
-}
-.faqbottomtitle {
-  font-size: 1.2rem;
-}
+    .faq2-subject.open {
+        width: 80vw;
+    }
+
+    .faq2-title {
+        font-size: 1rem;
+        margin-top: 2vh;
+        margin-left: -6vw;
+        width: 65vw;
+    }
+
+    .faq2-bottom-title {
+        font-size: 1.2rem;
+    }
 }

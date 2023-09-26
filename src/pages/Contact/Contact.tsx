@@ -1,7 +1,9 @@
+// Updated JSX code with logical class names
 import React, { FormEvent, useState } from 'react';
 import './Contact.css';
 import wave from '../../Assets/wave.svg';
 import stars from '../../Assets/stars.svg';
+
 function Contact() {
     const [formData, setFormData] = useState({
         name: '',
@@ -29,56 +31,56 @@ function Contact() {
     };
 
     return (
-        <div className="contactcontainer">
-        <div className='conactcontent'>
-        <img src={stars} alt="wave" className="starsimg animate-pop-in"/>
+        <div className="contact-container">
+            <div className='contact-content'>
+                <img src={stars} alt="wave" className="stars-img animate-pop-in"/>
 
-            <form onSubmit={handleSubmit} id="contactForm">
-            <h1 className='contacttitle animate-pop-in'>Barking up the right tree</h1>
-            <img src={wave} alt="wave" className="waveimgcontact animate-pop-in"/>
-            <p className='contactpara animate-pop-in'>From woof to welcome, Contact our pawsome team below</p>
-                <div className="contactformgroup animate-pop-in">
-                    <label htmlFor="name"></label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder='Enter name*'
-                        required
-                    />
-                </div>
-                <div className="contactformgroup animate-pop-in">
-                    <label htmlFor="email"></label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder='Email*'
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="contactformgroup animate-pop-in">
-                    <label htmlFor="message"></label>
-                    <textarea
-                    className='contacttextarea'
-                        id="message"
-                        name="message"
-                        placeholder='Message*'
-                        rows={4}
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                    ></textarea>
-                </div>
-                <div className="contactformgroupbutton animate-pop-in">
-                    <button type="submit" value="Submit" > Submit</button>
-                </div>
-            </form>
-        </div>
+                <form onSubmit={handleSubmit} id="contact-form">
+                    <h1 className='contact-title animate-pop-in'>Barking up the right tree</h1>
+                    <img src={wave} alt="wave" className="wave-img-contact animate-pop-in"/>
+                    <p className='contact-para animate-pop-in'>From woof to welcome, Contact our pawsome team below</p>
+                    <div className="contact-form-group animate-pop-in">
+                        <label htmlFor="name"></label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder='Enter name*'
+                            required
+                        />
+                    </div>
+                    <div className="contact-form-group animate-pop-in">
+                        <label htmlFor="email"></label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder='Email*'
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="contact-form-group animate-pop-in">
+                        <label htmlFor="message"></label>
+                        <textarea
+                            className='contact-textarea'
+                            id="message"
+                            name="message"
+                            placeholder='Message*'
+                            rows={4}
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        ></textarea>
+                    </div>
+                    <div className="contact-form-group-button animate-pop-in">
+                        <button type="submit" value="Submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

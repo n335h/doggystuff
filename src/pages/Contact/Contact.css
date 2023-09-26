@@ -1,41 +1,38 @@
-
-
-.contactcontainer {
+/* Updated CSS with logical class names */
+.contact-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 150vh;
-
     width: 101%;
     padding: 0;
     margin: 0;
     margin-top: -20vh;
     background-color: var(--light-blue);
     max-height: auto;
-   
-}
-#contactForm h1 {
-font-size: 4.5rem;
-width: 35vw;
-padding: 0;
-margin: 0;
-text-align: center;
-z-index: 1;
-color: var(--black-text);
-  
 }
 
-#contactForm p {
+#contact-form h1 {
+    font-size: 4.5rem;
+    width: 35vw;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    z-index: 1;
+    color: var(--black-text);
+}
+
+#contact-form p {
     font-size: 1.5rem;
     width: 35vw;
     text-align: center;
     z-index: 1;
     padding: 0;
     margin-top: 4rem;
-
 }
-#contactForm {
+
+#contact-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,11 +42,13 @@ color: var(--black-text);
     padding: 0;
     color: var(--header-text);
 }
-.barkimg {
+
+.bark-img {
+    /* Updated class name */
     position: fixed;
     height: 25rem;
-    width:30rem;
-    bottom:0;
+    width: 30rem;
+    bottom: 0;
     left: 5rem;
     margin: 0;
     padding: 0;
@@ -58,11 +57,13 @@ color: var(--black-text);
     rotate: -2deg;
     opacity: 0.8;
 }
-.starsimg {
+
+.stars-img {
+    /* Updated class name */
     position: fixed;
     height: 25rem;
-    width:15rem;
-    bottom:0;
+    width: 15rem;
+    bottom: 0;
     right: 5rem;
     margin: 0;
     padding: 0;
@@ -71,8 +72,9 @@ color: var(--black-text);
     rotate: -2deg;
     opacity: 0.8;
 }
-.conactcontent {
-    height:100vh;
+
+.contact-content {
+    height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -81,10 +83,10 @@ color: var(--black-text);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-
 }
-.contactformgroup {
+
+.contact-form-group {
+    /* Updated class name */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,18 +94,20 @@ color: var(--black-text);
     margin: 0;
     padding: 0;
     width: 100%;
-   
 }
-.contactformgroup input {
-    height:2vh;
+
+.contact-form-group input {
+    /* Updated class name */
+    height: 2vh;
     width: 35vw;
     border-radius: 3.4rem;
     font-size: 1.5rem;
     padding: 2rem;
     background-color: var(--background-offwhite);
-
 }
-.contacttextarea {
+
+.contact-textarea {
+    /* Updated class name */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,24 +121,25 @@ color: var(--black-text);
     border: none;
     font-size: 1.5rem;
     background-color: var(--background-offwhite);
-   
 }
-.waveimgcontact {
-            position: relative;
-            height:10vh;
-            width:4vw;
-            scale:7;
-            top:2rem;
-            margin: 0;
-            padding: 0;
-            z-index: 0;
-            filter: invert(97%) sepia(23%) saturate(6420%) hue-rotate(191deg) brightness(113%) contrast(96%);
-            rotate: -2deg;
-            opacity: 0.8;
-            
-        }
 
-.contactformgroupbutton button {
+.wave-img-contact {
+    /* Updated class name */
+    position: relative;
+    height: 10vh;
+    width: 4vw;
+    scale: 7;
+    top: 2rem;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    filter: invert(97%) sepia(23%) saturate(6420%) hue-rotate(191deg) brightness(113%) contrast(96%);
+    rotate: -2deg;
+    opacity: 0.8;
+}
+
+.contact-form-group-button button {
+    /* Updated class name */
     height: 10vh;
     width: 10vw;
     border-radius: 3.4rem;
@@ -146,12 +151,16 @@ color: var(--black-text);
     margin-top: 2vh;
     margin-bottom: 2vh;
 }
-.contactformgroupbutton button:hover {
+
+.contact-form-group-button button:hover {
+    /* Updated class name */
     background-color: transparent;
     color: var(--header-main);
     border: 4px solid var(--header-main);
 }
-.contactformgroupbutton{
+
+.contact-form-group-button {
+    /* Updated class name */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -159,157 +168,135 @@ color: var(--black-text);
     margin: 0;
     padding: 0;
     width: 40vw;
-   
 }
-.contacttextarea.focus {
+
+.contact-textarea.focus {
+    /* Updated class name */
     border: none;
 }
 
-input:focus, textarea:focus, select:focus{
+input:focus, textarea:focus, select:focus {
     outline: 4px solid var(--header-main);
 }
 
 @media screen and (max-width: 1500px) {
-
-    #contactForm {
-    
+    #contact-form {
         width: 80%;
-
     }
-    #contactForm h1 {
+
+    #contact-form h1 {
         font-size: 4rem;
         width: 50vw;
         margin-bottom: 0;
+    }
 
-          
-        }
-        
-        #contactForm p {
-            font-size: 2rem;
-            width: 60vw;
-            text-align: center;
-            margin-bottom: 5vh;
-        
-        }
+    #contact-form p {
+        font-size: 2rem;
+        width: 60vw;
+        text-align: center;
+        margin-bottom: 5vh;
+    }
 
-        .contactformgroup input {
-            height:4vh;
-            width: 60vw;
-            font-size: 1.5rem;
+    .contact-form-group input {
+        height: 4vh;
+        width: 60vw;
+        font-size: 1.5rem;
+    }
 
-        
-        }
-        .contacttextarea {
-            
-            width: 60vw;
-       
-           
-        }
-        
-.contactformgroupbutton button {
-    width:30vw;
+    .contact-textarea {
+        width: 60vw;
+    }
 
+    .contact-form-group-button button {
+        width: 30vw;
+    }
+
+    .contact-form-group-button {
+        width: 60vw;
+    }
 }
-.contactformgroupbutton {
-    width: 60vw;
-}
-}
+
 @media screen and (max-width: 750px) {
-
-    #contactForm h1 {
+    #contact-form h1 {
         font-size: 3.5rem;
         width: 60vw;
+    }
 
-          
-        }
-        
-        #contactForm p {
-            font-size: 1.5rem;
-            width: 60vw;
-            text-align: center;
-            margin-bottom: 5vh;
-        
-        }
+    #contact-form p {
+        font-size: 1.5rem;
+        width: 60vw;
+        text-align: center;
+        margin-bottom: 5vh;
+    }
 
-        .contactformgroup input {
-            height:4vh;
-            width: 70vw;
-            font-size: 1.5rem;
+    .contact-form-group input {
+        height: 4vh;
+        width: 70vw;
+        font-size: 1.5rem;
+    }
 
-        
-        }
-        .contacttextarea {
-            
-            width: 70vw;
-       
-           
-        }
-        
-.contactformgroupbutton button {
-    width:50vw;
+    .contact-textarea {
+        width: 70vw;
+    }
 
-}
-.contactformgroupbutton {
-    width: 75vw;
-}
+    .contact-form-group-button button {
+        width: 50vw;
+    }
+
+    .contact-form-group-button {
+        width: 75vw;
+    }
 }
 
 @media screen and (max-width: 375px) {
-
     html, body {
         width: 100%;
-       }
-
-        #contactForm p {
-            width: 80vw;
-            font-size: 1.2rem;
-        
-        }
-
-        #contactForm h1 {
-            font-size: 2.6rem;
-            width: 80vw;
-            margin-top: 0;
-    
-              
-            }
-            
-            #contactForm p {
-                font-size: 1rem;
-                width: 80vw;
-                text-align: center;
-                margin-top: 5vh;
-                margin-bottom: 2vh;
-            
-            }
-    
-            .contactformgroup input {
-                height: 1vh;
-                width: 65vw;
-                font-size: 1rem;
-    
-            
-            }
-            .contacttextarea {
-                
-                width: 65vw;
-                font-size: 1.1rem;
-           
-               
-            }
-            
-    .contactformgroupbutton button {
-        width:50vw;
-    
     }
-    .contactformgroupbutton {
+
+    #contact-form p {
+        width: 80vw;
+        font-size: 1.2rem;
+    }
+
+    #contact-form h1 {
+        font-size: 2.6rem;
+        width: 80vw;
+        margin-top: 0;
+    }
+
+    #contact-form p {
+        font-size: 1rem;
+        width: 80vw;
+        text-align: center;
+        margin-top: 5vh;
+        margin-bottom: 2vh;
+    }
+
+    .contact-form-group input {
+        height: 1vh;
+        width: 65vw;
+        font-size: 1rem;
+    }
+
+    .contact-textarea {
+        width: 65vw;
+        font-size: 1.1rem;
+    }
+
+    .contact-form-group-button button {
+        width: 50vw;
+    }
+
+    .contact-form-group-button {
         width: 75vw;
     }
-    .starsimg {
+
+    .stars-img {
+        /* Updated class name */
         position: absolute;
         height: 5rem;
-        width:5rem;
-        top:10vh;
+        width: 5rem;
+        top: 10vh;
         right: 5rem;
         margin: 0;
         padding: 0;
@@ -318,11 +305,12 @@ input:focus, textarea:focus, select:focus{
         rotate: -2deg;
         opacity: 0.8;
     }
-    .waveimgcontact {
-        position: absolute;
-        height:10vh;
-        width:12vw;
-        top:16rem;
 
+    .wave-img-contact {
+        /* Updated class name */
+        position: absolute;
+        height: 10vh;
+        width: 12vw;
+        top: 16rem;
     }
-} 
+}
