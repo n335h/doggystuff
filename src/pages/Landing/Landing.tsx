@@ -1,15 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import "./Landing.css";
-//import animate.css from main pages folder
 import "../animate.css";
 import landing1 from "../../Assets/landingsub2.png";
 import lookinat from "../../Assets/lookinat.svg";
 import keepscroll from "../../Assets/keepscroll.svg";
 import stars from "../../Assets/stars.svg";
-// import arrows from "../../Assets/arrows.svg";
 
-// import Footer from "../Footer/Footer";
 
 
 export function Landing() {
@@ -81,13 +78,13 @@ export function Landing() {
 
 
 
-      <section className="landingSection4">
-        <div className="landingSubOuter4">
-          <div className="landingSub4Content">
-            <div className="landingSub4Info">
-              <h1 className="landingSub4Title">Subscribe here, smart human</h1>
-              <h2 className="landingSub4Para">There's always alot happening in the world of doggo delights. Subscribe today to get all the latest from DoggyStuff.</h2>
-              <div className="input-container">
+      <section className="landing-section-3">
+        <div className="landing-section-3-container">
+          <div className="landing-section-3-content"> 
+            <div className="landing-section-3-info">
+              <h1 className="landing-section-3-sub">Subscribe here, smart human</h1>
+              <h2 className="landing-section-3-para">There's always alot happening in the world of doggo delights. Subscribe today to get all the latest from DoggyStuff.</h2>
+              <div className="landing-section-3-input-container">
   <input type="text" placeholder="Enter your email address" />
   <button className="landingSub4Button">Submit</button>
 </div>
@@ -103,7 +100,7 @@ export function Landing() {
           </div>
         
       </section>
-      {/* <Footer/> */}
+
     
     </div>
     
