@@ -276,4 +276,13 @@ display: none;
         font-size: 0.9rem;
        
     }
+    .waveimg {
+        height: 25rem;
+        width:18rem;
+        margin: 0;
+        padding: 0;
+        z-index: 0;
+        filter: invert(95%) sepia(1%) saturate(5419%) hue-rotate(178deg) brightness(101%) contrast(92%);
+        
+    }
 }
