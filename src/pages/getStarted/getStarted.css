@@ -106,12 +106,12 @@
     color: #ffffff;
     font-size: 1.5rem;
     font-weight: 700;
+    border: 4px solid var(--header-main);
     border-radius: 17.4rem;
-    border: 0;
 }
 
 .get-started-button:hover {
-    background-color: var(--header-main-hover);
+    background-color: transparent;
     color: var(--header-main);
     border: 4px solid var(--header-main);
     cursor: pointer;

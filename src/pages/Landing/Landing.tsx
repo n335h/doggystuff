@@ -57,7 +57,7 @@ export function Landing() {
                   <h1 className="landingPara animate-pop-in ">DoggyStuff makes food fit for a human’s plate and doggos palate. High-quality, high-protein ingredients. No sugars, salts, grains or fillers. Ever. 
 </h1>
 <Link to="/FAQ" className="landingSubButton animate-pop-in">Learn More</Link>
-<img src={stars} alt="bowl" className="starsimglanding animate-pop-in" /> 
+              <img src={stars} alt="bowl" className="starsimglanding animate-pop-in" /> 
 
                 </div>
                 
@@ -83,19 +83,7 @@ export function Landing() {
       </section>
 
 
-{/* 
-      <section className="landingSection3">
-  <div className="landingSubOuter3">
-    <div className="foodTypes">
-      <div className="foodTypeContainer">
-       
-        
-        
-      </div>
-    </div>
-    <button className="foodTypeButton">View all products</button>
-  </div> 
-</section> */}
+
       <section className="landingSection4">
         <div className="landingSubOuter4">
           <div className="landingSub4Content">
