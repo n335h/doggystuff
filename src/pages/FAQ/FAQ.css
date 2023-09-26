@@ -74,6 +74,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    border-radius: 25px;
     margin: auto;
     margin-top: 4vh;
     margin-bottom: 3vh;
@@ -266,6 +267,11 @@
 }
 
 @media screen and (max-width: 425px) {
+    .faq2-subject {
+        width:80vw;
+    }
+        
+    
     .faq2-pagetitle {
         font-size: 3rem;
     }
@@ -275,11 +281,11 @@
     }
 
     .faq2-content {
-        width: 80vw;
+        width: 90vw;
     }
 
     .faq2-subject.open {
-        width: 80vw;
+        width:80vw;
     }
 
     .faq2-title {
@@ -305,7 +311,10 @@
     }
 
     .faq2-content {
-        width: 80vw;
+        width: 90vw;
+    }
+    .faq2-subject {
+        width:80vw;
     }
 
     .faq2-subject.open {
