@@ -247,7 +247,62 @@ input:focus, textarea:focus, select:focus {
         width: 75vw;
     }
 }
+@media screen and (max-width: 425px) {
+    .contact-content {
+        margin-top: 5vh;
+    }
 
+    #contact-form h1 {
+        font-size: 2.5rem;
+        width: 80vw;
+        margin-top: 0;
+    }
+
+    .contact-form-group input {
+        height: 1vh;
+        width: 70vw;
+        font-size: 1.5rem;
+    }
+
+    .contact-textarea {
+        width: 70vw;
+    }
+
+    .contact-form-group-button button {
+        width: 50vw;
+    }
+    
+
+.wave-img-contact {
+    width: 9vw;
+    top: 1vh;
+
+
+}
+
+#contact-form p {
+    font-size: 1.3rem;
+    width: 70vw;
+    text-align: center;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+
+.stars-img {
+    /* Updated class name */
+    position: fixed;
+    height:15rem;
+    width: 5rem;
+    top: 2rem;
+    right:2rem;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    filter: invert(97%) sepia(23%) saturate(6420%) hue-rotate(191deg) brightness(113%) contrast(96%);
+    rotate: -2deg;
+    opacity: 0.8;
+}
+}
 @media screen and (max-width: 375px) {
     html, body {
         width: 100%;
@@ -311,6 +366,6 @@ input:focus, textarea:focus, select:focus {
         position: absolute;
         height: 10vh;
         width: 12vw;
-        top: 16rem;
+        top: 14rem;
     }
 }
