@@ -328,7 +328,7 @@ input:focus, textarea:focus, select:focus {
     }
 
     .contact-form-group input {
-        height: 1vh;
+        height: 0.5vh;
         width: 65vw;
         font-size: 1rem;
     }
