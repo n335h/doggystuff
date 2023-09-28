@@ -105,6 +105,11 @@
       padding: 0 1rem;
       font-size: 1.2rem;
   }
+  .submit-button.signup button {
+    background-color: var(--header-main);
+    margin: 0;
+   width: 35vw;
+  }
 .sign-form button {
     border-radius: 17.4rem;
     border: none; 
@@ -122,6 +127,14 @@ width:100vw;
 }
     
     }
-    @media screen and (max-width:500px) {
-      
+    @media screen and (max-width:425px) {
+      .submit-button.signup {
+        margin: 0;
+       width: 30vw;
+      }
+      .submit-button.signup button {
+        background-color: var(--header-main);
+        margin: 0;
+       width: 30vw;
+      }
     }
