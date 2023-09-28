@@ -810,6 +810,12 @@ font-size: 3rem;
 }
 
 }
+@media screen and (max-width: 375px) {
+  .landing-section-2-container{
+    background-size:250%; 
+  }
+
+}
 
 @media screen and (max-width: 320px) {
   html, body {
@@ -836,7 +842,7 @@ font-size: 3rem;
   }
   .lookinat{
     position: relative;
-    top: 50vh;
+    top: 70vh;
     left:50vw;
     width:45vw;
     margin-top: 2vh;
@@ -930,8 +936,9 @@ font-size: 3rem;
   right:-30%; /* Adjust the left position to place it horizontally */
 }
 
-.starsimglanding{
-  top:  40vh;
+
+.landing-section-2-container{
+background-size: 300%;
 }
 
 }
