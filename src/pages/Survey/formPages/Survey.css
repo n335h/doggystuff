@@ -1,16 +1,30 @@
 
-.survey {
+.surveyContainer {
     background-color: var(--background-offwhite);
     width: 100vw;
     height: 120vh;
     margin: auto;
-    margin-top: -10vh;
+    margin-top: -20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     z-index: 0;
   }
+  .survey {
+    background-color: var(--background-offwhite);
+    width: 100vw;
+    height: 120vh;
+    margin: auto;
+    margin-top:  25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 0;
+  }
+  
+
   .surveyButtons {
     display: flex;
     flex-direction: row;
@@ -25,13 +39,13 @@
     width: 100vw;
     text-align: center;
     color: var(--black-text);
-    margin-top: -10vh;
+    margin-top: 1rem;
   }
 
 .surveyFormNum {
     position: absolute;
-    top: -9rem;
-    margin: 1rem;
+    top: -3rem;
+    margin: 2rem;
     font-size: 1.2rem;
     color: var(--main-blue);
     
@@ -186,7 +200,9 @@
     width: 100vw;
     height: 100%;
   }
-  
+  .formContent h3 {
+    color: var(--black-text);
+  }
   #dog_size, #dog_sex p {
     width: 5vw;
     padding: 1rem;
@@ -215,6 +231,7 @@
   .pureCross,
   .dogHealth,
   .foodVeg
+
   
    {
     justify-content: center;
@@ -222,13 +239,13 @@
     flex-direction: row;
     align-items: center;
   }
-  .flavoursNotContent {
+  .flavoursNotContent, .foodveg {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width:40vw;
+    width:70vw;
   }
 
   
@@ -256,7 +273,9 @@
       width: 25vw;
       height: 8.5vh;
         }
-
+        .flavoursNotContent {
+          width:60vw;
+        }
 
   }
   
@@ -287,6 +306,10 @@
     }
     .formTitle {
       font-size: 2rem;
+      width: 60vw;
+      margin: auto;
+      margin-top: 1rem;
+
     }
      
     

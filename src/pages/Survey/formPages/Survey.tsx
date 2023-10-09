@@ -272,7 +272,8 @@ if (errorExistingAddressData) {
 
 
     return (
-        <div className="survey">
+        <div className="surveyContainer">
+            <div className="survey">
             <div className="surveyContent animate-pop-in">
                 <form onSubmit={onSubmit}  className="surveyForm">
                     <div className="surveyFormNum">
@@ -287,7 +288,7 @@ if (errorExistingAddressData) {
                     </div>
                 </form> 
             </div>
-
+            </div>
         </div>
     )
 }

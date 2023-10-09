@@ -55,7 +55,7 @@ function DogInfo({
         required
       />
 
-      <label htmlFor="dog_age"></label>
+      <label htmlFor="dog_age"> .</label>
       <select
         className="dropdownOptions"
         onChange={handleDogAgeChange}

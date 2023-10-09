@@ -71,9 +71,10 @@
               Fish
             </button>
           </div>
-                    <label htmlFor='veg'>Do they want vegetables?</label>
+                    <h3>Do they want vegetables?</h3>
 
                     <div className="foodVeg">
+                      
                         {/* <input title="vegNo" type='radio' className='dropdownOptions'
                             onChange={e=> updateFields({veg: e.target.value}) }
                             value='No'
