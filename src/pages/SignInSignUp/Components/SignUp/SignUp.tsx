@@ -7,12 +7,7 @@ import './SignUp.css';
 import hamburgerclose from '../../../../Assets/hamburgerclose.svg';
 
 
-// interface SignUpFormData {
-//   first_name: string;
-//   last_name: string;
-//   email: string;
-//   password: string;
-// }
+
 
 interface SignUpProps {
   SignUpFormData: {

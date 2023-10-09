@@ -16,12 +16,6 @@ interface NavbarProps {
   setIsSignedIn: (value: boolean) => void;
   visible: boolean; // Add the 'visible' prop
 }
-// const formData = {
-//   email: '',
-//   password: '',
-//   first_name: '',
-//   last_name: '',
-// }
 
 
 export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarProps) {
@@ -29,38 +23,12 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
   const [additionalMenuOpen, setAdditionalMenuOpen] = useState(false);
   const [hamburgerIcon, setHamburgerIcon] = useState('hamburgeropen'); // Default to 'hamburgeropen'
   const [SignInMenuOpen, setSignInMenuOpen] = useState(false);
-  // const [SignInIconState, setSignInIconState] = useState('user');
   const [SignInIconState, setSignInIcon] = useState('user');
   const [additionalSignInMenuOpen, setAdditionalSignInMenuOpen] = useState(false);
   const [currentColorClass] = useState<string>('logo1'); // Set an initial class
   const [currentColorClass2] = useState<string>('signedinicon1'); // Set an initial class
-  // const [showSignUp, setShowSignUp] = useState(false);
-  // const [showSignIn, setShowSignIn] = useState(false);
-  // const [signUpRedirect, setSignUpRedirect] = useState(false);
 
-  // function handleSignUpClick() {
-  //     setShowSignUp(true);
-  //     setShowSignIn(false);
-  // }
-
-  // function handleSignInClick() {
-  //     setShowSignUp(false);
-  //     setShowSignIn(true);
-  // }
-
-  // function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-  //     setFormData((prevFormData) => {
-  //         return {
-  //             ...prevFormData,
-  //             [event.target.name]: event.target.value,
-  //         };
-  //     });
-  // }
   const navbarRef = useRef<HTMLElement>(null); // Create a ref for the navbar element
-  // const location = useLocation();
-
-  // const shouldApplyPageStyle = location.pathname === '/signin'; // Set to true if the current path is '/specific-page'
-
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);

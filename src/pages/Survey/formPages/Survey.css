@@ -14,10 +14,9 @@
   .surveyButtons {
     display: flex;
     flex-direction: row;
-    align-items: space-between;
-    justify-content: center;
-    width: 60vw;
-    margin-top: 5rem;
+    align-items: center;
+    justify-content: space-around;
+    width: 35vw;
   }
   .formTitle {
     font-size: 2.5rem;
@@ -26,30 +25,16 @@
     width: 100vw;
     text-align: center;
     color: var(--black-text);
+    margin-top: -10vh;
   }
-  .formWrapper {
-    display: absolute;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 60vh;
-    left: 50%;
-    top: 50%;
-    margin: auto;
-    z-index: 1;
-  }
+
 .surveyFormNum {
     position: absolute;
-    top: -20vh;
-    right: 7.5vw;
+    top: -9rem;
     margin: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--main-blue);
     
-}
-.surveyFormSection {
-  margin-top: -10vh;
 }
   .surveyForm form {
     display: flex;
@@ -95,15 +80,7 @@
     cursor: pointer;
     }
 
-  .surveyContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 50vh;
-    margin: auto;
-  }
+
   
   /* Form Styles */
   form.surveyForm {
@@ -114,14 +91,15 @@
   }
   
   form.surveyForm input {
-    width: 35vw;
-    height: 3.5rem;
+    width: 40vw;
+    height: 2rem;
     border: none;
     border-radius: 5px;
     padding: 1.5rem 1rem;
     font-size: 1.2rem;
     border-radius: 17.4rem;
     margin: 0;
+    margin-bottom: 1rem;
 
   }
   
@@ -138,17 +116,21 @@
     align-items: center;
     justify-content: center;
     height: 11rem;
-    width: 11rem;
+    width: 13rem;
     background-color: var(--main-blue);
     border-radius: 10px;
     color: #fff;
     font-weight: 700;
     font-size: 0.9rem;
-    margin: 0.5rem;
+    margin: 0.25rem;
     border: 0;
   }
+
+  .dogSex button {
+    width: 20rem;
+  }
   .dropdownOptions {
-    width:36vw;
+    width:40vw;
     height: 4.5rem;
     border: none;
     border-radius: 5px;
@@ -245,19 +227,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width:60vw;
+    flex-wrap: wrap;
+    width:40vw;
   }
 
   
   /* Responsive Styles */
   @media screen and (max-width: 1300px) {
-    .dogSex button,
-    .dogSize button,
-    .pureCross button,
-    .dogHealth button {
-      height: 10rem;
-      width: 13rem;
-    }
+
     .dogSize, .dogSex {
       width: 50vw;
     }
@@ -266,6 +243,9 @@
     }
     .dropdownOptions {
       width: 53vw;
+    }
+    .flavoursNotContent {
+      width:50vw;
     }
  
   }
@@ -281,137 +261,78 @@
   }
   
   @media screen and (max-width: 768px) {
-    form.surveyForm {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      width: 100vw;
-    }
-    .surveyContent {
-        width: 70vw;
-    }
     form.surveyForm input {
-      width: 60vw;
-      height: 3.5rem;
-      margin-bottom: 0rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.2rem;
-      border-radius: 17.4rem;
-      margin: 0;
+      width: 75vw;
     }
     .dropdownOptions {
-      width:64vw;
-      height: 4.5rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.2rem;
-      border-radius: 17.4rem;
+      width: 78vw;
     }
-    .dogSize, .dogSex, .dogHealth {
-      width:70vw;
-    }
-    .surveyButton, #backSurveyButton {
-        width: 40vw;
-      }
-      .pureCross, .dogHealth {
-        width: 100vw;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+    .dogSex,
+    .dogSize {
+      width:80vw;
     }
     .dogSex button,
     .dogSize button,
     .pureCross button,
-    .dogHealth button
-     {
-      height: 10rem;
-      width: 12rem;
+    .dogHealth button,
+    .dogFood button,
+    .flavoursNot button {
+      width: 25vw;
     }
-
+    .dogSex button {
+      width: 20rem;
+    }
+    .surveyButtons {
+      width: 55vw;
+    }
     .formTitle {
-        margin-bottom:  3vh;
-        margin-top: 10vh;
-        font-size: 1.6rem;
-      
+      font-size: 2rem;
     }
-    .surveyFormNum {
-      position: absolute;
-      top: -22vh;
-      left: 45%;
-      
-      font-size: 1.2rem;
-      color: var(--main-blue);
-      
-  }
-  .surveyButtons {
-    width: 80vw;
-    display: flex;
-    flex-direction: row;
-    align-items: space-between;
-    justify-content: center;
-  }
+     
+    
 }
 
   @media screen and (max-width: 425px) {
-
-    .surveyButton, .backSurveyButton{
-      margin-top:1rem;
-    }
-    .formContent {
-      height: 60vh;
-    }
-    .dogSize, .dogSex{
-      width:80vw;
-    }
     form.surveyForm input {
       width: 80vw;
-      font-size: 1.1rem;
-      padding: 0.5rem;
-    
-
     }
-    .surveyFormSection {
-      width: 100vw;
-    }
-  
     .dropdownOptions {
-      width:84vw;
-      font-size: 1.1rem;
-      
+      width: 83vw;
     }
-    .formTitle {
-      margin-top: 4rem;
+    .dogSize, .dogSex, .pureCross, .dogHealth, .foodVeg {
+      width: 90vw;
     }
     .surveyButtons {
-      display: flex;
-      flex-direction: row;
-      align-items: space-between;
-      justify-content: space-evenly;
       width: 90vw;
+    }
+
+  }
+  @media screen and (max-width: 425px) {
+    form.surveyForm input {
+      width: 80vw;
+    }
+    .dropdownOptions {
+      width: 83vw;
+    }
+    .dogSex button,
+    .dogSize button,
+    .pureCross button,
+    .dogHealth button,
+    .dogFood button,
+    .flavoursNot button
+     {
+      height: 35vw;
+    }
+    .dogSex button {
+      width: 40vw;
     }
     .surveyFormNum {
-      position: absolute;
-      top: -22vh;
-      left: 40%;
-      margin: 1rem;
-      font-size: 1.2rem;
-      color: var(--main-blue);
+      font-size: 0.8rem;
+      top:-7rem;
+      right: 40%;
     }
-    .pureCross {
-      width: 90vw;
+    button.surveyButton, button#backSurveyButton {
+   width: 40vw; 
     }
-    .dogSex, .dogSize {
-      width: 90vw;
+
     }
-    .pureCross {
-      flex-direction: column;
-      margin-bottom: 10vh;
-    }
-    .formContent{
-      height: 100vh;
-    }
-  }
