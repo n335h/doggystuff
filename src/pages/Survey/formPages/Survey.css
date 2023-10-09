@@ -17,6 +17,7 @@
     align-items: space-between;
     justify-content: center;
     width: 60vw;
+    margin-top: 5rem;
   }
   .formTitle {
     font-size: 2.5rem;
@@ -46,6 +47,9 @@
     font-size: 1.5rem;
     color: var(--main-blue);
     
+}
+.surveyFormSection {
+  margin-top: -10vh;
 }
   .surveyForm form {
     display: flex;
@@ -276,7 +280,7 @@
 
   }
   
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 768px) {
     form.surveyForm {
       display: flex;
       flex-direction: column;
@@ -337,8 +341,8 @@
     .surveyFormNum {
       position: absolute;
       top: -22vh;
-      right: 5vw;
-      margin: 1rem;
+      left: 45%;
+      
       font-size: 1.2rem;
       color: var(--main-blue);
       
