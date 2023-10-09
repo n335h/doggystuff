@@ -1,8 +1,8 @@
-/* Base Styles */
+
 .survey {
     background-color: var(--background-offwhite);
     width: 100vw;
-    height: 110vh;
+    height: 120vh;
     margin: auto;
     margin-top: -10vh;
     display: flex;
@@ -11,27 +11,36 @@
     justify-content: center;
     z-index: 0;
   }
+  .surveyButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: center;
+    width: 60vw;
+  }
   .formTitle {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom:  5vh;
-    margin-top: 15vh;
+    margin-bottom:  2vh;
     width: 100vw;
     text-align: center;
+    color: var(--black-text);
   }
   .formWrapper {
-    display: flex;
+    display: absolute;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60vw;
-    height: 70vh;
+    width: 100%;
+    height: 60vh;
+    left: 50%;
+    top: 50%;
     margin: auto;
     z-index: 1;
   }
 .surveyFormNum {
     position: absolute;
-    top: -10vh;
+    top: -20vh;
     right: 7.5vw;
     margin: 1rem;
     font-size: 1.5rem;
@@ -48,7 +57,7 @@
     background-color: var(--header-main); /* Change this to your desired button style */
     color: #fff;
     padding: 10px;
-    margin-top: 5rem;
+    margin-top:1rem;
     font-size: 1.1rem;
     font-weight:600;
     width: 15vw;
@@ -66,7 +75,7 @@
     background-color: var(--main-blue); /* Change this to your desired button style */
     color: #fff;
     padding: 10px;
-    margin: 10px 10px;
+    margin-top:1rem;
     font-size: 1.1rem;
     font-weight:600;
     width: 15vw;
@@ -100,17 +109,15 @@
     justify-content: space-between;
   }
   
-  form.surveyForm input,
-  .dropdownOptions {
+  form.surveyForm input {
     width: 35vw;
-    height: 4.5rem;
+    height: 3.5rem;
     border: none;
     border-radius: 5px;
-    padding: 0 1rem;
+    padding: 1.5rem 1rem;
     font-size: 1.2rem;
     border-radius: 17.4rem;
     margin: 0;
-    margin-bottom: 1rem;
 
   }
   
@@ -136,7 +143,17 @@
     margin: 0.5rem;
     border: 0;
   }
-  
+  .dropdownOptions {
+    width:36vw;
+    height: 4.5rem;
+    border: none;
+    border-radius: 5px;
+    padding: 1.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 17.4rem;
+    margin: 0;
+    margin-bottom: 1rem;
+}
   /* Button Hover Styles */
   .dogSex button:hover,
   .dogSize button:hover,
@@ -179,9 +196,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 60vw;
-    margin-bottom: 3rem;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100%;
   }
   
   #dog_size, #dog_sex p {
@@ -197,7 +214,7 @@
     justify-content: center;
     width: 40vw;
   }
-  
+
   .dogSexOption,
   .dogSizeOption,
   .dogHealthOption,
@@ -244,56 +261,20 @@
       width: 50vw;
     }
     .dropdownOptions {
-      width: 50vw;
+      width: 53vw;
     }
  
   }
   
   @media screen and (max-width: 1000px) {
-    /* .dogSex button,
-    .dogSize button,
-    .pureCross button,
-    .dogHealth button {
-      height: 10rem;
-      width: 10rem;
-    }
-    .dogSize, .dogSex {
-      width: 60vw;
-    }
-    .surveyForm input {
-      width: 60vw;
-    }
-    .dropdownOptions {
-      width: 60vw;
-    } */
+
     .surveyButton, #backSurveyButton {
       width: 25vw;
       height: 8.5vh;
-      margin-top: 5rem;
-    }
-    .surveyButtons {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-evenly;
-    }
+        }
+
 
   }
-  
-  /* You can uncomment and customize additional responsive styles as needed */
-  /* @media screen and (max-width: 500px) {
-    .dogSex button,
-    .dogSize button,
-    .pureCross button,
-    .dogHealth button {
-      height: 7rem;
-      width: 14rem;
-    }
-    .dogSize, .dogSex {
-      width: 70vw;
-    }
-  } */
   
   @media screen and (max-width: 750px) {
     form.surveyForm {
@@ -301,37 +282,35 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+      width: 100vw;
     }
-    .formContent {
-        width: 80vw;
+    .surveyContent {
+        width: 70vw;
     }
     form.surveyForm input {
-      width: 83vw;
+      width: 60vw;
       height: 3.5rem;
       margin-bottom: 0rem;
       border: none;
       border-radius: 5px;
-      padding: 0 1rem;
       font-size: 1.2rem;
       border-radius: 17.4rem;
       margin: 0;
     }
     .dropdownOptions {
-      width: 90vw;
-      height: 3.5rem;
+      width:64vw;
+      height: 4.5rem;
       margin-bottom: 1rem;
       border: none;
       border-radius: 5px;
-      padding: 1rem;
       font-size: 1.2rem;
       border-radius: 17.4rem;
     }
     .dogSize, .dogSex, .dogHealth {
-      width: 90vw;
+      width:70vw;
     }
     .surveyButton, #backSurveyButton {
         width: 40vw;
-        height: 8.5vh;
       }
       .pureCross, .dogHealth {
         width: 100vw;
@@ -355,6 +334,80 @@
         font-size: 1.6rem;
       
     }
+    .surveyFormNum {
+      position: absolute;
+      top: -22vh;
+      right: 5vw;
+      margin: 1rem;
+      font-size: 1.2rem;
+      color: var(--main-blue);
+      
+  }
+  .surveyButtons {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: center;
+  }
 }
-  /* Add any other media queries as needed */
+
+  @media screen and (max-width: 425px) {
+
+    .surveyButton, .backSurveyButton{
+      margin-top:1rem;
+    }
+    .formContent {
+      height: 60vh;
+    }
+    .dogSize, .dogSex{
+      width:80vw;
+    }
+    form.surveyForm input {
+      width: 80vw;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+    
+
+    }
+    .surveyFormSection {
+      width: 100vw;
+    }
   
+    .dropdownOptions {
+      width:84vw;
+      font-size: 1.1rem;
+      
+    }
+    .formTitle {
+      margin-top: 4rem;
+    }
+    .surveyButtons {
+      display: flex;
+      flex-direction: row;
+      align-items: space-between;
+      justify-content: space-evenly;
+      width: 90vw;
+    }
+    .surveyFormNum {
+      position: absolute;
+      top: -22vh;
+      left: 40%;
+      margin: 1rem;
+      font-size: 1.2rem;
+      color: var(--main-blue);
+    }
+    .pureCross {
+      width: 90vw;
+    }
+    .dogSex, .dogSize {
+      width: 90vw;
+    }
+    .pureCross {
+      flex-direction: column;
+      margin-bottom: 10vh;
+    }
+    .formContent{
+      height: 100vh;
+    }
+  }

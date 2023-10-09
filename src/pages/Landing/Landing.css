@@ -447,7 +447,7 @@ font-size: 3rem;
     align-items: center;
     margin: 0;
     margin-top: -10vh;
-    width:100vw;
+    width:100%;
   }
   .landing-section-1-info h1 {
     width: 30vw;
@@ -508,6 +508,7 @@ font-size: 3rem;
   }
 }
 @media screen and (max-width:768px ) {
+
   .landing-section-1-info {
     width: 70vw;
     margin-bottom: 5rem;
@@ -526,12 +527,13 @@ font-size: 3rem;
   .landing-section-1-img {
     width:70vw;
     margin-bottom: 2rem;
+    margin-top: 5rem;
   }
   .keepscrollimg{
     position: relative;
+    width: 90%;
     top:-10vh;
     left: 0vw;
-    width:100vw;
     margin-top: 2vh;
     z-index: 100;
   }
@@ -553,7 +555,7 @@ font-size: 3rem;
     background-position: right middle;
     align-items: center;
     max-width: 100vw;
-    height: 130vh;
+    height: 120vh;
   }
 .landing-section-1-content{
   flex-direction: column-reverse;
@@ -589,7 +591,7 @@ font-size: 3rem;
   }
 
   .landing-section-3-container {
-    height: 90vh;
+    height: 80vh;
   }
 
   .landing-button, .landing-section-1-button {
@@ -668,6 +670,12 @@ font-size: 3rem;
     background-position: 50% 20% center;
     background-repeat: no-repeat;
     max-width: 100%;
+  }
+  .landing-section-3-content {
+    height: 90vh;
+  }
+  html {
+    width: 100vw;
   }
 }
 
@@ -806,13 +814,13 @@ font-size: 3rem;
 } 
 
 .landing-section-2-container{
-  background-size:230%; 
+  background-size:250%; 
 }
 
 }
 @media screen and (max-width: 375px) {
   .landing-section-2-container{
-    background-size:250%; 
+    background-size:300%; 
   }
 
 }
@@ -938,7 +946,7 @@ font-size: 3rem;
 
 
 .landing-section-2-container{
-background-size: 300%;
+background-size: 400%;
 }
 
 }

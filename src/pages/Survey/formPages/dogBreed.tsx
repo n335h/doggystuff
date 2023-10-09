@@ -22,7 +22,7 @@ export function DogBreed( {dog_breed, pure_cross, updateFields}: BreedFormProps)
         
             <FormWrapper title="What breed is your doggo?">
       
-                <label htmlFor="dog_breed">Dog Breed</label>
+                <label htmlFor="dog_breed"></label>
                 <select  title='breeddropdown' className='dropdownOptions' onChange={e=> updateFields({dog_breed: e.target.value}) } value={dog_breed}  id="dogBreed" name="dogBreed" placeholder="Dog Breed" required >
                 
   <option value="" selected disabled>Select a breed...</option>
