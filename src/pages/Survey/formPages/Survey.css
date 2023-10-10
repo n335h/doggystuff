@@ -105,7 +105,7 @@
   }
   
   form.surveyForm input {
-    width: 40vw;
+    width: 36rem;
     height: 2rem;
     border: none;
     border-radius: 5px;
@@ -144,16 +144,17 @@
     width: 20rem;
   }
   .dropdownOptions {
-    width:40vw;
+    width:38rem;
     height: 4.5rem;
     border: none;
     border-radius: 5px;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2rem;
     font-size: 1.2rem;
     border-radius: 17.4rem;
     margin: 0;
     margin-bottom: 1rem;
 }
+
   /* Button Hover Styles */
   .dogSex button:hover,
   .dogSize button:hover,
@@ -316,26 +317,35 @@
 }
 
   @media screen and (max-width: 425px) {
-    form.surveyForm input {
-      width: 80vw;
-    }
-    .dropdownOptions {
+.dropdownOptions {
       width: 83vw;
     }
     .dogSize, .dogSex, .pureCross, .dogHealth, .foodVeg {
-      width: 90vw;
+      width: 100vw;
     }
     .surveyButtons {
       width: 90vw;
     }
+    .dogFood {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
   }
   @media screen and (max-width: 425px) {
+    .formTitle{
+      margin-bottom: 2rem;
+    }
     form.surveyForm input {
-      width: 80vw;
+      width: 78vw;
+      height: 1rem;
     }
     .dropdownOptions {
       width: 83vw;
+      
     }
     .dogSex button,
     .dogSize button,
@@ -349,9 +359,20 @@
     .dogSex button {
       width: 40vw;
     }
+    .dogSize button {
+      width: 26vw;
+    }
+    .flavoursNotContent {
+      width: 90vw;
+    }
+    .dogFood button
+    {
+      width: 40vw;
+    }
+    
     .surveyFormNum {
       font-size: 0.8rem;
-      top:-7rem;
+      top:-3rem;
       right: 40%;
     }
     button.surveyButton, button#backSurveyButton {

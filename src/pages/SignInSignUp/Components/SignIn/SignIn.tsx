@@ -85,6 +85,7 @@ function SignIn({ SignInFormData, signUpRedirect, isSignedIn, setIsSignedIn }: S
                 onChange={handleChange}
                 required
               />
+              
               <br />
               <p> Forgot your password?</p>
               <div className="submit-button">

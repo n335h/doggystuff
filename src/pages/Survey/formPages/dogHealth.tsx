@@ -19,6 +19,8 @@
                 
                 <FormWrapper title="Describe your doggos body">
                     <div className="surveyFormSectionContent">
+                    <h3 className="dogHealthTitle">Dog Weight</h3>
+
                         <div className="dogHealth">
   <button
     type="button"

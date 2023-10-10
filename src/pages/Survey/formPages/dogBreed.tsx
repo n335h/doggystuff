@@ -142,7 +142,8 @@ export function DogBreed( {dog_breed, pure_cross, updateFields}: BreedFormProps)
   <option value="whippet">Whippet</option>
   <option value="yorkshire_terrier">Yorkshire Terrier</option>
 </select>
-<label htmlFor="pure_cross">They are a </label>
+
+<label htmlFor="pure_cross"><h3> Are they Pure or Cross breed? </h3> </label>
 <div className='pureCross'>
             
                 <button type="button" className={`pureCrossOption ${pure_cross === 'pure' ? 'selected' : ''}`} onClick={() => updateFields({pure_cross: 'pure'})}>Pure Breed</button>

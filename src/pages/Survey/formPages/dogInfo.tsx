@@ -43,7 +43,7 @@ function DogInfo({
   return (
     <FormWrapper title="Tell us about your Doggo">
 
-
+<h3 className="dogName">Dog Name</h3>
       <label htmlFor="dog_name"></label>
       <input
         onChange={handleDogNameChange}
@@ -55,7 +55,7 @@ function DogInfo({
         required
       />
 
-      <label htmlFor="dog_age"> .</label>
+      <label htmlFor="dog_age"><h3> Dog Age </h3></label>
       <select
         className="dropdownOptions"
         onChange={handleDogAgeChange}
@@ -71,9 +71,9 @@ function DogInfo({
         <option value="6-10">6-10</option>
         <option value="10+">10+</option>
       </select>
+      <h3>Dog Size</h3>
 
       <div className="dogSize">
-        
       <button
   type="button"
   className={`dogSizeOption ${
@@ -102,7 +102,7 @@ function DogInfo({
   Large
 </button>
       </div>
-
+<h3> Dog Sex</h3>
       <div className="dogSex">
       <button
   type="button"

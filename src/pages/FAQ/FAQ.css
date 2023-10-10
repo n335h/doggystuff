@@ -32,6 +32,7 @@
 
 .faq2-content {
     display: flex;
+    color: transparent;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -93,7 +94,6 @@
     width: 20px;
     height: 20px;
     background-size: cover;
-    margin-right: 10px;
 }
 
 /* FAQ answer styles */
@@ -212,14 +212,25 @@
 
     .faq2-subject {
         height: 7vh;
-        width: 100vw;
+        width: 80vw;
     }
 
     .faq2-content.open {
-        width: 70vw;
+        width: 80vw;
         margin-left: 0;
         line-height: 1.5;
         font-size: 1rem;
+        
+
+    }
+    .faq2-subject.open {
+        width: 80vw;
+        margin: auto;
+        margin-left: 0;
+        line-height: 1.5;
+        font-size: 1rem;
+        margin-bottom: 10px;
+
     }
 
     .faq2-caron {
@@ -243,9 +254,9 @@
     .faq2-float {
         top: 0;
         right: 2rem;
-    }
+    } 
 }
-
+/* 
 @media screen and (max-width: 500px) {
     .faq2-title {
         font-size: 1rem;
@@ -266,13 +277,13 @@
         height: 7vh;
         width: 80vw;
     }
-}
+} */
 
 @media screen and (max-width: 425px) {
-    .faq2-subject {
+    /* .faq2-subject {
         width:80vw;
     }
-        
+         */
     
     .faq2-pagetitle {
         font-size: 3rem;
@@ -282,13 +293,13 @@
         font-size: 1.1rem;
     }
 
-    .faq2-content {
+    /* .faq2-content {
         width: 90vw;
     }
 
     .faq2-subject.open {
         width:80vw;
-    }
+    } */
 
     .faq2-title {
         font-size: 1rem;
@@ -301,7 +312,7 @@
         font-size: 1.2rem;
     }
 }
-
+/* 
 @media screen and (max-width: 375px) {
     .faq2-pagetitle {
         font-size: 2.4rem;
@@ -333,4 +344,4 @@
     .faq2-bottom-title {
         font-size: 1.2rem;
     }
-}
+} */
