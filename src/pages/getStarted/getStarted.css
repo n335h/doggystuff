@@ -72,7 +72,7 @@
     margin-top: 0;
     padding: 0;
     text-align: center;
-    width: 30vw;
+    width: 40vw;
     z-index: 1;
 }
 
@@ -133,7 +133,7 @@
 @media screen and (max-width: 1440px) {
     .get-started-title {
         font-size: 4.5rem;
-        width: 40vw;
+        width: 50vw;
     }
 
     .get-started-p {
@@ -220,7 +220,7 @@
         display: none;
     }
     .wave-img {
-        top:17rem;
+        top:18.5rem;
     }
 }
 .exclaim-img {
@@ -234,7 +234,7 @@
 .get-started p {
 
     font-size: 1.1rem;
-    width: 70%;
+    width: 60%;
 }
 
 }
