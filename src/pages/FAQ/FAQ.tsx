@@ -71,7 +71,7 @@ const FAQ2 = () => {
                         </div>
                     ))}
                 </ul>
-            </div>
+            </div> 
             <div className="faq2-bottom">
                 <img className="faq2-bottom-img  animate-pop-in" src={faqdog} alt="FAQ" />
                 <h1 className="faq2-bottom-title animate-pop-in">Ready to stop chasing your tail in circles looking for the best, human-grade quality dog food?</h1>
