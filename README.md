@@ -2,6 +2,10 @@
 
 Side project WIP- DoggyStuff is a personalized dog food subscription service that tailors nutrition to your dogs unique needs.
 
+
+# Deployed Site 
+https://doggystuff.netlify.app/
+
 # Tech Stack
 React.tsx, Supabase, CSS, Netlify
 
