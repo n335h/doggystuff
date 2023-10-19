@@ -10,7 +10,9 @@ Browser Router
 
 # Current Issues
 
-Current deployed site has issues on sign in where it doesn't forward you onto profile page, it currently works on local, exploring possible causes. 
+Current deployed site has issues on sign in where it doesn't forward you onto profile page, currently works on local, exploring possible causes. 
+
+Some CSS responsiveness issues
 
 # Functionality
 
