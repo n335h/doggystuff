@@ -5,7 +5,7 @@ Side project WIP- DoggyStuff is a personalized dog food subscription service tha
 # Tech Stack
 React.tsx, Supabase, CSS, Netlify
 
-# Additional tech 
+Additional tech : 
 Browser Router
 
 # Current Issues
