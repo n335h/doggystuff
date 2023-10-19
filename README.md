@@ -5,6 +5,9 @@ Side project WIP- DoggyStuff is a personalized dog food subscription service tha
 # Tech Stack
 React.tsx, Supabase, CSS, Netlify
 
+Additional tech 
+Browser Router
+
 # Current Issues
 
 Current deployed site has issues on sign in where it doesn't forward you onto profile page, it currently works on local, exploring possible causes. 
