@@ -16,7 +16,7 @@ Current deployed site has issues on sign in where it doesn't forward you onto pr
 
 You can create an account and complete the survey to place an order - If you complete the survey without an account it will add an additional sign up screen. Once registered  you can visit your profile, update your details, view past orders and also your currently registered animals. 
 
-#Database planning 
+# Database planning 
 [Image](https://github.com/n335h/doggystuff/blob/main/Screenshot%202023-08-03%20at%2010.58.00.png?raw=true)
 
 
