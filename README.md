@@ -1,3 +1,24 @@
+# DoggyStuff
+
+Side project WIP- DoggyStuff is a personalized dog food subscription service that tailors nutrition to your dogs unique needs.
+
+# Tech Stack
+React.tsx, Supabase, CSS, Netlify
+
+# Current Issues
+
+Current deployed site has issues on sign in where it doesn't forward you onto profile page, it currently works on local, exploring possible causes. 
+
+# Functionality
+
+You can create an account and complete the survey to place an order - If you complete the survey without an account it will add an additional sign up screen. Once registered  you can visit your profile, update your details, view past orders and also your currently registered animals. 
+
+
+
+_____________________________________________________________________________________________________________________________________________________
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
