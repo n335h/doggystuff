@@ -166,7 +166,7 @@ function App() {
             />
             <Route path="/Survey" element={<Survey updateFields={updateFields} updateOrderFields={updateOrderFields} />} />
             <Route path="/GetStarted" element={<GetStarted />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/Profile" element={<Profile />} />
             <Route path="/FAQ" element={<FAQ />} />
             <Route path="/Contact" element={<Contact />} />
           </Routes>

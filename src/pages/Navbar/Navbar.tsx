@@ -92,7 +92,7 @@ export default function Navbar({ isSignedIn, setIsSignedIn, visible }: NavbarPro
     const section4End = 4 * sectionHeight;
 
     
-
+ // handle scroll for nav bar svgs
     const handleScroll = () => {
       const scrollY = window.scrollY;
       let currentSection;

@@ -220,7 +220,7 @@
         display: none;
     }
     .wave-img {
-        top:18.5rem;
+        top:17.5rem;
     }
 }
 .exclaim-img {
@@ -291,11 +291,15 @@
 
     .get-started-title {
         font-size: 2.8rem;
+        
     }
 
     .get-started p {
         font-size: 0.9rem;
         width: 80%;
+    }
+    .main-para {
+        width: 40vw;
     }
 
     /* .wave-img {

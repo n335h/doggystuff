@@ -179,46 +179,46 @@ input:focus, textarea:focus, select:focus {
     outline: 4px solid var(--header-main);
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1280px) {
     #contact-form {
         width: 80%;
     }
 
     #contact-form h1 {
-        font-size: 4rem;
-        width: 50vw;
+        font-size: 3.5rem;
+        width: 40vw;
         margin-bottom: 0;
     }
 
     #contact-form p {
-        font-size: 2rem;
-        width: 60vw;
+        font-size: 1.6rem;
+        width: 40vw;
         text-align: center;
         margin-bottom: 5vh;
     }
 
     .contact-form-group input {
         height: 4vh;
-        width: 60vw;
+        width: 40Svw;
         font-size: 1.5rem;
     }
 
     .contact-textarea {
-        width: 60vw;
+        width: 40vw;
     }
 
     .contact-form-group-button button {
-        width: 30vw;
+        width: 20vw;
     }
 
     .contact-form-group-button {
-        width: 60vw;
+        width: 40vw;
     }
-}
+} 
 
 @media screen and (max-width: 750px) {
     #contact-form h1 {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
         width: 60vw;
     }
 
@@ -269,7 +269,8 @@ input:focus, textarea:focus, select:focus {
     }
 
     .contact-form-group-button button {
-        width: 50vw;
+        width: 40vw;
+        height: 8vh;
     }
     
 
