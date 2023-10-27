@@ -38,10 +38,11 @@ function SignIn({ SignInFormData, signUpRedirect, isSignedIn, setIsSignedIn }: S
       setShowSignInSuccessOverlay(true); // Show the sign-in success overlay
      
       setShowSignIn(false);
-      navigate('/Profile');
+    
     } else {
       setSignInError(true);
     }
+    navigate('/Profile');
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
