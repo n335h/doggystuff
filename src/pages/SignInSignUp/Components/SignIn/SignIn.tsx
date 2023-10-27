@@ -43,8 +43,6 @@ function SignIn({ SignInFormData, signUpRedirect, isSignedIn, setIsSignedIn }: S
     } else {
       setSignInError(true);
     }
-    navigate('/Profile');
-    console.log('profile loaded');
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
