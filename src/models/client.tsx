@@ -97,7 +97,9 @@ export async function isSessionSignedIn(): Promise<boolean> {
 export async function getCurrentUserId(): Promise<string | null> {
   try {
     const { data: { user } } = await supabaseClient!.auth.getUser();
+    console.log (user?.id, 'THIS IS THE USER ID')
     return user?.id || null; // ? is used to tell TypeScript that the value may be null or undefined and to not throw an error if it is 
+
   } catch (error) {
     // Handle any other errors that may occur
     console.error(error);
@@ -121,7 +123,6 @@ export async function fetchUserProfile() {
 
 
   if (user) {
-    console.log(user?.data.user?.id, 'THIS IS THE USER ID 1 ');
     try {
       const { data: userData, error } = await supabaseClient!
         .from('users')
@@ -129,15 +130,6 @@ export async function fetchUserProfile() {
         .eq('user_id', user?.data.user?.id) //added ? to user to fix error "Object is possibly 'null'."
         .single();
 
-      console.log(userData, 'THIS IS THE USER DATA 2');
-
-      // const { data: addressData, error } = await supabaseClient!
-      //   .from('user_address')
-      //   .select('*')
-      //   .eq('user_id', user.data.user.id)
-      //   .single();
-
-      //   console.log(user.data.user.id, 'THIS IS THE USER ID being');
 
       if (error) {
         console.error('Error fetching user data:', error);
@@ -191,7 +183,6 @@ export async function fetchUserOrderData(): Promise<OrderData[] | null> {
 
   try {
     const user_ID = await getCurrentUserId();
-    console.log(user_ID, 'THIS IS THE USER ID 14');
     if (user_ID) {
       const order_query = await supabaseClient!
         .from("order")
@@ -199,7 +190,6 @@ export async function fetchUserOrderData(): Promise<OrderData[] | null> {
         .select('*') 
         .eq('user_id', user_ID);
        
-      console.log(order_query, 'THIS IS THE ORDER QUERY 2');
 
       if (order_query.error) {
         console.error('Error fetching user order data:', order_query.error);
@@ -232,53 +222,6 @@ export async function fetchUserOrderData(): Promise<OrderData[] | null> {
   }
 }
 
-// export async function fetchUserAddressData() {
-//   const user_ID = await getCurrentUserId();
-//   //convert user_ID to string
-//   console.log(user_ID, 'THIS IS THE USER ID 1 ');
-
-//   if (user_ID) {
-//     let address_query = await supabaseClient!
-//       .from('user_address')
-//       .select('*')
-//       .eq('user_id', user_ID)
-//       .single();
-
-//     console.log(address_query, 'THIS IS THE ADDRESS QUERY 2');
-
-//     if (address_query.error) {
-//       console.error('Error fetching user address data:', address_query.error);
-//     } else {
-//       const userAddress = { ...address_query};
-//       console.log('User Address:', userAddress, 'THIS IS THE USER ADDRESS 4');
-//       return userAddress;
-//     }
-//   } else {
-//     console.log('User is not signed in.');
-//   }
-
-
-
-// if (user) {
-//   const { data: addressData, error } = await supabaseClient!
-//     .from('user_address')
-//     .select('*')
-//     .eq('user_id',user_id)
-//     .single();
-
-//   if (error) {
-//     console.error('Error fetching user address data:', error);
-//   } else {
-//     const userAddress = { ...addressData };
-//     console.log('User Address:', userAddress, 'THIS IS THE USER ADDRESS 4');
-//     return userAddress;
-//   }
-// } else {
-//   console.log('User is not signed in.');
-// }
-// }
-
-
 
 
 export async function fetchUserDogData(): Promise<DogData[] | null> {
@@ -291,12 +234,10 @@ export async function fetchUserDogData(): Promise<DogData[] | null> {
         .select('*') 
         .eq('user_id', user_ID);
         
-      console.log(dog_query, 'THIS IS THE DOG QUERY 1');
       if (dog_query.error) {
         console.error('Error fetching user order data:', dog_query.error);
         return null;
       } else {         
-        console.log(dog_query, 'THIS IS THE DOG QUERY 2');
         return dog_query.data.map((dog: any) => ({
           dog_id: dog.dog_id,
           dog_name: dog.dog_name,
@@ -434,26 +375,3 @@ export async function updateDogData(
   });
   console.log('Update DogData');
 }
-
-
-
-
-
-
-
-
-
-// type UserData = {
-//   user: User | null;
-//   session: Session | null;
-// };
-// type User = {
-//  user_metadata: {
-//   first_name: string;
-//   last_name: string;
-//  };
-//  };
-
-// type Session = {
-//   // Define the properties of the Session type if needed.
-// };

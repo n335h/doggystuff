@@ -36,13 +36,15 @@ function SignIn({ SignInFormData, signUpRedirect, isSignedIn, setIsSignedIn }: S
     if (signInSuccessful) {
       setIsSignedIn(true);
       setShowSignInSuccessOverlay(true); // Show the sign-in success overlay
-     
+      navigate('/Profile');
+    console.log('profile loaded');
       setShowSignIn(false);
     
     } else {
       setSignInError(true);
     }
     navigate('/Profile');
+    console.log('profile loaded');
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
