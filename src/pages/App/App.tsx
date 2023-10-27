@@ -10,7 +10,6 @@ import GetStarted from '../getStarted/getStarted';
 import Profile from '../Profile/Profile';
 import FAQ from '../FAQ/FAQ';
 import Contact from '../Contact/Contact';
-import './App.css';
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);

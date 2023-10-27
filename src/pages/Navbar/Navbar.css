@@ -6,10 +6,9 @@
         background-color: transparent;
         z-index: 100;
         transition: top 0.3s ease-in-out;
-        width: 100vw;
       }
       .outerNav {
-        width: 100%;
+        width: 100vw;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -25,15 +24,11 @@
       margin: 0;
       padding: 0;
       height: 10vh;
-      width: 95%;
+      width: 95vw;
       top: 0;
       z-index: 100;
     }
-    .Nav {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
+    
     .menu {
       display: flex;
       flex-direction: row;
