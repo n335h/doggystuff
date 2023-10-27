@@ -36,8 +36,9 @@ function SignIn({ SignInFormData, signUpRedirect, isSignedIn, setIsSignedIn }: S
     if (signInSuccessful) {
       setIsSignedIn(true);
       setShowSignInSuccessOverlay(true); // Show the sign-in success overlay
-      navigate('/profile');
+     
       setShowSignIn(false);
+      navigate('/Profile');
     } else {
       setSignInError(true);
     }
