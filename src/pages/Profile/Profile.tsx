@@ -104,14 +104,14 @@ function Profile() {
 
   const [editProfile, setEditProfile] = useState(false);
   const [editedProfile, setEditedProfile] = useState<ProfileData>({
-    first_name: userProfile.first_name || '',
+    first_name: userProfile.first_name && '',
     last_name: userProfile.last_name || '',
     email: userProfile.email || '',
     user_id: userProfile.user_id || '',
   });
   const [editAddress, setEditAddress] = useState(false);
   const [editedAddress, setEditedAddress] = useState<AddressData>({
-    address_fl: addressData.address_fl || '',
+    address_fl: addressData.address_fl && '',
     address_sl: addressData.address_sl || '',
     address_town: addressData.address_town || '',
     address_county: addressData.address_county || '',
@@ -132,22 +132,32 @@ function Profile() {
 
   useEffect(() => {
     async function getUserProfile() {
+      try {
       const profileData = await fetchUserProfile();
+      console.log("Fetched profile data:", profileData);
       setUserProfile(profileData);
       setEditedProfile(profileData);
+    } catch (error) {
+      console.error('Error fetching user profile:', error);
     }
+  }
 
     getUserProfile();
   }, []);
 
   useEffect(() => {
     async function getUserAddressData() {
+      try {
       const fetchedAddressData = await fetchUserAddressData();
+      console.log("Fetched address data:", fetchedAddressData);
       if (fetchedAddressData) {
         setAddressData(fetchedAddressData);
         setEditedAddress(fetchedAddressData);
       }
+    } catch (error) {
+      console.error('Error fetching user address data:', error);
     }
+  }
 
     getUserAddressData();
   }, []);
