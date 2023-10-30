@@ -104,19 +104,19 @@ function Profile() {
 
   const [editProfile, setEditProfile] = useState(false);
   const [editedProfile, setEditedProfile] = useState<ProfileData>({
-    first_name: userProfile.first_name && '',
-    last_name: userProfile.last_name || '',
-    email: userProfile.email || '',
-    user_id: userProfile.user_id || '',
+    first_name: userProfile.first_name ?? '',
+    last_name: userProfile.last_name ?? '',
+    email: userProfile.email ?? '',
+    user_id: userProfile.user_id ?? '',
   });
   const [editAddress, setEditAddress] = useState(false);
   const [editedAddress, setEditedAddress] = useState<AddressData>({
-    address_fl: addressData.address_fl && '',
-    address_sl: addressData.address_sl || '',
-    address_town: addressData.address_town || '',
-    address_county: addressData.address_county || '',
-    address_postcode: addressData.address_postcode || '',
-    user_id: addressData.user_id || '',
+    address_fl: addressData.address_fl ?? '',
+    address_sl: addressData.address_sl ?? '',
+    address_town: addressData.address_town ?? '',
+    address_county: addressData.address_county ?? '',
+    address_postcode: addressData.address_postcode ?? '',
+    user_id: addressData.user_id ?? '',
   });
 
   const handleViewOrderClick = (order: OrderData) => {
