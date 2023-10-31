@@ -133,14 +133,14 @@ function Profile() {
   useEffect(() => {
     async function getUserProfile() {
       try {
-      const profileData = await fetchUserProfile();
-      console.log("Fetched profile data:", profileData);
-      setUserProfile(profileData);
-      setEditedProfile(profileData);
-    } catch (error) {
-      console.error('Error fetching user profile:', error);
+        const profileData = await fetchUserProfile();
+        console.log("Fetched profile data:", profileData);
+        setUserProfile(profileData);
+        setEditedProfile(profileData);
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+      }
     }
-  }
 
     getUserProfile();
   }, []);
@@ -148,16 +148,16 @@ function Profile() {
   useEffect(() => {
     async function getUserAddressData() {
       try {
-      const fetchedAddressData = await fetchUserAddressData();
-      console.log("Fetched address data:", fetchedAddressData);
-      if (fetchedAddressData) {
-        setAddressData(fetchedAddressData);
-        setEditedAddress(fetchedAddressData);
+        const fetchedAddressData = await fetchUserAddressData();
+        console.log("Fetched address data:", fetchedAddressData);
+        if (fetchedAddressData) {
+          setAddressData(fetchedAddressData);
+          setEditedAddress(fetchedAddressData);
+        }
+      } catch (error) {
+        console.error('Error fetching user address data:', error);
       }
-    } catch (error) {
-      console.error('Error fetching user address data:', error);
     }
-  }
 
     getUserAddressData();
   }, []);
@@ -375,10 +375,14 @@ function Profile() {
 
                     <div className='userinfodetails'>
                       {/* conditional check to ensure that userProfile is not undefined before rendering the first_name */}
-                      {userProfile && userProfile.first_name && (
+                      {/* This conditional rendering will prevent trying to access first_name when userProfile is undefined. */}
+                      {userProfile?.first_name ? (
                         <h2 className="welcome-text">
-                          Welcome <span className="name-text">{userProfile?.first_name}</span>!
+                          Welcome <span className="name-text">{userProfile.first_name}</span>!
                         </h2>
+                      ) : (
+                        // Render something else or loading state
+                        <p>Loading...</p>
                       )}
                       <h3 className="userdetails">User Details</h3>
 
