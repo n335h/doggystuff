@@ -377,7 +377,7 @@ function Profile() {
                       {/* conditional check to ensure that userProfile is not undefined before rendering the first_name */}
                       {userProfile && userProfile.first_name && (
                         <h2 className="welcome-text">
-                          Welcome <span className="name-text">{userProfile.first_name}</span>!
+                          Welcome <span className="name-text">{userProfile?.first_name}</span>!
                         </h2>
                       )}
                       <h3 className="userdetails">User Details</h3>
