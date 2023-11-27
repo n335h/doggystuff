@@ -28,7 +28,7 @@ const FAQ2 = () => {
         },
         {
             question: 'When does the food arrive?',
-            answer: 'Pick any weekday, and it will arrive every four weeks.',
+            answer: 'Pick any weekday, and it will arrive every four weeks from that day. You can change your delivery date at any time in your account.',
         },
         {
             question: 'Shipping',

@@ -63,6 +63,7 @@
     padding: 20px;
     height: auto;
     width: 60vw;
+    text-align: left;
 
 }
 
@@ -107,11 +108,15 @@
     color: #fff;
     width: 35vw;
     margin-top: 1.5rem;
-    margin-left: 2vw;
+    margin-left: 1.2vw;
     line-height: 1.5;
     font-size: 1rem;
+    text-align: left;
 }
 
+.faq2-content.open li {
+    text-align: left;
+}
 /* After content */
 .faq2-subject.open::after {
     display: block;
