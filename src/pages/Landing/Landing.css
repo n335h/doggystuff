@@ -677,7 +677,7 @@ font-size: 3rem;
   .keepscrollimg {
     position: absolute;
 
-    top:46.5vh;
+    top:50.5vh;
     width:90vw;
     margin-top: 2vh;
     z-index: 100;
@@ -800,7 +800,7 @@ font-size: 3rem;
     background-size:300%; 
   }
   .keepscrollimg {
-    top:47.5vh;
+    top:50.5vh;
   }
 
 }
