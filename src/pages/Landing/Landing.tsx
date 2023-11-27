@@ -89,7 +89,7 @@ export function Landing() {
   <button className="landingSub4Button">Submit</button>
 </div>
              <span className="tcs"> <input className='tcsinput' title="t&cs" type="checkbox" />
-              <label className="landingSub4Label">I agree to the <span className="tcslink"><a href="https://www.termsandconditionsgenerator.com/live.php?token=9Z6Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z1Z"> 
+              <label className="landingSub4Label">I agree to the <span className="tcslink"><a href=" "> 
               Terms and Conditions</a></span></label>
               </span>
               </div>
