@@ -191,9 +191,6 @@ margin-top: 15vh;
      height: 50px;
 
    }
-   .maindashboard {
-    
-   }
 
    .editinfo  {
       width: 70vw;
@@ -223,16 +220,17 @@ margin-top: 15vh;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    margin-top: 10vh;
+    margin-top: -30rem;
 
    }
     .dashboardleft {
-      margin-top: 50vh;
-      height: 100vh;
+      margin-top: 40vh;
+      height:20vh;
       width: 100vw;
     }
     .dashboardright {
-      margin-top: 20vh;
+      margin-top: 10vh;
+      height: 50vh;
       width: 100vw;
     }
     .dogContainer {
@@ -251,7 +249,7 @@ margin-top: 15vh;
       
     }
     .userinfodetails, .useraddressdetails {
-      width: 90vw;
+      width: 50vw;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -267,7 +265,7 @@ margin-top: 15vh;
       
     }
     .userDetails {
-      width: 90vw;
+      width: 40vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -286,7 +284,7 @@ margin-top: 15vh;
     }
     .userinfobox {
    
-      width: 100vw;
+      width: 50vw;
       height: 100vh;
     }
   }
@@ -304,7 +302,11 @@ margin-top: 15vh;
   
        
      }
+     .userinfodetails, .useraddressdetails {
+      width: 60vw;
+      
 
+    }
     }
 
 
