@@ -104,19 +104,19 @@ function Profile() {
 
   const [editProfile, setEditProfile] = useState(false);
   const [editedProfile, setEditedProfile] = useState<ProfileData>({
-    first_name: '',
-    last_name: '',
-    email: '',
-    user_id: '',
+    first_name: userProfile.first_name ?? '',
+    last_name: userProfile.last_name ?? '',
+    email: userProfile.email ?? '',
+    user_id: userProfile.user_id ?? '',
   });
   const [editAddress, setEditAddress] = useState(false);
   const [editedAddress, setEditedAddress] = useState<AddressData>({
-    address_fl: '',
-    address_sl: '',
-    address_town: '',
-    address_county: '',
-    address_postcode: '',
-    user_id: '',
+    address_fl: addressData.address_fl ?? '',
+    address_sl: addressData.address_sl ?? '',
+    address_town: addressData.address_town ?? '',
+    address_county: addressData.address_county ?? '',
+    address_postcode: addressData.address_postcode ?? '',
+    user_id: addressData.user_id ?? '',
   });
 
   const handleViewOrderClick = (order: OrderData) => {
@@ -132,9 +132,14 @@ function Profile() {
 
   useEffect(() => {
     async function getUserProfile() {
-      const profileData = await fetchUserProfile();
-      setUserProfile(profileData);
-      setEditedProfile(profileData);
+      try {
+        const profileData = await fetchUserProfile();
+        console.log("Fetched profile data:", profileData);
+        setUserProfile(profileData);
+        setEditedProfile(profileData);
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+      }
     }
 
     getUserProfile();
@@ -142,10 +147,15 @@ function Profile() {
 
   useEffect(() => {
     async function getUserAddressData() {
-      const fetchedAddressData = await fetchUserAddressData();
-      if (fetchedAddressData) {
-        setAddressData(fetchedAddressData);
-        setEditedAddress(fetchedAddressData);
+      try {
+        const fetchedAddressData = await fetchUserAddressData();
+        console.log("Fetched address data:", fetchedAddressData);
+        if (fetchedAddressData) {
+          setAddressData(fetchedAddressData);
+          setEditedAddress(fetchedAddressData);
+        }
+      } catch (error) {
+        console.error('Error fetching user address data:', error);
       }
     }
 
@@ -365,10 +375,14 @@ function Profile() {
 
                     <div className='userinfodetails'>
                       {/* conditional check to ensure that userProfile is not undefined before rendering the first_name */}
-                      {userProfile && userProfile.first_name && (
+                      {/* This conditional rendering will prevent trying to access first_name when userProfile is undefined. */}
+                      {userProfile?.first_name ? (
                         <h2 className="welcome-text">
                           Welcome <span className="name-text">{userProfile.first_name}</span>!
                         </h2>
+                      ) : (
+                        // Render something else or loading state
+                        <p>Loading...</p>
                       )}
                       <h3 className="userdetails">User Details</h3>
 
