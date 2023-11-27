@@ -507,10 +507,10 @@ font-size: 3rem;
   .keepscrollimg{
     position: relative;
     width: 90%;
-    top:-10vh;
+    top:-5vh;
     left: 0vw;
     margin-top: 2vh;
-    z-index: 100;
+    z-index: 10;
   }
   .lookinat {
     position: relative;
@@ -581,6 +581,7 @@ font-size: 3rem;
     font-size: 1.2rem;
     font-weight: 600;
     border-radius: 17.4rem;
+    z-index:60;
     border: 0;
   }
 
@@ -675,7 +676,7 @@ font-size: 3rem;
   }
   .keepscrollimg {
     position: absolute;
-    left: auto;
+
     top:46.5vh;
     width:90vw;
     margin-top: 2vh;
@@ -716,6 +717,7 @@ font-size: 3rem;
     border-radius: 17.4rem;
     border: 0;
     max-width: 100%;
+    z-index: 100;
 
   }
 .landing-section-3-container, .landing-section-3 {
@@ -770,6 +772,7 @@ font-size: 3rem;
   font-size: 0.8rem;
   width: 18vw;
   height: 6.2vh;
+  z-index: 20;
   border-radius: 17.4rem;
 }
  .tcs {
