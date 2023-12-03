@@ -1,5 +1,13 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
+
+export type ProfileData = {
+  first_name: string;
+  last_name: string;
+  email: string;
+  user_id: string;
+}
+
 export interface AddressData {
   address_fl: string;
   address_sl: string;

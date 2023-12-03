@@ -12,7 +12,7 @@ import {
 import './Profile.css';
 import dogAvatar from '../../Assets/temp-dog-avatar.jpg';
 
-interface ProfileData {
+type ProfileData = {
   first_name: string;
   last_name: string;
   email: string;
@@ -65,13 +65,15 @@ function formatDate(dateString: string) {
 }
 
 function Profile() {
-  const [userProfile, setUserProfile] = useState<ProfileData>({
+
+  const [userProfile, setUserProfile] = useState<ProfileData | null>({
     first_name: '',
     last_name: '',
     email: '',
     user_id: '',
   });
-  const [addressData, setAddressData] = useState<AddressData>({
+
+  const [addressData, setAddressData] = useState<AddressData | null>({
     address_fl: '',
     address_sl: '',
     address_town: '',
@@ -104,19 +106,19 @@ function Profile() {
 
   const [editProfile, setEditProfile] = useState(false);
   const [editedProfile, setEditedProfile] = useState<ProfileData>({
-    first_name: userProfile.first_name ?? '',
-    last_name: userProfile.last_name ?? '',
-    email: userProfile.email ?? '',
-    user_id: userProfile.user_id ?? '',
+    first_name: userProfile?.first_name ?? '',
+    last_name: userProfile?.last_name ?? '',
+    email: userProfile?.email ?? '',
+    user_id: userProfile?.user_id ?? '',
   });
   const [editAddress, setEditAddress] = useState(false);
   const [editedAddress, setEditedAddress] = useState<AddressData>({
-    address_fl: addressData.address_fl ?? '',
-    address_sl: addressData.address_sl ?? '',
-    address_town: addressData.address_town ?? '',
-    address_county: addressData.address_county ?? '',
-    address_postcode: addressData.address_postcode ?? '',
-    user_id: addressData.user_id ?? '',
+    address_fl: addressData?.address_fl ?? '',
+    address_sl: addressData?.address_sl ?? '',
+    address_town: addressData?.address_town ?? '',
+    address_county: addressData?.address_county ?? '',
+    address_postcode: addressData?.address_postcode ?? '',
+    user_id: addressData?.user_id ?? '',
   });
 
   const handleViewOrderClick = (order: OrderData) => {
@@ -165,6 +167,8 @@ function Profile() {
   const handleSaveProfile = async () => {
     try {
       console.log("Saving profile data...");
+
+      if (userProfile) {
       await updateUserData(
         userProfile.user_id,
         editedProfile.first_name,
@@ -174,7 +178,10 @@ function Profile() {
       console.log("Profile data save successfully");
       setUserProfile({ ...userProfile, ...editedProfile });
       setEditProfile(false);
-    } catch (error) {
+    } else {
+      console.error("User profile is null");
+    }
+  } catch (error) {
       console.error("Error updating user profile:", error);
     }
   };
@@ -376,14 +383,26 @@ function Profile() {
                     <div className='userinfodetails'>
                       {/* conditional check to ensure that userProfile is not undefined before rendering the first_name */}
                       {/* This conditional rendering will prevent trying to access first_name when userProfile is undefined. */}
-                      {userProfile?.first_name ? (
-                        <h2 className="welcome-text">
-                          Welcome <span className="name-text">{userProfile.first_name}</span>!
-                        </h2>
+
+                      {userProfile ? (
+                        <div>
+                          <h3 className="userdetails">User Details</h3>
+                          <p>
+                            <span className="bolded">Firstname: {userProfile.first_name || 'N/A'}</span>
+                          </p>
+                          <p>
+                            <span className="bolded">Lastname: {userProfile.last_name || 'N/A'}</span>
+                          </p>
+                          <p>
+                            <span className="bolded">Email: {userProfile.email || 'N/A'}</span>
+                          </p>
+                        </div>
                       ) : (
-                        // Render something else or loading state
-                        <p>Loading...</p>
+                        <p>Loading user details...</p>
+                      
+
                       )}
+
                       <h3 className="userdetails">User Details</h3>
 
                       <p>
@@ -532,4 +551,3 @@ function Profile() {
 }
 
 export default Profile;
-
