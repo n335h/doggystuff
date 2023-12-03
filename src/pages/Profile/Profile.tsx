@@ -383,6 +383,7 @@ function Profile() {
                     <div className='userinfodetails'>
                       {/* conditional check to ensure that userProfile is not undefined before rendering the first_name */}
                       {/* This conditional rendering will prevent trying to access first_name when userProfile is undefined. */}
+
                       {userProfile ? (
                         <div>
                           <h3 className="userdetails">User Details</h3>
@@ -398,6 +399,8 @@ function Profile() {
                         </div>
                       ) : (
                         <p>Loading user details...</p>
+                      
+
                       )}
 
                       <h3 className="userdetails">User Details</h3>

@@ -1,6 +1,6 @@
 .profile {
   margin: 0 auto;
-  height: 90vh;
+  height: 110vh;
   width: 100vw;
   margin: 0;
   padding: 0;
@@ -13,24 +13,15 @@
   color: #000;
   
 }
-html {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-}
+
 
 .maindashboard {
   display: flex;
-  justify-content: center; /* Horizontally center the content */
-  align-items: flex-start; /* Vertically center the content */
-  height: 90vh; /* Adjust the height as needed */
   width:100%;
-  margin: 0;
 }
 
 .dashboardleft {
-  text-align: center; /* Center the text inside dashboardleft */
+  text-align: center; 
 }
 .dashboardright, .dashboardleft {
   display: flex;
@@ -80,8 +71,8 @@ margin-top: 15vh;
 /* Style for dog and order button containers */
 .dog-button-container,
 .order-button-container {
-  flex: 0; /* Prevent button containers from growing */
-  margin-left: 10px; /* Add some space between data and buttons */
+  flex: 0; 
+  margin-left: 10px; 
 }
 
 .dashboardright button {
@@ -200,9 +191,6 @@ margin-top: 15vh;
      height: 50px;
 
    }
-   .maindashboard {
-    
-   }
 
    .editinfo  {
       width: 70vw;
@@ -232,16 +220,17 @@ margin-top: 15vh;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    margin-top: 10vh;
+    margin-top: -30rem;
 
    }
     .dashboardleft {
-      margin-top: 50vh;
-      height: 100vh;
+      margin-top: 40vh;
+      height:20vh;
       width: 100vw;
     }
     .dashboardright {
-      margin-top: 20vh;
+      margin-top: 10vh;
+      height: 50vh;
       width: 100vw;
     }
     .dogContainer {
@@ -260,7 +249,7 @@ margin-top: 15vh;
       
     }
     .userinfodetails, .useraddressdetails {
-      width: 90vw;
+      width: 50vw;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -276,7 +265,7 @@ margin-top: 15vh;
       
     }
     .userDetails {
-      width: 90vw;
+      width: 40vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -295,7 +284,7 @@ margin-top: 15vh;
     }
     .userinfobox {
    
-      width: 100vw;
+      width: 50vw;
       height: 100vh;
     }
   }
@@ -313,7 +302,11 @@ margin-top: 15vh;
   
        
      }
+     .userinfodetails, .useraddressdetails {
+      width: 60vw;
+      
 
+    }
     }
 
 

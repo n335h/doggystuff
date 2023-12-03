@@ -203,6 +203,7 @@
   }
   .formContent h3 {
     color: var(--black-text);
+    text-align: center;
   }
   #dog_size, #dog_sex p {
     width: 5vw;
