@@ -403,17 +403,6 @@ function Profile() {
 
                       )}
 
-                      <h3 className="userdetails">User Details</h3>
-
-                      <p>
-                        <span className="bolded">Firstname: {userProfile?.first_name}</span>
-                      </p>
-                      <p>
-                        <span className="bolded">Lastname: {userProfile?.last_name}</span>
-                      </p>
-                      <p>
-                        <span className="bolded">Email: {userProfile?.email}</span>
-                      </p>
                     </div>
                     <div className='useraddressdetails'>
                       <h3 className="address">Address</h3>
