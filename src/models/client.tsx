@@ -55,9 +55,10 @@ if (supabaseUrl && supabaseKey) {
 export async function SignInUser(email: string, password: string): Promise<boolean> {
   try {
     const { error } = await supabaseClient?.auth.signInWithPassword({ email, password }) || {};
-    if (error) {
+    if (error) { 
       console.error('Sign-in error:', error);
       return false;
+      
     } else {
       // Sign in was successful
       console.log('Sign-in successful');
@@ -373,5 +374,5 @@ export async function updateDogData(
     dog_name: dog_name,
     dog_health: dog_health,
   });
-  console.log('Update DogData');
+  console.log('Updated DogData');
 }
