@@ -15,7 +15,9 @@ export async function insertPublicUser(
   last_name: string,
   email: string
 ): Promise<void> {
-  await supabaseClient!.from('user').insert({
+  await supabaseClient!
+  .from('users')
+  .insert({
     user_id: user_id,
     first_name: first_name,
     last_name: last_name,
