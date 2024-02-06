@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { supabaseSignUp } from '../../../../models/queries';
+import { supabaseSignUp } from '../../server/queries';
 // import { insertPublicUser } from '../../../../models/queries';
 import SignMessage from '../SignMessage/SignMessage';
 import { Link } from 'react-router-dom';

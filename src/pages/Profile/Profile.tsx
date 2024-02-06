@@ -7,7 +7,7 @@ import {
   fetchUserDogData,
   updateUserData,
   updateUserAddressData,
-} from '../../models/client';
+} from '../../server/client';
 // import ImageUpload from '../ImgUpload/ImgUpload';
 import './Profile.css';
 import dogAvatar from '../../Assets/temp-dog-avatar.jpg';

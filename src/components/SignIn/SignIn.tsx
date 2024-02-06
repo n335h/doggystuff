@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SignInUser } from '../../../../models/client';
+import { SignInUser } from '../../server/client';
 import SignMessage from '../../Components/SignMessage/SignMessage';
 import { Link } from "react-router-dom";
 import './SignIn.css';
