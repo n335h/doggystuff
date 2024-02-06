@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SignInUser } from '../../server/client';
-import SignMessage from '../../Components/SignMessage/SignMessage';
+import SignMessage from '../SignMessage/SignMessage';
 import { Link } from "react-router-dom";
 import './SignIn.css';
-import hamburgerclose from '../../../../Assets/hamburgerclose.svg';
+import hamburgerclose from '../../Assets/hamburgerclose.svg';
 
 interface SignInProps {
   SignInFormData: {

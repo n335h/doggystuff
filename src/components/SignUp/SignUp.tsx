@@ -4,7 +4,7 @@ import { supabaseSignUp } from '../../server/queries';
 import SignMessage from '../SignMessage/SignMessage';
 import { Link } from 'react-router-dom';
 import './SignUp.css';
-import hamburgerclose from '../../../../Assets/hamburgerclose.svg';
+import hamburgerclose from '../../Assets/hamburgerclose.svg';
 
 
 
